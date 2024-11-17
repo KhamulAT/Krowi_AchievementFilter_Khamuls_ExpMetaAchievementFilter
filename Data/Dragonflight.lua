@@ -7,13 +7,6 @@ addon.Achievements = addon.Achievements or {}
 addon.Achievements.DF = {}
 addon.Achievements.DFMetaAchievementId = 20501
 
-local factionSpecificAchievements = {
-    { -- Alliance
-    },
-    { -- Horde
-    }
-}
-
 local ACM_16339 = { -- Myths of the Dragonflight Dungeons
     GetAchievementName(16339),
     true,

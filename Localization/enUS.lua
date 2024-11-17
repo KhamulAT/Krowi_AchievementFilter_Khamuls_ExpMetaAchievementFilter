@@ -23,4 +23,8 @@ L["ACM_40957"] = "Maximum Effort"
 L["ACM_40959"] = "Black Empire State of Mind"
 L["ACM_40958"] = "Full Heart, Can't Lose"
 L["ACM_41209"] = "Dressed to Kill: Battle for Azeroth"
+L["ACM_41201"] = "You Xal Not Pass"
+L["ACM_41186"] = "Slate of the Union"
+L["ACM_41187"] = "Rage Aside the Machine"
+L["ACM_41188"] = "Crystal Chronicled"
 
