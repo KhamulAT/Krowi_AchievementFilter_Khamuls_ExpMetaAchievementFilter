@@ -99,7 +99,7 @@ local ACM_15324 = { -- Tower Ranger
     }
 }
 
-local AMC_15648 = { 
+local ACM_15648 = { 
     GetAchievementName(15648),
     true,
     {
