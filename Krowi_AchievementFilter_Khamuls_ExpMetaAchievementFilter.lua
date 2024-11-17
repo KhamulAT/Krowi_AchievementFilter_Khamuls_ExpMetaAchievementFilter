@@ -11,11 +11,12 @@ end
 local aggregatedAchievementsList = {
     971,
     {
-        GetNextIndex(),
         addon.L["Khamul's Meta-Expansion Achievement List"],
         addon.Achievements.BfA,
+        addon.Achievements.SL,
         {
-            addon.Achievements.BfAMetaAchievementId
+            addon.Achievements.BfAMetaAchievementId,
+            addon.Achievements.SLMetaAchievementId,
         }
     }
 }

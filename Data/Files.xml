@@ -1,3 +1,4 @@
 <Ui>
     <Script file="BattleForAzeroth.lua" />
+    <Script file="Shadowlands.lua" />
 </Ui>

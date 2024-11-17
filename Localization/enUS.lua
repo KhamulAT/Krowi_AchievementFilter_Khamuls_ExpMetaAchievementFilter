@@ -6,6 +6,9 @@ addon.L = L;
 L["Khamul's Meta-Expansion Achievement List"] = "Khamul's Meta-Expansion Achievement List"
 L["Unknown Achievement"] = "Unknown Achievement"
 
+-- Tooltips
+L["Tt_ACM_15035"] = "Only 4 needed to complete the Metaachievement"
+
 -- Not yet available achievements names
 L["ACM_40953"] = "A Farewell to Arms"
 L["ACM_40956"] = "I'm On Island Time"

@@ -60,7 +60,6 @@ local factionSpecificAchievements = {
 }
 
 local ACM_12807 = { -- Battle for Azeroth Dungeon Hero
-    GetNextIndex(),
     GetAchievementName(12807),
     true,
     {
@@ -79,14 +78,12 @@ local ACM_12807 = { -- Battle for Azeroth Dungeon Hero
 }
 
 local ACM_40956 = { -- I'm On Island Time
-    GetNextIndex(),
     GetAchievementName(40956),
     true,
     {
         IgnoreFactionFilter  = true
     },
     { -- Hot Tropic
-        GetNextIndex(),
         GetAchievementName(41202),
         true,
         {
@@ -101,7 +98,6 @@ local ACM_40956 = { -- I'm On Island Time
         },
     },
     { -- Sound Off
-        GetNextIndex(),
         GetAchievementName(41205),
         true,
         {
@@ -116,7 +112,6 @@ local ACM_40956 = { -- I'm On Island Time
         },
     },
     { -- Bown Voyage
-        GetNextIndex(),
         GetAchievementName(41203),
         true,
         {
@@ -131,7 +126,6 @@ local ACM_40956 = { -- I'm On Island Time
         },
     },
     { -- Songs of Storms
-        GetNextIndex(),
         GetAchievementName(41206),
         true,
         {
@@ -146,7 +140,6 @@ local ACM_40956 = { -- I'm On Island Time
         },
     },
     { -- Dune Sqpad
-        GetNextIndex(),
         GetAchievementName(41204),
         true,
         {
@@ -161,7 +154,6 @@ local ACM_40956 = { -- I'm On Island Time
         },
     },
     { -- When the Drust Settles
-        GetNextIndex(),
         GetAchievementName(41207),
         true,
         {
@@ -175,7 +167,6 @@ local ACM_40956 = { -- I'm On Island Time
         },
     },
     { -- Loremaster of Zandalar
-        GetNextIndex(),
         GetAchievementName(13294),
         true,
         {
@@ -188,7 +179,6 @@ local ACM_40956 = { -- I'm On Island Time
         },
     },
     { -- Loremaster of Kul Tiras
-        GetNextIndex(),
         GetAchievementName(12593),
         true,
         {
@@ -215,14 +205,12 @@ local ACM_40956 = { -- I'm On Island Time
 }
 
 local ACM_40955 = { -- War Stories
-    GetNextIndex(),
     GetAchievementName(40955),
     true,
     {
         IgnoreFactionFilter  = true
     },
     { -- Two Sides to Every Tale
-        GetNextIndex(),
         GetAchievementName(13517),
         true,
         {
@@ -251,7 +239,6 @@ local ACM_40955 = { -- War Stories
 }
 
 local ACM_13134 = { -- Expedition Leader
-    GetNextIndex(),
     GetAchievementName(13134),
     true,
     {
@@ -272,7 +259,6 @@ local ACM_13134 = { -- Expedition Leader
 }
 
 local ACM_40957 = { -- Maximum Effort
-    GetNextIndex(),
     GetAchievementName(40957),
     true,
     {
@@ -297,14 +283,12 @@ local ACM_40957 = { -- Maximum Effort
 }
 
 local ACM_13638 = { -- Undersea Usurper
-    GetNextIndex(),
     GetAchievementName(13638),
     true,
     {
         IgnoreFactionFilter  = true
     },
     {
-        GetNextIndex(),
         GetAchievementName(AchievementShowDecider(13761, 13762, factionSpecificAchievements, "completedBeforeFaction")),
         true,
         {
@@ -338,7 +322,6 @@ local ACM_13638 = { -- Undersea Usurper
 }
 
 local ACM_13541 = { -- Mecha-Done
-    GetNextIndex(),
     GetAchievementName(13541),
     true,
     {
@@ -359,7 +342,6 @@ local ACM_13541 = { -- Mecha-Done
 }
 
 local ACM_40959 = { --Black Empire State of Mind
-    GetNextIndex(),
     GetAchievementName(40959),
     true,
     {
@@ -374,7 +356,6 @@ local ACM_40959 = { --Black Empire State of Mind
 }
 
 local ACM_13994 = { -- Through the Depths of Visions
-    GetNextIndex(),
     GetAchievementName(13994),
     true,
     {
@@ -386,7 +367,6 @@ local ACM_13994 = { -- Through the Depths of Visions
 }
 
 local ACM_40958 = { -- Full Heart, Can't Lose
-    GetNextIndex(),
     GetAchievementName(40958),
     true,
     {
@@ -400,7 +380,6 @@ local ACM_40958 = { -- Full Heart, Can't Lose
 }
 
 local ACM_41209 = { -- Dressed to Kill: Battle for Azeroth
-    GetNextIndex(),
     GetAchievementName(41209),
     true,
     {
@@ -417,7 +396,6 @@ local ACM_41209 = { -- Dressed to Kill: Battle for Azeroth
 
 -- try to add a new category to the specials tab 
 local ACMList = { -- meta achievements overview
-    GetNextIndex(),
     GetAchievementName(40953, "BfA - "),
     true,
     ACM_12807, -- Battle for Azeroth Dungeon Hero
