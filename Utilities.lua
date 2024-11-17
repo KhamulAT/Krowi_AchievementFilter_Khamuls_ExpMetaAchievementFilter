@@ -1,7 +1,6 @@
 local addonName, addon = ...;
 
 addon.Achievements = addon.Achievements or {}
-local currentIndex = 10000
 
 -- Setup some vars
 addon.L = LibStub("AceLocale-3.0"):GetLocale(addonName);
@@ -26,11 +25,6 @@ function GetAchievementName(achievementID, prefix)
     end
     
     return prefix .. name
-end
-
-function GetNextIndex() 
-    currentIndex = currentIndex + 1
-    return currentIndex
 end
 
 -- possible decisionTypes are:
