@@ -62,10 +62,10 @@ local factionSpecificAchievements = {
 local ACM_12807 = { -- Battle for Azeroth Dungeon Hero
     GetNextIndex(),
     GetAchievementName(12807),
+    true,
     {
         IgnoreCollapsedChainFilter = true
     },
-    true,
     {
         12505,
         12484,
@@ -81,6 +81,7 @@ local ACM_12807 = { -- Battle for Azeroth Dungeon Hero
 local ACM_40956 = { -- I'm On Island Time
     GetNextIndex(),
     GetAchievementName(40956),
+    true,
     {
         IgnoreFactionFilter  = true
     },
@@ -176,10 +177,10 @@ local ACM_40956 = { -- I'm On Island Time
     { -- Loremaster of Zandalar
         GetNextIndex(),
         GetAchievementName(13294),
+        true,
         {
             IgnoreFactionFilter  = true
         },
-        true,
         {
             11861,
             12478,
@@ -189,10 +190,10 @@ local ACM_40956 = { -- I'm On Island Time
     { -- Loremaster of Kul Tiras
         GetNextIndex(),
         GetAchievementName(12593),
+        true,
         {
             IgnoreFactionFilter  = true
         },
-        true,
         {
             12473,
             12496,
@@ -216,13 +217,14 @@ local ACM_40956 = { -- I'm On Island Time
 local ACM_40955 = { -- War Stories
     GetNextIndex(),
     GetAchievementName(40955),
+    true,
     {
         IgnoreFactionFilter  = true
     },
-    true,
     { -- Two Sides to Every Tale
         GetNextIndex(),
         GetAchievementName(13517),
+        true,
         {
             IgnoreFactionFilter  = true
         },
@@ -251,10 +253,10 @@ local ACM_40955 = { -- War Stories
 local ACM_13134 = { -- Expedition Leader
     GetNextIndex(),
     GetAchievementName(13134),
+    true,
     {
         IgnoreFactionFilter  = true
     },
-    true,
     {
         13122,
         13126,
@@ -272,10 +274,10 @@ local ACM_13134 = { -- Expedition Leader
 local ACM_40957 = { -- Maximum Effort
     GetNextIndex(),
     GetAchievementName(40957),
+    true,
     {
         IgnoreFactionFilter  = true
     },
-    true,
     {
         AchievementShowDecider(12873, 12881, factionSpecificAchievements, "completedBeforeFaction"),
         AchievementShowDecider(13296, 13297, factionSpecificAchievements, "completedBeforeFaction"),
@@ -297,17 +299,17 @@ local ACM_40957 = { -- Maximum Effort
 local ACM_13638 = { -- Undersea Usurper
     GetNextIndex(),
     GetAchievementName(13638),
+    true,
     {
         IgnoreFactionFilter  = true
     },
-    true,
     {
         GetNextIndex(),
         GetAchievementName(AchievementShowDecider(13761, 13762, factionSpecificAchievements, "completedBeforeFaction")),
+        true,
         {
             IgnoreFactionFilter  = true
         },
-        true,
         {
             AchievementShowDecider(13750, 13759, factionSpecificAchievements, "completedBeforeFaction"),
             AchievementShowDecider(13756, 13760, factionSpecificAchievements, "completedBeforeFaction"),
@@ -338,10 +340,10 @@ local ACM_13638 = { -- Undersea Usurper
 local ACM_13541 = { -- Mecha-Done
     GetNextIndex(),
     GetAchievementName(13541),
+    true,
     {
         IgnoreFactionFilter  = true
     },
-    true,
     {
         AchievementShowDecider(13553, 13700, factionSpecificAchievements, "completedBeforeFaction"),
         13470,
@@ -417,6 +419,7 @@ local ACM_41209 = { -- Dressed to Kill: Battle for Azeroth
 local ACMList = { -- meta achievements overview
     GetNextIndex(),
     GetAchievementName(40953, "BfA - "),
+    true,
     ACM_12807, -- Battle for Azeroth Dungeon Hero
     ACM_40956, -- I'm On Island Time
     ACM_40955, -- War Stories
