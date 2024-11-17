@@ -1,5 +1,6 @@
 local addonName, addon = ...;
 local L = LibStub("AceLocale-3.0"):NewLocale(addonName, "enUS", true)
+
 addon.L = L;
 
 -- Globals
@@ -8,6 +9,7 @@ L["Unknown Achievement"] = "Unknown Achievement"
 
 -- Tooltips
 L["Tt_ACM_15035"] = "Only 4 needed to complete the Metaachievement"
+L["Tt_ACM_41201"] = "Many of the achievements will come with 11.0.7"
 
 -- Not yet available achievements names
 L["ACM_40953"] = "A Farewell to Arms"
@@ -27,4 +29,5 @@ L["ACM_41201"] = "You Xal Not Pass"
 L["ACM_41186"] = "Slate of the Union"
 L["ACM_41187"] = "Rage Aside the Machine"
 L["ACM_41188"] = "Crystal Chronicled"
+L["ACM_41189"] = "Azj the World Turns"
 
