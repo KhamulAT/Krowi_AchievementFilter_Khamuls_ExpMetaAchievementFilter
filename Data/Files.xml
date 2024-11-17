@@ -2,4 +2,5 @@
     <Script file="BattleForAzeroth.lua" />
     <Script file="Shadowlands.lua" />
     <Script file="Dragonflight.lua" />
+    <Script file="TheWarWithin.lua" />
 </Ui>
