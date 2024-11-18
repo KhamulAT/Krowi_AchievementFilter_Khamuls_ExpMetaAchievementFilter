@@ -2,9 +2,13 @@
 This addon provides additional filters for Krowi's AchievementFilter Addon.
 
 Currently includes the following:
-- Battle for Azeroth (since 11.0.7)
+- Preview: Battle for Azeroth (will be fully added in 11.0.7)
 - Shadowlands
 - Dragonflight
-- The War Within (since 11.0.7)
+- Preview: The War Within (will be fully added in 11.0.7)
 
+Curseforge:
 Requires https://www.curseforge.com/wow/addons/krowi-achievement-filter to work properly
+
+Wago:
+Requires https://addons.wago.io/addons/krowi-achievement-filter to work properly

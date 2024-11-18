@@ -9,7 +9,7 @@ L["Unknown Achievement"] = "Unknown Achievement"
 
 -- Tooltips
 L["Tt_ACM_15035"] = "Only 4 needed to complete the Metaachievement"
-L["Tt_ACM_41201"] = "Many of the achievements will come with 11.0.7"
+L["Tt_Preview"] = "(Preview) some of the achievements will be added, when 11.0.7 goes live."
 
 -- Not yet available achievements names
 L["ACM_40953"] = "A Farewell to Arms"

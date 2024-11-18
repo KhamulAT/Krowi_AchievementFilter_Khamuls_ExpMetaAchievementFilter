@@ -1,5 +1,6 @@
 local addonName, addon = ...;
 
+local L = addon.L
 addon.Achievements = addon.Achievements or {}
 
 -- Add new entry for BfA
@@ -398,6 +399,10 @@ local ACM_41209 = { -- Dressed to Kill: Battle for Azeroth
 local ACMList = { -- meta achievements overview
     GetAchievementName(40953, "BfA - "),
     true,
+    {
+        IgnoreCollapsedChainFilter = true,
+        Tooltip = L["Tt_Preview"]
+    },
     ACM_12807, -- Battle for Azeroth Dungeon Hero
     ACM_40956, -- I'm On Island Time
     ACM_40955, -- War Stories
