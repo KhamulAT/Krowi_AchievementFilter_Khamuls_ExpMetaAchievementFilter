@@ -81,6 +81,9 @@ local ACM_15324 = { -- Tower Ranger
     GetAchievementName(15324),
     true,
     {
+        IgnoreCollapsedChainFilter = true
+    },
+    {
         GetAchievementName(15092),
         true,
         {
@@ -116,6 +119,9 @@ local ACM_15648 = {
 local ACMList = { -- meta achievements overview
     GetAchievementName(20501, "SL - "),
     true,
+    {
+        IgnoreCollapsedChainFilter = true
+    },
     ACM_15336, -- From A to Zereth
     ACM_15651, -- Myths of the Shadowlands Dungeons
     ACM_15035, -- On the Offensive

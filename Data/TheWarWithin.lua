@@ -71,7 +71,7 @@ local ACMList = { -- meta achievements overview
     true,
     {
         IgnoreCollapsedChainFilter = true,
-        Tooltip = L["Tt_ACM_41201"]
+        Tooltip = L["Tt_Preview"]
     },
     ACM_41186, -- Slate of the Union
     ACM_41187, -- Rage Aside the Machine

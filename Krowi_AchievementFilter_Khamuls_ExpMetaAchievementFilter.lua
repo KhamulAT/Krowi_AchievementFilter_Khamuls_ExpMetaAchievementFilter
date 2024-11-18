@@ -15,10 +15,12 @@ local aggregatedAchievementsList = {
         addon.Achievements.BfA,
         addon.Achievements.SL,
         addon.Achievements.DF,
+        addon.Achievements.TWW,
         {
             addon.Achievements.BfAMetaAchievementId,
             addon.Achievements.SLMetaAchievementId,
-            addon.Achievements.DFMetaAchievementId
+            addon.Achievements.DFMetaAchievementId,
+            addon.Achievements.TWWMetaAchievementId
         }
     }
 }

@@ -1,5 +1,6 @@
 local addonName, addon = ...;
 local L = LibStub("AceLocale-3.0"):NewLocale(addonName, "deDE")
+if not L then return end
 addon.L = L;
 
 -- Globals
@@ -8,7 +9,7 @@ L["Unknown Achievement"] = "Unknown Achievement"
 
 -- Tooltips
 L["Tt_ACM_15035"] = "Nur 4 erforderlich, um das Metaachievement abzuschließen"
-L["Tt_ACM_41201"] = "Viele der Errungenschaften werden mit 11.0.7 kommen"
+L["Tt_Preview"] = "(Vorschau) Viele der Errungenschaften, werden erst mit Patch 11.0.7 hinzugefügt."
 
 -- Not yet available achievements names
 L["ACM_40953"] = "A Farewell to Arms"
@@ -28,3 +29,4 @@ L["ACM_41201"] = "You Xal Not Pass"
 L["ACM_41186"] = "Slate of the Union"
 L["ACM_41187"] = "Rage Aside the Machine"
 L["ACM_41188"] = "Crystal Chronicled"
+L["ACM_41189"] = "Azj the World Turns"
