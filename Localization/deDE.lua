@@ -4,14 +4,14 @@ if not L then return end
 addon.L = L;
 
 -- Globals
-L["Khamul's Meta-Expansion Achievement List"] = "Khamul's Meta-Expansion Achievement Liste"
+L["Khamul's Meta-Expansion Achievement List"] = "Khamul's Meta-Achievement Liste"
 L["Unknown Achievement"] = "Unknown Achievement"
 
 -- Tooltips
-L["Tt_ACM_15035"] = "Nur 4 erforderlich, um das Metaachievement abzuschließen"
-L["Tt_Preview"] = "(Vorschau) Viele der Errungenschaften, werden erst mit Patch 11.0.7 hinzugefügt."
+L["Tt_ACM_15035"] = "Nur 4 erforderlich, um die Meta-Errungenschaft abzuschließen"
+L["Tt_Preview"] = "(Vorschau) Mit 11.0.7 werden weitere Errungenschaften hinzugefügt."
 
--- Not yet available achievements names
+-- Not yet available achievements names (no longer needed when 11.0.7 hit the live servers)
 L["ACM_40953"] = "A Farewell to Arms"
 L["ACM_40956"] = "I'm On Island Time"
 L["ACM_41202"] = "Hot Tropic"
