@@ -66,6 +66,19 @@ local ACM_41189 = { -- Azj the World Turns
     }
 }
 
+local ACM_41133 = { -- Isle Remember You
+    GetAchievementName(41133),
+    true,
+    {
+        41045,
+        41042,
+        41043,
+        41046,
+        41131,
+        41050
+    }
+}
+
 local ACMList = { -- meta achievements overview
     GetAchievementName(41201, "TWW - "),
     true,
@@ -76,11 +89,13 @@ local ACMList = { -- meta achievements overview
     ACM_41187, -- Rage Aside the Machine
     ACM_41188, -- Crystal Chronicled
     ACM_41189, -- Azj the World Turns
+    ACM_41133, -- Isle Remember You
     {
         41186,
         41187,
         41188,
-        41189
+        41189,
+        41133
     }
 }
 
