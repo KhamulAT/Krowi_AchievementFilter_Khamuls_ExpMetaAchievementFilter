@@ -3,6 +3,8 @@ local L = LibStub("AceLocale-3.0"):NewLocale(addonName, "deDE")
 if not L then return end
 addon.L = L;
 
+-- translated using deepl.com
+
 -- Globals
 L["Khamul's Meta-Expansion Achievement List"] = "Khamul's Meta-Achievement Liste"
 L["Unknown Achievement"] = "Unknown Achievement"
