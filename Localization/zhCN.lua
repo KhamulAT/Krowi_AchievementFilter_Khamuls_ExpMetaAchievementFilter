@@ -11,7 +11,7 @@ L["Unknown Achievement"] = "未知成就"
 L["Tt_ACM_15035"] = "只需4个即可完成成就"
 L["Tt_Preview"] = "（预览）许多成就将在 11.0.7 中添加"
 
--- Not yet available achievements names
+-- Not yet available achievements names (no longer needed when 11.0.7 hit the live servers)
 L["ACM_40953"] = "永别了，武装"
 L["ACM_40956"] = "登岛时光"
 L["ACM_41202"] = "真的很赞"

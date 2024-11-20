@@ -4,14 +4,14 @@ local L = LibStub("AceLocale-3.0"):NewLocale(addonName, "enUS", true)
 addon.L = L;
 
 -- Globals
-L["Khamul's Meta-Expansion Achievement List"] = "Khamul's Meta-Expansion Achievement List"
+L["Khamul's Meta-Expansion Achievement List"] = "Khamul's Meta-Achievement List"
 L["Unknown Achievement"] = "Unknown Achievement"
 
 -- Tooltips
-L["Tt_ACM_15035"] = "Only 4 needed to complete the Metaachievement"
-L["Tt_Preview"] = "(Preview) some of the achievements will be added, when 11.0.7 goes live."
+L["Tt_ACM_15035"] = "Only 4 needed to complete the Meta-Achievement"
+L["Tt_Preview"] = "(Preview) Some new achievements will be added, when 11.0.7 goes live."
 
--- Not yet available achievements names
+-- Not yet available achievements names (no longer needed when 11.0.7 hit the live servers)
 L["ACM_40953"] = "A Farewell to Arms"
 L["ACM_40956"] = "I'm On Island Time"
 L["ACM_41202"] = "Hot Tropic"

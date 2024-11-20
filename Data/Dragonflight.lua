@@ -5,7 +5,7 @@ addon.Achievements = addon.Achievements or {}
 
 -- Add new entry for SL
 addon.Achievements.DF = {}
-addon.Achievements.DFMetaAchievementId = 20501
+addon.Achievements.DFMetaAchievementId = 19458
 
 local ACM_16339 = { -- Myths of the Dragonflight Dungeons
     GetAchievementName(16339),
