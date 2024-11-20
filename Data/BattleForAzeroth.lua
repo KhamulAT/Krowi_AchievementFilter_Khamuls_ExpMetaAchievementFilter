@@ -108,7 +108,6 @@ local ACM_40956 = { -- I'm On Island Time
             13057,
             13061,
             13058,
-            12087,
             13049
         },
     },
@@ -254,7 +253,6 @@ local ACM_13134 = { -- Expedition Leader
         13125,
         13127,
         13128,
-        13121,
         AchievementShowDecider(13135, 13133, factionSpecificAchievements, "completedBeforeFaction")
     }
 }
@@ -274,7 +272,6 @@ local ACM_40957 = { -- Maximum Effort
         AchievementShowDecider(13307, 13308, factionSpecificAchievements, "completedBeforeFaction"),
         AchievementShowDecider(12879, 12886, factionSpecificAchievements, "completedBeforeFaction"),
         AchievementShowDecider(13309, 13310, factionSpecificAchievements, "completedBeforeFaction"),
-        12874,
         12872,
         AchievementShowDecider(12867, 12896, factionSpecificAchievements, "completedBeforeFaction"),
         AchievementShowDecider(12869, 12898, factionSpecificAchievements, "completedBeforeFaction"),
