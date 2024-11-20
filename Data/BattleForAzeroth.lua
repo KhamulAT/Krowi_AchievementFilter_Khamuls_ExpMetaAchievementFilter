@@ -264,19 +264,19 @@ local ACM_40957 = { -- Maximum Effort
         IgnoreFactionFilter  = true
     },
     {
-        AchievementShowDecider(12873, 12881, factionSpecificAchievements, "completedBeforeFaction"),
-        AchievementShowDecider(13296, 13297, factionSpecificAchievements, "completedBeforeFaction"),
-        AchievementShowDecider(12876, 12889, factionSpecificAchievements, "completedBeforeFaction"),
-        AchievementShowDecider(13306, 13305, factionSpecificAchievements, "completedBeforeFaction"),
-        AchievementShowDecider(12878, 12884, factionSpecificAchievements, "completedBeforeFaction"),
-        AchievementShowDecider(13307, 13308, factionSpecificAchievements, "completedBeforeFaction"),
-        AchievementShowDecider(12879, 12886, factionSpecificAchievements, "completedBeforeFaction"),
-        AchievementShowDecider(13309, 13310, factionSpecificAchievements, "completedBeforeFaction"),
+        AchievementShowDecider(12873, 12881, factionSpecificAchievements, "completedBeforeFaction"), -- War is Hell
+        AchievementShowDecider(13296, 13297, factionSpecificAchievements, "completedBeforeFaction"), -- War for the Shore
+        --AchievementShowDecider(12876, 12889, factionSpecificAchievements, "completedBeforeFaction"), -- Strike Fast
+        --AchievementShowDecider(13306, 13305, factionSpecificAchievements, "completedBeforeFaction"), -- Night Moves
+        --AchievementShowDecider(12878, 12884, factionSpecificAchievements, "completedBeforeFaction"), -- Leader of Troops
+        --AchievementShowDecider(13307, 13308, factionSpecificAchievements, "completedBeforeFaction"), -- Recruitment Officee
+        --AchievementShowDecider(12879, 12886, factionSpecificAchievements, "completedBeforeFaction"), -- Tour of War
+        --AchievementShowDecider(13309, 13310, factionSpecificAchievements, "completedBeforeFaction"), -- Deforester/ By Natures Call
         12872,
-        AchievementShowDecider(12867, 12896, factionSpecificAchievements, "completedBeforeFaction"),
-        AchievementShowDecider(12869, 12898, factionSpecificAchievements, "completedBeforeFaction"),
-        AchievementShowDecider(12870, 12899, factionSpecificAchievements, "completedBeforeFaction"),
-        AchievementShowDecider(13284, 13283, factionSpecificAchievements, "completedBeforeFaction")
+        AchievementShowDecider(12867, 12896, factionSpecificAchievements, "completedBeforeFaction"), -- The Barrens
+        AchievementShowDecider(12869, 12898, factionSpecificAchievements, "completedBeforeFaction"), -- Lordaeron
+        AchievementShowDecider(12870, 12899, factionSpecificAchievements, "completedBeforeFaction"), -- Kalimdor
+        AchievementShowDecider(13284, 13283, factionSpecificAchievements, "completedBeforeFaction") -- Frontline Warrior
     }
 }
 
