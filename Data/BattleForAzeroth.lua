@@ -400,8 +400,7 @@ local ACMList = { -- meta achievements overview
     GetAchievementName(40953, "BfA - "),
     true,
     {
-        IgnoreCollapsedChainFilter = true,
-        Tooltip = L["Tt_Preview"]
+        IgnoreCollapsedChainFilter = true
     },
     ACM_12807, -- Battle for Azeroth Dungeon Hero
     ACM_40956, -- I'm On Island Time

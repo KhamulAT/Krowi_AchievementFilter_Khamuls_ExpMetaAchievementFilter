@@ -70,8 +70,7 @@ local ACMList = { -- meta achievements overview
     GetAchievementName(41201, "TWW - "),
     true,
     {
-        IgnoreCollapsedChainFilter = true,
-        Tooltip = L["Tt_Preview"]
+        IgnoreCollapsedChainFilter = true
     },
     ACM_41186, -- Slate of the Union
     ACM_41187, -- Rage Aside the Machine
