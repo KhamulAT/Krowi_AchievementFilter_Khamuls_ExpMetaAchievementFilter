@@ -27,6 +27,28 @@ function GetAchievementName(achievementID, prefix)
     return prefix .. name
 end
 
+function IsAchievementCompleted(achievementId) 
+    local _, _, _, completed, _, _, _, _, _, _, _, _, _, earnedBy = GetAchievementInfo(achievementId)
+
+    return completed
+end
+
+function ShowOnlyCompletedAchievementsWhenRequirementsAreMet(achLimit, achievementsTable)
+    local completed = {}
+
+    for i,v in ipairs(achievementsTable) do 
+        if IsAchievementCompleted(v) then 
+            table.insert(completed, v)
+        end
+    end
+
+    if (#completed >= achLimit) then
+        return completed
+    end
+
+    return achievementsTable
+end
+
 -- possible decisionTypes are:
 --   currentFactionOnly: returns the achievementID for the current faction (Default)
 --   completedThanFaction: returns the achievementID which is completed, if both are completed of not completed, the faction achievementID will be returned
@@ -34,13 +56,6 @@ function AchievementShowDecider(achievementIdOne, achievementIdTwo, factionAchie
     --print(achievementIdOne .. "/" .. achievementIdTwo)
     -- Default decision type to "currentFactionOnly" if nil
     decisionType = decisionType or "currentFactionOnly"
-
-    -- Helper function to get status and faction
-    local function GetAchievementDetails(achievementId)
-        local _, _, _, completed, _, _, _, _, _, _, _, _, _, earnedBy = GetAchievementInfo(achievementId)
-
-        return completed
-    end
 
     local function GetFactionForAchievementId(table, id) 
         
@@ -70,9 +85,9 @@ function AchievementShowDecider(achievementIdOne, achievementIdTwo, factionAchie
     local playerFaction = UnitFactionGroup("player") -- Returns "Horde" or "Alliance"
 
     -- Get details for both achievements
-    local completedOne = GetAchievementDetails(achievementIdOne)
+    local completedOne = IsAchievementCompleted(achievementIdOne)
     local factionOne = GetFactionForAchievementId(factionAchievements, achievementIdOne)
-    local completedTwo = GetAchievementDetails(achievementIdTwo)
+    local completedTwo = IsAchievementCompleted(achievementIdTwo)
     local factionTwo = GetFactionForAchievementId(factionAchievements, achievementIdTwo)
 
     --print("ACM_1: " .. achievementIdOne .. "/" .. tostring(completedOne) .. "/" .. factionOne)

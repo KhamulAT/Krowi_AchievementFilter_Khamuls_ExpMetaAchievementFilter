@@ -43,7 +43,7 @@ local ACM_15035 = { -- On the Offensive
     {
         Tooltip = L["Tt_ACM_15035"]
     },
-    {
+    ShowOnlyCompletedAchievementsWhenRequirementsAreMet(4, {
         15000,
         15001,
         15037,
@@ -53,7 +53,7 @@ local ACM_15035 = { -- On the Offensive
         15004,
         15042,
         15044
-    }
+    })
 }
 
 local ACM_15649 = { -- Shadowlands Dilettante
