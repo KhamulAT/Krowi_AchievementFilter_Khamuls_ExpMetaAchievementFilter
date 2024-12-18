@@ -378,7 +378,7 @@ local ACM_40958 = { -- Full Heart, Can't Lose
 local ACM_41209 = { -- Dressed to Kill: Battle for Azeroth
     GetAchievementName(41209),
     true,
-    {
+    ShowOnlyCompletedAchievementsWhenRequirementsAreMet(4, {
         12991,
         12993,
         13385,
@@ -387,7 +387,7 @@ local ACM_41209 = { -- Dressed to Kill: Battle for Azeroth
         13585,
         14058,
         14059
-    }
+    })
 }
 
 -- try to add a new category to the specials tab 
@@ -395,8 +395,7 @@ local ACMList = { -- meta achievements overview
     GetAchievementName(40953, "BfA - "),
     true,
     {
-        IgnoreCollapsedChainFilter = true,
-        Tooltip = L["Tt_Preview"]
+        IgnoreCollapsedChainFilter = true
     },
     ACM_12807, -- Battle for Azeroth Dungeon Hero
     ACM_40956, -- I'm On Island Time
