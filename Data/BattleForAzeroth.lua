@@ -82,11 +82,14 @@ local ACM_40956 = { -- I'm On Island Time
     GetAchievementName(40956),
     true,
     {
-        IgnoreFactionFilter  = true
+        IgnoreFactionFilter = true
     },
     { -- Hot Tropic
         GetAchievementName(41202),
         true,
+        {
+            IgnoreFactionFilter = true
+        },
         {
             12944,
             12851,
@@ -102,6 +105,9 @@ local ACM_40956 = { -- I'm On Island Time
         GetAchievementName(41205),
         true,
         {
+            IgnoreFactionFilter = true
+        },
+        {
             12939,
             12852,
             13050,
@@ -114,6 +120,9 @@ local ACM_40956 = { -- I'm On Island Time
     { -- Bown Voyage
         GetAchievementName(41203),
         true,
+        {
+            IgnoreFactionFilter = true
+        },
         {
             12942,
             12771,
@@ -129,6 +138,9 @@ local ACM_40956 = { -- I'm On Island Time
         GetAchievementName(41206),
         true,
         {
+            IgnoreFactionFilter = true
+        },
+        {
             12940,
             12853,
             13047,
@@ -143,6 +155,9 @@ local ACM_40956 = { -- I'm On Island Time
         GetAchievementName(41204),
         true,
         {
+            IgnoreFactionFilter = true
+        },
+        {
             12943,
             12849,
             13016,
@@ -156,6 +171,9 @@ local ACM_40956 = { -- I'm On Island Time
     { -- When the Drust Settles
         GetAchievementName(41207),
         true,
+        {
+            IgnoreFactionFilter = true
+        },
         {
             12941,
             12995,
@@ -217,10 +235,8 @@ local ACM_40955 = { -- War Stories
             IgnoreFactionFilter  = true
         },
         {
-            12891,
-            13467,
-            12479,
-            13466
+            AchievementShowDecider(13467, 13466, factionSpecificAchievements, "completedBeforeFaction"),
+            AchievementShowDecider(12891, 12479, factionSpecificAchievements, "completedBeforeFaction")
         }
     },
     {
@@ -343,6 +359,9 @@ local ACM_40959 = { --Black Empire State of Mind
     GetAchievementName(40959),
     true,
     {
+        IgnoreFactionFilter = true
+    },
+    {
         14154,
         14153,
         14156,
@@ -357,6 +376,9 @@ local ACM_13994 = { -- Through the Depths of Visions
     GetAchievementName(13994),
     true,
     {
+        IgnoreFactionFilter = true
+    },
+    {
         14066,
         14060,
         14067,
@@ -368,6 +390,9 @@ local ACM_40958 = { -- Full Heart, Can't Lose
     GetAchievementName(40958),
     true,
     {
+        IgnoreFactionFilter = true
+    },
+    {
         12918,
         13572,
         13771,
@@ -378,6 +403,9 @@ local ACM_40958 = { -- Full Heart, Can't Lose
 local ACM_41209 = { -- Dressed to Kill: Battle for Azeroth
     GetAchievementName(41209),
     true,
+    {
+        IgnoreFactionFilter = true
+    },
     ShowOnlyCompletedAchievementsWhenRequirementsAreMet(4, {
         12991,
         12993,
