@@ -39,7 +39,7 @@ local ACM_15651 = { -- Myths of the Shadowlands Dungeons
 
 local ACM_15035 = { -- On the Offensive
     GetAchievementName(15035),
-    true,
+    false,
     {
         Tooltip = L["Tt_ACM_15035"]
     },
@@ -58,10 +58,10 @@ local ACM_15035 = { -- On the Offensive
 
 local ACM_15649 = { -- Shadowlands Dilettante
     GetAchievementName(15649),
-    true,
+    false,
     {
         GetAchievementName(14752),
-        true,
+        false,
         {
             14684,
             14748,
@@ -79,13 +79,13 @@ local ACM_15649 = { -- Shadowlands Dilettante
 
 local ACM_15324 = { -- Tower Ranger
     GetAchievementName(15324),
-    true,
+    false,
     {
         IgnoreCollapsedChainFilter = true
     },
     {
         GetAchievementName(15092),
-        true,
+        false,
         {
             15093,
             15095,
@@ -118,7 +118,7 @@ local ACM_15648 = {
 
 local ACMList = { -- meta achievements overview
     GetAchievementName(20501, "SL - "),
-    true,
+    false,
     {
         IgnoreCollapsedChainFilter = true
     },

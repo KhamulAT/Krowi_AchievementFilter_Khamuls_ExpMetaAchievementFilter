@@ -9,7 +9,7 @@ addon.Achievements.TWWMetaAchievementId = 41201
 
 local ACM_41186 = { -- Slate of the Union
     GetAchievementName(41186),
-    true,
+    false,
     {
         40435,
         40434,
@@ -22,7 +22,7 @@ local ACM_41186 = { -- Slate of the Union
 
 local ACM_41187 = { -- Rage Aside the Machine
     GetAchievementName(41187),
-    true,
+    false,
     {
         40837,
         40724,
@@ -36,7 +36,7 @@ local ACM_41187 = { -- Rage Aside the Machine
 
 local ACM_41188 = { -- Crystal Chronicled
     GetAchievementName(41188),
-    true,
+    false,
     {
         40851,
         40848,
@@ -53,7 +53,7 @@ local ACM_41188 = { -- Crystal Chronicled
 
 local ACM_41189 = { -- Azj the World Turns
     GetAchievementName(41189),
-    true,
+    false,
     {
         40840,
         40828,
@@ -68,7 +68,7 @@ local ACM_41189 = { -- Azj the World Turns
 
 local ACM_41133 = { -- Isle Remember You
     GetAchievementName(41133),
-    true,
+    false,
     {
         41045,
         41042,
@@ -81,7 +81,7 @@ local ACM_41133 = { -- Isle Remember You
 
 local ACMList = { -- meta achievements overview
     GetAchievementName(41201, "TWW - "),
-    true,
+    false,
     {
         IgnoreCollapsedChainFilter = true
     },

@@ -9,7 +9,7 @@ addon.Achievements.DFMetaAchievementId = 19458
 
 local ACM_16339 = { -- Myths of the Dragonflight Dungeons
     GetAchievementName(16339),
-    true,
+    false,
     {
         16271,
         16257,
@@ -24,7 +24,7 @@ local ACM_16339 = { -- Myths of the Dragonflight Dungeons
 
 local ACM_16585 = { -- Loremaster of the Dragon Isles
     GetAchievementName(16585),
-    true,
+    false,
     {
         16334,
         16401,
@@ -39,7 +39,7 @@ local ACM_16585 = { -- Loremaster of the Dragon Isles
 
 local ACM_19463 = { -- Dragon Quests
     GetAchievementName(19463),
-    true,
+    false,
     {
         17773,
         17734,
@@ -52,7 +52,7 @@ local ACM_19463 = { -- Dragon Quests
 
 local ACM_19466 = { -- Oh My God, They Were Clutchmates
     GetAchievementName(19466),
-    true,
+    false,
     {
         41174,
         41180,
@@ -71,7 +71,7 @@ local ACM_19466 = { -- Oh My God, They Were Clutchmates
 
 local ACM_19307 = { -- Dragon Isles Pathfinder
     GetAchievementName(19307),
-    true,
+    false,
     {
         16334,
         15394,
@@ -86,7 +86,7 @@ local ACM_19307 = { -- Dragon Isles Pathfinder
 
 local ACM_19486 = { -- Accross the Isles
     GetAchievementName(19486),
-    true,
+    false,
     {
         GetAchievementName(19479),
         true,
@@ -103,7 +103,7 @@ local ACM_19486 = { -- Accross the Isles
     },
     {
         GetAchievementName(19481),
-        true,
+        false,
         {
             16540,
             16545,
@@ -117,7 +117,7 @@ local ACM_19486 = { -- Accross the Isles
     },
     {
         GetAchievementName(19482),
-        true,
+        false,
         {
             16443,
             16444,
@@ -131,7 +131,7 @@ local ACM_19486 = { -- Accross the Isles
     },
     {
         GetAchievementName(19483),
-        true,
+        false,
         {
             16411,
             16412,
@@ -148,7 +148,7 @@ local ACM_19486 = { -- Accross the Isles
     },
     {
         GetAchievementName(19485),
-        true,
+        false,
         {
             17342,
             18635,
@@ -164,13 +164,13 @@ local ACM_19486 = { -- Accross the Isles
     },
     {
         GetAchievementName(16492),
-        true,
+        false,
         {
             GetAchievementName(16490),
-            true,
+            false,
             {
                 GetAchievementName(16468),
-                true,
+                false,
                 {
                     16463,
                     16465,
@@ -180,7 +180,7 @@ local ACM_19486 = { -- Accross the Isles
             },
             {
                 GetAchievementName(16476),
-                true,
+                false,
                 {
                     16475,
                     16478,
@@ -190,7 +190,7 @@ local ACM_19486 = { -- Accross the Isles
             },
             {
                 GetAchievementName(16484),
-                true,
+                false,
                 {
                     16480,
                     16481,
@@ -200,7 +200,7 @@ local ACM_19486 = { -- Accross the Isles
             },
             {
                 GetAchievementName(16489),
-                true,
+                false,
                 {
                     16485,
                     16486,
@@ -237,7 +237,7 @@ local ACM_19486 = { -- Accross the Isles
 
 local ACM_17543 = { -- You Know How to Reach Me
     GetAchievementName(17543),
-    true,
+    false,
     {
         17534,
         17526,
@@ -255,7 +255,7 @@ local ACM_17543 = { -- You Know How to Reach Me
 
 local ACM_17785 = { --Que Zara(lek), Zara(lek)
     GetAchievementName(17785),
-    true,
+    false,
     {
         IgnoreCollapsedChainFilter = true
     },
@@ -272,7 +272,7 @@ local ACM_17785 = { --Que Zara(lek), Zara(lek)
 
 local ACM_19318 = { -- Dream On
     GetAchievementName(19318),
-    true,
+    false,
     {
         19026,
         19316,
@@ -285,7 +285,7 @@ local ACM_19318 = { -- Dream On
 
 local ACM_19478 = { -- Now THIS is Dragon Racing!
     GetAchievementName(19478),
-    true,
+    false,
     {
         IgnoreCollapsedChainFilter = true
     },
@@ -306,7 +306,7 @@ local ACM_19478 = { -- Now THIS is Dragon Racing!
 
 local ACMList = { -- meta achievements overview
     GetAchievementName(19458, "DF - "),
-    true,
+    false,
     {
         IgnoreCollapsedChainFilter = true
     },

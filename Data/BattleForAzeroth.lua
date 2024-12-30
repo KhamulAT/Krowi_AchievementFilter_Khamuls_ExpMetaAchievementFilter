@@ -62,7 +62,7 @@ local factionSpecificAchievements = {
 
 local ACM_12807 = { -- Battle for Azeroth Dungeon Hero
     GetAchievementName(12807),
-    true,
+    false,
     {
         IgnoreCollapsedChainFilter = true
     },
@@ -80,13 +80,13 @@ local ACM_12807 = { -- Battle for Azeroth Dungeon Hero
 
 local ACM_40956 = { -- I'm On Island Time
     GetAchievementName(40956),
-    true,
+    false,
     {
         IgnoreFactionFilter = true
     },
     { -- Hot Tropic
         GetAchievementName(41202),
-        true,
+        false,
         {
             IgnoreFactionFilter = true
         },
@@ -103,7 +103,7 @@ local ACM_40956 = { -- I'm On Island Time
     },
     { -- Sound Off
         GetAchievementName(41205),
-        true,
+        false,
         {
             IgnoreFactionFilter = true
         },
@@ -119,7 +119,7 @@ local ACM_40956 = { -- I'm On Island Time
     },
     { -- Bown Voyage
         GetAchievementName(41203),
-        true,
+        false,
         {
             IgnoreFactionFilter = true
         },
@@ -136,7 +136,7 @@ local ACM_40956 = { -- I'm On Island Time
     },
     { -- Songs of Storms
         GetAchievementName(41206),
-        true,
+        false,
         {
             IgnoreFactionFilter = true
         },
@@ -153,7 +153,7 @@ local ACM_40956 = { -- I'm On Island Time
     },
     { -- Dune Sqpad
         GetAchievementName(41204),
-        true,
+        false,
         {
             IgnoreFactionFilter = true
         },
@@ -170,7 +170,7 @@ local ACM_40956 = { -- I'm On Island Time
     },
     { -- When the Drust Settles
         GetAchievementName(41207),
-        true,
+        false,
         {
             IgnoreFactionFilter = true
         },
@@ -186,7 +186,7 @@ local ACM_40956 = { -- I'm On Island Time
     },
     { -- Loremaster of Zandalar
         GetAchievementName(13294),
-        true,
+        false,
         {
             IgnoreFactionFilter  = true
         },
@@ -198,7 +198,7 @@ local ACM_40956 = { -- I'm On Island Time
     },
     { -- Loremaster of Kul Tiras
         GetAchievementName(12593),
-        true,
+        false,
         {
             IgnoreFactionFilter  = true
         },
@@ -224,13 +224,13 @@ local ACM_40956 = { -- I'm On Island Time
 
 local ACM_40955 = { -- War Stories
     GetAchievementName(40955),
-    true,
+    false,
     {
         IgnoreFactionFilter  = true
     },
     { -- Two Sides to Every Tale
         GetAchievementName(13517),
-        true,
+        false,
         {
             IgnoreFactionFilter  = true
         },
@@ -256,7 +256,7 @@ local ACM_40955 = { -- War Stories
 
 local ACM_13134 = { -- Expedition Leader
     GetAchievementName(13134),
-    true,
+    false,
     {
         IgnoreFactionFilter  = true
     },
@@ -275,7 +275,7 @@ local ACM_13134 = { -- Expedition Leader
 
 local ACM_40957 = { -- Maximum Effort
     GetAchievementName(40957),
-    true,
+    false,
     {
         IgnoreFactionFilter  = true
     },
@@ -298,13 +298,13 @@ local ACM_40957 = { -- Maximum Effort
 
 local ACM_13638 = { -- Undersea Usurper
     GetAchievementName(13638),
-    true,
+    false,
     {
         IgnoreFactionFilter  = true
     },
     {
         GetAchievementName(AchievementShowDecider(13761, 13762, factionSpecificAchievements, "completedBeforeFaction")),
-        true,
+        false,
         {
             IgnoreFactionFilter  = true
         },
@@ -337,7 +337,7 @@ local ACM_13638 = { -- Undersea Usurper
 
 local ACM_13541 = { -- Mecha-Done
     GetAchievementName(13541),
-    true,
+    false,
     {
         IgnoreFactionFilter  = true
     },
@@ -357,7 +357,7 @@ local ACM_13541 = { -- Mecha-Done
 
 local ACM_40959 = { --Black Empire State of Mind
     GetAchievementName(40959),
-    true,
+    false,
     {
         IgnoreFactionFilter = true
     },
@@ -374,7 +374,7 @@ local ACM_40959 = { --Black Empire State of Mind
 
 local ACM_13994 = { -- Through the Depths of Visions
     GetAchievementName(13994),
-    true,
+    false,
     {
         IgnoreFactionFilter = true
     },
@@ -388,7 +388,7 @@ local ACM_13994 = { -- Through the Depths of Visions
 
 local ACM_40958 = { -- Full Heart, Can't Lose
     GetAchievementName(40958),
-    true,
+    false,
     {
         IgnoreFactionFilter = true
     },
@@ -402,7 +402,7 @@ local ACM_40958 = { -- Full Heart, Can't Lose
 
 local ACM_41209 = { -- Dressed to Kill: Battle for Azeroth
     GetAchievementName(41209),
-    true,
+    false,
     {
         IgnoreFactionFilter = true
     },
@@ -421,7 +421,7 @@ local ACM_41209 = { -- Dressed to Kill: Battle for Azeroth
 -- try to add a new category to the specials tab 
 local ACMList = { -- meta achievements overview
     GetAchievementName(40953, "BfA - "),
-    true,
+    false,
     {
         IgnoreCollapsedChainFilter = true
     },
