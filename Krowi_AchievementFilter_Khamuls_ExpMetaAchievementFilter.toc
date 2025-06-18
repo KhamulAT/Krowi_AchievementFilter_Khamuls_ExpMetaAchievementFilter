@@ -1,4 +1,4 @@
-## Interface: 110100
+## Interface: 110107
 ## Title: Krowi's |cFF1D92C2AF|r - Khamuls Expansion Meta Achievement Filters
 ## Version: 1.1.3
 ## Author: Khamûl-Antonidas
