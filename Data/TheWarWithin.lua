@@ -40,23 +40,33 @@ function InitializeTWW()
         }
     }
 
+    local Glory_of_the_Delver_list = {
+        40537,
+        40506,
+        40445,
+        40453,
+        40454,
+        40538,
+        42193
+    }
+
+    -- check if My New  Nemesis is already completed
+    if IsAchievementCompleted(41530) then 
+        table.insert(Glory_of_the_Delver_list, 41530)
+    end
+
+    -- check if My First Nemesis is already completed
+    if IsAchievementCompleted(40103) then 
+        table.insert(Glory_of_the_Delver_list, 40103)
+    end
+
     local ACM_40438 = { -- Glory of the Delver
         GetAchievementName(40438),
         false,
         {
             IgnoreCollapsedChainFilter = true
         },
-        {
-            40537,
-            40506,
-            40445,
-            40453,
-            40454,
-            40538,
-            40103,
-            41530,
-            42193
-        }
+        Glory_of_the_Delver_list
     }
 
     local ACM_41586 = { -- Going Goblin Mode
