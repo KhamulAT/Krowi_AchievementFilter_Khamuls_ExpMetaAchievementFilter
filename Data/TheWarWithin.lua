@@ -210,7 +210,7 @@ function InitializeTWW()
     }
 
     local ACMList = { -- Worldsoul-Searching
-        "TWW - Worldsoul-Searching",
+        GetAchievementName(61451, "TWW - "),
         false,
         {
             IgnoreCollapsedChainFilter = true
