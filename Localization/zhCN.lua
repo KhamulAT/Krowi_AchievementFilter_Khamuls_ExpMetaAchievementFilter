@@ -4,7 +4,7 @@ if not L then return end
 addon.L = L;
 
 -- Globals
-L["Khamul's Meta-Expansion Achievement List"] = "Khamul's Meta-资料片新增成就列表"
+L["Khamul's Meta-Expansion Achievement List"] = "Khamul's Meta-内容更新新增成就列表"
 L["Unknown Achievement"] = "未知成就"
 
 -- Tooltips
