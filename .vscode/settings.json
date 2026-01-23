@@ -1,10 +1,9 @@
 {
-    "emeraldwalk.runonsave": {
-        "commands": [
-            {
-                "match": "\\.(lua|toc|xml)$",
-                "command": "workbench.action.tasks.runTask Deploy WoW Addon"
-            }
-        ]
-    }
+  "emeraldwalk.runonsave": {
+    "commands": [
+    {
+      "match": "\\.(lua|toc|xml)$",
+      "cmd": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"${workspaceFolder}\\bin\\publish2wowdir.ps1\""
+    }]
+  }
 }
