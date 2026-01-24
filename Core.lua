@@ -2,9 +2,12 @@ local ADDON_NAME = ...
 
 local KhamulsAchievementFilter = LibStub("AceAddon-3.0"):NewAddon(ADDON_NAME, "AceEvent-3.0", "AceConsole-3.0")
 
+local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
+
 local defaults = {
   profile = {
-    enabled = true,
+    metaAchievementsEnabled = true,
+    decorAchievementsEnabled = true,
   },
 }
 
@@ -30,7 +33,20 @@ function KhamulsAchievementFilter:OnInitialize()
 end
 
 function KhamulsAchievementFilter:OnEnable()
-  
+  -- Get modules explicitly and fail fast with a clear error.
+  local Utilities = self:GetModule("Utilities", true)
+  if not Utilities then
+    self:Print("ERROR: Module 'Utilities' is missing. Check your .toc load order and file paths.")
+    return
+  end
+  self.Utilities = Utilities
+
+  local Data = self:GetModule("Data", true)
+  if not Data then
+    self:Print("ERROR: Module 'Data' is missing. Check your .toc load order and file paths.")
+    return
+  end
+  self.Data = Data
 end
 
 function KhamulsAchievementFilter:OnPlayerLogin()
@@ -39,7 +55,13 @@ function KhamulsAchievementFilter:OnPlayerLogin()
     return
   end
 
-  if self.db.profile.enabled then
-    self:Print("PLAYER_LOGIN received. KrowiAF detected. Filter extension enabled.")
+  if self.db.profile.metaAchievementsEnabled then
+     KrowiAF.CategoryData.KhamulsExpansionMetaAchievementLists = self.Data:GetSource("MetaAchievements"):GetItems()
   end
+
+  if self.db.profile.decorAchievementsEnabled then
+     KrowiAF.CategoryData.KhamulsHousingDecorAchievementLists = self.Data:GetSource("DecorAchievements"):GetItems()
+  end
+
+
 end

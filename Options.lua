@@ -1,5 +1,6 @@
 local ADDON_NAME = ...
 local KhamulsAchievementFilter = LibStub("AceAddon-3.0"):GetAddon(ADDON_NAME)
+local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 
 function KhamulsAchievementFilter:InitOptions()
   local AceConfig = LibStub("AceConfig-3.0")
@@ -7,27 +8,42 @@ function KhamulsAchievementFilter:InitOptions()
 
   local options = {
     type = "group",
-    name = ADDON_NAME,
+    name = L["Khamuls Achievement Lists for Krowi's Achievement Filter"],
     args = {
-      enabled = {
+      metaAchievementsEnabled = {
         type = "toggle",
-        name = "Enabled",
-        desc = "Enable/disable this extension behavior.",
+        name = L["Show List for Expansion Meta Achievements"],
+        desc = L["If enabled, a list with all achievements required for expansion meta achievements will be shown"],
         width = "full",
+        order = 1,
         get = function()
-          return KhamulsAchievementFilter.db.profile.enabled
+          return KhamulsAchievementFilter.db.profile.metaAchievementsEnabled
         end,
         set = function(_, value)
-          KhamulsAchievementFilter.db.profile.enabled = value
+          KhamulsAchievementFilter.db.profile.metaAchievementsEnabled = value
+        end,
+      },
+      decorAchievementsEnabled = {
+        type = "toggle",
+        name = L["Show List for Achievements with decors as reward"],
+        desc = L["If enabled, a list with all achievements, which have a decor as reward, will be shown"],
+        width = "full",
+        order = 2,
+        get = function()
+          return KhamulsAchievementFilter.db.profile.decorAchievementsEnabled
+        end,
+        set = function(_, value)
+          KhamulsAchievementFilter.db.profile.decorAchievementsEnabled = value
         end,
       },
       krowiStatus = {
         type = "description",
+        order = 3,
         name = function()
           if KhamulsAchievementFilter:IsKrowiAFAvailable() then
-            return "KrowiAF status: detected"
+            return L["Krowi AchievementFilter status: "] .. L["detected"]
           end
-          return "KrowiAF status: not detected"
+          return L["Krowi AchievementFilter status: "] .. L["not detected"]
         end,
         width = "full",
       },
@@ -36,5 +52,5 @@ function KhamulsAchievementFilter:InitOptions()
 
   AceConfig:RegisterOptionsTable(ADDON_NAME, options)
 
-  self.optionsFrame = AceConfigDialog:AddToBlizOptions(ADDON_NAME, ADDON_NAME)
+  self.optionsFrame = AceConfigDialog:AddToBlizOptions(ADDON_NAME, L["Khamuls Achievement Lists for Krowi's Achievement Filter"])
 end

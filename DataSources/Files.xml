@@ -1,7 +1,6 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
 ..\FrameXML\UI.xsd">
-    <Script file="BattleForAzeroth.lua" />
-    <Script file="Shadowlands.lua" />
-    <Script file="Dragonflight.lua" />
-    <Script file="TheWarWithin.lua" />
+    <Script file="DataSources.lua" />
+    <Include file="MetaAchievements\Files.xml" />
+    <Include file="DecorAchievements\Files.xml" />
 </Ui>

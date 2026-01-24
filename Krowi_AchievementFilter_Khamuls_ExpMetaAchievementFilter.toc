@@ -15,8 +15,9 @@
 Libs\Files.xml
 Localization\Files.xml
 
-Utilities.lua
-Data\Files.xml
 
 Core.lua
+Utilities.lua
 Options.lua
+
+DataSources\Files.xml

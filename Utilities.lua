@@ -1,24 +1,23 @@
-local addonName, addon = ...;
+local ADDON_NAME = ...
+local KhamulsAchievementFilter = LibStub("AceAddon-3.0"):GetAddon(ADDON_NAME)
 
-addon.Achievements = addon.Achievements or {}
+local Utilities = KhamulsAchievementFilter:NewModule("Utilities")
+local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 
--- Setup some vars
-addon.L = LibStub("AceLocale-3.0"):GetLocale(addonName);
-
-function GetAchievementName(achievementID, prefix) 
+function Utilities:GetAchievementName(achievementID, prefix) 
     --print(achievementID)
     if not prefix then
         prefix = ""
     end
 
-    local name = select(2, GetAchievementInfo(achievementID)) or addon.L["Unknown Achievement"]
+    local name = select(2, GetAchievementInfo(achievementID)) or L["Unknown Achievement"]
     
-    if name == addon.L["Unknown Achievement"] then
+    if name == L["Unknown Achievement"] then
         -- try to get the achievementname from locale
         local achievementLocaleKey = "ACM_" .. achievementID
 
-        if addon.L[achievementLocaleKey] then
-            name = addon.L[achievementLocaleKey]
+        if L[achievementLocaleKey] then
+            name = L[achievementLocaleKey]
         else
             name = name .. ": (" .. achievementID .. ")"
         end
@@ -27,17 +26,17 @@ function GetAchievementName(achievementID, prefix)
     return prefix .. name
 end
 
-function IsAchievementCompleted(achievementId) 
+function Utilities:IsAchievementCompleted(achievementId) 
     local _, _, _, completed, _, _, _, _, _, _, _, _, _, earnedBy = GetAchievementInfo(achievementId)
 
     return completed
 end
 
-function ShowOnlyCompletedAchievementsWhenRequirementsAreMet(achLimit, achievementsTable)
+function Utilities:ShowOnlyCompletedAchievementsWhenRequirementsAreMet(achLimit, achievementsTable)
     local completed = {}
 
     for i,v in ipairs(achievementsTable) do 
-        if IsAchievementCompleted(v) then 
+        if self:IsAchievementCompleted(v) then 
             table.insert(completed, v)
         end
     end
@@ -52,7 +51,7 @@ end
 -- possible decisionTypes are:
 --   currentFactionOnly: returns the achievementID for the current faction (Default)
 --   completedThanFaction: returns the achievementID which is completed, if both are completed of not completed, the faction achievementID will be returned
-function AchievementShowDecider(achievementIdOne, achievementIdTwo, factionAchievements, decisionType)
+function Utilities:AchievementShowDecider(achievementIdOne, achievementIdTwo, factionAchievements, decisionType)
     --print(achievementIdOne .. "/" .. achievementIdTwo)
     -- Default decision type to "currentFactionOnly" if nil
     decisionType = decisionType or "currentFactionOnly"
@@ -85,9 +84,9 @@ function AchievementShowDecider(achievementIdOne, achievementIdTwo, factionAchie
     local playerFaction = UnitFactionGroup("player") -- Returns "Horde" or "Alliance"
 
     -- Get details for both achievements
-    local completedOne = IsAchievementCompleted(achievementIdOne)
+    local completedOne = self:IsAchievementCompleted(achievementIdOne)
     local factionOne = GetFactionForAchievementId(factionAchievements, achievementIdOne)
-    local completedTwo = IsAchievementCompleted(achievementIdTwo)
+    local completedTwo = self:IsAchievementCompleted(achievementIdTwo)
     local factionTwo = GetFactionForAchievementId(factionAchievements, achievementIdTwo)
 
     --print("ACM_1: " .. achievementIdOne .. "/" .. tostring(completedOne) .. "/" .. factionOne)
@@ -120,4 +119,60 @@ function AchievementShowDecider(achievementIdOne, achievementIdTwo, factionAchie
     else
         error("Invalid decisionType: " .. tostring(decisionType))
     end
+end
+
+function Utilities:HousingUtilitiesGetAchievementNameWithPrefix(achievementID, prefix) 
+    --print(achievementID)
+    if not prefix then
+        prefix = ""
+    end
+
+    local name = self:GetAchievementName(achievementID)
+    
+    if name == L["Unknown Achievement"] then
+        -- try to get the achievementname from locale
+        local achievementLocaleKey = "ACM_" .. achievementID
+
+        if L[achievementLocaleKey] then
+            name = L[achievementLocaleKey]
+        else
+            name = name .. ": (" .. achievementID .. ")"
+        end
+    end
+    
+    return prefix .. name
+end
+
+function Utilities:HousingUtilitiesGetAchievementName(achievementID)
+    local name = select(2, GetAchievementInfo(achievementID)) or L["Unknown Achievement"]
+
+    return name
+end
+
+function Utilities:HousingUtilitiesReplacePlaceholderInText(template, values) 
+    return template:gsub("{(%d+)}", function(index)
+        return values[tonumber(index)] or "{" .. index .. "}"
+    end)
+end
+
+function Utilities:HousingUtilitiesGetZoneNameByMapID(mapID)
+    return C_Map.GetMapInfo(mapID).name
+end
+
+function Utilities:HousingUtilitiesGetDungeonNameByLFGDungeonID(dungeonID)
+  local name, typeID, subtypeID = GetLFGDungeonInfo(dungeonID)
+
+  if name then
+    return name
+  end
+  return QUEUED_STATUS_UNKNOWN
+end
+
+function Utilities:HousingUtilitiesGetAchievementCategoryNameNyCategoryID(categoryId)
+  if type(categoryId) ~= "number" then
+    return QUEUED_STATUS_UNKNOWN
+  end
+
+  local name = GetCategoryInfo(categoryId)
+  return name
 end

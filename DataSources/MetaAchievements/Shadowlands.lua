@@ -1,16 +1,17 @@
-local addonName, addon = ...;
+local ADDON_NAME = ...
+local KhamulsAchievementFilter = LibStub("AceAddon-3.0"):GetAddon(ADDON_NAME)
+local Utilities = KhamulsAchievementFilter:GetModule("Utilities")
 
-local L = addon.L
-addon.Achievements = addon.Achievements or {}
+local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 
--- Add new entry for SL
-addon.Achievements.SL = {}
-addon.Achievements.SLMetaAchievementId = 20501
+function GetSLAchievementId()
+    return 20501
+end
 
-function InitializeSL()
+function GetSLList()
 
     local ACM_15336 = { -- From A to Zereth
-        GetAchievementName(15336),
+        Utilities:GetAchievementName(15336),
         true,
         {
             15259,
@@ -24,7 +25,7 @@ function InitializeSL()
     }
 
     local ACM_15651 = { -- Myths of the Shadowlands Dungeons
-        GetAchievementName(15651),
+        Utilities:GetAchievementName(15651),
         true,
         {
             14368,
@@ -40,12 +41,12 @@ function InitializeSL()
     }
 
     local ACM_15035 = { -- On the Offensive
-        GetAchievementName(15035),
+        Utilities:GetAchievementName(15035),
         false,
         {
             Tooltip = L["Tt_ACM_15035"]
         },
-        ShowOnlyCompletedAchievementsWhenRequirementsAreMet(4, {
+        Utilities:ShowOnlyCompletedAchievementsWhenRequirementsAreMet(4, {
             15000,
             15001,
             15037,
@@ -59,10 +60,10 @@ function InitializeSL()
     }
 
     local ACM_15649 = { -- Shadowlands Dilettante
-        GetAchievementName(15649),
+        Utilities:GetAchievementName(15649),
         false,
         {
-            GetAchievementName(14752),
+            Utilities:GetAchievementName(14752),
             false,
             {
                 14684,
@@ -80,13 +81,13 @@ function InitializeSL()
     }
 
     local ACM_15324 = { -- Tower Ranger
-        GetAchievementName(15324),
+        Utilities:GetAchievementName(15324),
         false,
         {
             IgnoreCollapsedChainFilter = true
         },
         {
-            GetAchievementName(15092),
+            Utilities:GetAchievementName(15092),
             false,
             {
                 15093,
@@ -105,7 +106,7 @@ function InitializeSL()
     }
 
     local ACM_15648 = { 
-        GetAchievementName(15648),
+        Utilities:GetAchievementName(15648),
         true,
         {
             14895,
@@ -119,7 +120,7 @@ function InitializeSL()
     }
 
     local ACMList = { -- meta achievements overview
-        GetAchievementName(20501, "SL - "),
+        Utilities:GetAchievementName(20501, "SL - "),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -150,5 +151,5 @@ function InitializeSL()
         }
     }
 
-    addon.Achievements.SL = ACMList
+    return ACMList
 end
