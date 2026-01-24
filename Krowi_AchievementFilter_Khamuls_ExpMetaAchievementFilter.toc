@@ -10,6 +10,7 @@
 ## X-Curse-Project-ID: 1143362
 ## X-Wago: https://addons.wago.io/addons/krowi-achievementfilter-khamuls-expmetaachievementfilter
 ## X-Wago-Project-ID: vNAeqRNo
+## SavedVariables: Krowi_AchievementFilter_Khamuls_ExpMetaAchievementFilter
 
 Libs\Files.xml
 Localization\Files.xml
@@ -17,4 +18,5 @@ Localization\Files.xml
 Utilities.lua
 Data\Files.xml
 
-Krowi_AchievementFilter_Khamuls_ExpMetaAchievementFilter.lua
+Core.lua
+Options.lua
