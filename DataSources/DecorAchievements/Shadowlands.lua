@@ -10,7 +10,7 @@ function GetHousingSL()
         false,
         {
             IgnoreCollapsedChainFilter = true,
-            Tooltip = Utilities:HousingUtilitiesReplacePlaceholderInText(L["Tt_UseMetaAchievementPlugin"], {Utilities:HousingUtilitiesGetAchievementName(20501)})
+            Tooltip = Utilities:ReplacePlaceholderInText(L["Tt_UseMetaAchievementPlugin"], {Utilities:GetAchievementName(20501)})
         },
         {
             20501

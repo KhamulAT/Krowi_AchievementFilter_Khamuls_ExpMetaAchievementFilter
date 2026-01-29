@@ -7,7 +7,7 @@ local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 function GetHousingTWW()
 
     local ACM_TWW_Zones_IsleOfDorn_Quests = {
-        Utilities:HousingUtilitiesGetAchievementCategoryNameNyCategoryID(96),
+        Utilities:GetAchievementCategoryNameNyCategoryID(96),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -18,7 +18,7 @@ function GetHousingTWW()
     }
 
     local ACM_TWW_Zones_IsleOfDorn_Exploration = {
-        Utilities:HousingUtilitiesGetAchievementCategoryNameNyCategoryID(97),
+        Utilities:GetAchievementCategoryNameNyCategoryID(97),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -30,7 +30,7 @@ function GetHousingTWW()
 
 
     local ACM_TWW_Zones_IsleOfDorn = {
-        Utilities:HousingUtilitiesGetZoneNameByMapID(2248),
+        Utilities:GetZoneNameByMapID(2248),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -43,7 +43,7 @@ function GetHousingTWW()
     }
 
     local ACM_TWW_Zones_TheRingingDeeps_Exploration = {
-        Utilities:HousingUtilitiesGetAchievementCategoryNameNyCategoryID(97),
+        Utilities:GetAchievementCategoryNameNyCategoryID(97),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -54,7 +54,7 @@ function GetHousingTWW()
     }
 
     local ACM_TWW_Zones_TheRingingDeeps = {
-        Utilities:HousingUtilitiesGetZoneNameByMapID(2214),
+        Utilities:GetZoneNameByMapID(2214),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -63,7 +63,7 @@ function GetHousingTWW()
     }
 
     local ACM_TWW_Zones_AzjKahet_Exploration = {
-        Utilities:HousingUtilitiesGetAchievementCategoryNameNyCategoryID(97),
+        Utilities:GetAchievementCategoryNameNyCategoryID(97),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -74,7 +74,7 @@ function GetHousingTWW()
     }
 
     local ACM_TWW_Zones_AzjKahet = {
-        Utilities:HousingUtilitiesGetZoneNameByMapID(2255),
+        Utilities:GetZoneNameByMapID(2255),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -83,7 +83,7 @@ function GetHousingTWW()
     }
 
     local ACM_TWW_Zones_Undermine_Quests = {
-        Utilities:HousingUtilitiesGetAchievementCategoryNameNyCategoryID(96),
+        Utilities:GetAchievementCategoryNameNyCategoryID(96),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -94,7 +94,7 @@ function GetHousingTWW()
     }
 
     local ACM_TWW_Zones_Undermine = {
-        Utilities:HousingUtilitiesGetZoneNameByMapID(2346),
+        Utilities:GetZoneNameByMapID(2346),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -115,7 +115,7 @@ function GetHousingTWW()
     }
 
     local ACM_TWW_Raids_LiberationOfUndermine = {
-        Utilities:HousingUtilitiesGetDungeonNameByLFGDungeonID(2779),
+        Utilities:GetDungeonNameByLFGDungeonID(2779),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -126,7 +126,7 @@ function GetHousingTWW()
     }
 
     local ACM_TWW_Raids = {
-        Utilities:HousingUtilitiesGetAchievementCategoryNameNyCategoryID(15278),
+        Utilities:GetAchievementCategoryNameNyCategoryID(15278),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -135,7 +135,7 @@ function GetHousingTWW()
     }
 
     local ACM_TWW_TradeSkills = {
-        Utilities:HousingUtilitiesGetAchievementCategoryNameNyCategoryID(169),
+        Utilities:GetAchievementCategoryNameNyCategoryID(169),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -146,7 +146,7 @@ function GetHousingTWW()
     }
 
     local ACM_TWW_Lorewalking = {
-        Utilities:HousingUtilitiesGetAchievementCategoryNameNyCategoryID(15552),
+        Utilities:GetAchievementCategoryNameNyCategoryID(15552),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -160,11 +160,11 @@ function GetHousingTWW()
     }
 
     local ACMList = { 
-        "The War Within",
+        EXPANSION_NAME10,
         false,
         {
             IgnoreCollapsedChainFilter = true,
-            Tooltip = Utilities:HousingUtilitiesReplacePlaceholderInText(L["Tt_UseMetaAchievementPlugin"], {Utilities:HousingUtilitiesGetAchievementName(61451)})
+            Tooltip = Utilities:ReplacePlaceholderInText(L["Tt_UseMetaAchievementPlugin"], {Utilities:GetAchievementName(61451)})
         },
         ACM_TWW_Zones,
         ACM_TWW_Raids,
@@ -173,8 +173,6 @@ function GetHousingTWW()
         {
             61451
         }
-
-
     }
 
     return ACMList

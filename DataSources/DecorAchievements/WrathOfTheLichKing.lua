@@ -7,7 +7,7 @@ local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 function GetHousingWotLk()
 
     local ACM_WotLk_SholoazarBasin = {
-        Utilities:HousingUtilitiesGetZoneNameByMapID(119),
+        Utilities:GetZoneNameByMapID(119),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -38,7 +38,7 @@ function GetHousingWotLk()
     }
 
     local ACM_WotLk_Raids_OnyxiasLair = {
-        Utilities:HousingUtilitiesGetDungeonNameByLFGDungeonID(257),
+        Utilities:GetDungeonNameByLFGDungeonID(257),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -47,7 +47,7 @@ function GetHousingWotLk()
     }
 
     local ACM_WotLk_Raids = {
-        Utilities:HousingUtilitiesGetAchievementCategoryNameNyCategoryID(15278),
+        Utilities:GetAchievementCategoryNameNyCategoryID(15278),
         false,
         {
             IgnoreCollapsedChainFilter = true

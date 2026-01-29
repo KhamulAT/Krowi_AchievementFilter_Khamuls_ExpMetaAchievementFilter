@@ -8,6 +8,7 @@ local defaults = {
   profile = {
     metaAchievementsEnabled = true,
     decorAchievementsEnabled = true,
+    campsiteAchievementsEnabled = true,
   },
 }
 
@@ -61,6 +62,10 @@ function KhamulsAchievementFilter:OnPlayerLogin()
 
   if self.db.profile.decorAchievementsEnabled then
      KrowiAF.CategoryData.KhamulsHousingDecorAchievementLists = self.Data:GetSource("DecorAchievements"):GetItems()
+  end
+
+  if self.db.profile.campsiteAchievementsEnabled then
+     KrowiAF.CategoryData.KhamulsWarbandCampsiteAchievementLists = self.Data:GetSource("CampsiteAchievements"):GetItems()
   end
 
 

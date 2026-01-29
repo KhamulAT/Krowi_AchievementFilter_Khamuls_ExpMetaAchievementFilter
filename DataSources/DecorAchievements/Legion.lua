@@ -7,7 +7,7 @@ local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 function GetHousingLegion()
 
     local ACM_Legion_ValSharah_Exploration = {
-        Utilities:HousingUtilitiesGetAchievementCategoryNameNyCategoryID(97),
+        Utilities:GetAchievementCategoryNameNyCategoryID(97),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -18,7 +18,7 @@ function GetHousingLegion()
     }
 
     local ACM_Legion_Valsharah_Quests = {
-        Utilities:HousingUtilitiesGetAchievementCategoryNameNyCategoryID(96),
+        Utilities:GetAchievementCategoryNameNyCategoryID(96),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -29,7 +29,7 @@ function GetHousingLegion()
     }
 
     local ACM_Legion_Valsharah = {
-        Utilities:HousingUtilitiesGetZoneNameByMapID(641),
+        Utilities:GetZoneNameByMapID(641),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -39,7 +39,7 @@ function GetHousingLegion()
     }
 
     local ACM_Legion_Highmountain_Quests = {
-        Utilities:HousingUtilitiesGetAchievementCategoryNameNyCategoryID(96),
+        Utilities:GetAchievementCategoryNameNyCategoryID(96),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -50,7 +50,7 @@ function GetHousingLegion()
     }
 
     local ACM_Legion_Highmountain_Exploration = {
-        Utilities:HousingUtilitiesGetAchievementCategoryNameNyCategoryID(97),
+        Utilities:GetAchievementCategoryNameNyCategoryID(97),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -61,7 +61,7 @@ function GetHousingLegion()
     }
 
     local ACM_Legion_Highmountain = {
-        Utilities:HousingUtilitiesGetZoneNameByMapID(650),
+        Utilities:GetZoneNameByMapID(650),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -71,7 +71,7 @@ function GetHousingLegion()
     }
 
     local ACM_Legion_Suramar_Quests = {
-        Utilities:HousingUtilitiesGetAchievementCategoryNameNyCategoryID(96),
+        Utilities:GetAchievementCategoryNameNyCategoryID(96),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -83,7 +83,7 @@ function GetHousingLegion()
     }
 
     local ACM_Legion_Suramar = {
-        Utilities:HousingUtilitiesGetZoneNameByMapID(680),
+        Utilities:GetZoneNameByMapID(680),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -103,7 +103,7 @@ function GetHousingLegion()
     }
 
     local ACM_Legion_Dungeons_NeltharionsLair = {
-        Utilities:HousingUtilitiesGetDungeonNameByLFGDungeonID(1206),
+        Utilities:GetDungeonNameByLFGDungeonID(1206),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -114,7 +114,7 @@ function GetHousingLegion()
     }
 
     local ACM_Legion_Dungeons = {
-        Utilities:HousingUtilitiesGetAchievementCategoryNameNyCategoryID(15272),
+        Utilities:GetAchievementCategoryNameNyCategoryID(15272),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -123,7 +123,7 @@ function GetHousingLegion()
     }
 
     local ACM_Legion_Raids_TombOfSargeras = {
-        Utilities:HousingUtilitiesGetDungeonNameByLFGDungeonID(1525),
+        Utilities:GetDungeonNameByLFGDungeonID(1525),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -134,7 +134,7 @@ function GetHousingLegion()
     }
 
     local ACM_Legion_Raids = {
-        Utilities:HousingUtilitiesGetAchievementCategoryNameNyCategoryID(15278),
+        Utilities:GetAchievementCategoryNameNyCategoryID(15278),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -143,7 +143,7 @@ function GetHousingLegion()
     }
 
     local ACM_Legion_OrderHalls_ALegendaryCampaign = {
-        Utilities:HousingUtilitiesGetAchievementName(11137),
+        Utilities:GetAchievementName(11137),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -165,7 +165,7 @@ function GetHousingLegion()
     }
 
     local ACM_Legion_OrderHalls_RaiseAnArmy = {
-        Utilities:HousingUtilitiesGetAchievementName(11212),
+        Utilities:GetAchievementName(11212),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -187,7 +187,7 @@ function GetHousingLegion()
     }
 
     local ACM_Legion_OrderHalls_LegendaryResearch = {
-        Utilities:HousingUtilitiesGetAchievementName(11223),
+        Utilities:GetAchievementName(11223),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -209,7 +209,7 @@ function GetHousingLegion()
     }
 
     local ACM_Legion_OrderHalls_HiddenPotential = {
-        Utilities:HousingUtilitiesGetAchievementName(10460),
+        Utilities:GetAchievementName(10460),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -231,7 +231,7 @@ function GetHousingLegion()
     }
 
     local ACM_Legion_OrderHalls = {
-        Utilities:HousingUtilitiesGetAchievementCategoryNameNyCategoryID(15304),
+        Utilities:GetAchievementCategoryNameNyCategoryID(15304),
         false,
         {
             IgnoreCollapsedChainFilter = true

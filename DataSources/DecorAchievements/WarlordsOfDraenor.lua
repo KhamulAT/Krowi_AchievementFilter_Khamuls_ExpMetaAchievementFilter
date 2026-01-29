@@ -7,7 +7,7 @@ local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 function GetHousingWoD()
 
     local ACM_WoD_TradeSkills_Archaeology = {
-        Utilities:HousingUtilitiesGetAchievementCategoryNameNyCategoryID(15071),
+        Utilities:GetAchievementCategoryNameNyCategoryID(15071),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -18,7 +18,7 @@ function GetHousingWoD()
     }
 
     local ACM_WoD_TradeSkills = {
-        Utilities:HousingUtilitiesGetAchievementCategoryNameNyCategoryID(169),
+        Utilities:GetAchievementCategoryNameNyCategoryID(169),
         false,
         {
             IgnoreCollapsedChainFilter = true

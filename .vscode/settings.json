@@ -19,7 +19,7 @@
     "utf8": "disable"
   },
   "Lua.workspace.library": [
-    "~\\.vscode\\extensions\\ketho.wow-api-0.21.0\\Annotations\\Core"
+    "~\\.vscode\\extensions\\ketho.wow-api-0.22.1\\Annotations\\Core"
   ],
   "Lua.diagnostics.globals": [
     "ACCEPT",
@@ -45,6 +45,7 @@
     "SPLASH_BATTLEFORAZEROTH_BOX_RIGHT_TITLE_HORDE",
     "EXPANSION_NAME6",
     "QUEUED_STATUS_UNKNOWN",
-    "Add"
+    "Add",
+    "EXPANSION_NAME10"
   ]
 }

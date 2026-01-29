@@ -7,7 +7,7 @@ local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 function GetHousingClassic()
 
     local ACM_Classic_NorthernStranglethorn = {
-        Utilities:HousingUtilitiesGetZoneNameByMapID(50),
+        Utilities:GetZoneNameByMapID(50),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -18,7 +18,7 @@ function GetHousingClassic()
     }
 
     local ACM_Classic_EasternPlaguelands = {
-        Utilities:HousingUtilitiesGetZoneNameByMapID(23),
+        Utilities:GetZoneNameByMapID(23),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -29,7 +29,7 @@ function GetHousingClassic()
     }
 
     local ACM_Classic_EasternKingdoms = {
-        Utilities:HousingUtilitiesGetZoneNameByMapID(13),
+        Utilities:GetZoneNameByMapID(13),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -51,7 +51,7 @@ function GetHousingClassic()
     }
 
     local ACM_Classic_TradeSkills_Archaeology = {
-        Utilities:HousingUtilitiesGetAchievementCategoryNameNyCategoryID(15071),
+        Utilities:GetAchievementCategoryNameNyCategoryID(15071),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -62,7 +62,7 @@ function GetHousingClassic()
     }
 
     local ACM_Classic_TradeSkills = {
-        Utilities:HousingUtilitiesGetAchievementCategoryNameNyCategoryID(169),
+        Utilities:GetAchievementCategoryNameNyCategoryID(169),
         false,
         {
             IgnoreCollapsedChainFilter = true

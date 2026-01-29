@@ -3,4 +3,5 @@
     <Script file="DataSources.lua" />
     <Include file="MetaAchievements\Files.xml" />
     <Include file="DecorAchievements\Files.xml" />
+    <Include file="CampsiteAchievements\Files.xml" />
 </Ui>

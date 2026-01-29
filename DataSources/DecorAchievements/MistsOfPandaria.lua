@@ -7,7 +7,7 @@ local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 function GetHousingMoP()
 
     local ACM_MoP_Scenarios_BloodInTheSnow = {
-        Utilities:HousingUtilitiesGetDungeonNameByLFGDungeonID(646),
+        Utilities:GetDungeonNameByLFGDungeonID(646),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -18,7 +18,7 @@ function GetHousingMoP()
     }
 
     local ACM_MoP_Scenarios = {
-        Utilities:HousingUtilitiesGetAchievementCategoryNameNyCategoryID(15302),
+        Utilities:GetAchievementCategoryNameNyCategoryID(15302),
         false,
         {
             IgnoreCollapsedChainFilter = true

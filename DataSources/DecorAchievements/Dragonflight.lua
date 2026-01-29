@@ -8,7 +8,7 @@ function GetHousingDF()
 
 
     local ACM_DF_Zones_TheAzureSpan_Quests = {
-        Utilities:HousingUtilitiesGetAchievementCategoryNameNyCategoryID(96),
+        Utilities:GetAchievementCategoryNameNyCategoryID(96),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -19,7 +19,7 @@ function GetHousingDF()
     }
 
     local ACM_DF_Zones_TheAzureSpan = {
-        Utilities:HousingUtilitiesGetZoneNameByMapID(2024),
+        Utilities:GetZoneNameByMapID(2024),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -28,7 +28,7 @@ function GetHousingDF()
     }
 
     local ACM_DF_Zones_Thaldraszus_Quests = {
-        Utilities:HousingUtilitiesGetAchievementCategoryNameNyCategoryID(96),
+        Utilities:GetAchievementCategoryNameNyCategoryID(96),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -39,7 +39,7 @@ function GetHousingDF()
     }
 
     local ACM_DF_Zones_Thaldraszus = {
-        Utilities:HousingUtilitiesGetZoneNameByMapID(2025),
+        Utilities:GetZoneNameByMapID(2025),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -48,7 +48,7 @@ function GetHousingDF()
     }
 
     local ACM_DF_Zones_TheForbiddenReach_Exploration = {
-        Utilities:HousingUtilitiesGetAchievementCategoryNameNyCategoryID(97),
+        Utilities:GetAchievementCategoryNameNyCategoryID(97),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -59,7 +59,7 @@ function GetHousingDF()
     }
 
     local ACM_DF_Zones_TheForbiddenReach = {
-        Utilities:HousingUtilitiesGetZoneNameByMapID(2151),
+        Utilities:GetZoneNameByMapID(2151),
         false,
         {
             IgnoreCollapsedChainFilter = true

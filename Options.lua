@@ -36,6 +36,19 @@ function KhamulsAchievementFilter:InitOptions()
           KhamulsAchievementFilter.db.profile.decorAchievementsEnabled = value
         end,
       },
+      campsiteAchievementsEnabled = {
+        type = "toggle",
+        name = L["Show List for Achievements with warband campsites as reward"],
+        desc = L["If enabled, a list with all achievements, which have a warband campsite as reward, will be shown"],
+        width = "full",
+        order = 2,
+        get = function()
+          return KhamulsAchievementFilter.db.profile.campsiteAchievementsEnabled
+        end,
+        set = function(_, value)
+          KhamulsAchievementFilter.db.profile.campsiteAchievementsEnabled = value
+        end,
+      },
       krowiStatus = {
         type = "description",
         order = 3,

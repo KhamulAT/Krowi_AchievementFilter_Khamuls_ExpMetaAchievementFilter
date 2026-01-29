@@ -121,7 +121,7 @@ function Utilities:AchievementShowDecider(achievementIdOne, achievementIdTwo, fa
     end
 end
 
-function Utilities:HousingUtilitiesGetAchievementNameWithPrefix(achievementID, prefix) 
+function Utilities:GetAchievementNameWithPrefix(achievementID, prefix) 
     --print(achievementID)
     if not prefix then
         prefix = ""
@@ -143,23 +143,18 @@ function Utilities:HousingUtilitiesGetAchievementNameWithPrefix(achievementID, p
     return prefix .. name
 end
 
-function Utilities:HousingUtilitiesGetAchievementName(achievementID)
-    local name = select(2, GetAchievementInfo(achievementID)) or L["Unknown Achievement"]
-
-    return name
-end
-
-function Utilities:HousingUtilitiesReplacePlaceholderInText(template, values) 
+function Utilities:ReplacePlaceholderInText(template, values) 
     return template:gsub("{(%d+)}", function(index)
         return values[tonumber(index)] or "{" .. index .. "}"
     end)
 end
 
-function Utilities:HousingUtilitiesGetZoneNameByMapID(mapID)
+-- https://www.wowhead.com/guide/list-of-zone-map-id-number-for-navigation-in-wow-and-tomtom-19501
+function Utilities:GetZoneNameByMapID(mapID)
     return C_Map.GetMapInfo(mapID).name
 end
 
-function Utilities:HousingUtilitiesGetDungeonNameByLFGDungeonID(dungeonID)
+function Utilities:GetDungeonNameByLFGDungeonID(dungeonID)
   local name, typeID, subtypeID = GetLFGDungeonInfo(dungeonID)
 
   if name then
@@ -168,11 +163,25 @@ function Utilities:HousingUtilitiesGetDungeonNameByLFGDungeonID(dungeonID)
   return QUEUED_STATUS_UNKNOWN
 end
 
-function Utilities:HousingUtilitiesGetAchievementCategoryNameNyCategoryID(categoryId)
+function Utilities:GetAchievementCategoryNameNyCategoryID(categoryId)
   if type(categoryId) ~= "number" then
     return QUEUED_STATUS_UNKNOWN
   end
 
   local name = GetCategoryInfo(categoryId)
   return name
+end
+
+-- @param achievementID number
+-- @return string|nil
+function Utilities:GetAchievementRewardInfo(achievementID)
+    if type(achievementID) ~= "number" then
+        return nil
+    end
+
+    -- rewardText is the UI-accurate, localized reward string
+    local _, _, _, _, _, _, _, _, _, _, rewardText = GetAchievementInfo(achievementID)
+    print(rewardText)
+
+    return rewardText
 end

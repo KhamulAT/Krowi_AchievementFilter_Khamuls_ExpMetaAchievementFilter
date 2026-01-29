@@ -7,7 +7,7 @@ local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 function GetHousingPvP()
 
     local ACM_WarsongGulch = {
-        Utilities:HousingUtilitiesGetAchievementCategoryNameNyCategoryID(14804),
+        Utilities:GetAchievementCategoryNameNyCategoryID(14804),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -19,7 +19,7 @@ function GetHousingPvP()
     }
 
     local ACM_ArathiBasin = {
-        Utilities:HousingUtilitiesGetAchievementCategoryNameNyCategoryID(14802),
+        Utilities:GetAchievementCategoryNameNyCategoryID(14802),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -31,7 +31,7 @@ function GetHousingPvP()
     }
 
     local ACM_EyeOfTheStorm = {
-        Utilities:HousingUtilitiesGetAchievementCategoryNameNyCategoryID(14803),
+        Utilities:GetAchievementCategoryNameNyCategoryID(14803),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -43,7 +43,7 @@ function GetHousingPvP()
     }
 
     local ACM_AlteracValley = {
-        Utilities:HousingUtilitiesGetAchievementCategoryNameNyCategoryID(14801),
+        Utilities:GetAchievementCategoryNameNyCategoryID(14801),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -55,7 +55,7 @@ function GetHousingPvP()
     }
 
     local ACM_BattleForGilneas = {
-        Utilities:HousingUtilitiesGetAchievementCategoryNameNyCategoryID(15073),
+        Utilities:GetAchievementCategoryNameNyCategoryID(15073),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -66,7 +66,7 @@ function GetHousingPvP()
     }
 
     local ACM_TwinPeaks = {
-        Utilities:HousingUtilitiesGetAchievementCategoryNameNyCategoryID(15074),
+        Utilities:GetAchievementCategoryNameNyCategoryID(15074),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -77,7 +77,7 @@ function GetHousingPvP()
     }
 
     local ACM_TempleOfKotmogu = {
-        Utilities:HousingUtilitiesGetAchievementCategoryNameNyCategoryID(15163),
+        Utilities:GetAchievementCategoryNameNyCategoryID(15163),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -88,7 +88,7 @@ function GetHousingPvP()
     }
 
     local ACM_DeephaulRavine = {
-        Utilities:HousingUtilitiesGetAchievementCategoryNameNyCategoryID(15525),
+        Utilities:GetAchievementCategoryNameNyCategoryID(15525),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -100,7 +100,7 @@ function GetHousingPvP()
     }
 
     local ACMList = { 
-        Utilities:HousingUtilitiesGetAchievementCategoryNameNyCategoryID(15279),
+        Utilities:GetAchievementCategoryNameNyCategoryID(15279),
         false,
         {
             IgnoreCollapsedChainFilter = true

@@ -7,7 +7,7 @@ local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 function GetHousingBfA()
 
     local ACM_BfA_Zones_KulTirasZandalar_Quests = {
-        Utilities:HousingUtilitiesGetAchievementCategoryNameNyCategoryID(96),
+        Utilities:GetAchievementCategoryNameNyCategoryID(96),
         false,
         {
             IgnoreCollapsedChainFilter = true,
@@ -32,7 +32,7 @@ function GetHousingBfA()
     }
 
     local ACM_BfA_Zones_TiragardeSound_Quests = {
-        Utilities:HousingUtilitiesGetAchievementCategoryNameNyCategoryID(96),
+        Utilities:GetAchievementCategoryNameNyCategoryID(96),
         false,
         {
             IgnoreCollapsedChainFilter = true,
@@ -44,7 +44,7 @@ function GetHousingBfA()
     }
 
     local ACM_BfA_Zones_TiragardeSound = {
-        Utilities:HousingUtilitiesGetZoneNameByMapID(895),
+        Utilities:GetZoneNameByMapID(895),
         false,
         {
             IgnoreCollapsedChainFilter = true,
@@ -54,7 +54,7 @@ function GetHousingBfA()
     }
 
     local ACM_BfA_Zones_Zuldazar_Quests = {
-        Utilities:HousingUtilitiesGetAchievementCategoryNameNyCategoryID(96),
+        Utilities:GetAchievementCategoryNameNyCategoryID(96),
         false,
         {
             IgnoreCollapsedChainFilter = true,
@@ -68,7 +68,7 @@ function GetHousingBfA()
     }
 
     local ACM_BfA_Zones_Zuldazar = {
-        Utilities:HousingUtilitiesGetZoneNameByMapID(862),
+        Utilities:GetZoneNameByMapID(862),
         false,
         {
             IgnoreCollapsedChainFilter = true,
@@ -78,7 +78,7 @@ function GetHousingBfA()
     }
 
     local ACM_BfA_Zones_Voldun_Exploration = {
-        Utilities:HousingUtilitiesGetAchievementCategoryNameNyCategoryID(97),
+        Utilities:GetAchievementCategoryNameNyCategoryID(97),
         false,
         {
             IgnoreCollapsedChainFilter = true,
@@ -90,7 +90,7 @@ function GetHousingBfA()
     }
 
     local ACM_BfA_Zones_Voldun = {
-        Utilities:HousingUtilitiesGetZoneNameByMapID(864),
+        Utilities:GetZoneNameByMapID(864),
         false,
         {
             IgnoreCollapsedChainFilter = true,
@@ -100,7 +100,7 @@ function GetHousingBfA()
     }
 
     local ACM_BfA_Zones_MechagonIsland_Exploration = {
-        Utilities:HousingUtilitiesGetAchievementCategoryNameNyCategoryID(97),
+        Utilities:GetAchievementCategoryNameNyCategoryID(97),
         false,
         {
             IgnoreCollapsedChainFilter = true,
@@ -115,7 +115,7 @@ function GetHousingBfA()
     }
 
     local ACM_BfA_Zones_MechagonIsland = {
-        Utilities:HousingUtilitiesGetZoneNameByMapID(1462),
+        Utilities:GetZoneNameByMapID(1462),
         false,
         {
             IgnoreCollapsedChainFilter = true,
@@ -139,7 +139,7 @@ function GetHousingBfA()
     }
 
     local ACM_BfA_Dungeons_OperationMechagon = {
-        Utilities:HousingUtilitiesGetDungeonNameByLFGDungeonID(2006),
+        Utilities:GetDungeonNameByLFGDungeonID(2006),
         false,
         {
             IgnoreCollapsedChainFilter = true,
@@ -151,7 +151,7 @@ function GetHousingBfA()
     }
 
     local ACM_BfA_Dungeons = {
-        Utilities:HousingUtilitiesGetAchievementCategoryNameNyCategoryID(15272),
+        Utilities:GetAchievementCategoryNameNyCategoryID(15272),
         false,
         {
             IgnoreCollapsedChainFilter = true,
@@ -161,7 +161,7 @@ function GetHousingBfA()
     }
 
     local ACM_BfA_Professions_Cooking = {
-        Utilities:HousingUtilitiesGetAchievementCategoryNameNyCategoryID(170),
+        Utilities:GetAchievementCategoryNameNyCategoryID(170),
         false,
         {
             IgnoreCollapsedChainFilter = true,
@@ -173,7 +173,7 @@ function GetHousingBfA()
     }
 
     local ACM_BfA_Professions = {
-        Utilities:HousingUtilitiesGetAchievementCategoryNameNyCategoryID(169),
+        Utilities:GetAchievementCategoryNameNyCategoryID(169),
         false,
         {
             IgnoreCollapsedChainFilter = true,
@@ -186,7 +186,7 @@ function GetHousingBfA()
     }
 
     local ACM_BfA_WarEffort = {
-        Utilities:HousingUtilitiesGetAchievementCategoryNameNyCategoryID(15308),
+        Utilities:GetAchievementCategoryNameNyCategoryID(15308),
         false,
         {
             IgnoreCollapsedChainFilter = true,
@@ -206,7 +206,7 @@ function GetHousingBfA()
         {
             IgnoreCollapsedChainFilter = true,
             IgnoreFactionFilter = true,
-            Tooltip = Utilities:HousingUtilitiesReplacePlaceholderInText(L["Tt_UseMetaAchievementPlugin"], {Utilities:HousingUtilitiesGetAchievementName(40953)})
+            Tooltip = Utilities:ReplacePlaceholderInText(L["Tt_UseMetaAchievementPlugin"], {Utilities:GetAchievementName(40953)})
         },
         ACM_BfA_Zones,
         ACM_BfA_Dungeons,
