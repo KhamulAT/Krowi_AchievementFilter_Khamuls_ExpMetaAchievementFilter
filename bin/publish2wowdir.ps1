@@ -2,55 +2,119 @@
 # Config
 # -------------------------
 
-$TargetRoot = "D:\World of Warcraft\_retail_\Interface\AddOns\Krowi_AchievementFilter_Khamuls_ExpMetaAchievementFilter"
-
 # Debounce window (ms): wait this long without new triggers before deploying
 $DebounceMs = 750
 
 # Lock behavior
-$LockWaitMs      = 15000  # max time to wait for an existing deploy to finish
-$LockPollInterval = 200   # poll interval while waiting for lock
+$LockWaitMs       = 15000  # max time to wait for an existing deploy to finish
+$LockPollInterval = 200    # poll interval while waiting for lock
 
 # -------------------------
-# Resolve paths (repo root)
+# Resolve paths (repo root + env)
 # -------------------------
 
 $ScriptDir  = Split-Path -Parent $MyInvocation.MyCommand.Path
 $SourceRoot = Resolve-Path (Join-Path $ScriptDir "..") | Select-Object -ExpandProperty Path
 
+# Prefer .env next to script; allow override via -EnvPath if you want later
+$EnvPath = Join-Path $ScriptDir ".env"
+if (-not (Test-Path $EnvPath)) {
+    throw "Missing .env file at: $EnvPath"
+}
+
+function Import-DotEnv {
+    param([Parameter(Mandatory)][string]$Path)
+
+    $result = @{}
+
+    Get-Content -LiteralPath $Path | ForEach-Object {
+        $line = $_.Trim()
+
+        if ([string]::IsNullOrWhiteSpace($line)) { return }
+        if ($line.StartsWith("#")) { return }
+
+        # allow "export KEY=VALUE"
+        if ($line.StartsWith("export ")) { $line = $line.Substring(7).Trim() }
+
+        $idx = $line.IndexOf("=")
+        if ($idx -lt 1) { return }
+
+        $key = $line.Substring(0, $idx).Trim()
+        $val = $line.Substring($idx + 1).Trim()
+
+        # remove optional surrounding quotes
+        if (($val.StartsWith('"') -and $val.EndsWith('"')) -or ($val.StartsWith("'") -and $val.EndsWith("'"))) {
+            $val = $val.Substring(1, $val.Length - 2)
+        }
+
+        if ($key) { $result[$key] = $val }
+    }
+
+    return $result
+}
+
+function Get-EnvList {
+    param(
+        [hashtable]$Env,
+        [Parameter(Mandatory)][string]$Key
+    )
+
+    if (-not $Env.ContainsKey($Key) -or [string]::IsNullOrWhiteSpace($Env[$Key])) {
+        return @()
+    }
+
+    return $Env[$Key].Split(",") | ForEach-Object { $_.Trim() } | Where-Object { $_ -ne "" }
+}
+
+$envVars = Import-DotEnv -Path $EnvPath
+
+$WoWRootFolder    = $envVars["WoWRootFolder"]
+$AddonFolder      = $envVars["AddonFolder"]
+$WoWClientsFolder = Get-EnvList -Env $envVars -Key "WoWClientsFolder"
+
+if ([string]::IsNullOrWhiteSpace($WoWRootFolder)) { throw "WoWRootFolder is missing in .env" }
+if ([string]::IsNullOrWhiteSpace($AddonFolder))   { throw "AddonFolder is missing in .env" }
+if ($WoWClientsFolder.Count -lt 1)                { throw "WoWClientsFolder is missing/empty in .env" }
+
+$ExcludeDirs  = Get-EnvList -Env $envVars -Key "ExcludedDirs"
+$ExcludeFiles = Get-EnvList -Env $envVars -Key "ExcludedFiles"
+
+# Provide sane defaults if not specified
+if ($ExcludeDirs.Count -eq 0) {
+    $ExcludeDirs = @(".git", ".vscode", "bin", "Release_Archive", "Resources")
+}
+if ($ExcludeFiles.Count -eq 0) {
+    $ExcludeFiles = @(".gitignore")
+}
+
+# -------------------------
+# Build target roots
+# -------------------------
+
+$TargetRoots = foreach ($client in $WoWClientsFolder) {
+    Join-Path $WoWRootFolder (Join-Path $client (Join-Path "Interface\AddOns" $AddonFolder))
+}
+
 Write-Host "Source: $SourceRoot"
-Write-Host "Target: $TargetRoot"
+Write-Host "Targets:"
+$TargetRoots | ForEach-Object { Write-Host "  - $_" }
 
 # -------------------------
 # Safety guard (recommended)
 # -------------------------
 
-if ($TargetRoot -notmatch '\\Interface\\AddOns\\') {
-    throw "Safety guard triggered: TargetRoot does not look like a WoW AddOns path: $TargetRoot"
+foreach ($t in $TargetRoots) {
+    if ($t -notmatch '\\Interface\\AddOns\\') {
+        throw "Safety guard triggered: TargetRoot does not look like a WoW AddOns path: $t"
+    }
 }
 
-# -------------------------
-# Exclusions
-# -------------------------
-
-$ExcludeDirs = @(
-    ".git",
-    ".vscode",
-    "bin",
-    "Release_Archive",
-    "Resources"
-)
-
-$ExcludeFiles = @(
-    ".gitignore"
-)
+Write-Host "Excluded directories: $($ExcludeDirs -join ', ')"
+Write-Host "Excluded files: $($ExcludeFiles -join ', ')"
 
 # -------------------------
 # Lock + Debounce helpers
 # -------------------------
-
-$LockPath     = Join-Path $TargetRoot ".deploy.lock"
-$DebouncePath = Join-Path $TargetRoot ".deploy.debounce"
 
 function Acquire-Lock {
     param(
@@ -63,7 +127,6 @@ function Acquire-Lock {
 
     while ($true) {
         try {
-            # Use exclusive create so only one process can create the lock
             $fs = [System.IO.File]::Open($Path, [System.IO.FileMode]::CreateNew, [System.IO.FileAccess]::Write, [System.IO.FileShare]::None)
             $writer = New-Object System.IO.StreamWriter($fs)
             $writer.WriteLine("pid=$PID")
@@ -98,81 +161,79 @@ function Touch-File {
     Set-Content -Path $Path -Value "$([DateTime]::UtcNow.ToString('o'))" -Encoding ASCII
 }
 
-# -------------------------
-# Ensure target exists (needed for lock/debounce files)
-# -------------------------
+function Deploy-ToTarget {
+    param(
+        [Parameter(Mandatory)][string]$TargetRoot
+    )
 
-if (-not (Test-Path $TargetRoot)) {
-    New-Item -ItemType Directory -Path $TargetRoot | Out-Null
-}
+    $LockPath     = Join-Path $TargetRoot ".deploy.lock"
+    $DebouncePath = Join-Path $TargetRoot ".deploy.debounce"
 
-# -------------------------
-# Debounce: coalesce rapid triggers
-# -------------------------
-
-# Mark "a deploy was requested now"
-Touch-File -Path $DebouncePath
-
-# Wait until the file hasn't changed for DebounceMs
-while ($true) {
-    $t1 = (Get-Item $DebouncePath).LastWriteTimeUtc
-    Start-Sleep -Milliseconds $DebounceMs
-    $t2 = (Get-Item $DebouncePath).LastWriteTimeUtc
-
-    if ($t1 -eq $t2) {
-        break
+    # Ensure target exists (needed for lock/debounce files)
+    if (-not (Test-Path $TargetRoot)) {
+        New-Item -ItemType Directory -Path $TargetRoot | Out-Null
     }
-    # Another trigger happened during the wait -> loop again
-}
 
-# -------------------------
-# Acquire lock and re-check debounce (avoid redundant deploy)
-# -------------------------
+    # -------------------------
+    # Debounce: coalesce rapid triggers
+    # -------------------------
 
-Acquire-Lock -Path $LockPath -WaitMs $LockWaitMs -PollMs $LockPollInterval
+    Touch-File -Path $DebouncePath
 
-try {
-    # If a new trigger happened while we waited for the lock, restart debounce
-    $tBefore = (Get-Item $DebouncePath).LastWriteTimeUtc
-    Start-Sleep -Milliseconds $DebounceMs
-    $tAfter = (Get-Item $DebouncePath).LastWriteTimeUtc
-    if ($tBefore -ne $tAfter) {
-        Write-Host "New save detected while waiting for lock; restarting debounce..."
+    while ($true) {
+        $t1 = (Get-Item $DebouncePath).LastWriteTimeUtc
+        Start-Sleep -Milliseconds $DebounceMs
+        $t2 = (Get-Item $DebouncePath).LastWriteTimeUtc
+
+        if ($t1 -eq $t2) { break }
+    }
+
+    Acquire-Lock -Path $LockPath -WaitMs $LockWaitMs -PollMs $LockPollInterval
+
+    try {
+        # Re-check debounce after lock
+        $tBefore = (Get-Item $DebouncePath).LastWriteTimeUtc
+        Start-Sleep -Milliseconds $DebounceMs
+        $tAfter = (Get-Item $DebouncePath).LastWriteTimeUtc
+        if ($tBefore -ne $tAfter) {
+            Write-Host "[$TargetRoot] New save detected while waiting for lock; restarting debounce..."
+            Release-Lock -Path $LockPath
+            Deploy-ToTarget -TargetRoot $TargetRoot
+            return
+        }
+
+        Write-Host "[$TargetRoot] Cleaning target directory..."
+        Get-ChildItem -Path $TargetRoot -Force | Where-Object {
+            $_.Name -notin @(".deploy.lock", ".deploy.debounce")
+        } | ForEach-Object {
+            Remove-Item -Path $_.FullName -Recurse -Force -ErrorAction Stop
+        }
+
+        $null = robocopy `
+            $SourceRoot `
+            $TargetRoot `
+            /E `
+            /COPY:DAT /DCOPY:DAT `
+            /XD @($ExcludeDirs) `
+            /XF @($ExcludeFiles) `
+            /R:2 /W:1 `
+            /NFL /NDL /NJH /NJS /NP
+
+        if ($LASTEXITCODE -ge 8) {
+            throw "[$TargetRoot] Robocopy failed with exit code $LASTEXITCODE"
+        }
+
+        Write-Host "[$TargetRoot] Deployed successfully. (Robocopy exit code: $LASTEXITCODE)"
+    }
+    finally {
         Release-Lock -Path $LockPath
-        & $MyInvocation.MyCommand.Path
-        exit 0
     }
-
-    # -------------------------
-    # Deploy
-    # -------------------------
-
-    Write-Host "Cleaning target directory..."
-    Get-ChildItem -Path $TargetRoot -Force | Where-Object {
-        $_.Name -notin @(".deploy.lock", ".deploy.debounce")
-    } | ForEach-Object {
-        Remove-Item -Path $_.FullName -Recurse -Force -ErrorAction Stop
-    }
-
-    Write-Host "Excluded directories: $($ExcludeDirs -join ', ')"
-    Write-Host "Excluded files: $($ExcludeFiles -join ', ')"
-
-    $null = robocopy `
-        $SourceRoot `
-        $TargetRoot `
-        /E `
-        /COPY:DAT /DCOPY:DAT `
-        /XD @($ExcludeDirs) `
-        /XF @($ExcludeFiles) `
-        /R:2 /W:1 `
-        /NFL /NDL /NJH /NJS /NP
-
-    if ($LASTEXITCODE -ge 8) {
-        throw "Robocopy failed with exit code $LASTEXITCODE"
-    }
-
-    Write-Host "Addon files successfully deployed. (Robocopy exit code: $LASTEXITCODE)"
 }
-finally {
-    Release-Lock -Path $LockPath
+
+# -------------------------
+# Deploy to all targets
+# -------------------------
+
+foreach ($t in $TargetRoots) {
+    Deploy-ToTarget -TargetRoot $t
 }
