@@ -1,13 +1,14 @@
-local addonName, addon = ...;
+local ADDON_NAME = ...
+local KhamulsAchievementFilter = LibStub("AceAddon-3.0"):GetAddon(ADDON_NAME)
+local Utilities = KhamulsAchievementFilter:GetModule("Utilities")
 
-local L = addon.L
-addon.Achievements = addon.Achievements or {}
+local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 
--- Add new entry for BfA
-addon.Achievements.BfA = {}
-addon.Achievements.BfAMetaAchievementId = 40953
+function GetBfAAchievementId()
+    return 40953
+end
 
-function InitializeBfA()
+function GetBfAList()
 
     local factionSpecificAchievements = {
         { -- Alliance
@@ -63,7 +64,7 @@ function InitializeBfA()
     }
 
     local ACM_12807 = { -- Battle for Azeroth Dungeon Hero
-        GetAchievementName(12807),
+        Utilities:GetAchievementName(12807),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -81,13 +82,13 @@ function InitializeBfA()
     }
 
     local ACM_40956 = { -- I'm On Island Time
-        GetAchievementName(40956),
+        Utilities:GetAchievementName(40956),
         false,
         {
             IgnoreFactionFilter = true
         },
         { -- Hot Tropic
-            GetAchievementName(41202),
+            Utilities:GetAchievementName(41202),
             false,
             {
                 IgnoreFactionFilter = true
@@ -104,7 +105,7 @@ function InitializeBfA()
             },
         },
         { -- Sound Off
-            GetAchievementName(41205),
+            Utilities:GetAchievementName(41205),
             false,
             {
                 IgnoreFactionFilter = true
@@ -120,7 +121,7 @@ function InitializeBfA()
             },
         },
         { -- Bown Voyage
-            GetAchievementName(41203),
+            Utilities:GetAchievementName(41203),
             false,
             {
                 IgnoreFactionFilter = true
@@ -137,7 +138,7 @@ function InitializeBfA()
             },
         },
         { -- Songs of Storms
-            GetAchievementName(41206),
+            Utilities:GetAchievementName(41206),
             false,
             {
                 IgnoreFactionFilter = true
@@ -154,7 +155,7 @@ function InitializeBfA()
             },
         },
         { -- Dune Sqpad
-            GetAchievementName(41204),
+            Utilities:GetAchievementName(41204),
             false,
             {
                 IgnoreFactionFilter = true
@@ -171,7 +172,7 @@ function InitializeBfA()
             },
         },
         { -- When the Drust Settles
-            GetAchievementName(41207),
+            Utilities:GetAchievementName(41207),
             false,
             {
                 IgnoreFactionFilter = true
@@ -187,7 +188,7 @@ function InitializeBfA()
             },
         },
         { -- Loremaster of Zandalar
-            GetAchievementName(13294),
+            Utilities:GetAchievementName(13294),
             false,
             {
                 IgnoreFactionFilter  = true
@@ -199,7 +200,7 @@ function InitializeBfA()
             },
         },
         { -- Loremaster of Kul Tiras
-            GetAchievementName(12593),
+            Utilities:GetAchievementName(12593),
             false,
             {
                 IgnoreFactionFilter  = true
@@ -225,39 +226,39 @@ function InitializeBfA()
     }
 
     local ACM_40955 = { -- War Stories
-        GetAchievementName(40955),
+        Utilities:GetAchievementName(40955),
         false,
         {
             IgnoreFactionFilter  = true
         },
         { -- Two Sides to Every Tale
-            GetAchievementName(13517),
+            Utilities:GetAchievementName(13517),
             false,
             {
                 IgnoreFactionFilter  = true
             },
             {
-                AchievementShowDecider(13467, 13466, factionSpecificAchievements, "completedBeforeFaction"),
-                AchievementShowDecider(12891, 12479, factionSpecificAchievements, "completedBeforeFaction")
+                Utilities:AchievementShowDecider(13467, 13466, factionSpecificAchievements, "completedBeforeFaction"),
+                Utilities:AchievementShowDecider(12891, 12479, factionSpecificAchievements, "completedBeforeFaction")
             }
         },
         {
             12555,
             12582,
             13517,
-            AchievementShowDecider(13924, 13925, factionSpecificAchievements, "completedBeforeFaction"),
+            Utilities:AchievementShowDecider(13924, 13925, factionSpecificAchievements, "completedBeforeFaction"),
             13263,
             12997,
             12719,
             13251,
-            AchievementShowDecider(13700, 13553, factionSpecificAchievements, "completedBeforeFaction"),
-            AchievementShowDecider(13709, 13710, factionSpecificAchievements, "completedBeforeFaction"),
+            Utilities:AchievementShowDecider(13700, 13553, factionSpecificAchievements, "completedBeforeFaction"),
+            Utilities:AchievementShowDecider(13709, 13710, factionSpecificAchievements, "completedBeforeFaction"),
             14157
         },
     }
 
     local ACM_13134 = { -- Expedition Leader
-        GetAchievementName(13134),
+        Utilities:GetAchievementName(13134),
         false,
         {
             IgnoreFactionFilter  = true
@@ -271,19 +272,19 @@ function InitializeBfA()
             13125,
             13127,
             13128,
-            AchievementShowDecider(13135, 13133, factionSpecificAchievements, "completedBeforeFaction")
+            Utilities:AchievementShowDecider(13135, 13133, factionSpecificAchievements, "completedBeforeFaction")
         }
     }
 
     local ACM_40957 = { -- Maximum Effort
-        GetAchievementName(40957),
+        Utilities:GetAchievementName(40957),
         false,
         {
             IgnoreFactionFilter  = true
         },
         {
-            AchievementShowDecider(12873, 12881, factionSpecificAchievements, "completedBeforeFaction"), -- War is Hell
-            AchievementShowDecider(13296, 13297, factionSpecificAchievements, "completedBeforeFaction"), -- War for the Shore
+            Utilities:AchievementShowDecider(12873, 12881, factionSpecificAchievements, "completedBeforeFaction"), -- War is Hell
+            Utilities:AchievementShowDecider(13296, 13297, factionSpecificAchievements, "completedBeforeFaction"), -- War for the Shore
             --AchievementShowDecider(12876, 12889, factionSpecificAchievements, "completedBeforeFaction"), -- Strike Fast
             --AchievementShowDecider(13306, 13305, factionSpecificAchievements, "completedBeforeFaction"), -- Night Moves
             --AchievementShowDecider(12878, 12884, factionSpecificAchievements, "completedBeforeFaction"), -- Leader of Troops
@@ -291,36 +292,36 @@ function InitializeBfA()
             --AchievementShowDecider(12879, 12886, factionSpecificAchievements, "completedBeforeFaction"), -- Tour of War
             --AchievementShowDecider(13309, 13310, factionSpecificAchievements, "completedBeforeFaction"), -- Deforester/ By Natures Call
             12872,
-            AchievementShowDecider(12867, 12896, factionSpecificAchievements, "completedBeforeFaction"), -- The Barrens
-            AchievementShowDecider(12869, 12898, factionSpecificAchievements, "completedBeforeFaction"), -- Lordaeron
-            AchievementShowDecider(12870, 12899, factionSpecificAchievements, "completedBeforeFaction"), -- Kalimdor
-            AchievementShowDecider(13284, 13283, factionSpecificAchievements, "completedBeforeFaction") -- Frontline Warrior
+            Utilities:AchievementShowDecider(12867, 12896, factionSpecificAchievements, "completedBeforeFaction"), -- The Barrens
+            Utilities:AchievementShowDecider(12869, 12898, factionSpecificAchievements, "completedBeforeFaction"), -- Lordaeron
+            Utilities:AchievementShowDecider(12870, 12899, factionSpecificAchievements, "completedBeforeFaction"), -- Kalimdor
+            Utilities:AchievementShowDecider(13284, 13283, factionSpecificAchievements, "completedBeforeFaction") -- Frontline Warrior
         }
     }
 
     local ACM_13638 = { -- Undersea Usurper
-        GetAchievementName(13638),
+        Utilities:GetAchievementName(13638),
         false,
         {
             IgnoreFactionFilter  = true
         },
         {
-            GetAchievementName(AchievementShowDecider(13761, 13762, factionSpecificAchievements, "completedBeforeFaction")),
+            Utilities:GetAchievementName(Utilities:AchievementShowDecider(13761, 13762, factionSpecificAchievements, "completedBeforeFaction")),
             false,
             {
                 IgnoreFactionFilter  = true
             },
             {
-                AchievementShowDecider(13750, 13759, factionSpecificAchievements, "completedBeforeFaction"),
-                AchievementShowDecider(13756, 13760, factionSpecificAchievements, "completedBeforeFaction"),
-                AchievementShowDecider(13757, 13758, factionSpecificAchievements, "completedBeforeFaction")
+                Utilities:AchievementShowDecider(13750, 13759, factionSpecificAchievements, "completedBeforeFaction"),
+                Utilities:AchievementShowDecider(13756, 13760, factionSpecificAchievements, "completedBeforeFaction"),
+                Utilities:AchievementShowDecider(13757, 13758, factionSpecificAchievements, "completedBeforeFaction")
             }
         },
         {
             13635,
             13690,
             13691,
-            AchievementShowDecider(13761, 13762, factionSpecificAchievements, "completedBeforeFaction"),
+            Utilities:AchievementShowDecider(13761, 13762, factionSpecificAchievements, "completedBeforeFaction"),
             13549,
             13711,
             13722,
@@ -330,21 +331,21 @@ function InitializeBfA()
             13763,
             13764,
             13712,
-            AchievementShowDecider(13558, 13559, factionSpecificAchievements, "completedBeforeFaction"),
+            Utilities:AchievementShowDecider(13558, 13559, factionSpecificAchievements, "completedBeforeFaction"),
             13765,
-            AchievementShowDecider(13709, 13710, factionSpecificAchievements, "completedBeforeFaction"),
+            Utilities:AchievementShowDecider(13709, 13710, factionSpecificAchievements, "completedBeforeFaction"),
             13836
         }
     }
 
     local ACM_13541 = { -- Mecha-Done
-        GetAchievementName(13541),
+        Utilities:GetAchievementName(13541),
         false,
         {
             IgnoreFactionFilter  = true
         },
         {
-            AchievementShowDecider(13553, 13700, factionSpecificAchievements, "completedBeforeFaction"),
+            Utilities:AchievementShowDecider(13553, 13700, factionSpecificAchievements, "completedBeforeFaction"),
             13470,
             13556,
             13479,
@@ -358,7 +359,7 @@ function InitializeBfA()
     }
 
     local ACM_40959 = { --Black Empire State of Mind
-        GetAchievementName(40959),
+        Utilities:GetAchievementName(40959),
         false,
         {
             IgnoreFactionFilter = true
@@ -375,7 +376,7 @@ function InitializeBfA()
     }
 
     local ACM_13994 = { -- Through the Depths of Visions
-        GetAchievementName(13994),
+        Utilities:GetAchievementName(13994),
         false,
         {
             IgnoreFactionFilter = true
@@ -389,7 +390,7 @@ function InitializeBfA()
     }
 
     local ACM_40958 = { -- Full Heart, Can't Lose
-        GetAchievementName(40958),
+        Utilities:GetAchievementName(40958),
         false,
         {
             IgnoreFactionFilter = true
@@ -403,12 +404,12 @@ function InitializeBfA()
     }
 
     local ACM_41209 = { -- Dressed to Kill: Battle for Azeroth
-        GetAchievementName(41209),
+        Utilities:GetAchievementName(41209),
         false,
         {
             IgnoreFactionFilter = true
         },
-        ShowOnlyCompletedAchievementsWhenRequirementsAreMet(4, {
+        Utilities:ShowOnlyCompletedAchievementsWhenRequirementsAreMet(4, {
             12991,
             12993,
             13385,
@@ -422,7 +423,7 @@ function InitializeBfA()
 
     -- try to add a new category to the specials tab 
     local ACMList = { -- meta achievements overview
-        GetAchievementName(40953, "BfA - "),
+        Utilities:GetAchievementName(40953, "BfA - "),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -460,5 +461,5 @@ function InitializeBfA()
         }
     }
 
-    addon.Achievements.BfA = ACMList
+    return ACMList
 end

@@ -1,16 +1,17 @@
-local addonName, addon = ...;
+local ADDON_NAME = ...
+local KhamulsAchievementFilter = LibStub("AceAddon-3.0"):GetAddon(ADDON_NAME)
+local Utilities = KhamulsAchievementFilter:GetModule("Utilities")
 
-local L = addon.L
-addon.Achievements = addon.Achievements or {}
+local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 
--- Add new entry for SL
-addon.Achievements.DF = {}
-addon.Achievements.DFMetaAchievementId = 19458
+function GetDFAchievementId()
+    return 19458
+end
 
-function InitializeDF()
+function GetDFList()
 
     local ACM_16339 = { -- Myths of the Dragonflight Dungeons
-        GetAchievementName(16339),
+        Utilities:GetAchievementName(16339),
         false,
         {
             16271,
@@ -25,7 +26,7 @@ function InitializeDF()
     }
 
     local ACM_16585 = { -- Loremaster of the Dragon Isles
-        GetAchievementName(16585),
+        Utilities:GetAchievementName(16585),
         false,
         {
             16334,
@@ -40,7 +41,7 @@ function InitializeDF()
     }
 
     local ACM_19463 = { -- Dragon Quests
-        GetAchievementName(19463),
+        Utilities:GetAchievementName(19463),
         false,
         {
             17773,
@@ -53,7 +54,7 @@ function InitializeDF()
     }
 
     local ACM_19466 = { -- Oh My God, They Were Clutchmates
-        GetAchievementName(19466),
+        Utilities:GetAchievementName(19466),
         false,
         {
             41174,
@@ -72,7 +73,7 @@ function InitializeDF()
     }
 
     local ACM_19307 = { -- Dragon Isles Pathfinder
-        GetAchievementName(19307),
+        Utilities:GetAchievementName(19307),
         false,
         {
             16334,
@@ -87,10 +88,10 @@ function InitializeDF()
     }
 
     local ACM_19486 = { -- Accross the Isles
-        GetAchievementName(19486),
+        Utilities:GetAchievementName(19486),
         false,
         {
-            GetAchievementName(19479),
+            Utilities:GetAchievementName(19479),
             true,
             {
                 16570,
@@ -104,7 +105,7 @@ function InitializeDF()
             }
         },
         {
-            GetAchievementName(19481),
+            Utilities:GetAchievementName(19481),
             false,
             {
                 16540,
@@ -118,7 +119,7 @@ function InitializeDF()
             }
         },
         {
-            GetAchievementName(19482),
+            Utilities:GetAchievementName(19482),
             false,
             {
                 16443,
@@ -132,7 +133,7 @@ function InitializeDF()
             }
         },
         {
-            GetAchievementName(19483),
+            Utilities:GetAchievementName(19483),
             false,
             {
                 16411,
@@ -149,7 +150,7 @@ function InitializeDF()
             }
         },
         {
-            GetAchievementName(19485),
+            Utilities:GetAchievementName(19485),
             false,
             {
                 17342,
@@ -165,13 +166,13 @@ function InitializeDF()
             }
         },
         {
-            GetAchievementName(16492),
+            Utilities:GetAchievementName(16492),
             false,
             {
-                GetAchievementName(16490),
+                Utilities:GetAchievementName(16490),
                 false,
                 {
-                    GetAchievementName(16468),
+                    Utilities:GetAchievementName(16468),
                     false,
                     {
                         16463,
@@ -181,7 +182,7 @@ function InitializeDF()
                     }
                 },
                 {
-                    GetAchievementName(16476),
+                    Utilities:GetAchievementName(16476),
                     false,
                     {
                         16475,
@@ -191,7 +192,7 @@ function InitializeDF()
                     }
                 },
                 {
-                    GetAchievementName(16484),
+                    Utilities:GetAchievementName(16484),
                     false,
                     {
                         16480,
@@ -201,7 +202,7 @@ function InitializeDF()
                     }
                 },
                 {
-                    GetAchievementName(16489),
+                    Utilities:GetAchievementName(16489),
                     false,
                     {
                         16485,
@@ -238,7 +239,7 @@ function InitializeDF()
     }
 
     local ACM_17543 = { -- You Know How to Reach Me
-        GetAchievementName(17543),
+        Utilities:GetAchievementName(17543),
         false,
         {
             17534,
@@ -256,7 +257,7 @@ function InitializeDF()
     }
 
     local ACM_17785 = { --Que Zara(lek), Zara(lek)
-        GetAchievementName(17785),
+        Utilities:GetAchievementName(17785),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -273,7 +274,7 @@ function InitializeDF()
     }
 
     local ACM_19318 = { -- Dream On
-        GetAchievementName(19318),
+        Utilities:GetAchievementName(19318),
         false,
         {
             19026,
@@ -286,7 +287,7 @@ function InitializeDF()
     }
 
     local ACM_19478 = { -- Now THIS is Dragon Racing!
-        GetAchievementName(19478),
+        Utilities:GetAchievementName(19478),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -307,7 +308,7 @@ function InitializeDF()
     }
 
     local ACMList = { -- meta achievements overview
-        GetAchievementName(19458, "DF - "),
+        Utilities:GetAchievementName(19458, "DF - "),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -340,5 +341,5 @@ function InitializeDF()
         }
     }
 
-    addon.Achievements.DF = ACMList
+    return ACMList
 end
