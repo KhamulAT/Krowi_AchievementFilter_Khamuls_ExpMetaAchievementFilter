@@ -89,7 +89,7 @@ function KhamulsAchievementFilter:InitOptions()
             name = L["Show List for Achievements with warband campsites as reward"],
             desc = L["If enabled, a list with all achievements, which have a warband campsite as reward, will be shown"],
             width = "full",
-            order = 2,
+            order = 1,
             get = function()
               return KhamulsAchievementFilter.db.profile.campsiteAchievementsEnabled
             end,
@@ -97,6 +97,32 @@ function KhamulsAchievementFilter:InitOptions()
               KhamulsAchievementFilter.db.profile.campsiteAchievementsEnabled = value
             end,
           },
+          flattenStructure = {
+            type = "toggle",
+            name = "TT | Flatten list structure",
+            desc = "TT | The generated lists depth will be flatten and all achievements will be displayed in the expansions category",
+            width = "full",
+            order = 2,
+            get = function()
+              return KhamulsAchievementFilter.db.profile.campsiteAchievementsEnabled.flattenStructure
+            end,
+            set = function(_, value)
+              KhamulsAchievementFilter.db.profile.campsiteAchievementsEnabled.flattenStructure = value
+            end
+          },
+          includeChildAchievements = {
+            type = "toggle",
+            name = "TT | Include Child Achievements",
+            desc = "TT | If an Achievement has other Achievements as requirement, they will be shown in an extra category.",
+            width = "full",
+            order = 3,
+            get = function()
+              return KhamulsAchievementFilter.db.profile.campsiteAchievementsEnabled.includeChildAchievements
+            end,
+            set = function(_, value)
+              KhamulsAchievementFilter.db.profile.campsiteAchievementsEnabled.includeChildAchievements = value
+            end
+          }
         }
       },
       petAchievements = {

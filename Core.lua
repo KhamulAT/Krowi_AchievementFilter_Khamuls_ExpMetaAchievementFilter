@@ -13,9 +13,12 @@ local defaults = {
       includeChildAchievements = true
     },
     campsiteAchievementsEnabled = true,
+    campsiteAchievementsSettings = {
+      flattenStructure = false,
+      includeChildAchievements = true
+    },
     petAchievementsEnabled = true,
     petAchievementsSettings = {
-      grouping = "activity", -- expansion or activity
       flattenStructure = false,
       includeChildAchievements = true
     }
