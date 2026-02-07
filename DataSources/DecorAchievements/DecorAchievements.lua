@@ -8,7 +8,6 @@ local Data = Addon:GetModule("Data")
 ---@type KAF_DataSource
 local Source = {
   Name = "DecorAchievements",
-  Id = 1,
   Items = {},
 }
 

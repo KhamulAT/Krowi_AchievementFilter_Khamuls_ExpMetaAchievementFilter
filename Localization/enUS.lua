@@ -8,7 +8,11 @@ L["Khamuls Achievement Lists for Krowi's Achievement Filter"] = "Khamuls Achieve
 L["Khamul's Meta-Expansion Achievement List"] = "Khamul's Meta-Achievements"
 L["Khamul's House Decor Achievement List"] = "Khamul's Housingdecor List"
 L["Khamul's Campsite Achievement List"] = "Khamul's Campsite Achievement List"
+L["Khamul's Battle Pet Achievement List"] = "Khamul's Battle Pet Achievement List"
 L["Unknown Achievement"] = "Unknown Achievement"
+
+-- Special categories
+L["Cross-Expansion"] = "Cross-Expansion"
 
 -- Tooltips
 L["Tt_ACM_15035"] = "Only 4 needed to complete the Meta-Achievement"
@@ -24,6 +28,8 @@ L["Show List for Achievements with decors as reward"] = "Show List for Achieveme
 L["If enabled, a list with all achievements, which have a decor as reward, will be shown"] = "If enabled, a list with all achievements, which have a decor as reward, will be shown"
 L["Show List for Achievements with warband campsites as reward"] = "Show List for Achievements with warband campsites as reward"
 L["If enabled, a list with all achievements, which have a warband campsite as reward, will be shown"] = "If enabled, a list with all achievements, which have a warband campsite as reward, will be shown"
+L["Show List for Achievements with battle pets as reward"] = "Show List for Achievements with battle pets as reward"
+L["If enabled, a list with all achievements, which have a battle pet as reward, will be shown"] = "If enabled, a list with all achievements, which have a battle pet as reward, will be shown"
 L["Krowi AchievementFilter status: "] = "Krowi AchievementFilter status: "
 L["detected"] = "detected"
 L["not detected"] = "not detected"

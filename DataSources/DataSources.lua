@@ -3,7 +3,6 @@ local Addon = LibStub("AceAddon-3.0"):GetAddon(ADDON_NAME)
 
 ---@class KAF_DataSource
 ---@field Name string
----@field Id number
 ---@field Items table
 ---@field ctx? table
 ---@field Init? fun(self: KAF_DataSource, ctx: table)
@@ -37,24 +36,33 @@ end
 
 ---@param source KAF_DataSource
 function Data:RegisterSource(source)
-  assert(type(source) == "table", "Data:RegisterSource expects a table")
-  assert(type(source.Name) == "string" and source.Name ~= "", "Source must have a Name")
-  assert(type(source.Id) == "number", "Source must have an Id (number)")
-  assert(type(source.Items) == "table", "Source must have Items (table)")
-  source.Items = source.Items or {}
-  self.Sources = self.Sources or {}
+    assert(type(source) == "table", "Data:RegisterSource expects a table")
+    assert(type(source.Name) == "string" and source.Name ~= "", "Source must have a Name")
 
-  EnsureContext(self)
+    source.Items = source.Items or {}
+    self.Sources = self.Sources or {}
 
-  -- Inject shared context into the source (dependency injection)
-  source.ctx = self.ctx
+    EnsureContext(self)
 
-  -- Allow source to initialize itself (create tables, etc.)
-  if type(source.Init) == "function" then
-    source:Init(self.ctx)
-  end
+    -- Inject shared context into the source (dependency injection)
+    source.ctx = self.ctx
 
-  self.Sources[source.Name] = source
+    -- DO NOT init here (DB may not be ready yet)
+    self.Sources[source.Name] = source
+end
+
+function Data:InitSources()
+    if not self.Sources then return end
+    EnsureContext(self)
+
+    for _, source in pairs(self.Sources) do
+        source.ctx = self.ctx
+
+        if type(source.Init) == "function" and not source._initialized then
+            source:Init(self.ctx)
+            source._initialized = true
+        end
+    end
 end
 
 ---@param name string

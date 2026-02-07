@@ -7,7 +7,7 @@ local Data = Addon:GetModule("Data")
 
 ---@type KAF_DataSource
 local Source = {
-  Name = "CampsiteAchievements",
+  Name = "PetAchievements",
   Items = {},
 }
 
@@ -16,8 +16,20 @@ function Source:Init(ctx)
   self.Items = {
     971,
     {
-        ctx.L["Khamul's Campsite Achievement List"],
-        GetTWWList()
+        ctx.L["Khamul's Battle Pet Achievement List"],
+        GetCrossExpansionPetAchievements(),
+        GetClassicPetAchievements(),
+        GetTBCPetAchievements(),
+        GetWotLKPetAchievements(),
+        GetCataPetAchievements(),
+        GetMoPPetAchievements(),
+        GetWoDPetAchievements(),
+        GetLegionPetAchievements(),
+        GetBfaPetAchievements(),
+        GetSLPetAchievements(),
+        GetDFPetAchievements(),
+        GetTWWPetAchievements(),
+        GetMNPetAchievements()
     }
   }
 end

@@ -151,7 +151,13 @@ end
 
 -- https://www.wowhead.com/guide/list-of-zone-map-id-number-for-navigation-in-wow-and-tomtom-19501
 function Utilities:GetZoneNameByMapID(mapID)
-    return C_Map.GetMapInfo(mapID).name
+    local map = C_Map.GetMapInfo(mapID)
+    
+    if map then
+        return map.name
+    end
+    
+    return QUEUED_STATUS_UNKNOWN
 end
 
 function Utilities:GetDungeonNameByLFGDungeonID(dungeonID)
@@ -181,7 +187,10 @@ function Utilities:GetAchievementRewardInfo(achievementID)
 
     -- rewardText is the UI-accurate, localized reward string
     local _, _, _, _, _, _, _, _, _, _, rewardText = GetAchievementInfo(achievementID)
-    print(rewardText)
 
     return rewardText
+end
+
+function Utilities:GetExpansionNameById(expansionId)
+    return expansionId and ("EXPANSION_NAME" .. tostring(expansionId));
 end

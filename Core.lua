@@ -9,7 +9,17 @@ local defaults = {
     metaAchievementsEnabled = true,
     decorAchievementsEnabled = true,
     campsiteAchievementsEnabled = true,
+    petAchievementsEnabled = true,
+    petAchievementsSettings = {
+      grouping = "activity", -- expansion or activity
+      flattenStructure = false,
+      includeChildAchievements = true
+    }
   },
+}
+
+local defaultsTwo = {
+  global = {}
 }
 
 -- Dependency check
@@ -23,8 +33,7 @@ end
 
 function KhamulsAchievementFilter:OnInitialize()
     -- Initialize AceDB
-  self.db = LibStub("AceDB-3.0"):New("Krowi_AchievementFilter_Khamuls_ExpMetaAchievementFilter", defaults, true)
-
+  self.db = LibStub("AceDB-3.0"):New("Khamuls_ExpMetaAchievementFilter", defaults, true)
   -- Initialize AceConfig
   if self.InitOptions then
     self:InitOptions()
@@ -56,6 +65,11 @@ function KhamulsAchievementFilter:OnPlayerLogin()
     return
   end
 
+  local Data = self:GetModule("Data", true)
+  if Data and Data.InitSources then
+      Data:InitSources()
+  end
+
   if self.db.profile.metaAchievementsEnabled then
      KrowiAF.CategoryData.KhamulsExpansionMetaAchievementLists = self.Data:GetSource("MetaAchievements"):GetItems()
   end
@@ -68,5 +82,7 @@ function KhamulsAchievementFilter:OnPlayerLogin()
      KrowiAF.CategoryData.KhamulsWarbandCampsiteAchievementLists = self.Data:GetSource("CampsiteAchievements"):GetItems()
   end
 
-
+  if self.db.profile.petAchievementsEnabled then
+     KrowiAF.CategoryData.KhamulsPetAchievementLists = self.Data:GetSource("PetAchievements"):GetItems()
+  end
 end
