@@ -1,16 +1,17 @@
-local addonName, addon = ...;
+local ADDON_NAME = ...
+local KhamulsAchievementFilter = LibStub("AceAddon-3.0"):GetAddon(ADDON_NAME)
+local Utilities = KhamulsAchievementFilter:GetModule("Utilities")
 
-local L = addon.L
-addon.Achievements = addon.Achievements or {}
+local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 
--- Add new entry for TWW
-addon.Achievements.TWW = {}
-addon.Achievements.TWWMetaAchievementId = 41201
+function GetTWWAchievementId()
+    return 41201
+end
 
-function InitializeTWW()
+function GetTWWList()
 
     local ACM_41555 = { -- All That Khaz
-        GetAchievementName(41555),
+        Utilities:GetAchievementName(41555),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -26,7 +27,7 @@ function InitializeTWW()
     }
 
     local ACM_40231 = { -- The War Within Pathfinder
-        GetAchievementName(40231),
+        Utilities:GetAchievementName(40231),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -51,17 +52,17 @@ function InitializeTWW()
     }
 
     -- check if My New  Nemesis is already completed
-    if IsAchievementCompleted(41530) then 
+    if Utilities:IsAchievementCompleted(41530) then 
         table.insert(Glory_of_the_Delver_list, 41530)
     end
 
     -- check if My First Nemesis is already completed
-    if IsAchievementCompleted(40103) then 
+    if Utilities:IsAchievementCompleted(40103) then 
         table.insert(Glory_of_the_Delver_list, 40103)
     end
 
     local ACM_40438 = { -- Glory of the Delver
-        GetAchievementName(40438),
+        Utilities:GetAchievementName(40438),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -70,7 +71,7 @@ function InitializeTWW()
     }
 
     local ACM_41586 = { -- Going Goblin Mode
-        GetAchievementName(41586),
+        Utilities:GetAchievementName(41586),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -86,7 +87,7 @@ function InitializeTWW()
     }
 
     local ACM_60889 = { -- Unraveled and Persevering
-        GetAchievementName(60889),
+        Utilities:GetAchievementName(60889),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -103,7 +104,7 @@ function InitializeTWW()
     }
 
     local ACM_41186 = { -- Slate of the Union
-        GetAchievementName(41186),
+        Utilities:GetAchievementName(41186),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -119,7 +120,7 @@ function InitializeTWW()
     }
 
     local ACM_41187 = { -- Rage Aside the Machine
-        GetAchievementName(41187),
+        Utilities:GetAchievementName(41187),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -136,7 +137,7 @@ function InitializeTWW()
     }
 
     local ACM_41188 = { -- Crystal Chronicled
-        GetAchievementName(41188),
+        Utilities:GetAchievementName(41188),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -156,7 +157,7 @@ function InitializeTWW()
     }
 
     local ACM_41189 = { -- Azj the World Turns
-        GetAchievementName(41189),
+        Utilities:GetAchievementName(41189),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -174,7 +175,7 @@ function InitializeTWW()
     }
 
     local ACM_41133 = { -- Isle Remember You
-        GetAchievementName(41133),
+        Utilities:GetAchievementName(41133),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -190,7 +191,7 @@ function InitializeTWW()
     }
 
     local ACM_41201 = { -- You Xal Not Pass
-        GetAchievementName(41201),
+        Utilities:GetAchievementName(41201),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -210,7 +211,7 @@ function InitializeTWW()
     }
 
     local ACMList = { -- Worldsoul-Searching
-        GetAchievementName(61451, "TWW - "),
+        Utilities:GetAchievementName(61451, "TWW - "),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -236,5 +237,5 @@ function InitializeTWW()
 
     }
 
-    addon.Achievements.TWW = ACMList
+    return ACMList
 end
