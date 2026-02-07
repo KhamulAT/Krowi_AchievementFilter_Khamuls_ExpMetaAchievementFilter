@@ -36,7 +36,7 @@ end
 
 function KhamulsAchievementFilter:OnInitialize()
     -- Initialize AceDB
-  self.db = LibStub("AceDB-3.0"):New("Khamuls_ExpMetaAchievementFilter", defaults, true)
+  self.db = LibStub("AceDB-3.0"):New("Khamuls_ExpMetaAchievementFilter_Settings", defaults, true)
   -- Initialize AceConfig
   if self.InitOptions then
     self:InitOptions()

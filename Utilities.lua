@@ -10,9 +10,9 @@ function Utilities:GetAchievementName(achievementID, prefix)
         prefix = ""
     end
 
-    local name = select(2, GetAchievementInfo(achievementID)) or L["Unknown Achievement"]
+    local name = select(2, GetAchievementInfo(achievementID)) or self.GetUnknownAchievementString()
     
-    if name == L["Unknown Achievement"] then
+    if name == self.GetUnknownAchievementString() then
         -- try to get the achievementname from locale
         local achievementLocaleKey = "ACM_" .. achievementID
 
@@ -129,7 +129,7 @@ function Utilities:GetAchievementNameWithPrefix(achievementID, prefix)
 
     local name = self:GetAchievementName(achievementID)
     
-    if name == L["Unknown Achievement"] then
+    if name == self.GetUnknownAchievementString() then
         -- try to get the achievementname from locale
         local achievementLocaleKey = "ACM_" .. achievementID
 
@@ -193,4 +193,8 @@ end
 
 function Utilities:GetExpansionNameById(expansionId)
     return expansionId and ("EXPANSION_NAME" .. tostring(expansionId));
+end
+
+function Utilities:GetUnknownAchievementString() 
+    return _G.UNKNOWN .. " " .. _G.BATTLE_PET_SOURCE_6
 end

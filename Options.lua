@@ -8,13 +8,13 @@ function KhamulsAchievementFilter:InitOptions()
 
   local options = {
     type = "group",
-    name = L["Khamuls Achievement Lists for Krowi's Achievement Filter"],
+    name = L["Khamuls Collections for Krowi's Achievement Filter"],
     args = {
       metaAchievements = {
         type = "group",
         inline = true,
-        name = "TT | Mount Meta Achievements Settings",
-        order = 1,
+        name = L["Meta-Mount Collection Settings"],
+        order = 3,
         args = {
           metaAchievementsEnabled = {
             type = "toggle",
@@ -34,7 +34,7 @@ function KhamulsAchievementFilter:InitOptions()
       decorAchievements = {
         type = "group",
         inline = true,
-        name = "TT | Decoration Achievements Settings",
+        name = L["Decor Collection Settings"],
         order = 1,
         args = {
           decorAchievementsEnabled = {
@@ -52,8 +52,8 @@ function KhamulsAchievementFilter:InitOptions()
           },
           flattenStructure = {
             type = "toggle",
-            name = "TT | Flatten list structure",
-            desc = "TT | The generated lists depth will be flatten and all achievements will be displayed in the expansions category",
+            name = L["Flatten collection structure"],
+            desc = L["The collections depth will be flatten and all achievements will be displayed in the expansions category"],
             width = "full",
             order = 2,
             get = function()
@@ -65,8 +65,8 @@ function KhamulsAchievementFilter:InitOptions()
           },
           includeChildAchievements = {
             type = "toggle",
-            name = "TT | Include Child Achievements",
-            desc = "TT | If an Achievement has other Achievements as requirement, they will be shown in an extra category.",
+            name = L["Include Child Achievements"],
+            desc = L["If an Achievement has other Achievements as requirement, they will be shown in an extra category."],
             width = "full",
             order = 3,
             get = function()
@@ -81,8 +81,8 @@ function KhamulsAchievementFilter:InitOptions()
       campsiteAchievements = {
         type = "group",
         inline = true,
-        name = "TT | Warband Campsite Achievements Settings",
-        order = 3,
+        name = L["Campsite Collection Settings"],
+        order = 2,
         args = {
           campsiteAchievementsEnabled = {
             type = "toggle",
@@ -99,28 +99,28 @@ function KhamulsAchievementFilter:InitOptions()
           },
           flattenStructure = {
             type = "toggle",
-            name = "TT | Flatten list structure",
-            desc = "TT | The generated lists depth will be flatten and all achievements will be displayed in the expansions category",
+            name = L["Flatten collection structure"],
+            desc = L["The collections depth will be flatten and all achievements will be displayed in the expansions category"],
             width = "full",
             order = 2,
             get = function()
-              return KhamulsAchievementFilter.db.profile.campsiteAchievementsEnabled.flattenStructure
+              return KhamulsAchievementFilter.db.profile.campsiteAchievementsSettings.flattenStructure
             end,
             set = function(_, value)
-              KhamulsAchievementFilter.db.profile.campsiteAchievementsEnabled.flattenStructure = value
+              KhamulsAchievementFilter.db.profile.campsiteAchievementsSettings.flattenStructure = value
             end
           },
           includeChildAchievements = {
             type = "toggle",
-            name = "TT | Include Child Achievements",
-            desc = "TT | If an Achievement has other Achievements as requirement, they will be shown in an extra category.",
+            name = L["Include Child Achievements"],
+            desc = L["If an Achievement has other Achievements as requirement, they will be shown in an extra category."],
             width = "full",
             order = 3,
             get = function()
-              return KhamulsAchievementFilter.db.profile.campsiteAchievementsEnabled.includeChildAchievements
+              return KhamulsAchievementFilter.db.profile.campsiteAchievementsSettings.includeChildAchievements
             end,
             set = function(_, value)
-              KhamulsAchievementFilter.db.profile.campsiteAchievementsEnabled.includeChildAchievements = value
+              KhamulsAchievementFilter.db.profile.campsiteAchievementsSettings.includeChildAchievements = value
             end
           }
         }
@@ -128,7 +128,7 @@ function KhamulsAchievementFilter:InitOptions()
       petAchievements = {
         type = "group",
         inline = true,
-        name = "TT | Pet Achievements Settings",
+        name = L["Pet Collection Settings"],
         order = 4,
         args = {
           petAchievementsEnabled = {
@@ -146,8 +146,8 @@ function KhamulsAchievementFilter:InitOptions()
           },
           flattenStructure = {
             type = "toggle",
-            name = "TT | Flatten list structure",
-            desc = "TT | The generated lists depth will be flatten and all achievements will be displayed in the expansions category",
+            name = L["Flatten collection structure"],
+            desc = L["The collections depth will be flatten and all achievements will be displayed in the expansions category"],
             width = "full",
             order = 2,
             get = function()
@@ -159,8 +159,8 @@ function KhamulsAchievementFilter:InitOptions()
           },
           includeChildAchievements = {
             type = "toggle",
-            name = "TT | Include Child Achievements",
-            desc = "TT | If an Achievement has other Achievements as requirement, they will be shown in an extra category.",
+            name = L["Include Child Achievements"],
+            desc = L["If an Achievement has other Achievements as requirement, they will be shown in an extra category."],
             width = "full",
             order = 3,
             get = function()
@@ -188,5 +188,5 @@ function KhamulsAchievementFilter:InitOptions()
 
   AceConfig:RegisterOptionsTable(ADDON_NAME, options)
 
-  self.optionsFrame = AceConfigDialog:AddToBlizOptions(ADDON_NAME, L["Khamuls Achievement Lists for Krowi's Achievement Filter"])
+  self.optionsFrame = AceConfigDialog:AddToBlizOptions(ADDON_NAME, L["Khamuls Collections for Krowi's Achievement Filter"])
 end
