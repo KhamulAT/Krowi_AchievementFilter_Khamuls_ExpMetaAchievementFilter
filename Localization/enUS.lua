@@ -5,10 +5,10 @@ if not L then return end
 
 -- Globals
 L["Khamuls Achievement Lists for Krowi's Achievement Filter"] = "Khamuls Achievement Lists for Krowi's Achievement Filter"
-L["Khamul's Meta-Expansion Achievement List"] = "Khamul's Meta-Achievements"
-L["Khamul's House Decor Achievement List"] = "Khamul's Housingdecor List"
-L["Khamul's Campsite Achievement List"] = "Khamul's Campsite Achievement List"
-L["Khamul's Battle Pet Achievement List"] = "Khamul's Battle Pet Achievement List"
+L["Khamul's Meta-Expansion Achievement List"] = "Khamul's Meta-Mount Collection"
+L["Khamul's House Decor Achievement List"] = "Khamul's Decor Collection"
+L["Khamul's Campsite Achievement List"] = "Khamul's Campsite Collection"
+L["Khamul's Battle Pet Achievement List"] = "Khamul's Pet Collection"
 L["Unknown Achievement"] = "Unknown Achievement"
 
 -- Special categories
@@ -16,7 +16,7 @@ L["Cross-Expansion"] = "Cross-Expansion"
 
 -- Tooltips
 L["Tt_ACM_15035"] = "Only 4 needed to complete the Meta-Achievement"
-L["Tt_UseMetaAchievementPlugin"] = "Use \"Khamul's Expansion Meta Achievement Filters\" add-on to get a detailed overview for \"{1}\"."
+L["Tt_UseMetaAchievementPlugin"] = "Use \"Khamul's Meta-Mount Collection\" category, to get an detailed overview for \"{1}\"."
 
 -- Messages
 L["Krowi's Achievement Filter Addon not loaded!"] = "Krowi's Achievement Filter Addon not loaded!"

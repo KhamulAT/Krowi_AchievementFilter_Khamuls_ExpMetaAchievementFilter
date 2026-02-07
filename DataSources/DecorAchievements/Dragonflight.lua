@@ -82,7 +82,8 @@ function GetHousingDF()
         EXPANSION_NAME9,
         false,
         {
-            IgnoreCollapsedChainFilter = true
+            IgnoreCollapsedChainFilter = true,
+            Tooltip = Utilities:ReplacePlaceholderInText(L["Tt_UseMetaAchievementPlugin"], {Utilities:GetAchievementName(19458)})
         },
         ACM_DF_Zones,
         {
