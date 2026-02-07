@@ -18,7 +18,5 @@ Localization\Files.xml
 
 Core.lua
 Utilities.lua
-
 DataSources\Files.xml
-
 Options.lua
