@@ -1,6 +1,3 @@
--- Modules/DataSources/MetaAchievements.lua
--- A data source object (NOT an AceModule).
-
 local ADDON_NAME = ...
 local Addon = LibStub("AceAddon-3.0"):GetAddon(ADDON_NAME)
 local Data = Addon:GetModule("Data")
@@ -12,7 +9,6 @@ local Source = {
 }
 
 function Source:Init(ctx)
-  -- ctx.Utilities, ctx.L, ctx.Addon are available
   self.Items = {
     971,
     {
@@ -23,9 +19,13 @@ function Source:Init(ctx)
 end
 
 function Source:Rebuild()
-  -- Example rebuild logic
-  -- self.ctx.Utilities:SomeHelper()
-  -- local text = self.ctx.L["SOME_KEY"]
+  self.Items = {
+    971,
+    {
+        self.ctx.L["Khamul's Campsite Achievement List"],
+        GetTWWCampsiteList()
+    }
+  }
 end
 
 function Source:GetItems()

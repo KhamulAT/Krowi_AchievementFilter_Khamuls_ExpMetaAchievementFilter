@@ -1,6 +1,7 @@
 local ADDON_NAME = ...
 local KhamulsAchievementFilter = LibStub("AceAddon-3.0"):GetAddon(ADDON_NAME)
 local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
+--local Data = KhamulsAchievementFilter:GetModule("Data", true)
 
 function KhamulsAchievementFilter:InitOptions()
   local AceConfig = LibStub("AceConfig-3.0")
@@ -10,26 +11,12 @@ function KhamulsAchievementFilter:InitOptions()
     type = "group",
     name = L["Khamuls Collections for Krowi's Achievement Filter"],
     args = {
-      metaAchievements = {
-        type = "group",
-        inline = true,
-        name = L["Meta-Mount Collection Settings"],
-        order = 3,
-        args = {
-          metaAchievementsEnabled = {
-            type = "toggle",
-            name = L["Show List for Expansion Meta Achievements"],
-            desc = L["If enabled, a list with all achievements required for expansion meta achievements will be shown"],
-            width = "full",
-            order = 1,
-            get = function()
-              return KhamulsAchievementFilter.db.profile.metaAchievementsEnabled
-            end,
-            set = function(_, value)
-              KhamulsAchievementFilter.db.profile.metaAchievementsEnabled = value
-            end,
-          },
-        }
+      information = {
+        type ="description",
+        width = "full",
+        fontSize = "medium",
+        order = 0,
+        name = L["Changing any option on this page, requires a reload to take affect."]
       },
       decorAchievements = {
         type = "group",
@@ -123,6 +110,27 @@ function KhamulsAchievementFilter:InitOptions()
               KhamulsAchievementFilter.db.profile.campsiteAchievementsSettings.includeChildAchievements = value
             end
           }
+        }
+      },
+      metaAchievements = {
+        type = "group",
+        inline = true,
+        name = L["Meta-Mount Collection Settings"],
+        order = 3,
+        args = {
+          metaAchievementsEnabled = {
+            type = "toggle",
+            name = L["Show List for Expansion Meta Achievements"],
+            desc = L["If enabled, a list with all achievements required for expansion meta achievements will be shown"],
+            width = "full",
+            order = 1,
+            get = function()
+              return KhamulsAchievementFilter.db.profile.metaAchievementsEnabled
+            end,
+            set = function(_, value)
+              KhamulsAchievementFilter.db.profile.metaAchievementsEnabled = value
+            end,
+          },
         }
       },
       petAchievements = {

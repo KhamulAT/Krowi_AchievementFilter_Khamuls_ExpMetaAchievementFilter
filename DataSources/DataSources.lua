@@ -15,11 +15,8 @@ local Data = Addon:NewModule("Data")
 
 local function EnsureContext(self)
   if self.ctx then return end
-
-  -- Locale must be loaded before this is called (load Locale files before DataSources in the toc).
   local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 
-  -- Utilities module must exist (Utilities.lua must be loaded before any source registers).
   local Utilities = Addon:GetModule("Utilities", true)
   assert(Utilities, "Utilities module not loaded. Ensure Utilities.lua is listed before DataSources in the toc.")
 
@@ -44,10 +41,7 @@ function Data:RegisterSource(source)
 
     EnsureContext(self)
 
-    -- Inject shared context into the source (dependency injection)
     source.ctx = self.ctx
-
-    -- DO NOT init here (DB may not be ready yet)
     self.Sources[source.Name] = source
 end
 
@@ -65,16 +59,16 @@ function Data:InitSources()
     end
 end
 
+function Data:RebuildSource(name)
+    if not self.Sources[name] then return end
+
+    if type(self.Sources[name].Rebuild) == "function" and self.Sources[name]._initialized then
+        self.Sources[name]:Rebuild()
+    end
+end
+
 ---@param name string
 ---@return KAF_DataSource
 function Data:GetSource(name)
   return self.Sources[name]
-end
-
-function Data:GetMetaAchievements()
-  return self.Sources.MetaAchievements
-end
-
-function Data:GetDecorAchievements()
-  return self.Sources.DecorAchievements
 end
