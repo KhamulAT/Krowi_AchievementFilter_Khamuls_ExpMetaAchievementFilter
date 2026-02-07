@@ -26,6 +26,7 @@ function Source:Init(ctx)
         GetHousingSL(),
         GetHousingDF(),
         GetHousingTWW(),
+        GetHousingMN(),
         GetHousingPvP()
     }
   }

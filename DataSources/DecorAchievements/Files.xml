@@ -1,4 +1,5 @@
 <Ui>
+    <Script file="Midnight.lua" />
     <Script file="TheWarWithin.lua" />
     <Script file="Dragonflight.lua" />
     <Script file="Shadowlands.lua" />

@@ -6,170 +6,174 @@ local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 
 function GetHousingTWW()
 
-    local ACM_TWW_Zones_IsleOfDorn_Quests = {
-        Utilities:GetAchievementCategoryNameNyCategoryID(96),
+    -- Child Achievements Slate of the Union
+    local ACMChilds_SlateOfTheUnion = {
+        Utilities:GetAchievementName(41186),
         false,
         {
-            IgnoreCollapsedChainFilter = true
+            IgnoreCollapsedChainFilter = true,
+            IgnoreFactionFilter = true
         },
         {
-            20595
+            40435, -- Adventurer of the Isle of Dorn
+            40434, -- Treasures of the Isle of Dorn
+            40606, -- Flat Earthen
+            40859, -- We're Here All Night
+            40860, -- A Star of Dorn
+            40504, -- Rocked to Sleep
         }
     }
 
-    local ACM_TWW_Zones_IsleOfDorn_Exploration = {
-        Utilities:GetAchievementCategoryNameNyCategoryID(97),
+    -- Flat achievement list
+    local ACMListFlat = {
+        EXPANSION_NAME10, -- The War Within
         false,
         {
-            IgnoreCollapsedChainFilter = true
-        },
-        {
-            40859
+            IgnoreCollapsedChainFilter = true,
+            IgnoreFactionFilter = true
         }
     }
 
+    if KhamulsAchievementFilter.db.profile.decorAchievementsSettings.includeChildAchievements then
+        ACMListFlat[#ACMListFlat+1] = ACMChilds_SlateOfTheUnion
+    end
 
-    local ACM_TWW_Zones_IsleOfDorn = {
-        Utilities:GetZoneNameByMapID(2248),
+    ACMListFlat[#ACMListFlat+1] = {
+        61451, -- Worldsoul-Searching
+        41186, -- Slate or the Union
+        20595, -- Sojurner of Isle of Dorn
+        40859, -- We're All Night
+        40504, -- Rocked to Sleep
+        40542, -- Smelling History
+        40894, -- Sojourner of Undermine
+        41119, -- One Rank Higher
+        19408, -- Professional Algari Master
+        42187, -- Lorewalking: Ethereal Wisdon
+        42188, -- Lorewalking: Blade's Bane
+        42189, -- Lorewalking: The Lich King
+        61467, -- Lorewalking: The Elves of Quel'Thalas
+    }
+
+    -- Return flat structure if set
+    if KhamulsAchievementFilter.db.profile.decorAchievementsSettings.flattenStructure then
+        return ACMListFlat
+    end
+
+    local ACMList_Zones_IsleOfDorn = {
+        Utilities:GetZoneNameByMapID(2248), -- Isle of Dorn
         false,
         {
             IgnoreCollapsedChainFilter = true
-        },
-        ACM_TWW_Zones_IsleOfDorn_Quests,
-        ACM_TWW_Zones_IsleOfDorn_Exploration,
-        {
-            41186
         }
     }
 
-    local ACM_TWW_Zones_TheRingingDeeps_Exploration = {
-        Utilities:GetAchievementCategoryNameNyCategoryID(97),
+    if KhamulsAchievementFilter.db.profile.decorAchievementsSettings.includeChildAchievements then
+        ACMList_Zones_IsleOfDorn[#ACMList_Zones_IsleOfDorn+1] = ACMChilds_SlateOfTheUnion
+    end
+
+    ACMList_Zones_IsleOfDorn[#ACMList_Zones_IsleOfDorn+1] = {
+        41186, -- Slate or the Union
+        20595, -- Sojurner of Isle of Dorn
+        40859, -- We're All Night
+    }
+
+    -- Zones
+    local ACMList_Zones = {
+        _G.ZONE, -- Zone
         false,
         {
             IgnoreCollapsedChainFilter = true
         },
+        ACMList_Zones_IsleOfDorn,
         {
-            40504
+            Utilities:GetZoneNameByMapID(2214), -- The Ringing Deeps
+            false,
+            {
+                IgnoreCollapsedChainFilter = true
+            },
+            {
+                40504, -- Rocked to Sleep
+            }
+        },
+        {
+            Utilities:GetZoneNameByMapID(2255), -- Azj-Kahet
+            false,
+            {
+                IgnoreCollapsedChainFilter = true
+            },
+            {
+                40542, -- Smelling History
+            }
+        },
+        {
+            Utilities:GetZoneNameByMapID(2346), -- Undermine
+            false,
+            {
+                IgnoreCollapsedChainFilter = true
+            },
+            {
+                40894, -- Sojourner of Undermine
+            }
         }
     }
 
-    local ACM_TWW_Zones_TheRingingDeeps = {
-        Utilities:GetZoneNameByMapID(2214),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true
-        },
-        ACM_TWW_Zones_TheRingingDeeps_Exploration
-    }
-
-    local ACM_TWW_Zones_AzjKahet_Exploration = {
-        Utilities:GetAchievementCategoryNameNyCategoryID(97),
+    -- Raids
+    local ACMList_Raids = {
+        _G.RAIDS, -- Raids
         false,
         {
             IgnoreCollapsedChainFilter = true
         },
         {
-            40542
+            Utilities:GetDungeonNameByLFGDungeonID(2779),
+            false,
+            {
+                IgnoreCollapsedChainFilter = true
+            },
+            {
+                41119, -- One Rank Higher
+            }
         }
     }
 
-    local ACM_TWW_Zones_AzjKahet = {
-        Utilities:GetZoneNameByMapID(2255),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true
-        },
-        ACM_TWW_Zones_AzjKahet_Exploration
-    }
-
-    local ACM_TWW_Zones_Undermine_Quests = {
-        Utilities:GetAchievementCategoryNameNyCategoryID(96),
+    -- Trade Skills
+    local ACMList_TradeSkills = {
+        _G.TRADE_SKILLS, -- Professions
         false,
         {
             IgnoreCollapsedChainFilter = true
         },
         {
-            40894
+            19408, -- Professional Algari Master
         }
     }
 
-    local ACM_TWW_Zones_Undermine = {
-        Utilities:GetZoneNameByMapID(2346),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true
-        },
-        ACM_TWW_Zones_Undermine_Quests
-    }
-
-    local ACM_TWW_Zones = {
-        ZONE,
-        false,
-        {
-            IgnoreCollapsedChainFilter = true
-        },
-        ACM_TWW_Zones_IsleOfDorn,
-        ACM_TWW_Zones_TheRingingDeeps,
-        ACM_TWW_Zones_AzjKahet,
-        ACM_TWW_Zones_Undermine
-    }
-
-    local ACM_TWW_Raids_LiberationOfUndermine = {
-        Utilities:GetDungeonNameByLFGDungeonID(2779),
+    -- Lorewalking
+    local ACMList_Lorewalking = {
+        Utilities:GetAchievementCategoryNameNyCategoryID(15552), -- Lorewalking
         false,
         {
             IgnoreCollapsedChainFilter = true
         },
         {
-            41119
-        }
-    }
-
-    local ACM_TWW_Raids = {
-        Utilities:GetAchievementCategoryNameNyCategoryID(15278),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true
-        },
-        ACM_TWW_Raids_LiberationOfUndermine
-    }
-
-    local ACM_TWW_TradeSkills = {
-        Utilities:GetAchievementCategoryNameNyCategoryID(169),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true
-        },
-        {
-            19408
-        }
-    }
-
-    local ACM_TWW_Lorewalking = {
-        Utilities:GetAchievementCategoryNameNyCategoryID(15552),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true
-        },
-        {
-            42187,
-            42188,
-            42189,
-            61467
+            42187, -- Lorewalking: Ethereal Wisdon
+            42188, -- Lorewalking: Blade's Bane
+            42189, -- Lorewalking: The Lich King
+            61467, -- Lorewalking: The Elves of Quel'Thalas
         }
     }
 
     local ACMList = { 
-        EXPANSION_NAME10,
+        EXPANSION_NAME10, -- The War Within
         false,
         {
             IgnoreCollapsedChainFilter = true,
             Tooltip = Utilities:ReplacePlaceholderInText(L["Tt_UseMetaAchievementPlugin"], {Utilities:GetAchievementName(61451)})
         },
-        ACM_TWW_Zones,
-        ACM_TWW_Raids,
-        ACM_TWW_TradeSkills,
-        ACM_TWW_Lorewalking,
+        ACMList_Zones,
+        ACMList_Raids,
+        ACMList_TradeSkills,
+        ACMList_Lorewalking,
         {
             61451
         }

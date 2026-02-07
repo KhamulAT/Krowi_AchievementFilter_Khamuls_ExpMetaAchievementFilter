@@ -80,7 +80,7 @@ function GetDFPetAchievements()
         return ACMListFlat
     end
 
-    -- Pet Battle Dungeons
+    -- Zone
     local ACMList_Zones_ValdrakkenZaralekCavernEmeraldDream = {
         _G.ZONE, -- Zone
         false,

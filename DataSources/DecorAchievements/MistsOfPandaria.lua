@@ -6,33 +6,49 @@ local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 
 function GetHousingMoP()
 
-    local ACM_MoP_Scenarios_BloodInTheSnow = {
-        Utilities:GetDungeonNameByLFGDungeonID(646),
+    -- Flat achievement list
+    local ACMListFlat = {
+        EXPANSION_NAME4, -- Mists of Pandaria
         false,
         {
-            IgnoreCollapsedChainFilter = true
+            IgnoreCollapsedChainFilter = true,
+            IgnoreFactionFilter = true
         },
         {
-            8316
+            8316, -- Blood in the Snow
         }
     }
 
-    local ACM_MoP_Scenarios = {
-        Utilities:GetAchievementCategoryNameNyCategoryID(15302),
+    -- Return flat structure if set
+    if KhamulsAchievementFilter.db.profile.decorAchievementsSettings.flattenStructure then
+        return ACMListFlat
+    end
+
+    local ACMList_Scenarios = {
+        Utilities:GetAchievementCategoryNameNyCategoryID(15302), -- Pandaria Scenarios
         false,
         {
             IgnoreCollapsedChainFilter = true
         },
-        ACM_MoP_Scenarios_BloodInTheSnow
+        {
+            Utilities:GetDungeonNameByLFGDungeonID(646), -- Blood in the Snow
+            false,
+            {
+                IgnoreCollapsedChainFilter = true
+            },
+            {
+                8316, -- Blood in the Snow
+            }
+        }
     }
 
     local ACMList = {
-        EXPANSION_NAME4,
+        EXPANSION_NAME4, -- Mists of Pandaria
         false,
         {
             IgnoreCollapsedChainFilter = true
         },
-        ACM_MoP_Scenarios
+        ACMList_Scenarios
     }
 
     return ACMList

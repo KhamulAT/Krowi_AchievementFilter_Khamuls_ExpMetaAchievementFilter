@@ -6,78 +6,92 @@ local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 
 function GetHousingClassic()
 
-    local ACM_Classic_NorthernStranglethorn = {
-        Utilities:GetZoneNameByMapID(50),
+    -- Flat achievement list
+    local ACMListFlat = {
+        EXPANSION_NAME0 .. " & " .. EXPANSION_NAME3, -- Classic & Cataclysm
         false,
         {
-            IgnoreCollapsedChainFilter = true
+            IgnoreCollapsedChainFilter = true,
+            IgnoreFactionFilter = true
         },
         {
-            940
+            19719,  -- Reclamation of Gilneas
+            5442, -- Full Caravan
+            940, -- The Green Hills of Stranglethorn
+            4859, -- Kings Under the Mountain
         }
     }
 
-    local ACM_Classic_EasternPlaguelands = {
-        Utilities:GetZoneNameByMapID(23),
+    -- Return flat structure if set
+    if KhamulsAchievementFilter.db.profile.decorAchievementsSettings.flattenStructure then
+        return ACMListFlat
+    end
+
+    -- Zones
+    local ACMList_Zones = {
+        _G.ZONE, -- Zone
         false,
         {
             IgnoreCollapsedChainFilter = true
         },
         {
-            5442
+            Utilities:GetZoneNameByMapID(13), -- Eastern Kingdoms
+            false,
+            {
+                IgnoreCollapsedChainFilter = true
+            },
+            {
+                Utilities:GetZoneNameByMapID(23), -- Eastern Plaguelands
+                false,
+                {
+                    IgnoreCollapsedChainFilter = true
+                },
+                {
+                    5442, -- Full Caravan
+                }
+            },
+            {
+                Utilities:GetZoneNameByMapID(50), -- Northern Stranglethorn
+                false,
+                {
+                    IgnoreCollapsedChainFilter = true
+                },
+                {
+                    940, -- The Green Hills of Stranglethorn
+                }
+            },
+            {
+                19719,  -- Reclamation of Gilneas
+            }
         }
     }
 
-    local ACM_Classic_EasternKingdoms = {
-        Utilities:GetZoneNameByMapID(13),
+    local ACMList_TradeSkills = {
+        _G.TRADE_SKILLS, -- Professions
         false,
         {
             IgnoreCollapsedChainFilter = true
         },
-        ACM_Classic_EasternPlaguelands,
-        ACM_Classic_NorthernStranglethorn,
         {
-            19719
+            Utilities:GetAchievementCategoryNameNyCategoryID(15071), -- Archeology
+            false,
+            {
+                IgnoreCollapsedChainFilter = true
+            },
+            {
+                4859, -- Kings Under the Mountain
+            }
         }
-    }
-
-    local ACM_Classic_Zones = {
-        ZONE,
-        false,
-        {
-            IgnoreCollapsedChainFilter = true
-        },
-        ACM_Classic_EasternKingdoms
-    }
-
-    local ACM_Classic_TradeSkills_Archaeology = {
-        Utilities:GetAchievementCategoryNameNyCategoryID(15071),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true
-        },
-        {
-            4859
-        }
-    }
-
-    local ACM_Classic_TradeSkills = {
-        Utilities:GetAchievementCategoryNameNyCategoryID(169),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true
-        },
-        ACM_Classic_TradeSkills_Archaeology
     }
 
     local ACMList = { 
-        EXPANSION_NAME0 .. " & " .. EXPANSION_NAME3,
+        EXPANSION_NAME0 .. " & " .. EXPANSION_NAME3, -- Classic & Cataclysm
         false,
         {
             IgnoreCollapsedChainFilter = true
         },
-        ACM_Classic_Zones,
-        ACM_Classic_TradeSkills
+        ACMList_Zones,
+        ACMList_TradeSkills
     }
 
     return ACMList

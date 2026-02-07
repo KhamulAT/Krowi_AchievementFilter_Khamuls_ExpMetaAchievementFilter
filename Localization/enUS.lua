@@ -14,6 +14,10 @@ L["Unknown Achievement"] = "Unknown Achievement"
 -- Special categories
 L["Cross-Expansion"] = "Cross-Expansion"
 
+-- Missing category titles
+L["Hard"] = "Hard"
+L["Nightmare"] = "Nightmare"
+
 -- Tooltips
 L["Tt_ACM_15035"] = "Only 4 needed to complete the Meta-Achievement"
 L["Tt_UseMetaAchievementPlugin"] = "Use \"Khamul's Meta-Mount Collection\" category, to get an detailed overview for \"{1}\"."

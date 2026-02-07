@@ -6,53 +6,66 @@ local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 
 function GetHousingWotLk()
 
-    local ACM_WotLk_SholoazarBasin = {
-        Utilities:GetZoneNameByMapID(119),
+    -- Flat achievement list
+    local ACMListFlat = {
+        EXPANSION_NAME2, -- Wrath of the Lich King
         false,
         {
-            IgnoreCollapsedChainFilter = true
+            IgnoreCollapsedChainFilter = true,
+            IgnoreFactionFilter = true
         },
         {
-            938
+            938, -- The Snows of Northrend
+            4405, -- More Dots! (25 player)
         }
     }
 
-    local ACM_WotLk_Zones = {
-        ZONE,
-        false,
-        {
-            IgnoreCollapsedChainFilter = true
-        },
-        ACM_WotLk_SholoazarBasin
-    }
+    -- Return flat structure if set
+    if KhamulsAchievementFilter.db.profile.decorAchievementsSettings.flattenStructure then
+        return ACMListFlat
+    end
 
-    local ACM_WotLk_Raids_OnyxiasLair_25Player = {
-        RAID_DIFFICULTY2,
+    local ACMList_Zones = {
+        _G.ZONE, -- Zone
         false,
         {
             IgnoreCollapsedChainFilter = true
         },
         {
-            4405
+            Utilities:GetZoneNameByMapID(119), -- Sholazar Basin
+            false,
+            {
+                IgnoreCollapsedChainFilter = true
+            },
+            {
+                938, -- The Snows of Northrend
+            }
         }
     }
 
-    local ACM_WotLk_Raids_OnyxiasLair = {
-        Utilities:GetDungeonNameByLFGDungeonID(257),
+    local ACMList_Raids = {
+        _G.RAIDS, -- Raids
         false,
         {
             IgnoreCollapsedChainFilter = true
         },
-        ACM_WotLk_Raids_OnyxiasLair_25Player
-    }
-
-    local ACM_WotLk_Raids = {
-        Utilities:GetAchievementCategoryNameNyCategoryID(15278),
-        false,
         {
-            IgnoreCollapsedChainFilter = true
-        },
-        ACM_WotLk_Raids_OnyxiasLair
+            Utilities:GetDungeonNameByLFGDungeonID(257), -- Onyxia's Lair
+            false,
+            {
+                IgnoreCollapsedChainFilter = true
+            },
+            {
+                _G.RAID_DIFFICULTY2, -- 25 Player
+                false,
+                {
+                    IgnoreCollapsedChainFilter = true
+                },
+                {
+                    4405, -- More Dots! (25 player)
+                }
+            }
+        }
     }
 
     local ACMList = {
@@ -61,8 +74,8 @@ function GetHousingWotLk()
         {
             IgnoreCollapsedChainFilter = true
         },
-        ACM_WotLk_Zones,
-        ACM_WotLk_Raids
+        ACMList_Zones,
+        ACMList_Raids
     }
 
     return ACMList

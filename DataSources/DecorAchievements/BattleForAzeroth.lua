@@ -6,158 +6,126 @@ local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 
 function GetHousingBfA()
 
-    local ACM_BfA_Zones_KulTirasZandalar_Quests = {
-        Utilities:GetAchievementCategoryNameNyCategoryID(96),
+    -- Flat achievement list
+    local ACMListFlat = {
+        EXPANSION_NAME7, -- Battle for Azeroth
         false,
         {
             IgnoreCollapsedChainFilter = true,
             IgnoreFactionFilter = true
         },
         {
-            12582,
-            12997,
-            12479,
-            12509
+            40953, -- A Farewell to Arms
+            12582, -- Come Sail Away
+            12997, -- The Pride of Kul Tiras
+            12479, -- Zandalar Forever!
+            12509, -- Ready for War
+            13049, -- The Long Con
+            13039, -- Paku'ai
+            13038, -- Raptari Rider
+            12614, -- Loa Expectations
+            13018, -- Dune Rider
+            13473, -- Diversified Investments
+            13475, -- Junkyard Scavenger
+            13477, -- Junkyard Apprentice
+            13723, -- M.C., Hammered
+            12733, -- Professional Zandalari Master
+            12746, -- The Zandalari Menu
+            12867, -- Azeroth at War: The Barrens
+            12869, -- Azeroth at War: After Lordaeron
+            12870, -- Azeroth at War: Kalimdor on Fire
+            13284, -- Frontline Warrior
         }
     }
 
-    local ACM_BfA_Zones_KulTirasZandalar = {
-        SPLASH_BATTLEFORAZEROTH_BOX_RIGHT_TITLE_ALLIANCE .. " & " .. SPLASH_BATTLEFORAZEROTH_BOX_RIGHT_TITLE_HORDE,
+    -- Return flat structure if set
+    if KhamulsAchievementFilter.db.profile.decorAchievementsSettings.flattenStructure then
+        return ACMListFlat
+    end
+
+    -- Zones
+    local ACMList_Zones = {
+        _G.ZONE, -- Zone
         false,
         {
             IgnoreCollapsedChainFilter = true,
             IgnoreFactionFilter = true
         },
-        ACM_BfA_Zones_KulTirasZandalar_Quests
+        {
+            Utilities:GetZoneNameByMapID(876) .. " & " .. Utilities:GetZoneNameByMapID(875), -- Kul Tiras & Zandalar
+            false,
+            {
+                IgnoreCollapsedChainFilter = true,
+                IgnoreFactionFilter = true
+            },
+            {
+                12582, -- Come Sail Away
+                12997, -- The Pride of Kul Tiras
+                12479, -- Zandalar Forever!
+                12509, -- Ready for War
+            }
+        },
+        {
+            Utilities:GetZoneNameByMapID(895), -- Tiragarde Sound
+            false,
+            {
+                IgnoreCollapsedChainFilter = true,
+                IgnoreFactionFilter = true
+            },
+            {
+                13049, -- The Long Con
+            }
+        },
+        {
+            Utilities:GetZoneNameByMapID(862), -- Zuldazar
+            false,
+            {
+                IgnoreCollapsedChainFilter = true,
+                IgnoreFactionFilter = true
+            },
+            {
+                13039, -- Paku'ai
+                13038, -- Raptari Rider
+                12614, -- Loa Expectations
+            }
+        },
+        {
+            Utilities:GetZoneNameByMapID(864), -- Vol'dun
+            false,
+            {
+                IgnoreCollapsedChainFilter = true,
+                IgnoreFactionFilter = true
+            },
+            {
+                13018, -- Dune Rider
+            }
+        },
+        {
+            Utilities:GetZoneNameByMapID(1462), -- Mechagon Island
+            false,
+            {
+                IgnoreCollapsedChainFilter = true,
+                IgnoreFactionFilter = true
+            },
+            {
+                13473, -- Diversified Investments
+                13475, -- Junkyard Scavenger
+                13477, -- Junkyard Apprentice
+            }
+        },
     }
 
-    local ACM_BfA_Zones_TiragardeSound_Quests = {
-        Utilities:GetAchievementCategoryNameNyCategoryID(96),
+    -- Dungeons
+    local ACMList_Dungeons = {
+        _G.DUNGEONS, -- Dungeons
         false,
         {
             IgnoreCollapsedChainFilter = true,
             IgnoreFactionFilter = true
         },
         {
-            13049
+            13723, -- M.C., Hammered
         }
-    }
-
-    local ACM_BfA_Zones_TiragardeSound = {
-        Utilities:GetZoneNameByMapID(895),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        ACM_BfA_Zones_TiragardeSound_Quests
-    }
-
-    local ACM_BfA_Zones_Zuldazar_Quests = {
-        Utilities:GetAchievementCategoryNameNyCategoryID(96),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
-            13039,
-            13038,
-            12614
-        }
-    }
-
-    local ACM_BfA_Zones_Zuldazar = {
-        Utilities:GetZoneNameByMapID(862),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        ACM_BfA_Zones_Zuldazar_Quests
-    }
-
-    local ACM_BfA_Zones_Voldun_Exploration = {
-        Utilities:GetAchievementCategoryNameNyCategoryID(97),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
-            13018
-        }
-    }
-
-    local ACM_BfA_Zones_Voldun = {
-        Utilities:GetZoneNameByMapID(864),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        ACM_BfA_Zones_Voldun_Exploration
-    }
-
-    local ACM_BfA_Zones_MechagonIsland_Exploration = {
-        Utilities:GetAchievementCategoryNameNyCategoryID(97),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
-            13723,
-            13473,
-            13475,
-            13477
-        }
-    }
-
-    local ACM_BfA_Zones_MechagonIsland = {
-        Utilities:GetZoneNameByMapID(1462),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        ACM_BfA_Zones_MechagonIsland_Exploration
-    }
-
-    local ACM_BfA_Zones = {
-        ZONE,
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        ACM_BfA_Zones_KulTirasZandalar,
-        ACM_BfA_Zones_TiragardeSound,
-        ACM_BfA_Zones_Zuldazar,
-        ACM_BfA_Zones_Voldun,
-        ACM_BfA_Zones_MechagonIsland
-    }
-
-    local ACM_BfA_Dungeons_OperationMechagon = {
-        Utilities:GetDungeonNameByLFGDungeonID(2006),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
-            13723
-        }
-    }
-
-    local ACM_BfA_Dungeons = {
-        Utilities:GetAchievementCategoryNameNyCategoryID(15272),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        ACM_BfA_Dungeons_OperationMechagon
     }
 
     local ACM_BfA_Professions_Cooking = {
@@ -172,46 +140,56 @@ function GetHousingBfA()
         }
     }
 
-    local ACM_BfA_Professions = {
-        Utilities:GetAchievementCategoryNameNyCategoryID(169),
+    local ACMList_TradeSkills = {
+        _G.TRADE_SKILLS, -- Professions
         false,
         {
             IgnoreCollapsedChainFilter = true,
             IgnoreFactionFilter = true
         },
-        ACM_BfA_Professions_Cooking,
         {
-            12733
+            Utilities:GetAchievementCategoryNameNyCategoryID(170), -- Cooking
+            false,
+            {
+                IgnoreCollapsedChainFilter = true,
+                IgnoreFactionFilter = true
+            },
+            {
+                12746, -- The Zandalari Menu
+            }
+        },
+        {
+            12733, -- Professional Zandalari Master
         }
     }
 
-    local ACM_BfA_WarEffort = {
-        Utilities:GetAchievementCategoryNameNyCategoryID(15308),
+    local ACMList_WarEffort = {
+        Utilities:GetAchievementCategoryNameNyCategoryID(15308), -- War Effort
         false,
         {
             IgnoreCollapsedChainFilter = true,
             IgnoreFactionFilter = true
         },
         {
-            12867,
-            12869,
-            12870,
-            13284
+            12867, -- Azeroth at War: The Barrens
+            12869, -- Azeroth at War: After Lordaeron
+            12870, -- Azeroth at War: Kalimdor on Fire
+            13284, -- Frontline Warrior
         }
     }
 
     local ACMList = { 
-        EXPANSION_NAME7,
+        EXPANSION_NAME7, -- Battle for Azeroth
         false,
         {
             IgnoreCollapsedChainFilter = true,
             IgnoreFactionFilter = true,
             Tooltip = Utilities:ReplacePlaceholderInText(L["Tt_UseMetaAchievementPlugin"], {Utilities:GetAchievementName(40953)})
         },
-        ACM_BfA_Zones,
-        ACM_BfA_Dungeons,
-        ACM_BfA_Professions,
-        ACM_BfA_WarEffort,
+        ACMList_Zones,
+        ACMList_Dungeons,
+        ACMList_TradeSkills,
+        ACMList_WarEffort,
         {
             40953
         }

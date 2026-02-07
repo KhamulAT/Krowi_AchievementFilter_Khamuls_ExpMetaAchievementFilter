@@ -8,6 +8,10 @@ local defaults = {
   profile = {
     metaAchievementsEnabled = true,
     decorAchievementsEnabled = true,
+    decorAchievementsSettings = {
+      flattenStructure = false,
+      includeChildAchievements = true
+    },
     campsiteAchievementsEnabled = true,
     petAchievementsEnabled = true,
     petAchievementsSettings = {
@@ -16,10 +20,6 @@ local defaults = {
       includeChildAchievements = true
     }
   },
-}
-
-local defaultsTwo = {
-  global = {}
 }
 
 -- Dependency check

@@ -6,88 +6,76 @@ local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 
 function GetHousingDF()
 
-
-    local ACM_DF_Zones_TheAzureSpan_Quests = {
-        Utilities:GetAchievementCategoryNameNyCategoryID(96),
+    -- Flat achievement list
+    local ACMListFlat = {
+        EXPANSION_NAME9, -- Dragonflight
         false,
         {
-            IgnoreCollapsedChainFilter = true
+            IgnoreCollapsedChainFilter = true,
+            IgnoreFactionFilter = true
         },
         {
-            17773
+            19458, -- A World Awoken
+            17773, -- A Blue Dawn
+            19507, -- Fringe Benefits
+            17529, -- Forbidden  Spoils
         }
     }
 
-    local ACM_DF_Zones_TheAzureSpan = {
-        Utilities:GetZoneNameByMapID(2024),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true
-        },
-        ACM_DF_Zones_TheAzureSpan_Quests
-    }
+    -- Return flat structure if set
+    if KhamulsAchievementFilter.db.profile.decorAchievementsSettings.flattenStructure then
+        return ACMListFlat
+    end
 
-    local ACM_DF_Zones_Thaldraszus_Quests = {
-        Utilities:GetAchievementCategoryNameNyCategoryID(96),
+    -- Zones
+    local ACMList_Zones = {
+        _G.ZONE, -- Zone
         false,
         {
             IgnoreCollapsedChainFilter = true
         },
         {
-            19507
+            Utilities:GetZoneNameByMapID(2024), -- Azure Span
+            false,
+            {
+                IgnoreCollapsedChainFilter = true
+            },
+            {
+                17773, -- A Blue Dawn
+            }
+        },
+        {
+            Utilities:GetZoneNameByMapID(2025), -- Thaldraszus
+            false,
+            {
+                IgnoreCollapsedChainFilter = true
+            },
+            {
+                19507, -- Fringe Benefits
+            }
+        },
+        {
+            Utilities:GetZoneNameByMapID(2151), -- Forbidden Reach
+            false,
+            {
+                IgnoreCollapsedChainFilter = true
+            },
+            {
+                17529, -- Forbidden  Spoils
+            }
         }
-    }
-
-    local ACM_DF_Zones_Thaldraszus = {
-        Utilities:GetZoneNameByMapID(2025),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true
-        },
-        ACM_DF_Zones_Thaldraszus_Quests
-    }
-
-    local ACM_DF_Zones_TheForbiddenReach_Exploration = {
-        Utilities:GetAchievementCategoryNameNyCategoryID(97),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true
-        },
-        {
-            17529
-        }
-    }
-
-    local ACM_DF_Zones_TheForbiddenReach = {
-        Utilities:GetZoneNameByMapID(2151),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true
-        },
-        ACM_DF_Zones_TheForbiddenReach_Exploration
-    }
-
-    local ACM_DF_Zones = {
-        ZONE,
-        false,
-        {
-            IgnoreCollapsedChainFilter = true
-        },
-        ACM_DF_Zones_TheAzureSpan,
-        ACM_DF_Zones_Thaldraszus,
-        ACM_DF_Zones_TheForbiddenReach
     }
 
     local ACMList = { 
-        EXPANSION_NAME9,
+        EXPANSION_NAME9, -- Dragonflight
         false,
         {
             IgnoreCollapsedChainFilter = true,
             Tooltip = Utilities:ReplacePlaceholderInText(L["Tt_UseMetaAchievementPlugin"], {Utilities:GetAchievementName(19458)})
         },
-        ACM_DF_Zones,
+        ACMList_Zones,
         {
-            19458
+            19458, -- A World Awoken
         }
 
     }
