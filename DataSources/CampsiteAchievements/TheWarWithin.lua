@@ -4,7 +4,7 @@ local Utilities = KhamulsAchievementFilter:GetModule("Utilities")
 
 local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 
-function GetTWWList()
+function GetTWWCampsiteList()
     local ACM_AllThatKhaz = {
         Utilities:GetAchievementName(41555),
         false,

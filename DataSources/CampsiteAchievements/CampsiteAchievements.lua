@@ -17,7 +17,7 @@ function Source:Init(ctx)
     971,
     {
         ctx.L["Khamul's Campsite Achievement List"],
-        GetTWWList()
+        GetTWWCampsiteList()
     }
   }
 end
