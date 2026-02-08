@@ -1,5 +1,5 @@
-## Interface: 120000
-## Title: Krowi's |cFF1D92C2AF|r - Khamuls Collections List Plugin
+## Interface: 120000, 120001
+## Title: Krowi's |cFF1D92C2AF|r - Khamuls Collections Plugin
 ## Version: 2.0.0
 ## Author: Khamûl-Antonidas
 ## X-Email: khamul.antonidas@gmail.com
@@ -18,7 +18,5 @@ Localization\Files.xml
 
 Core.lua
 Utilities.lua
-
 DataSources\Files.xml
-
 Options.lua
