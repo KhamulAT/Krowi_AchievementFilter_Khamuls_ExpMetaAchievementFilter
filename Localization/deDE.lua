@@ -45,3 +45,5 @@ L["The collections depth will be flatten and all achievements will be displayed 
 L["Include Child Achievements"] = "Zeige untergeordnete Errungenschaften an"
 L["If an Achievement has other Achievements as requirement, they will be shown in an extra category."] = "Wenn eine Errungenschaft andere Errungenschaften als Voraussetzung hat, werden diese in einer zusätzlichen Kategorie angezeigt."
 L["Changing any option on this page, requires a reload to take affect."] = "Jede Änderung einer Option auf dieser Seite, benötigt einen reload."
+L["Include Battle-Pet related rewards"] = "Zeige Erfolge mit Kampfhaustier zugehörigen Belohnungen"
+L["This will include Achievements with Pet-Battle rewards like daily quests unlock, costumes and toys"] = "Mit dieser Option werden Erfolge mit Haustier relevanten Belohnungen wie Kostüme, Spielzeuge und andere Freischaltungen."

@@ -25,7 +25,7 @@ function GetHousingMoP()
     end
 
     local ACMList_Scenarios = {
-        Utilities:GetAchievementCategoryNameNyCategoryID(15302), -- Pandaria Scenarios
+        Utilities:GetAchievementCategoryNameByCategoryID(15302), -- Pandaria Scenarios
         false,
         {
             IgnoreCollapsedChainFilter = true

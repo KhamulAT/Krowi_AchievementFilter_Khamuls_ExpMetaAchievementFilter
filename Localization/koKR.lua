@@ -47,3 +47,5 @@ L["The collections depth will be flatten and all achievements will be displayed 
 L["Include Child Achievements"] = "하위 업적 포함"
 L["If an Achievement has other Achievements as requirement, they will be shown in an extra category."] = "업적에 다른 업적이 요구 사항으로 있을 경우, 추가 범주에 표시됩니다."
 L["Changing any option on this page, requires a reload to take affect."] = "이 페이지의 옵션을 변경하면 적용을 위해 인터페이스를 다시 불러와야 합니다."
+L["Include Battle-Pet related rewards"] = "전투 애완동물 관련 보상 포함"
+L["This will include Achievements with Pet-Battle rewards like daily quests unlock, costumes and toys"] = "일일 퀘스트 해금, 의상, 장난감 등 전투 애완동물 보상을 제공하는 업적이 포함됩니다"

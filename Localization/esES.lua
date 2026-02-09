@@ -47,3 +47,5 @@ L["The collections depth will be flatten and all achievements will be displayed 
 L["Include Child Achievements"] = "Incluir logros dependientes"
 L["If an Achievement has other Achievements as requirement, they will be shown in an extra category."] = "Si un logro tiene otros logros como requisito, se mostrarán en una categoría adicional."
 L["Changing any option on this page, requires a reload to take affect."] = "Cambiar cualquier opción en esta página requiere recargar la interfaz para que surta efecto."
+L["Include Battle-Pet related rewards"] = "Incluir recompensas relacionadas con las mascotas de duelo"
+L["This will include Achievements with Pet-Battle rewards like daily quests unlock, costumes and toys"] = "Esto incluirá logros con recompensas de combates de mascotas, como el desbloqueo de misiones diarias, disfraces y juguetes"

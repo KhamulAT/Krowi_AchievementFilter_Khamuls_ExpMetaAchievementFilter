@@ -28,6 +28,11 @@ function GetSLPetAchievements()
         }
     }
 
+    -- PetBattles->AdditionalPetStuff
+    local ACMList_AdditionalPetStuffPetBattle = {
+        14625, -- Battle in the Shadowlands
+    }
+
     -- Flat achievement list
     local ACMListFlat = {
         _G.EXPANSION_NAME8, -- Shadowlands
@@ -38,10 +43,18 @@ function GetSLPetAchievements()
         }
     }
 
+    local ACMList_Accessoiries = {
+            15508, -- Fashion of the First Ones
+    }
+
     if KhamulsAchievementFilter.db.profile.petAchievementsSettings.includeChildAchievements then
         ACMListFlat[#ACMListFlat+1] = ACMChilds_FamilyBattler
         ACMListFlat[#ACMListFlat+1] = ACMChilds_TeamAquashock
         ACMListFlat[#ACMListFlat+1] = ACMChilds_ReekingOfVisions
+    end
+
+    if KhamulsAchievementFilter.db.profile.petAchievementsSettings.includePetRelatedStuff then 
+        ACMListFlat[#ACMListFlat+1] = ACMList_AdditionalPetStuffPetBattle
     end
 
     ACMListFlat[#ACMListFlat + 1] = {
@@ -53,6 +66,10 @@ function GetSLPetAchievements()
         15251, -- The Jailer's Gauntlet: Layer 1
     }
 
+    if KhamulsAchievementFilter.db.profile.petAchievementsSettings.includePetRelatedStuff then
+        ACMListFlat[#ACMListFlat+1] = ACMList_Accessoiries
+    end
+
     -- Return flat structure if set
     if KhamulsAchievementFilter.db.profile.petAchievementsSettings.flattenStructure then
         return ACMListFlat
@@ -60,7 +77,7 @@ function GetSLPetAchievements()
 
     -- Pet Battle
     local ACMList_PetBattles = {
-        _G.SHOW_PET_BATTLES_ON_MAP_TEXT, -- Pet Battles
+        Utilities:GetAchievementCategoryNameByCategoryID(15219), -- Pet Battles
         false,
         {
             IgnoreCollapsedChainFilter = true,
@@ -72,13 +89,17 @@ function GetSLPetAchievements()
         ACMList_PetBattles[#ACMList_PetBattles+1] = ACMChilds_FamilyExorcist
     end
 
+    if KhamulsAchievementFilter.db.profile.petAchievementsSettings.includePetRelatedStuff then 
+        ACMList_PetBattles[#ACMList_PetBattles+1] = ACMList_AdditionalPetStuffPetBattle
+    end
+
     ACMList_PetBattles[#ACMList_PetBattles+1] = {
         14879, -- Family Exorcist
         14881, -- Abhorrent Adversaries of the Afterlife
         15004, -- A Sly Fox
     }
 
-    ACMList_Thorghast = {
+    local ACMList_Thorghast = {
         Utilities:GetDungeonNameByLFGDungeonID(1963),
         false,
         {
@@ -92,6 +113,26 @@ function GetSLPetAchievements()
         }
     }
 
+    local ACMList_Zones = {
+        _G.ZONE, -- Zone
+        false,
+        {
+            IgnoreCollapsedChainFilter = true,
+            IgnoreFactionFilter = true
+        },
+        {
+            Utilities:GetZoneNameByMapID(1970), -- Zereth Mortis
+            false,
+            {
+                IgnoreCollapsedChainFilter = true,
+                IgnoreFactionFilter = true
+            },
+            {
+                15508, -- Fashion of the First Ones
+            }
+        }
+    }
+
     local ACMList = {
         _G.EXPANSION_NAME8, -- Shadowlands
         false,
@@ -99,9 +140,11 @@ function GetSLPetAchievements()
             IgnoreCollapsedChainFilter = true,
             IgnoreFactionFilter = true
         },
+        ACMList_Zones,
         ACMList_PetBattles,
-        ACMList_Thorghast
+        ACMList_Thorghast,
     }
+
 
     return ACMList
 end

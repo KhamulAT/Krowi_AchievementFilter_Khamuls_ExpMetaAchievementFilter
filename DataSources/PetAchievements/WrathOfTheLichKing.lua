@@ -28,6 +28,12 @@ function GetWotLKPetAchievements()
         }
     }
 
+    -- PetBattles->AdditionalPetStuff
+    local ACMList_AdditionalPetStuffPetBattle = {
+        11320, -- Raiding with Leashes IV: Wrath of the Lick King
+        6605, -- Taming Northrend
+    }
+
     -- Flat achievement list
     local ACMListFlat = {
         _G.EXPANSION_NAME2, -- Wrath of the Lich King
@@ -42,8 +48,11 @@ function GetWotLKPetAchievements()
         ACMListFlat[#ACMListFlat+1] = ACMChilds_FamilyBattlerofNorthrend
     end
 
+    if KhamulsAchievementFilter.db.profile.petAchievementsSettings.includePetRelatedStuff then
+        ACMListFlat[#ACMListFlat+1] = ACMList_AdditionalPetStuffPetBattle
+    end
+
     ACMListFlat[#ACMListFlat+1] = {
-        11320, -- Raiding with Leashes IV: Wrath of the Lick King
         60956, -- Family Battler of Northrend
     }
 
@@ -52,23 +61,9 @@ function GetWotLKPetAchievements()
         return ACMListFlat
     end
 
-    -- Raids
-    local ACMList_Raids = {
-        _G.RAIDS, -- Raids
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
-            11320, -- Raiding with Leashes IV: Wrath of the Lick King
-        }
-    }
-
-
     -- PetBattles
     local ACMList_PetBattles = {
-        _G.SHOW_PET_BATTLES_ON_MAP_TEXT, -- Pet Battles
+        Utilities:GetAchievementCategoryNameByCategoryID(15219), -- Pet Battles
         false,
         {
             IgnoreCollapsedChainFilter = true,
@@ -78,6 +73,10 @@ function GetWotLKPetAchievements()
 
     if KhamulsAchievementFilter.db.profile.petAchievementsSettings.includeChildAchievements then
         ACMList_PetBattles[#ACMList_PetBattles+1] = ACMChilds_FamilyBattlerofNorthrend
+    end
+
+    if KhamulsAchievementFilter.db.profile.petAchievementsSettings.includePetRelatedStuff then
+        ACMList_PetBattles[#ACMList_PetBattles+1] = ACMList_AdditionalPetStuffPetBattle
     end
 
     ACMList_PetBattles[#ACMList_PetBattles+1] = {
@@ -91,7 +90,6 @@ function GetWotLKPetAchievements()
             IgnoreCollapsedChainFilter = true,
             IgnoreFactionFilter = true
         },
-        ACMList_Raids,
         ACMList_PetBattles
     }
 

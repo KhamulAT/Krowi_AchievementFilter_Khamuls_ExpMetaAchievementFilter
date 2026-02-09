@@ -52,7 +52,7 @@ function GetDFPetAchievements()
 
     -- Flat achievement list
     local ACMListFlat = {
-        _G.EXPANSION_NAME9, -- Shadowlands
+        _G.EXPANSION_NAME9, -- Dragonflight
         false,
         {
             IgnoreCollapsedChainFilter = true,
@@ -69,6 +69,7 @@ function GetDFPetAchievements()
         18384, -- Whelp, There It Is
         17741, -- Slow and Steady Wins the Race
         19293, -- Friends In Feathers
+        19792, -- Just One More Thing
         19089, -- Don't Let the Doe hit You The Way Out
         16512, -- Family Battler of the Dragon Isles
         17934, -- Family Battler of Zaralek Cavern
@@ -121,6 +122,9 @@ function GetDFPetAchievements()
                 19293, -- Friends In Feathers
             }
         },
+        {
+            19792, -- Just One More Thing
+        }
     }
 
     -- Raids
@@ -146,7 +150,7 @@ function GetDFPetAchievements()
 
     -- PetBattles
     local ACMList_PetBattles = {
-        _G.SHOW_PET_BATTLES_ON_MAP_TEXT, -- Pet Battles
+        Utilities:GetAchievementCategoryNameByCategoryID(15219), -- Pet Battles
         false,
         {
             IgnoreCollapsedChainFilter = true,

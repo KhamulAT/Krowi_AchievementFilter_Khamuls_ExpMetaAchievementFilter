@@ -128,7 +128,7 @@ function GetHousingMN()
 
     -- Prey
     local ACMList_Prey = {
-        Utilities:GetAchievementCategoryNameNyCategoryID(15605),  -- Prey
+        Utilities:GetAchievementCategoryNameByCategoryID(15605),  -- Prey
         false,
         {
             IgnoreCollapsedChainFilter = true,

@@ -25,7 +25,7 @@ function GetHousingWoD()
     end
 
     local ACM_WoD_TradeSkills_Archaeology = {
-        Utilities:GetAchievementCategoryNameNyCategoryID(15071),
+        Utilities:GetAchievementCategoryNameByCategoryID(15071),
         false,
         {
             IgnoreCollapsedChainFilter = true
@@ -43,7 +43,7 @@ function GetHousingWoD()
             IgnoreCollapsedChainFilter = true
         },
         {
-            Utilities:GetAchievementCategoryNameNyCategoryID(15071), -- Archeology
+            Utilities:GetAchievementCategoryNameByCategoryID(15071), -- Archeology
             false,
             {
                 IgnoreCollapsedChainFilter = true

@@ -104,7 +104,6 @@ function GetTWWPetAchievements()
     end
 
     ACMListFlat[#ACMListFlat+1] = {
-        40088, -- A Champion's Tour: The War Within
         40869, -- Worm Theory
         41349, -- In with the Cartels
         41979, -- Bounty Seeker
@@ -128,17 +127,6 @@ function GetTWWPetAchievements()
         {
             IgnoreCollapsedChainFilter = true,
             IgnoreFactionFilter = true
-        },
-        {
-            Utilities:GetZoneNameByMapID(2274), -- Khaz Algar
-            false,
-            {
-                IgnoreCollapsedChainFilter = true,
-                IgnoreFactionFilter = true
-            },
-            {
-                40088, -- A Champion's Tour: The War Within
-            }
         },
         {
             Utilities:GetZoneNameByMapID(2255), -- Azj-Kahet
@@ -195,7 +183,7 @@ function GetTWWPetAchievements()
 
     -- PetBattles
     local ACMList_PetBattles = {
-        _G.SHOW_PET_BATTLES_ON_MAP_TEXT, -- Pet Battles
+        Utilities:GetAchievementCategoryNameByCategoryID(15219), -- Pet Battles
         false,
         {
             IgnoreCollapsedChainFilter = true,
@@ -228,7 +216,7 @@ function GetTWWPetAchievements()
         }
     }
 
-    ACMList_VisionsOfNZoth = {
+    local ACMList_VisionsOfNZoth = {
         _G.SPLASH_BATTLEFORAZEROTH_8_3_0_FEATURE1_TITLE, -- Horrific Visions
         false,
         {

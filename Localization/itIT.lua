@@ -47,3 +47,5 @@ L["The collections depth will be flatten and all achievements will be displayed 
 L["Include Child Achievements"] = "Includi imprese dipendenti"
 L["If an Achievement has other Achievements as requirement, they will be shown in an extra category."] = "Se un’impresa ha altre imprese come requisito, verranno mostrate in una categoria aggiuntiva."
 L["Changing any option on this page, requires a reload to take affect."] = "La modifica di qualsiasi opzione in questa pagina richiede un ricaricamento dell’interfaccia per avere effetto."
+L["Include Battle-Pet related rewards"] = "Includi le ricompense legate alle mascotte da combattimento"
+L["This will include Achievements with Pet-Battle rewards like daily quests unlock, costumes and toys"] = "Questo includerà le imprese con ricompense dei combattimenti tra mascotte, come lo sblocco di missioni giornaliere, costumi e giocattoli"

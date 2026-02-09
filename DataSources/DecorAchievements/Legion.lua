@@ -160,7 +160,7 @@ function GetHousingLegion()
 
     -- Orderhalls
     local ACMList_Orderhalls = {
-        Utilities:GetAchievementCategoryNameNyCategoryID(15304), -- Class Halls
+        Utilities:GetAchievementCategoryNameByCategoryID(15304), -- Class Halls
         false,
         {
             IgnoreCollapsedChainFilter = true

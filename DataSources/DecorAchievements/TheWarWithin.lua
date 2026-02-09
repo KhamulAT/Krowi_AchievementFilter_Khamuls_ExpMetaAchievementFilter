@@ -150,7 +150,7 @@ function GetHousingTWW()
 
     -- Lorewalking
     local ACMList_Lorewalking = {
-        Utilities:GetAchievementCategoryNameNyCategoryID(15552), -- Lorewalking
+        Utilities:GetAchievementCategoryNameByCategoryID(15552), -- Lorewalking
         false,
         {
             IgnoreCollapsedChainFilter = true
