@@ -36,7 +36,9 @@ function GetCrossExpansionPetAchievements()
             6556, -- Going to Need More Traps
             8300, -- Brutal Pet Brawler
             6582, -- Pro Pet Mob
-            12996, -- Toybox Tycoon
+            12996, -- Toybox Tycoon,
+            9983, -- That's Wwhack!
+            18644, -- Community Rumor Mill
         }
     }
 
@@ -138,6 +140,7 @@ function GetCrossExpansionPetAchievements()
         }
     }
 
+    -- Collections
     ACMList_Collections = {
         _G.AUCTION_HOUSE_FILTER_CATEGORY_COLLECTIONS, -- Collections
         false,
@@ -150,6 +153,33 @@ function GetCrossExpansionPetAchievements()
         }
     }
 
+
+    -- Darkmoon Faire
+    ACMList_DarkmoonFaire = {
+        Utilities:GetAchievementCategoryNameNyCategoryID(15101),
+        false,
+        {
+            IgnoreCollapsedChainFilter = true,
+            IgnoreFactionFilter = true
+        },
+        {
+            9983, -- That's Whack!
+        }
+    }
+
+    -- Zones
+    ACMList_Zones = {
+        _G.ZONE, -- Zone
+        false,
+        {
+            IgnoreCollapsedChainFilter = true,
+            IgnoreFactionFilter = true
+        },
+        {
+            18644, -- Community Rumor Mill
+        }
+    }
+
     local ACMList = {
         L["Cross-Expansion"],
         false,
@@ -157,10 +187,12 @@ function GetCrossExpansionPetAchievements()
             IgnoreCollapsedChainFilter = true,
             IgnoreFactionFilter = true
         },
+        ACMList_Collections,
+        ACMList_DarkmoonFaire,
         ACMList_DungeonsAndRaids,
-        ACMList_Professions_Cooking,
         ACMList_PetBattles_CollectBattleLevel,
-        ACMList_Collections
+        ACMList_Professions_Cooking,
+        ACMList_Zones,
     }
 
     return ACMList
