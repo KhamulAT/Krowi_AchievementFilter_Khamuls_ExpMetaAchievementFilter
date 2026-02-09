@@ -25,7 +25,9 @@ function Source:Init(ctx)
         GetSLPetAchievements(),
         GetDFPetAchievements(),
         GetTWWPetAchievements(),
-        GetMNPetAchievements()
+        GetMNPetAchievements(),
+        GetFeatsOfStrengthAndLegacyPetAchievements(),
+        GetPlayerVsPlayerPetAchievements(),
     }
   }
 end
@@ -47,7 +49,9 @@ function Source:Rebuild()
         GetSLPetAchievements(),
         GetDFPetAchievements(),
         GetTWWPetAchievements(),
-        GetMNPetAchievements()
+        GetMNPetAchievements(),
+        GetFeatsOfStrengthAndLegacyPetAchievements(),
+        GetPlayerVsPlayerPetAchievements(),
     }
   }
 end
