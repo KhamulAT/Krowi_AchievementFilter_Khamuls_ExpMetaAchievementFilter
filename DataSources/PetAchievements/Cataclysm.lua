@@ -6,6 +6,11 @@ local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 
 function GetCataPetAchievements()
 
+    -- PetBattles->AdditionalPetStuff
+    local ACMList_AdditionalPetStuffPetBattles = {
+        7525, -- Taming Cataclysm
+    }
+
     -- Flat achievement list
     local ACMListFlat = {
         _G.EXPANSION_NAME3, -- Cataclysm
@@ -21,6 +26,10 @@ function GetCataPetAchievements()
             12079, -- Raiding with Leashes V: Cuteaclysm
         }
     }
+
+    if KhamulsAchievementFilter.db.profile.petAchievementsSettings.includePetRelatedStuff then
+        ACMListFlat[#ACMListFlat+1] = ACMList_AdditionalPetStuffPetBattles
+    end
 
     -- Return flat structure if set
     if KhamulsAchievementFilter.db.profile.petAchievementsSettings.flattenStructure then
@@ -73,7 +82,7 @@ function GetCataPetAchievements()
         }
     }
 
-    -- PetBattles
+    -- Raids
     local ACMList_Raids = {
         _G.RAIDS, -- Raids
         false,
@@ -86,6 +95,19 @@ function GetCataPetAchievements()
         }
     }
 
+    -- PetBattles
+    local ACMList_PetBattles = {
+        Utilities:GetAchievementCategoryNameByCategoryID(15219), -- Pet Battles
+        false,
+        {
+            IgnoreCollapsedChainFilter = true,
+            IgnoreFactionFilter = true
+        }
+    }
+    if KhamulsAchievementFilter.db.profile.petAchievementsSettings.includePetRelatedStuff then
+        ACMList_PetBattles[#ACMList_PetBattles+1] = ACMList_AdditionalPetStuffPetBattles
+    end
+
     local ACMList = {
         _G.EXPANSION_NAME3, -- Cataclysm
         false,
@@ -94,6 +116,7 @@ function GetCataPetAchievements()
             IgnoreFactionFilter = true
         },
         ACMList_Zones_MountHyjalDeepholm_Quests,
+        ACMList_PetBattles,
         ACMList_PetBattleDungeons,
         ACMList_Raids
     }

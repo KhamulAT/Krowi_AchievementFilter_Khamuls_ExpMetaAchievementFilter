@@ -129,7 +129,7 @@ function GetHousingBfA()
     }
 
     local ACM_BfA_Professions_Cooking = {
-        Utilities:GetAchievementCategoryNameNyCategoryID(170),
+        Utilities:GetAchievementCategoryNameByCategoryID(170),
         false,
         {
             IgnoreCollapsedChainFilter = true,
@@ -148,7 +148,7 @@ function GetHousingBfA()
             IgnoreFactionFilter = true
         },
         {
-            Utilities:GetAchievementCategoryNameNyCategoryID(170), -- Cooking
+            Utilities:GetAchievementCategoryNameByCategoryID(170), -- Cooking
             false,
             {
                 IgnoreCollapsedChainFilter = true,
@@ -164,7 +164,7 @@ function GetHousingBfA()
     }
 
     local ACMList_WarEffort = {
-        Utilities:GetAchievementCategoryNameNyCategoryID(15308), -- War Effort
+        Utilities:GetAchievementCategoryNameByCategoryID(15308), -- War Effort
         false,
         {
             IgnoreCollapsedChainFilter = true,

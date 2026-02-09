@@ -47,3 +47,5 @@ L["The collections depth will be flatten and all achievements will be displayed 
 L["Include Child Achievements"] = "Включить зависимые достижения"
 L["If an Achievement has other Achievements as requirement, they will be shown in an extra category."] = "Если для достижения требуются другие достижения, они будут показаны в дополнительной категории."
 L["Changing any option on this page, requires a reload to take affect."] = "Изменение любого параметра на этой странице требует перезагрузки интерфейса для применения изменений."
+L["Include Battle-Pet related rewards"] = "Включить награды, связанные с боевыми питомцами"
+L["This will include Achievements with Pet-Battle rewards like daily quests unlock, costumes and toys"] = "Сюда будут включены достижения с наградами за бои питомцев, такими как открытие ежедневных заданий, костюмы и игрушки"

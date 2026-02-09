@@ -183,7 +183,7 @@ function GetTWWPetAchievements()
 
     -- PetBattles
     local ACMList_PetBattles = {
-        _G.SHOW_PET_BATTLES_ON_MAP_TEXT, -- Pet Battles
+        Utilities:GetAchievementCategoryNameByCategoryID(15219), -- Pet Battles
         false,
         {
             IgnoreCollapsedChainFilter = true,
@@ -216,7 +216,7 @@ function GetTWWPetAchievements()
         }
     }
 
-    ACMList_VisionsOfNZoth = {
+    local ACMList_VisionsOfNZoth = {
         _G.SPLASH_BATTLEFORAZEROTH_8_3_0_FEATURE1_TITLE, -- Horrific Visions
         false,
         {

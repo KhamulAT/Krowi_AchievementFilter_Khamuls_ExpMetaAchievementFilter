@@ -7,7 +7,7 @@ local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 function GetPlayerVsPlayerPetAchievements()
     -- Flat achievement list
     local ACMListFlat = {
-        Utilities:GetAchievementCategoryNameNyCategoryID(21), -- Player vs. Player
+        Utilities:GetAchievementCategoryNameByCategoryID(21), -- Player vs. Player
         false,
         {
             IgnoreCollapsedChainFilter = true,
@@ -28,7 +28,7 @@ function GetPlayerVsPlayerPetAchievements()
 
     -- Honor
     local ACMList_Honor = {
-        Utilities:GetAchievementCategoryNameNyCategoryID(15266), -- Honor
+        Utilities:GetAchievementCategoryNameByCategoryID(15266), -- Honor
         false,
         {
             IgnoreCollapsedChainFilter = true,
@@ -55,7 +55,7 @@ function GetPlayerVsPlayerPetAchievements()
     }
 
     local ACMList = {
-        Utilities:GetAchievementCategoryNameNyCategoryID(21), -- Player vs. Player
+        Utilities:GetAchievementCategoryNameByCategoryID(21), -- Player vs. Player
         false,
         {
             IgnoreCollapsedChainFilter = true,

@@ -7,7 +7,7 @@ local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 function GetFeatsOfStrengthAndLegacyPetAchievements()
     -- Flat achievement list
     local ACMListFlat = {
-       Utilities:GetAchievementCategoryNameNyCategoryID(81) .. " & " .. Utilities:GetAchievementCategoryNameNyCategoryID(15176), -- Feats of Strength & Legacy
+       Utilities:GetAchievementCategoryNameByCategoryID(81) .. " & " .. Utilities:GetAchievementCategoryNameByCategoryID(15176), -- Feats of Strength & Legacy
         false,
         {
             IgnoreCollapsedChainFilter = true,
@@ -29,7 +29,7 @@ function GetFeatsOfStrengthAndLegacyPetAchievements()
 
     -- Remix: Mists of Pandaria
     local ACMList_RemixMistsOfPandaria = {
-        Utilities:GetAchievementCategoryNameNyCategoryID(15536), -- "Remix: Mists of Pandaria"
+        Utilities:GetAchievementCategoryNameByCategoryID(15536), -- "Remix: Mists of Pandaria"
         false,
         {
             IgnoreCollapsedChainFilter = true,
@@ -43,7 +43,7 @@ function GetFeatsOfStrengthAndLegacyPetAchievements()
 
     -- Remix: Legion
     local ACMList_RemixLegion = {
-        Utilities:GetAchievementCategoryNameNyCategoryID(15562), -- "Legion Remix"
+        Utilities:GetAchievementCategoryNameByCategoryID(15562), -- "Legion Remix"
         false,
         {
             IgnoreCollapsedChainFilter = true,
@@ -56,7 +56,7 @@ function GetFeatsOfStrengthAndLegacyPetAchievements()
     }
 
     local ACMList = {
-        Utilities:GetAchievementCategoryNameNyCategoryID(81) .. " & " .. Utilities:GetAchievementCategoryNameNyCategoryID(15176), -- Feats of Strength & Legacy
+        Utilities:GetAchievementCategoryNameByCategoryID(81) .. " & " .. Utilities:GetAchievementCategoryNameByCategoryID(15176), -- Feats of Strength & Legacy
         false,
         {
             IgnoreCollapsedChainFilter = true,

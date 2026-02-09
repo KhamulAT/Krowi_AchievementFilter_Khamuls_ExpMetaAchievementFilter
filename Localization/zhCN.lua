@@ -47,3 +47,5 @@ L["The collections depth will be flatten and all achievements will be displayed 
 L["Include Child Achievements"] = "包含子成就"
 L["If an Achievement has other Achievements as requirement, they will be shown in an extra category."] = "如果某个成就需要其他成就作为前置，它们将显示在一个额外的分类中。"
 L["Changing any option on this page, requires a reload to take affect."] = "更改此页面上的任何选项都需要重新加载界面才能生效。"
+L["Include Battle-Pet related rewards"] = "包含战斗宠物相关奖励"
+L["This will include Achievements with Pet-Battle rewards like daily quests unlock, costumes and toys"] = "这将包含带有战斗宠物奖励的成就，例如解锁日常任务、外观和玩具"

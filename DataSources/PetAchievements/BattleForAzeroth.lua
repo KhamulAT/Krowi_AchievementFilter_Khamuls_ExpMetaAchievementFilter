@@ -132,7 +132,7 @@ function GetBfaPetAchievements()
 
     -- Pet Battle
     local ACMList_PetBattles = {
-        _G.SHOW_PET_BATTLES_ON_MAP_TEXT, -- Pet Battles
+        Utilities:GetAchievementCategoryNameByCategoryID(15219), -- Pet Battles
         false,
         {
             IgnoreCollapsedChainFilter = true,
@@ -151,7 +151,7 @@ function GetBfaPetAchievements()
         13695, -- Team Aquashock
     }
 
-    ACMList_VisionsOfNZoth = {
+    local ACMList_VisionsOfNZoth = {
         _G.SPLASH_BATTLEFORAZEROTH_8_3_0_FEATURE1_TITLE,
         false,
         {

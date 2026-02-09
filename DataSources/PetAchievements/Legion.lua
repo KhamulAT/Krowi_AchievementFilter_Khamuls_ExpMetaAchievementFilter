@@ -122,7 +122,7 @@ function GetLegionPetAchievements()
 
     -- Pet Battle
     local ACMList_PetBattles = {
-        _G.SHOW_PET_BATTLES_ON_MAP_TEXT,
+        Utilities:GetAchievementCategoryNameByCategoryID(15219),
         false,
         {
             IgnoreCollapsedChainFilter = true,

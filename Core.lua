@@ -20,7 +20,8 @@ local defaults = {
     petAchievementsEnabled = true,
     petAchievementsSettings = {
       flattenStructure = false,
-      includeChildAchievements = true
+      includeChildAchievements = true,
+      includePetRelatedStuff = true,
     }
   },
 }

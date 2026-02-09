@@ -47,3 +47,5 @@ L["The collections depth will be flatten and all achievements will be displayed 
 L["Include Child Achievements"] = "Inclure les hauts faits dépendants"
 L["If an Achievement has other Achievements as requirement, they will be shown in an extra category."] = "Si un haut fait a d’autres hauts faits comme prérequis, ils seront affichés dans une catégorie supplémentaire."
 L["Changing any option on this page, requires a reload to take affect."] = "Modifier une option sur cette page nécessite un rechargement de l’interface pour prendre effet."
+L["Include Battle-Pet related rewards"] = "Inclure les récompenses liées aux mascottes de combat"
+L["This will include Achievements with Pet-Battle rewards like daily quests unlock, costumes and toys"] = "Cela inclura les hauts faits avec des récompenses de combats de mascottes, comme le déblocage de quêtes journalières, des costumes et des jouets"

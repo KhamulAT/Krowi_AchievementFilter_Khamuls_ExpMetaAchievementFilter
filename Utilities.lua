@@ -169,7 +169,7 @@ function Utilities:GetDungeonNameByLFGDungeonID(dungeonID)
   return QUEUED_STATUS_UNKNOWN
 end
 
-function Utilities:GetAchievementCategoryNameNyCategoryID(categoryId)
+function Utilities:GetAchievementCategoryNameByCategoryID(categoryId)
   if type(categoryId) ~= "number" then
     return QUEUED_STATUS_UNKNOWN
   end
