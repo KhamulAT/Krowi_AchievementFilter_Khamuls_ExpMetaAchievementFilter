@@ -50,6 +50,12 @@ function GetClassicPetAchievements()
         }
     }
 
+    -- PetBattles->AdditionalPetStuff
+    local ACMList_AdditionalPetStuffZone = {
+        6602, -- Taming Kalimdor
+        6603, -- Taming Eastern Kindoms
+    }
+
     -- Flat achievement list
     local ACMListFlat = {
         _G.EXPANSION_NAME0, -- Classic
@@ -63,6 +69,10 @@ function GetClassicPetAchievements()
     if KhamulsAchievementFilter.db.profile.petAchievementsSettings.includeChildAchievements then
         ACMListFlat[#ACMListFlat+1] = ACMChilds_FamilyBattlerOfEasternKingdoms
         ACMListFlat[#ACMListFlat+1] = ACMChilds_FamilyBattlerOfKalimdor
+    end
+
+    if KhamulsAchievementFilter.db.profile.petAchievementsSettings.includePetRelatedStuff then
+        ACMListFlat[#ACMListFlat+1] = ACMList_AdditionalPetStuffZone
     end
 
     ACMListFlat[#ACMListFlat+1] = {
@@ -97,7 +107,7 @@ function GetClassicPetAchievements()
 
     -- PetBattles
     local ACMList_PetBattles = {
-        _G.SHOW_PET_BATTLES_ON_MAP_TEXT, -- Pet Battles
+        Utilities:GetAchievementCategoryNameNyCategoryID(15219), -- Pet Battles
         false,
         {
             IgnoreCollapsedChainFilter = true,
@@ -108,6 +118,10 @@ function GetClassicPetAchievements()
     if KhamulsAchievementFilter.db.profile.petAchievementsSettings.includeChildAchievements then
         ACMList_PetBattles[#ACMList_PetBattles+1] = ACMChilds_FamilyBattlerOfEasternKingdoms
         ACMList_PetBattles[#ACMList_PetBattles+1] = ACMChilds_FamilyBattlerOfKalimdor
+    end
+
+    if KhamulsAchievementFilter.db.profile.petAchievementsSettings.includePetRelatedStuff then
+        ACMList_PetBattles[#ACMList_PetBattles+1] = ACMList_AdditionalPetStuffZone
     end
 
     ACMList_PetBattles[#ACMList_PetBattles+1] = {

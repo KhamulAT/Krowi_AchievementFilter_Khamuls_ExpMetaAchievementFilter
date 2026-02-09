@@ -177,6 +177,19 @@ function KhamulsAchievementFilter:InitOptions()
             set = function(_, value)
               KhamulsAchievementFilter.db.profile.petAchievementsSettings.includeChildAchievements = value
             end
+          },
+          includePetRelatedStuff = {
+            type = "toggle",
+            name = L["Include Battle-Pet related rewards"],
+            desc = L["This will include Achievements with Pet-Battle rewards like daily quests unlock, costumes and toys"],
+            width = "full",
+            order = 4,
+            get = function()
+              return KhamulsAchievementFilter.db.profile.petAchievementsSettings.includePetRelatedStuff
+            end,
+            set = function(_, value)
+              KhamulsAchievementFilter.db.profile.petAchievementsSettings.includePetRelatedStuff = value
+            end
           }
         }
       },

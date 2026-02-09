@@ -45,3 +45,5 @@ L["The collections depth will be flatten and all achievements will be displayed 
 L["Include Child Achievements"] = "Include Child Achievements"
 L["If an Achievement has other Achievements as requirement, they will be shown in an extra category."] = "If an Achievement has other Achievements as requirement, they will be shown in an extra category."
 L["Changing any option on this page, requires a reload to take affect."] = "Changing any option on this page, requires a reload to take affect."
+L["Include Battle-Pet related rewards"] = "Include Battle-Pet related rewards"
+L["This will include Achievements with Pet-Battle rewards like daily quests unlock, costumes and toys"] = "This will include Achievements with Pet-Battle rewards like daily quests unlock, costumes and toys"
