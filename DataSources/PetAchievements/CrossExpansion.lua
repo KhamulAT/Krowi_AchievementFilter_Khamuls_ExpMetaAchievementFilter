@@ -115,7 +115,7 @@ function GetCrossExpansionPetAchievements()
 
     -- PetBattles->Collect
     local ACMList_PetBattlesCollect = {
-        Utilities:GetAchievementCategoryNameNyCategoryID(15118), -- Collect
+        Utilities:GetAchievementCategoryNameByCategoryID(15118), -- Collect
         false,
         {
             IgnoreCollapsedChainFilter = true,
@@ -146,7 +146,7 @@ function GetCrossExpansionPetAchievements()
 
     -- PetBattles->Battle
     local ACMList_PetBattlesBattle = {
-        Utilities:GetAchievementCategoryNameNyCategoryID(15119), -- Battle
+        Utilities:GetAchievementCategoryNameByCategoryID(15119), -- Battle
         false,
         {
             IgnoreCollapsedChainFilter = true,
@@ -163,7 +163,7 @@ function GetCrossExpansionPetAchievements()
 
     -- PetBattles->Level
     local ACMList_PetBattlesLevel = {
-        Utilities:GetAchievementCategoryNameNyCategoryID(15120), -- Level
+        Utilities:GetAchievementCategoryNameByCategoryID(15120), -- Level
         false,
         {
             IgnoreCollapsedChainFilter = true,
@@ -180,7 +180,7 @@ function GetCrossExpansionPetAchievements()
 
     -- PetBattles -> Collect, Battle, Level
     local ACMList_PetBattles_CollectBattleLevel = {
-        Utilities:GetAchievementCategoryNameNyCategoryID(15219), -- Pet Battles
+        Utilities:GetAchievementCategoryNameByCategoryID(15219), -- Pet Battles
         false,
         {
             IgnoreCollapsedChainFilter = true,
@@ -193,7 +193,7 @@ function GetCrossExpansionPetAchievements()
 
     -- Collections
     local ACMList_Collections = {
-        Utilities:GetAchievementCategoryNameNyCategoryID(15246), -- Collections
+        Utilities:GetAchievementCategoryNameByCategoryID(15246), -- Collections
         false,
         {
             IgnoreCollapsedChainFilter = true,
@@ -207,7 +207,7 @@ function GetCrossExpansionPetAchievements()
 
     -- Darkmoon Faire
     local ACMList_DarkmoonFaire = {
-        Utilities:GetAchievementCategoryNameNyCategoryID(15101), -- Darkmoon Faire
+        Utilities:GetAchievementCategoryNameByCategoryID(15101), -- Darkmoon Faire
         false,
         {
             IgnoreCollapsedChainFilter = true,

@@ -183,7 +183,7 @@ function GetTWWPetAchievements()
 
     -- PetBattles
     local ACMList_PetBattles = {
-        Utilities:GetAchievementCategoryNameNyCategoryID(15219), -- Pet Battles
+        Utilities:GetAchievementCategoryNameByCategoryID(15219), -- Pet Battles
         false,
         {
             IgnoreCollapsedChainFilter = true,

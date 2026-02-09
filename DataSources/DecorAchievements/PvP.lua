@@ -71,7 +71,7 @@ function GetHousingPvP()
 
     -- Flat achievement list
     local ACMListFlat = {
-        Utilities:GetAchievementCategoryNameNyCategoryID(15279), -- Player vs. Player
+        Utilities:GetAchievementCategoryNameByCategoryID(15279), -- Player vs. Player
         false,
         {
             IgnoreCollapsedChainFilter = true,
@@ -225,7 +225,7 @@ function GetHousingPvP()
     }
 
     local ACMList = { 
-        Utilities:GetAchievementCategoryNameNyCategoryID(15279), -- Player vs. Player
+        Utilities:GetAchievementCategoryNameByCategoryID(15279), -- Player vs. Player
         false,
         {
             IgnoreCollapsedChainFilter = true

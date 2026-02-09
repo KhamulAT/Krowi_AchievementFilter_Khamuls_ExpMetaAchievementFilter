@@ -73,7 +73,7 @@ function GetHousingClassic()
             IgnoreCollapsedChainFilter = true
         },
         {
-            Utilities:GetAchievementCategoryNameNyCategoryID(15071), -- Archeology
+            Utilities:GetAchievementCategoryNameByCategoryID(15071), -- Archeology
             false,
             {
                 IgnoreCollapsedChainFilter = true
