@@ -49,3 +49,7 @@ L["If an Achievement has other Achievements as requirement, they will be shown i
 L["Changing any option on this page, requires a reload to take affect."] = "이 페이지의 옵션을 변경하면 적용을 위해 인터페이스를 다시 불러와야 합니다."
 L["Include Battle-Pet related rewards"] = "전투 애완동물 관련 보상 포함"
 L["This will include Achievements with Pet-Battle rewards like daily quests unlock, costumes and toys"] = "일일 퀘스트 해금, 의상, 장난감 등 전투 애완동물 보상을 제공하는 업적이 포함됩니다"
+L["Khamul's Toy Box"] = "Khamul의 장난감 상자"
+L["Show List for Achievements with toys as reward"] = "보상으로 장난감을 주는 업적 컬렉션 표시"
+L["If enabled, a list with all achievements, which have a toy as reward, will be shown"] = "활성화하면 보상으로 장난감을 주는 모든 업적이 포함된 컬렉션이 표시됩니다."
+L["Toy Collection Settings"] = "장난감 컬렉션 설정"

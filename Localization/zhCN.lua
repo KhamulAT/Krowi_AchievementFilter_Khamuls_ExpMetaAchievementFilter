@@ -49,3 +49,7 @@ L["If an Achievement has other Achievements as requirement, they will be shown i
 L["Changing any option on this page, requires a reload to take affect."] = "更改此页面上的任何选项都需要重新加载界面才能生效。"
 L["Include Battle-Pet related rewards"] = "包含战斗宠物相关奖励"
 L["This will include Achievements with Pet-Battle rewards like daily quests unlock, costumes and toys"] = "这将包含带有战斗宠物奖励的成就，例如解锁日常任务、外观和玩具"
+L["Khamul's Toy Box"] = "玩具箱"
+L["Show List for Achievements with toys as reward"] = "显示奖励为玩具的成就收藏"
+L["If enabled, a list with all achievements, which have a toy as reward, will be shown"] = "启用后，将显示一个包含所有奖励为玩具的成就的收藏。"
+L["Toy Collection Settings"] = "Khamul 玩具收藏设置"

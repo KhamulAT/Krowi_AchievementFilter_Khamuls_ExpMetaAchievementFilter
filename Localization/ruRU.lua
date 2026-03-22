@@ -6,11 +6,11 @@ if not L then return end
 -- translated using chatgpt
 
 -- Globals
-L["Khamuls Collections for Krowi's Achievement Filter"] = "Коллекции Хамула для фильтра достижений Крови"
-L["Khamul's Meta-Expansion Achievement List"] = "Коллекция мета-маунтов Хамула"
-L["Khamul's House Decor Achievement List"] = "Коллекция декора Хамула"
-L["Khamul's Campsite Achievement List"] = "Коллекция лагерей Хамула"
-L["Khamul's Battle Pet Achievement List"] = "Коллекция боевых питомцев Хамула"
+L["Khamuls Collections for Krowi's Achievement Filter"] = "Коллекции Khamul для фильтра достижений Крови"
+L["Khamul's Meta-Expansion Achievement List"] = "Коллекция мета-маунтов Khamul"
+L["Khamul's House Decor Achievement List"] = "Коллекция декора Khamul"
+L["Khamul's Campsite Achievement List"] = "Коллекция лагерей Khamul"
+L["Khamul's Battle Pet Achievement List"] = "Коллекция боевых питомцев Khamul"
 
 -- Special categories
 L["Cross-Expansion"] = "Между дополнениями"
@@ -21,7 +21,7 @@ L["Nightmare"] = "Кошмар"
 
 -- Tooltips
 L["Tt_ACM_15035"] = "Для завершения мета-достижения требуется только 4"
-L["Tt_UseMetaAchievementPlugin"] = "Используйте категорию «Коллекция мета-маунтов Хамула», чтобы получить подробный обзор для «{1}»."
+L["Tt_UseMetaAchievementPlugin"] = "Используйте категорию «Коллекция мета-маунтов Khamul», чтобы получить подробный обзор для «{1}»."
 
 -- Messages
 L["Krowi's Achievement Filter Addon not loaded!"] = "Аддон «Фильтр достижений Крови» не загружен!"
@@ -49,3 +49,7 @@ L["If an Achievement has other Achievements as requirement, they will be shown i
 L["Changing any option on this page, requires a reload to take affect."] = "Изменение любого параметра на этой странице требует перезагрузки интерфейса для применения изменений."
 L["Include Battle-Pet related rewards"] = "Включить награды, связанные с боевыми питомцами"
 L["This will include Achievements with Pet-Battle rewards like daily quests unlock, costumes and toys"] = "Сюда будут включены достижения с наградами за бои питомцев, такими как открытие ежедневных заданий, костюмы и игрушки"
+L["Khamul's Toy Box"] = "Коробка игрушек Khamul"
+L["Show List for Achievements with toys as reward"] = "Показать коллекцию достижений с игрушками в награду"
+L["If enabled, a list with all achievements, which have a toy as reward, will be shown"] = "Если включено, будет показана коллекция со всеми достижениями, в награду за которые дается игрушка."
+L["Toy Collection Settings"] = "Настройки коллекции игрушек"

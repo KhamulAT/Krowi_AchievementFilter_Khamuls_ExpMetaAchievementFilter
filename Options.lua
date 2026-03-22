@@ -18,58 +18,11 @@ function KhamulsAchievementFilter:InitOptions()
         order = 0,
         name = L["Changing any option on this page, requires a reload to take affect."]
       },
-      decorAchievements = {
-        type = "group",
-        inline = true,
-        name = L["Decor Collection Settings"],
-        order = 1,
-        args = {
-          decorAchievementsEnabled = {
-            type = "toggle",
-            name = L["Show List for Achievements with decors as reward"],
-            desc = L["If enabled, a list with all achievements, which have a decor as reward, will be shown"],
-            width = "full",
-            order = 1,
-            get = function()
-              return KhamulsAchievementFilter.db.profile.decorAchievementsEnabled
-            end,
-            set = function(_, value)
-              KhamulsAchievementFilter.db.profile.decorAchievementsEnabled = value
-            end,
-          },
-          flattenStructure = {
-            type = "toggle",
-            name = L["Flatten collection structure"],
-            desc = L["The collections depth will be flatten and all achievements will be displayed in the expansions category"],
-            width = "full",
-            order = 2,
-            get = function()
-              return KhamulsAchievementFilter.db.profile.decorAchievementsSettings.flattenStructure
-            end,
-            set = function(_, value)
-              KhamulsAchievementFilter.db.profile.decorAchievementsSettings.flattenStructure = value
-            end
-          },
-          includeChildAchievements = {
-            type = "toggle",
-            name = L["Include Child Achievements"],
-            desc = L["If an Achievement has other Achievements as requirement, they will be shown in an extra category."],
-            width = "full",
-            order = 3,
-            get = function()
-              return KhamulsAchievementFilter.db.profile.decorAchievementsSettings.includeChildAchievements
-            end,
-            set = function(_, value)
-              KhamulsAchievementFilter.db.profile.decorAchievementsSettings.includeChildAchievements = value
-            end
-          }
-        }
-      },
       campsiteAchievements = {
         type = "group",
         inline = true,
         name = L["Campsite Collection Settings"],
-        order = 2,
+        order = 1,
         args = {
           campsiteAchievementsEnabled = {
             type = "toggle",
@@ -108,6 +61,53 @@ function KhamulsAchievementFilter:InitOptions()
             end,
             set = function(_, value)
               KhamulsAchievementFilter.db.profile.campsiteAchievementsSettings.includeChildAchievements = value
+            end
+          }
+        }
+      },
+      decorAchievements = {
+        type = "group",
+        inline = true,
+        name = L["Decor Collection Settings"],
+        order = 2,
+        args = {
+          decorAchievementsEnabled = {
+            type = "toggle",
+            name = L["Show List for Achievements with decors as reward"],
+            desc = L["If enabled, a list with all achievements, which have a decor as reward, will be shown"],
+            width = "full",
+            order = 1,
+            get = function()
+              return KhamulsAchievementFilter.db.profile.decorAchievementsEnabled
+            end,
+            set = function(_, value)
+              KhamulsAchievementFilter.db.profile.decorAchievementsEnabled = value
+            end,
+          },
+          flattenStructure = {
+            type = "toggle",
+            name = L["Flatten collection structure"],
+            desc = L["The collections depth will be flatten and all achievements will be displayed in the expansions category"],
+            width = "full",
+            order = 2,
+            get = function()
+              return KhamulsAchievementFilter.db.profile.decorAchievementsSettings.flattenStructure
+            end,
+            set = function(_, value)
+              KhamulsAchievementFilter.db.profile.decorAchievementsSettings.flattenStructure = value
+            end
+          },
+          includeChildAchievements = {
+            type = "toggle",
+            name = L["Include Child Achievements"],
+            desc = L["If an Achievement has other Achievements as requirement, they will be shown in an extra category."],
+            width = "full",
+            order = 3,
+            get = function()
+              return KhamulsAchievementFilter.db.profile.decorAchievementsSettings.includeChildAchievements
+            end,
+            set = function(_, value)
+              KhamulsAchievementFilter.db.profile.decorAchievementsSettings.includeChildAchievements = value
             end
           }
         }
@@ -193,9 +193,56 @@ function KhamulsAchievementFilter:InitOptions()
           }
         }
       },
+      toyAchievements = {
+        type = "group",
+        inline = true,
+        name = L["Toy Collection Settings"],
+        order = 5,
+        args = {
+          toyAchievementsEnabled = {
+            type = "toggle",
+            name = L["Show List for Achievements with toys as reward"],
+            desc = L["If enabled, a list with all achievements, which have a toy as reward, will be shown"],
+            width = "full",
+            order = 1,
+            get = function()
+              return KhamulsAchievementFilter.db.profile.toyAchievementsEnabled
+            end,
+            set = function(_, value)
+              KhamulsAchievementFilter.db.profile.toyAchievementsEnabled = value
+            end,
+          },
+          flattenStructure = {
+            type = "toggle",
+            name = L["Flatten collection structure"],
+            desc = L["The collections depth will be flatten and all achievements will be displayed in the expansions category"],
+            width = "full",
+            order = 2,
+            get = function()
+              return KhamulsAchievementFilter.db.profile.toyAchievementsSettings.flattenStructure
+            end,
+            set = function(_, value)
+              KhamulsAchievementFilter.db.profile.toyAchievementsSettings.flattenStructure = value
+            end
+          },
+          includeChildAchievements = {
+            type = "toggle",
+            name = L["Include Child Achievements"],
+            desc = L["If an Achievement has other Achievements as requirement, they will be shown in an extra category."],
+            width = "full",
+            order = 3,
+            get = function()
+              return KhamulsAchievementFilter.db.profile.toyAchievementsSettings.includeChildAchievements
+            end,
+            set = function(_, value)
+              KhamulsAchievementFilter.db.profile.toyAchievementsSettings.includeChildAchievements = value
+            end
+          }
+        }
+      },
       krowiStatus = {
         type = "description",
-        order = 5,
+        order = 6,
         name = function()
           if KhamulsAchievementFilter:IsKrowiAFAvailable() then
             return L["Krowi AchievementFilter status: "] .. L["detected"]
