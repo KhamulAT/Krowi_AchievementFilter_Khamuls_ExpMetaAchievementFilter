@@ -49,3 +49,8 @@ L["If an Achievement has other Achievements as requirement, they will be shown i
 L["Changing any option on this page, requires a reload to take affect."] = "Cambiar cualquier opción en esta página requiere recargar la interfaz para que surta efecto."
 L["Include Battle-Pet related rewards"] = "Incluir recompensas relacionadas con las mascotas de duelo"
 L["This will include Achievements with Pet-Battle rewards like daily quests unlock, costumes and toys"] = "Esto incluirá logros con recompensas de combates de mascotas, como el desbloqueo de misiones diarias, disfraces y juguetes"
+
+L["Khamul's Toy Box"] = "Caja de juguetes de Khamul"
+L["Show List for Achievements with toys as reward"] = "Mostrar colección de logros con juguetes como recompensa"
+L["If enabled, a list with all achievements, which have a toy as reward, will be shown"] = "Si se activa, se mostrará una colección con todos los logros que otorgan un juguete como recompensa."
+L["Toy Collection Settings"] = "Ajustes de la colección de juguetes"

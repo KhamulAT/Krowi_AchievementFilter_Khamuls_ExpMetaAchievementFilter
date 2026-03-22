@@ -22,6 +22,11 @@ local defaults = {
       flattenStructure = false,
       includeChildAchievements = true,
       includePetRelatedStuff = true,
+    },
+    toyAchievementsEnabled = true,
+    toyAchievementsSettings = {
+      flattenStructure = false,
+      includeChildAchievements = true
     }
   },
 }
@@ -88,5 +93,9 @@ function KhamulsAchievementFilter:OnPlayerLogin()
 
   if self.db.profile.petAchievementsEnabled then
      KrowiAF.CategoryData.KhamulsPetAchievementLists = self.Data:GetSource("PetAchievements"):GetItems()
+  end
+
+  if self.db.profile.toyAchievementsEnabled then
+     KrowiAF.CategoryData.KhamulsToyAchievementLists = self.Data:GetSource("ToyAchievements"):GetItems()
   end
 end

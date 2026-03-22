@@ -101,7 +101,7 @@ function GetDFPetAchievements()
             }
         },
         {
-            Utilities:GetZoneNameByMapID(2130), -- Zaralek Cavern
+            Utilities:GetZoneNameByMapID(2133), -- Zaralek Cavern
             false,
             {
                 IgnoreCollapsedChainFilter = true,
