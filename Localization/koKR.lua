@@ -53,3 +53,17 @@ L["Khamul's Toy Box"] = "Khamul의 장난감 상자"
 L["Show List for Achievements with toys as reward"] = "보상으로 장난감을 주는 업적 컬렉션 표시"
 L["If enabled, a list with all achievements, which have a toy as reward, will be shown"] = "활성화하면 보상으로 장난감을 주는 모든 업적이 포함된 컬렉션이 표시됩니다."
 L["Toy Collection Settings"] = "장난감 컬렉션 설정"
+
+-- RewardPreview
+L["Preview Reward"] = "Preview Reward"
+L["No preview available for this reward"] = "No preview available for this reward"
+L["Reward"] = "Reward"
+L["Item"] = "Item"
+L["Decor"] = "Decor"
+L["Title"] = "Title"
+L["Spell"] = "Spell"
+L["Debug Settings"] = "Debug Settings"
+L["Enable debug output"] = "Enable debug output"
+L["If enabled, RewardPreview diagnostic messages are shown in chat."] = "If enabled, RewardPreview diagnostic messages are shown in chat."
+L["NPC"] = "NPC"
+

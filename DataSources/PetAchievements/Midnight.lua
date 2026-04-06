@@ -18,7 +18,7 @@ function GetMNPetAchievements()
             61642, -- Heroic: Den of Nalorakk
             61213, -- Heroic: Magisters' Terrace
             61644, -- Heroic: Maisara Caverns
-            41963, -- Heroic: Murder  Row
+            41961, -- Heroic: Murder  Row
             61646, -- Heroic: Nexus-Point Xenas
             61648, -- Heroic: The Blinding Vale
             61509, -- Heroic: Voidscar Arena

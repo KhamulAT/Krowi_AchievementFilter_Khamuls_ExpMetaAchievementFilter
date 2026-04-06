@@ -53,3 +53,17 @@ L["Khamul's Toy Box"] = "Boîte à jouets de Khamul"
 L["Show List for Achievements with toys as reward"] = "Afficher la collection des hauts faits avec des jouets en récompense"
 L["If enabled, a list with all achievements, which have a toy as reward, will be shown"] = "Si cette option est activée, une collection avec tous les hauts faits qui offrent un jouet en récompense sera affichée."
 L["Toy Collection Settings"] = "Paramètres de la collection de jouets"
+
+-- RewardPreview
+L["Preview Reward"] = "Preview Reward"
+L["No preview available for this reward"] = "No preview available for this reward"
+L["Reward"] = "Reward"
+L["Item"] = "Item"
+L["Decor"] = "Decor"
+L["Title"] = "Title"
+L["Spell"] = "Spell"
+L["Debug Settings"] = "Debug Settings"
+L["Enable debug output"] = "Enable debug output"
+L["If enabled, RewardPreview diagnostic messages are shown in chat."] = "If enabled, RewardPreview diagnostic messages are shown in chat."
+L["NPC"] = "NPC"
+

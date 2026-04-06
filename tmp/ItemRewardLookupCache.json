@@ -1,0 +1,1312 @@
+{
+    "111866":  {
+                   "npcID":  80101,
+                   "itemID":  111866,
+                   "modelID":  53878,
+                   "mvTypeID":  80101,
+                   "speciesID":  1411,
+                   "spellID":  161643,
+                   "displayID":  53878,
+                   "typeName":  "pet"
+               },
+    "115301":  {
+                   "npcID":  84915,
+                   "itemID":  115301,
+                   "modelID":  58570,
+                   "mvTypeID":  84915,
+                   "speciesID":  1451,
+                   "spellID":  169695,
+                   "displayID":  58570,
+                   "typeName":  "pet"
+               },
+    "118577":  {
+                   "npcID":  87705,
+                   "itemID":  118577,
+                   "modelID":  60458,
+                   "mvTypeID":  87705,
+                   "speciesID":  1546,
+                   "spellID":  170289,
+                   "displayID":  60458,
+                   "typeName":  "pet"
+               },
+    "120121":  {
+                   "npcID":  88830,
+                   "itemID":  120121,
+                   "modelID":  61148,
+                   "mvTypeID":  88830,
+                   "speciesID":  1605,
+                   "spellID":  177233,
+                   "displayID":  61148,
+                   "typeName":  "pet"
+               },
+    "122116":  {
+                   "npcID":  90215,
+                   "itemID":  122116,
+                   "modelID":  61900,
+                   "mvTypeID":  90215,
+                   "speciesID":  1635,
+                   "spellID":  179841,
+                   "displayID":  61900,
+                   "typeName":  "pet"
+               },
+    "123862":  {
+                   "npcID":  76873,
+                   "itemID":  123862,
+                   "modelID":  53502,
+                   "mvTypeID":  76873,
+                   "speciesID":  1384,
+                   "spellID":  170267,
+                   "displayID":  53502,
+                   "typeName":  "pet"
+               },
+    "139775":  {
+                   "npcID":  111202,
+                   "itemID":  139775,
+                   "modelID":  71002,
+                   "mvTypeID":  111202,
+                   "speciesID":  1918,
+                   "spellID":  221684,
+                   "displayID":  71002,
+                   "typeName":  "pet"
+               },
+    "139776":  {
+                   "npcID":  111296,
+                   "itemID":  139776,
+                   "modelID":  71003,
+                   "mvTypeID":  111296,
+                   "speciesID":  1919,
+                   "spellID":  221683,
+                   "displayID":  71003,
+                   "typeName":  "pet"
+               },
+    "140323":  {
+                   "npcID":  112167,
+                   "itemID":  140323,
+                   "modelID":  71980,
+                   "mvTypeID":  112167,
+                   "speciesID":  1930,
+                   "spellID":  223409,
+                   "displayID":  71980,
+                   "typeName":  "pet"
+               },
+    "140761":  {
+                   "npcID":  112945,
+                   "itemID":  140761,
+                   "modelID":  72461,
+                   "mvTypeID":  112945,
+                   "speciesID":  1933,
+                   "spellID":  224786,
+                   "displayID":  72461,
+                   "typeName":  "pet"
+               },
+    "141352":  {
+                   "npcID":  113855,
+                   "itemID":  141352,
+                   "modelID":  70663,
+                   "mvTypeID":  113855,
+                   "speciesID":  1938,
+                   "spellID":  226813,
+                   "displayID":  70663,
+                   "typeName":  "pet"
+               },
+    "142210":  {
+                   "npcID":  0,
+                   "itemID":  142210,
+                   "modelID":  0,
+                   "mvTypeID":  0,
+                   "speciesID":  0,
+                   "spellID":  0,
+                   "displayID":  0,
+                   "typeName":  "unknown"
+               },
+    "142379":  {
+                   "npcID":  115918,
+                   "itemID":  142379,
+                   "modelID":  73244,
+                   "mvTypeID":  115918,
+                   "speciesID":  1978,
+                   "spellID":  230443,
+                   "displayID":  73244,
+                   "typeName":  "pet"
+               },
+    "142380":  {
+                   "npcID":  115919,
+                   "itemID":  142380,
+                   "modelID":  73245,
+                   "mvTypeID":  115919,
+                   "speciesID":  1979,
+                   "spellID":  230444,
+                   "displayID":  73245,
+                   "typeName":  "pet"
+               },
+    "147543":  {
+                   "npcID":  121317,
+                   "itemID":  147543,
+                   "modelID":  76262,
+                   "mvTypeID":  121317,
+                   "speciesID":  2049,
+                   "spellID":  242047,
+                   "displayID":  76262,
+                   "typeName":  "pet"
+               },
+    "151632":  {
+                   "npcID":  124589,
+                   "itemID":  151632,
+                   "modelID":  78106,
+                   "mvTypeID":  124589,
+                   "speciesID":  2064,
+                   "spellID":  247452,
+                   "displayID":  78106,
+                   "typeName":  "pet"
+               },
+    "152963":  {
+                   "npcID":  127956,
+                   "itemID":  152963,
+                   "modelID":  79712,
+                   "mvTypeID":  127956,
+                   "speciesID":  2093,
+                   "spellID":  253929,
+                   "displayID":  79712,
+                   "typeName":  "pet"
+               },
+    "153040":  {
+                   "npcID":  128146,
+                   "itemID":  153040,
+                   "modelID":  78451,
+                   "mvTypeID":  128146,
+                   "speciesID":  2113,
+                   "spellID":  254255,
+                   "displayID":  78451,
+                   "typeName":  "pet"
+               },
+    "156721":  {
+                   "npcID":  132366,
+                   "itemID":  156721,
+                   "modelID":  82391,
+                   "mvTypeID":  132366,
+                   "speciesID":  2158,
+                   "spellID":  260887,
+                   "displayID":  82391,
+                   "typeName":  "pet"
+               },
+    "161214":  {
+                   "npcID":  140125,
+                   "itemID":  161214,
+                   "modelID":  86574,
+                   "mvTypeID":  140125,
+                   "speciesID":  2202,
+                   "spellID":  274776,
+                   "displayID":  86574,
+                   "typeName":  "pet"
+               },
+    "163218":  {
+                   "npcID":  117343,
+                   "itemID":  163218,
+                   "modelID":  74515,
+                   "mvTypeID":  117343,
+                   "speciesID":  2003,
+                   "spellID":  0,
+                   "displayID":  74515,
+                   "typeName":  "pet"
+               },
+    "163220":  {
+                   "npcID":  143142,
+                   "itemID":  163220,
+                   "modelID":  75349,
+                   "mvTypeID":  143142,
+                   "speciesID":  2401,
+                   "spellID":  0,
+                   "displayID":  75349,
+                   "typeName":  "pet"
+               },
+    "163244":  {
+                   "npcID":  143160,
+                   "itemID":  163244,
+                   "modelID":  87760,
+                   "mvTypeID":  143160,
+                   "speciesID":  2402,
+                   "spellID":  0,
+                   "displayID":  87760,
+                   "typeName":  "pet"
+               },
+    "163634":  {
+                   "npcID":  143464,
+                   "itemID":  163634,
+                   "modelID":  79567,
+                   "mvTypeID":  143464,
+                   "speciesID":  2431,
+                   "spellID":  0,
+                   "displayID":  79567,
+                   "typeName":  "pet"
+               },
+    "163776":  {
+                   "npcID":  143730,
+                   "itemID":  163776,
+                   "modelID":  81972,
+                   "mvTypeID":  143730,
+                   "speciesID":  2442,
+                   "spellID":  0,
+                   "displayID":  81972,
+                   "typeName":  "pet"
+               },
+    "163974":  {
+                   "npcID":  144004,
+                   "itemID":  163974,
+                   "modelID":  87998,
+                   "mvTypeID":  144004,
+                   "speciesID":  2479,
+                   "spellID":  280727,
+                   "displayID":  87998,
+                   "typeName":  "pet"
+               },
+    "163975":  {
+                   "npcID":  144005,
+                   "itemID":  163975,
+                   "modelID":  87997,
+                   "mvTypeID":  144005,
+                   "speciesID":  2478,
+                   "spellID":  280728,
+                   "displayID":  87997,
+                   "typeName":  "pet"
+               },
+    "165894":  {
+                   "npcID":  147838,
+                   "itemID":  165894,
+                   "modelID":  31623,
+                   "mvTypeID":  147838,
+                   "speciesID":  2534,
+                   "spellID":  286790,
+                   "displayID":  31623,
+                   "typeName":  "pet"
+               },
+    "165907":  {
+                   "npcID":  147884,
+                   "itemID":  165907,
+                   "modelID":  86573,
+                   "mvTypeID":  147884,
+                   "speciesID":  2535,
+                   "spellID":  286837,
+                   "displayID":  86573,
+                   "typeName":  "pet"
+               },
+    "167057":  {
+                   "npcID":  150385,
+                   "itemID":  167057,
+                   "modelID":  90866,
+                   "mvTypeID":  150385,
+                   "speciesID":  2591,
+                   "spellID":  0,
+                   "displayID":  90866,
+                   "typeName":  "pet"
+               },
+    "168055":  {
+                   "npcID":  0,
+                   "itemID":  168055,
+                   "modelID":  0,
+                   "mvTypeID":  0,
+                   "speciesID":  0,
+                   "spellID":  295387,
+                   "displayID":  91388,
+                   "typeName":  "mount"
+               },
+    "168056":  {
+                   "npcID":  0,
+                   "itemID":  168056,
+                   "modelID":  0,
+                   "mvTypeID":  0,
+                   "speciesID":  0,
+                   "spellID":  295386,
+                   "displayID":  91389,
+                   "typeName":  "mount"
+               },
+    "168329":  {
+                   "npcID":  0,
+                   "itemID":  168329,
+                   "modelID":  0,
+                   "mvTypeID":  0,
+                   "speciesID":  0,
+                   "spellID":  296788,
+                   "displayID":  91633,
+                   "typeName":  "mount"
+               },
+    "169194":  {
+                   "npcID":  0,
+                   "itemID":  169194,
+                   "modelID":  0,
+                   "mvTypeID":  0,
+                   "speciesID":  0,
+                   "spellID":  294039,
+                   "displayID":  91238,
+                   "typeName":  "mount"
+               },
+    "169349":  {
+                   "npcID":  154822,
+                   "itemID":  169349,
+                   "modelID":  88874,
+                   "mvTypeID":  154822,
+                   "speciesID":  2683,
+                   "spellID":  0,
+                   "displayID":  88874,
+                   "typeName":  "pet"
+               },
+    "169670":  {
+                   "npcID":  154445,
+                   "itemID":  169670,
+                   "modelID":  92265,
+                   "mvTypeID":  154445,
+                   "speciesID":  2638,
+                   "spellID":  300387,
+                   "displayID":  92265,
+                   "typeName":  "pet"
+               },
+    "170070":  {
+                   "npcID":  0,
+                   "itemID":  170070,
+                   "modelID":  0,
+                   "mvTypeID":  0,
+                   "speciesID":  0,
+                   "spellID":  0,
+                   "displayID":  0,
+                   "typeName":  "unknown"
+               },
+    "170102":  {
+                   "npcID":  155865,
+                   "itemID":  170102,
+                   "modelID":  92580,
+                   "mvTypeID":  155865,
+                   "speciesID":  2767,
+                   "spellID":  303899,
+                   "displayID":  92580,
+                   "typeName":  "pet"
+               },
+    "174463":  {
+                   "npcID":  161967,
+                   "itemID":  174463,
+                   "modelID":  95173,
+                   "mvTypeID":  161967,
+                   "speciesID":  2844,
+                   "spellID":  315304,
+                   "displayID":  95173,
+                   "typeName":  "pet"
+               },
+    "174654":  {
+                   "npcID":  0,
+                   "itemID":  174654,
+                   "modelID":  0,
+                   "mvTypeID":  0,
+                   "speciesID":  0,
+                   "spellID":  305182,
+                   "displayID":  92708,
+                   "typeName":  "mount"
+               },
+    "181820":  {
+                   "npcID":  0,
+                   "itemID":  181820,
+                   "modelID":  0,
+                   "mvTypeID":  0,
+                   "speciesID":  0,
+                   "spellID":  332467,
+                   "displayID":  96472,
+                   "typeName":  "mount"
+               },
+    "182074":  {
+                   "npcID":  0,
+                   "itemID":  182074,
+                   "modelID":  0,
+                   "mvTypeID":  0,
+                   "speciesID":  0,
+                   "spellID":  332460,
+                   "displayID":  96468,
+                   "typeName":  "mount"
+               },
+    "183412":  {
+                   "npcID":  174085,
+                   "itemID":  183412,
+                   "modelID":  99906,
+                   "mvTypeID":  174085,
+                   "speciesID":  3041,
+                   "spellID":  341497,
+                   "displayID":  99906,
+                   "typeName":  "pet"
+               },
+    "184166":  {
+                   "npcID":  0,
+                   "itemID":  184166,
+                   "modelID":  0,
+                   "mvTypeID":  0,
+                   "speciesID":  0,
+                   "spellID":  344578,
+                   "displayID":  92630,
+                   "typeName":  "mount"
+               },
+    "184508":  {
+                   "npcID":  0,
+                   "itemID":  184508,
+                   "modelID":  0,
+                   "mvTypeID":  0,
+                   "speciesID":  0,
+                   "spellID":  0,
+                   "displayID":  0,
+                   "typeName":  "unknown"
+               },
+    "184509":  {
+                   "npcID":  175756,
+                   "itemID":  184509,
+                   "modelID":  100017,
+                   "mvTypeID":  175756,
+                   "speciesID":  3067,
+                   "spellID":  346236,
+                   "displayID":  100017,
+                   "typeName":  "pet"
+               },
+    "184512":  {
+                   "npcID":  175787,
+                   "itemID":  184512,
+                   "modelID":  100019,
+                   "mvTypeID":  175787,
+                   "speciesID":  3079,
+                   "spellID":  346260,
+                   "displayID":  100019,
+                   "typeName":  "pet"
+               },
+    "186539":  {
+                   "npcID":  179083,
+                   "itemID":  186539,
+                   "modelID":  93745,
+                   "mvTypeID":  179083,
+                   "speciesID":  3101,
+                   "spellID":  353450,
+                   "displayID":  93745,
+                   "typeName":  "pet"
+               },
+    "186551":  {
+                   "npcID":  179241,
+                   "itemID":  186551,
+                   "modelID":  98525,
+                   "mvTypeID":  179241,
+                   "speciesID":  3132,
+                   "spellID":  353659,
+                   "displayID":  98525,
+                   "typeName":  "pet"
+               },
+    "186637":  {
+                   "npcID":  0,
+                   "itemID":  186637,
+                   "modelID":  0,
+                   "mvTypeID":  0,
+                   "speciesID":  0,
+                   "spellID":  346554,
+                   "displayID":  100050,
+                   "typeName":  "mount"
+               },
+    "187673":  {
+                   "npcID":  0,
+                   "itemID":  187673,
+                   "modelID":  0,
+                   "mvTypeID":  0,
+                   "speciesID":  0,
+                   "spellID":  359381,
+                   "displayID":  98894,
+                   "typeName":  "mount"
+               },
+    "188679":  {
+                   "npcID":  183772,
+                   "itemID":  188679,
+                   "modelID":  98523,
+                   "mvTypeID":  183772,
+                   "speciesID":  3221,
+                   "spellID":  363086,
+                   "displayID":  98523,
+                   "typeName":  "pet"
+               },
+    "188696":  {
+                   "npcID":  0,
+                   "itemID":  188696,
+                   "modelID":  0,
+                   "mvTypeID":  0,
+                   "speciesID":  0,
+                   "spellID":  363136,
+                   "displayID":  104980,
+                   "typeName":  "mount"
+               },
+    "188736":  {
+                   "npcID":  0,
+                   "itemID":  188736,
+                   "modelID":  0,
+                   "mvTypeID":  0,
+                   "speciesID":  0,
+                   "spellID":  363297,
+                   "displayID":  104995,
+                   "typeName":  "mount"
+               },
+    "189455":  {
+                   "npcID":  0,
+                   "itemID":  189455,
+                   "modelID":  0,
+                   "mvTypeID":  0,
+                   "speciesID":  0,
+                   "spellID":  0,
+                   "displayID":  0,
+                   "typeName":  "unknown"
+               },
+    "190182":  {
+                   "npcID":  0,
+                   "itemID":  190182,
+                   "modelID":  0,
+                   "mvTypeID":  0,
+                   "speciesID":  0,
+                   "spellID":  0,
+                   "displayID":  0,
+                   "typeName":  "unknown"
+               },
+    "191932":  {
+                   "npcID":  188849,
+                   "itemID":  191932,
+                   "modelID":  106676,
+                   "mvTypeID":  188849,
+                   "speciesID":  3262,
+                   "spellID":  371621,
+                   "displayID":  106676,
+                   "typeName":  "pet"
+               },
+    "191936":  {
+                   "npcID":  188861,
+                   "itemID":  191936,
+                   "modelID":  106677,
+                   "mvTypeID":  188861,
+                   "speciesID":  3263,
+                   "spellID":  371636,
+                   "displayID":  106677,
+                   "typeName":  "pet"
+               },
+    "191941":  {
+                   "npcID":  188885,
+                   "itemID":  191941,
+                   "modelID":  106690,
+                   "mvTypeID":  188885,
+                   "speciesID":  3264,
+                   "spellID":  371655,
+                   "displayID":  106690,
+                   "typeName":  "pet"
+               },
+    "191946":  {
+                   "npcID":  188901,
+                   "itemID":  191946,
+                   "modelID":  106681,
+                   "mvTypeID":  188901,
+                   "speciesID":  3265,
+                   "spellID":  371675,
+                   "displayID":  106681,
+                   "typeName":  "pet"
+               },
+    "192751":  {
+                   "npcID":  0,
+                   "itemID":  192751,
+                   "modelID":  0,
+                   "mvTypeID":  0,
+                   "speciesID":  0,
+                   "spellID":  0,
+                   "displayID":  0,
+                   "typeName":  "unknown"
+               },
+    "192765":  {
+                   "npcID":  0,
+                   "itemID":  192765,
+                   "modelID":  0,
+                   "mvTypeID":  0,
+                   "speciesID":  0,
+                   "spellID":  374071,
+                   "displayID":  100697,
+                   "typeName":  "mount"
+               },
+    "192774":  {
+                   "npcID":  0,
+                   "itemID":  192774,
+                   "modelID":  0,
+                   "mvTypeID":  0,
+                   "speciesID":  0,
+                   "spellID":  374097,
+                   "displayID":  101172,
+                   "typeName":  "mount"
+               },
+    "192788":  {
+                   "npcID":  0,
+                   "itemID":  192788,
+                   "modelID":  0,
+                   "mvTypeID":  0,
+                   "speciesID":  0,
+                   "spellID":  374172,
+                   "displayID":  100961,
+                   "typeName":  "mount"
+               },
+    "192792":  {
+                   "npcID":  0,
+                   "itemID":  192792,
+                   "modelID":  0,
+                   "mvTypeID":  0,
+                   "speciesID":  0,
+                   "spellID":  351408,
+                   "displayID":  100966,
+                   "typeName":  "mount"
+               },
+    "193377":  {
+                   "npcID":  189119,
+                   "itemID":  193377,
+                   "modelID":  106645,
+                   "mvTypeID":  189119,
+                   "speciesID":  3294,
+                   "spellID":  375089,
+                   "displayID":  106645,
+                   "typeName":  "pet"
+               },
+    "197961":  {
+                   "npcID":  0,
+                   "itemID":  197961,
+                   "modelID":  0,
+                   "mvTypeID":  0,
+                   "speciesID":  0,
+                   "spellID":  0,
+                   "displayID":  0,
+                   "typeName":  "unknown"
+               },
+    "198822":  {
+                   "npcID":  0,
+                   "itemID":  198822,
+                   "modelID":  0,
+                   "mvTypeID":  0,
+                   "speciesID":  0,
+                   "spellID":  385260,
+                   "displayID":  108744,
+                   "typeName":  "mount"
+               },
+    "199669":  {
+                   "npcID":  0,
+                   "itemID":  199669,
+                   "modelID":  0,
+                   "mvTypeID":  199669,
+                   "speciesID":  0,
+                   "spellID":  0,
+                   "displayID":  659884,
+                   "typeName":  "misc"
+               },
+    "199688":  {
+                   "npcID":  189101,
+                   "itemID":  199688,
+                   "modelID":  109095,
+                   "mvTypeID":  189101,
+                   "speciesID":  3279,
+                   "spellID":  387685,
+                   "displayID":  109095,
+                   "typeName":  "pet"
+               },
+    "200874":  {
+                   "npcID":  197969,
+                   "itemID":  200874,
+                   "modelID":  109789,
+                   "mvTypeID":  197969,
+                   "speciesID":  3406,
+                   "spellID":  392380,
+                   "displayID":  109789,
+                   "typeName":  "pet"
+               },
+    "200882":  {
+                   "npcID":  0,
+                   "itemID":  200882,
+                   "modelID":  0,
+                   "mvTypeID":  200882,
+                   "speciesID":  0,
+                   "spellID":  0,
+                   "displayID":  663722,
+                   "typeName":  "misc"
+               },
+    "204894":  {
+                   "npcID":  204036,
+                   "itemID":  204894,
+                   "modelID":  112343,
+                   "mvTypeID":  204036,
+                   "speciesID":  3493,
+                   "spellID":  407492,
+                   "displayID":  112343,
+                   "typeName":  "pet"
+               },
+    "205013":  {
+                   "npcID":  204237,
+                   "itemID":  205013,
+                   "modelID":  112149,
+                   "mvTypeID":  204237,
+                   "speciesID":  3518,
+                   "spellID":  407946,
+                   "displayID":  112149,
+                   "typeName":  "pet"
+               },
+    "205017":  {
+                   "npcID":  204240,
+                   "itemID":  205017,
+                   "modelID":  112151,
+                   "mvTypeID":  204240,
+                   "speciesID":  3519,
+                   "spellID":  407955,
+                   "displayID":  112151,
+                   "typeName":  "pet"
+               },
+    "205165":  {
+                   "npcID":  204369,
+                   "itemID":  205165,
+                   "modelID":  112204,
+                   "mvTypeID":  204369,
+                   "speciesID":  3555,
+                   "spellID":  408330,
+                   "displayID":  112204,
+                   "typeName":  "pet"
+               },
+    "205206":  {
+                   "npcID":  0,
+                   "itemID":  205206,
+                   "modelID":  0,
+                   "mvTypeID":  0,
+                   "speciesID":  0,
+                   "spellID":  0,
+                   "displayID":  0,
+                   "typeName":  "unknown"
+               },
+    "205231":  {
+                   "npcID":  204621,
+                   "itemID":  205231,
+                   "modelID":  112270,
+                   "mvTypeID":  204621,
+                   "speciesID":  3557,
+                   "spellID":  408949,
+                   "displayID":  112270,
+                   "typeName":  "pet"
+               },
+    "208151":  {
+                   "npcID":  208643,
+                   "itemID":  208151,
+                   "modelID":  114316,
+                   "mvTypeID":  208643,
+                   "speciesID":  4263,
+                   "spellID":  418079,
+                   "displayID":  114316,
+                   "typeName":  "pet"
+               },
+    "210142":  {
+                   "npcID":  0,
+                   "itemID":  210142,
+                   "modelID":  0,
+                   "mvTypeID":  0,
+                   "speciesID":  0,
+                   "spellID":  424607,
+                   "displayID":  111720,
+                   "typeName":  "mount"
+               },
+    "210414":  {
+                   "npcID":  0,
+                   "itemID":  210414,
+                   "modelID":  0,
+                   "mvTypeID":  210414,
+                   "speciesID":  0,
+                   "spellID":  0,
+                   "displayID":  673928,
+                   "typeName":  "misc"
+               },
+    "210522":  {
+                   "npcID":  212206,
+                   "itemID":  210522,
+                   "modelID":  114609,
+                   "mvTypeID":  212206,
+                   "speciesID":  4288,
+                   "spellID":  426060,
+                   "displayID":  114609,
+                   "typeName":  "pet"
+               },
+    "210556":  {
+                   "npcID":  212275,
+                   "itemID":  210556,
+                   "modelID":  114645,
+                   "mvTypeID":  212275,
+                   "speciesID":  4291,
+                   "spellID":  426156,
+                   "displayID":  114645,
+                   "typeName":  "pet"
+               },
+    "211862":  {
+                   "npcID":  0,
+                   "itemID":  211862,
+                   "modelID":  0,
+                   "mvTypeID":  0,
+                   "speciesID":  0,
+                   "spellID":  376898,
+                   "displayID":  102078,
+                   "typeName":  "mount"
+               },
+    "213133":  {
+                   "npcID":  216930,
+                   "itemID":  213133,
+                   "modelID":  116799,
+                   "mvTypeID":  216930,
+                   "speciesID":  4411,
+                   "spellID":  433791,
+                   "displayID":  116799,
+                   "typeName":  "pet"
+               },
+    "217612":  {
+                   "npcID":  0,
+                   "itemID":  217612,
+                   "modelID":  0,
+                   "mvTypeID":  0,
+                   "speciesID":  0,
+                   "spellID":  440444,
+                   "displayID":  97313,
+                   "typeName":  "mount"
+               },
+    "219105":  {
+                   "npcID":  0,
+                   "itemID":  219105,
+                   "modelID":  0,
+                   "mvTypeID":  0,
+                   "speciesID":  0,
+                   "spellID":  0,
+                   "displayID":  0,
+                   "typeName":  "unknown"
+               },
+    "219110":  {
+                   "npcID":  0,
+                   "itemID":  219110,
+                   "modelID":  0,
+                   "mvTypeID":  0,
+                   "speciesID":  0,
+                   "spellID":  0,
+                   "displayID":  0,
+                   "typeName":  "unknown"
+               },
+    "219132":  {
+                   "npcID":  0,
+                   "itemID":  219132,
+                   "modelID":  0,
+                   "mvTypeID":  0,
+                   "speciesID":  0,
+                   "spellID":  0,
+                   "displayID":  0,
+                   "typeName":  "unknown"
+               },
+    "221492":  {
+                   "npcID":  222081,
+                   "itemID":  221492,
+                   "modelID":  114832,
+                   "mvTypeID":  222081,
+                   "speciesID":  4459,
+                   "spellID":  445493,
+                   "displayID":  114832,
+                   "typeName":  "pet"
+               },
+    "221817":  {
+                   "npcID":  223785,
+                   "itemID":  221817,
+                   "modelID":  119748,
+                   "mvTypeID":  223785,
+                   "speciesID":  4579,
+                   "spellID":  449550,
+                   "displayID":  119748,
+                   "typeName":  "pet"
+               },
+    "221818":  {
+                   "npcID":  223810,
+                   "itemID":  221818,
+                   "modelID":  119749,
+                   "mvTypeID":  223810,
+                   "speciesID":  4580,
+                   "spellID":  449626,
+                   "displayID":  119749,
+                   "typeName":  "pet"
+               },
+    "221821":  {
+                   "npcID":  222711,
+                   "itemID":  221821,
+                   "modelID":  119225,
+                   "mvTypeID":  222711,
+                   "speciesID":  4517,
+                   "spellID":  446734,
+                   "displayID":  119225,
+                   "typeName":  "pet"
+               },
+    "222967":  {
+                   "npcID":  222342,
+                   "itemID":  222967,
+                   "modelID":  114051,
+                   "mvTypeID":  222342,
+                   "speciesID":  4475,
+                   "spellID":  446048,
+                   "displayID":  114051,
+                   "typeName":  "pet"
+               },
+    "222970":  {
+                   "npcID":  222574,
+                   "itemID":  222970,
+                   "modelID":  119200,
+                   "mvTypeID":  222574,
+                   "speciesID":  4490,
+                   "spellID":  446435,
+                   "displayID":  119200,
+                   "typeName":  "pet"
+               },
+    "223267":  {
+                   "npcID":  0,
+                   "itemID":  223267,
+                   "modelID":  0,
+                   "mvTypeID":  0,
+                   "speciesID":  0,
+                   "spellID":  447195,
+                   "displayID":  119492,
+                   "typeName":  "mount"
+               },
+    "223313":  {
+                   "npcID":  0,
+                   "itemID":  223313,
+                   "modelID":  0,
+                   "mvTypeID":  0,
+                   "speciesID":  0,
+                   "spellID":  448934,
+                   "displayID":  119534,
+                   "typeName":  "mount"
+               },
+    "223802":  {
+                   "npcID":  223859,
+                   "itemID":  223802,
+                   "modelID":  119766,
+                   "mvTypeID":  223859,
+                   "speciesID":  4581,
+                   "spellID":  449807,
+                   "displayID":  119766,
+                   "typeName":  "pet"
+               },
+    "224415":  {
+                   "npcID":  0,
+                   "itemID":  224415,
+                   "modelID":  0,
+                   "mvTypeID":  0,
+                   "speciesID":  0,
+                   "spellID":  452779,
+                   "displayID":  120168,
+                   "typeName":  "mount"
+               },
+    "225934":  {
+                   "npcID":  222583,
+                   "itemID":  225934,
+                   "modelID":  119695,
+                   "mvTypeID":  222583,
+                   "speciesID":  4500,
+                   "spellID":  446493,
+                   "displayID":  119695,
+                   "typeName":  "pet"
+               },
+    "232807":  {
+                   "npcID":  231621,
+                   "itemID":  232807,
+                   "modelID":  75331,
+                   "mvTypeID":  231621,
+                   "speciesID":  4664,
+                   "spellID":  471946,
+                   "displayID":  75331,
+                   "typeName":  "pet"
+               },
+    "232855":  {
+                   "npcID":  231469,
+                   "itemID":  232855,
+                   "modelID":  144093,
+                   "mvTypeID":  231469,
+                   "speciesID":  4631,
+                   "spellID":  471902,
+                   "displayID":  144093,
+                   "typeName":  "pet"
+               },
+    "232991":  {
+                   "npcID":  0,
+                   "itemID":  232991,
+                   "modelID":  0,
+                   "mvTypeID":  0,
+                   "speciesID":  0,
+                   "spellID":  472752,
+                   "displayID":  123415,
+                   "typeName":  "mount"
+               },
+    "235050":  {
+                   "npcID":  0,
+                   "itemID":  235050,
+                   "modelID":  0,
+                   "mvTypeID":  0,
+                   "speciesID":  0,
+                   "spellID":  0,
+                   "displayID":  0,
+                   "typeName":  "unknown"
+               },
+    "235515":  {
+                   "npcID":  0,
+                   "itemID":  235515,
+                   "modelID":  0,
+                   "mvTypeID":  0,
+                   "speciesID":  0,
+                   "spellID":  473472,
+                   "displayID":  79821,
+                   "typeName":  "mount"
+               },
+    "240840":  {
+                   "npcID":  242452,
+                   "itemID":  240840,
+                   "modelID":  128356,
+                   "mvTypeID":  242452,
+                   "speciesID":  4803,
+                   "spellID":  1230550,
+                   "displayID":  128356,
+                   "typeName":  "pet"
+               },
+    "245255":  {
+                   "npcID":  245499,
+                   "itemID":  245255,
+                   "modelID":  129684,
+                   "mvTypeID":  245499,
+                   "speciesID":  4841,
+                   "spellID":  1238333,
+                   "displayID":  129684,
+                   "typeName":  "pet"
+               },
+    "246339":  {
+                   "npcID":  246661,
+                   "itemID":  246339,
+                   "modelID":  130098,
+                   "mvTypeID":  246661,
+                   "speciesID":  4854,
+                   "spellID":  0,
+                   "displayID":  130098,
+                   "typeName":  "pet"
+               },
+    "258188":  {
+                   "npcID":  0,
+                   "itemID":  258188,
+                   "modelID":  0,
+                   "mvTypeID":  0,
+                   "speciesID":  0,
+                   "spellID":  1262886,
+                   "displayID":  138340,
+                   "typeName":  "mount"
+               },
+    "258189":  {
+                   "npcID":  254689,
+                   "itemID":  258189,
+                   "modelID":  138342,
+                   "mvTypeID":  254689,
+                   "speciesID":  4910,
+                   "spellID":  0,
+                   "displayID":  138342,
+                   "typeName":  "pet"
+               },
+    "258737":  {
+                   "npcID":  254979,
+                   "itemID":  258737,
+                   "modelID":  138582,
+                   "mvTypeID":  254979,
+                   "speciesID":  4913,
+                   "spellID":  1263911,
+                   "displayID":  138582,
+                   "typeName":  "pet"
+               },
+    "40653":  {
+                  "npcID":  23274,
+                  "itemID":  40653,
+                  "modelID":  16633,
+                  "mvTypeID":  23274,
+                  "speciesID":  160,
+                  "spellID":  40990,
+                  "displayID":  16633,
+                  "typeName":  "pet"
+              },
+    "44841":  {
+                  "npcID":  32939,
+                  "itemID":  44841,
+                  "modelID":  28397,
+                  "mvTypeID":  32939,
+                  "speciesID":  203,
+                  "spellID":  61991,
+                  "displayID":  28397,
+                  "typeName":  "pet"
+              },
+    "49912":  {
+                  "npcID":  37865,
+                  "itemID":  49912,
+                  "modelID":  31174,
+                  "mvTypeID":  37865,
+                  "speciesID":  250,
+                  "spellID":  70613,
+                  "displayID":  31174,
+                  "typeName":  "pet"
+              },
+    "54810":  {
+                  "npcID":  40624,
+                  "itemID":  54810,
+                  "modelID":  31956,
+                  "mvTypeID":  40624,
+                  "speciesID":  255,
+                  "spellID":  75613,
+                  "displayID":  31956,
+                  "typeName":  "pet"
+              },
+    "60869":  {
+                  "npcID":  45247,
+                  "itemID":  60869,
+                  "modelID":  45940,
+                  "mvTypeID":  45247,
+                  "speciesID":  265,
+                  "spellID":  84492,
+                  "displayID":  45940,
+                  "typeName":  "pet"
+              },
+    "65661":  {
+                  "npcID":  42177,
+                  "itemID":  65661,
+                  "modelID":  69048,
+                  "mvTypeID":  42177,
+                  "speciesID":  259,
+                  "spellID":  78683,
+                  "displayID":  69048,
+                  "typeName":  "pet"
+              },
+    "65662":  {
+                  "npcID":  42183,
+                  "itemID":  65662,
+                  "modelID":  69047,
+                  "mvTypeID":  42183,
+                  "speciesID":  260,
+                  "spellID":  78685,
+                  "displayID":  69047,
+                  "typeName":  "pet"
+              },
+    "69838":  {
+                  "npcID":  0,
+                  "itemID":  69838,
+                  "modelID":  0,
+                  "mvTypeID":  0,
+                  "speciesID":  0,
+                  "spellID":  0,
+                  "displayID":  0,
+                  "typeName":  "unknown"
+              },
+    "71140":  {
+                  "npcID":  54227,
+                  "itemID":  71140,
+                  "modelID":  38693,
+                  "mvTypeID":  54227,
+                  "speciesID":  323,
+                  "spellID":  100970,
+                  "displayID":  38693,
+                  "typeName":  "pet"
+              },
+    "71387":  {
+                  "npcID":  54374,
+                  "itemID":  71387,
+                  "modelID":  38776,
+                  "mvTypeID":  54374,
+                  "speciesID":  325,
+                  "spellID":  101424,
+                  "displayID":  38776,
+                  "typeName":  "pet"
+              },
+    "85578":  {
+                  "npcID":  63621,
+                  "itemID":  85578,
+                  "modelID":  45894,
+                  "mvTypeID":  63621,
+                  "speciesID":  821,
+                  "spellID":  124152,
+                  "displayID":  45894,
+                  "typeName":  "pet"
+              },
+    "86562":  {
+                  "npcID":  64632,
+                  "itemID":  86562,
+                  "modelID":  43597,
+                  "mvTypeID":  64632,
+                  "speciesID":  835,
+                  "spellID":  126247,
+                  "displayID":  43597,
+                  "typeName":  "pet"
+              },
+    "88147":  {
+                  "npcID":  64232,
+                  "itemID":  88147,
+                  "modelID":  43127,
+                  "mvTypeID":  64232,
+                  "speciesID":  820,
+                  "spellID":  127815,
+                  "displayID":  43127,
+                  "typeName":  "pet"
+              },
+    "89686":  {
+                  "npcID":  66450,
+                  "itemID":  89686,
+                  "modelID":  45987,
+                  "mvTypeID":  66450,
+                  "speciesID":  856,
+                  "spellID":  130726,
+                  "displayID":  45987,
+                  "typeName":  "pet"
+              },
+    "89736":  {
+                  "npcID":  66491,
+                  "itemID":  89736,
+                  "modelID":  45195,
+                  "mvTypeID":  66491,
+                  "speciesID":  855,
+                  "spellID":  130759,
+                  "displayID":  45195,
+                  "typeName":  "pet"
+              },
+    "92738":  {
+                  "npcID":  0,
+                  "itemID":  92738,
+                  "modelID":  0,
+                  "mvTypeID":  0,
+                  "speciesID":  0,
+                  "spellID":  0,
+                  "displayID":  0,
+                  "typeName":  "unknown"
+              },
+    "93031":  {
+                  "npcID":  68655,
+                  "itemID":  93031,
+                  "modelID":  46897,
+                  "mvTypeID":  68655,
+                  "speciesID":  1145,
+                  "spellID":  135256,
+                  "displayID":  46897,
+                  "typeName":  "pet"
+              },
+    "94191":  {
+                  "npcID":  69849,
+                  "itemID":  94191,
+                  "modelID":  48211,
+                  "mvTypeID":  69849,
+                  "speciesID":  1184,
+                  "spellID":  138287,
+                  "displayID":  48211,
+                  "typeName":  "pet"
+              },
+    "97558":  {
+                  "npcID":  71023,
+                  "itemID":  97558,
+                  "modelID":  48667,
+                  "mvTypeID":  71023,
+                  "speciesID":  1236,
+                  "spellID":  141450,
+                  "displayID":  48667,
+                  "typeName":  "pet"
+              },
+    "98715":  {
+                  "npcID":  0,
+                  "itemID":  98715,
+                  "modelID":  0,
+                  "mvTypeID":  0,
+                  "speciesID":  0,
+                  "spellID":  0,
+                  "displayID":  0,
+                  "typeName":  "unknown"
+              }
+}

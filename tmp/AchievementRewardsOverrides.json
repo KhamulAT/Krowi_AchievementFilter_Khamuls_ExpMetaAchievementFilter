@@ -1,0 +1,263 @@
+{
+    "5860": {
+        "replace_existing":{
+            "replace": true,
+            "rewards": [[3, 65661], [3, 65662]]
+        }
+    },
+    "7499": {
+        "remove_all": {
+            "remove_all": true
+        }
+    },
+    "8348": {
+        "remove_all": {
+            "remove_all": true
+        }
+    },
+    "9824": {
+        "replace_existing":{
+            "replace": true,
+            "rewards": [[3, 122116]]
+        }
+    },
+    "9983": {
+        "replace_existing":{
+            "replace": true,
+            "rewards": [[3, 123862]]
+        }
+    },
+    "11320": {
+        "remove_all": {
+            "remove_all": true
+        }
+    },
+    "11765": {
+        "replace_existing":{
+            "replace": true,
+            "rewards": [[3, 147543]]
+        }
+    },
+    "12893": {
+        "replace_existing":{
+            "replace": true,
+            "rewards": [[3, 142379], [3, 142380]]
+        }
+    },
+    "12900": {
+        "replace_existing":{
+            "replace": true,
+            "rewards": [[3, 139775], [3, 139776]]
+        }
+    },
+    "12916": {
+        "replace_existing":{
+            "replace": true,
+            "rewards": [[3, 163974], [3, 163975]]
+        }
+    },
+    "13517": {
+        "replace_existing":{
+            "replace": true,
+            "rewards": [[3, 168056], [3, 168055]]
+        }
+    },
+    "14143": {
+        "replace_existing":{
+            "replace": true,
+            "rewards": [[3, 174463]]
+        }
+    },
+    "14625": {
+        "remove_all": {
+            "remove_all": true
+        }
+    },
+    
+    "15402": {
+        "remove_all": {
+            "remove_all": true
+        }
+    },
+    "15508": {
+        "remove_all": {
+            "remove_all": true
+        }
+    },
+    "15939": {
+        "remove_all": {
+            "remove_all": true
+        }
+    },
+    "15940": {
+        "replace_existing":{
+            "replace": true,
+            "rewards": [[3, 199688]]
+        }
+    },
+    "16444": {
+        "remove_all": {
+            "remove_all": true
+        }
+    },
+    "17782": {
+        "remove_all": {
+            "remove_all": true
+        }
+    },
+    "17785": {
+        "replace_existing":{
+            "replace": true,
+            "rewards": [[6, 408648]]
+        }
+    },
+    "18644": {
+        "replace_existing":{
+            "replace": true,
+            "rewards": [[3, 208151]]
+        }
+    },
+    "19317": {
+        "remove_all": {
+            "remove_all": true
+        }
+    },
+    "19486": {
+        "replace_existing":{
+            "replace": true,
+            "rewards": [[6, 373967]]
+        }
+    },
+    "19792": {
+        "replace_existing":{
+            "replace": true,
+            "rewards": [[3, 213133]]
+        }
+    },
+    "19877": {
+        "replace_existing":{
+            "replace": true,
+            "rewards": [[3, 221817]]
+        }
+    },
+    "20003": {
+        "replace_existing":{
+            "replace": true,
+            "rewards": [[3, 221818]]
+        }
+    },
+    "20596": {
+        "remove_all": {
+            "remove_all": true
+        }
+    },
+    "40194": {
+        "replace_existing":{
+            "replace": true,
+            "rewards": [[3, 221821]]
+        }
+    },
+    "40618": {
+        "remove_all": {
+            "remove_all": true
+        }
+    },
+    "40869": {
+        "replace_existing":{
+            "replace": true,
+            "rewards": [[3, 225934]]
+        }
+    },
+    "40953": {
+        "extend_existing": {
+            "add": [201, 3838]
+        }
+    },
+    "40956": {
+        "replace_existing":{
+            "replace": true,
+            "rewards": [[6, 303767]]
+        }
+    },
+    "40980": {
+        "replace_existing":{
+            "replace": true,
+            "rewards": [[3, 222970]]
+        }
+    },
+    "41092": {
+        "replace_existing":{
+            "replace": true,
+            "rewards": [[3, 205013]]
+        }
+    },
+    "41169": {
+        "remove_all": {
+            "remove_all": true
+        }
+    },
+    "41588": {
+        "remove_all": {
+            "remove_all": true
+        }
+    },
+    "42319": {
+        "replace_existing":{
+            "replace": true,
+            "rewards": [[6, 1254381]]
+        }
+    },
+    "42541": {
+        "replace_existing":{
+            "replace": true,
+            "rewards": [[3, 246339]]
+        }
+    },
+    "61091": {
+        "replace_existing":{
+            "replace": true,
+            "rewards": [[3, 258189]]
+        }
+    },
+    "61574": {
+        "replace_existing":{
+            "replace": true,
+            "rewards": [[201, 15494]]
+        }
+    },
+    "_examples":  {
+                      "replace_existing":  {
+                                               "replace":  true,
+                                               "rewards":  [
+                                                               [
+                                                                   3,
+                                                                   12345
+                                                               ],
+                                                               [
+                                                                   201,
+                                                                   9999
+                                                               ]
+                                                           ]
+                                           },
+                      "extend_existing":  {
+                                              "add":  [
+                                                          3,
+                                                          22222
+                                                      ],
+                                              "remove":  [
+                                                             201,
+                                                             9999
+                                                         ]
+                                          },
+                      "remove_all":  {
+                                         "remove_all":  true
+                                     },
+                      "remove_all_then_add":  {
+                                                  "remove_all":  true,
+                                                  "add":  [
+                                                              3,
+                                                              33333
+                                                          ]
+                                              }
+                  }
+}

@@ -5,7 +5,7 @@ local Utilities = KhamulsAchievementFilter:GetModule("Utilities")
 local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 
 function GetTWWAchievementId()
-    return 41201
+    return 61451
 end
 
 function GetTWWList()

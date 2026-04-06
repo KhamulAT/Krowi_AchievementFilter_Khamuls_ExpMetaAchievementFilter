@@ -18,6 +18,27 @@ function KhamulsAchievementFilter:InitOptions()
         order = 0,
         name = L["Changing any option on this page, requires a reload to take affect."]
       },
+      debugSettings = {
+        type = "group",
+        inline = true,
+        name = L["Debug Settings"],
+        order = 0.5,
+        args = {
+          debugEnabled = {
+            type = "toggle",
+            name = L["Enable debug output"],
+            desc = L["If enabled, RewardPreview diagnostic messages are shown in chat."],
+            width = "full",
+            order = 1,
+            get = function()
+              return KhamulsAchievementFilter.db.profile.debugEnabled or false
+            end,
+            set = function(_, value)
+              KhamulsAchievementFilter.db.profile.debugEnabled = value and true or false
+            end,
+          },
+        }
+      },
       campsiteAchievements = {
         type = "group",
         inline = true,

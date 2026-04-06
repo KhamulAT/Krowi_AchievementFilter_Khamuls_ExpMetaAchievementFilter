@@ -1,0 +1,26 @@
+{
+    "1254381":  {
+                    "mvTypeID":  251889,
+                    "spellID":  1254381,
+                    "typeName":  "spell",
+                    "displayID":  137254
+                },
+    "303767":  {
+                   "mvTypeID":  0,
+                   "spellID":  303767,
+                   "typeName":  "spell",
+                   "displayID":  92492
+               },
+    "373967":  {
+                   "mvTypeID":  0,
+                   "spellID":  373967,
+                   "typeName":  "spell",
+                   "displayID":  100692
+               },
+    "408648":  {
+                   "mvTypeID":  0,
+                   "spellID":  408648,
+                   "typeName":  "spell",
+                   "displayID":  112244
+               }
+}
