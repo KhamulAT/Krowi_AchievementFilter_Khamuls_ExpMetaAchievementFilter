@@ -53,3 +53,17 @@ L["Khamul's Toy Box"] = "Caixa de Brinquedos do Khamul"
 L["Show List for Achievements with toys as reward"] = "Mostrar coleção de conquistas com brinquedos como recompensa"
 L["If enabled, a list with all achievements, which have a toy as reward, will be shown"] = "Se ativado, uma coleção com todas as conquistas que têm um brinquedo como recompensa será exibida."
 L["Toy Collection Settings"] = "Configurações da Coleção de Brinquedos"
+
+-- RewardPreview
+L["Preview Reward"] = "Preview Reward"
+L["No preview available for this reward"] = "No preview available for this reward"
+L["Reward"] = "Reward"
+L["Item"] = "Item"
+L["Decor"] = "Decor"
+L["Title"] = "Title"
+L["Spell"] = "Spell"
+L["Debug Settings"] = "Debug Settings"
+L["Enable debug output"] = "Enable debug output"
+L["If enabled, RewardPreview diagnostic messages are shown in chat."] = "If enabled, RewardPreview diagnostic messages are shown in chat."
+L["NPC"] = "NPC"
+

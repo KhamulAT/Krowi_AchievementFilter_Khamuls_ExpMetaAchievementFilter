@@ -53,3 +53,17 @@ L["Khamul's Toy Box"] = "玩具箱"
 L["Show List for Achievements with toys as reward"] = "显示奖励为玩具的成就收藏"
 L["If enabled, a list with all achievements, which have a toy as reward, will be shown"] = "启用后，将显示一个包含所有奖励为玩具的成就的收藏。"
 L["Toy Collection Settings"] = "Khamul 玩具收藏设置"
+
+-- RewardPreview
+L["Preview Reward"] = "Preview Reward"
+L["No preview available for this reward"] = "No preview available for this reward"
+L["Reward"] = "Reward"
+L["Item"] = "Item"
+L["Decor"] = "Decor"
+L["Title"] = "Title"
+L["Spell"] = "Spell"
+L["Debug Settings"] = "Debug Settings"
+L["Enable debug output"] = "Enable debug output"
+L["If enabled, RewardPreview diagnostic messages are shown in chat."] = "If enabled, RewardPreview diagnostic messages are shown in chat."
+L["NPC"] = "NPC"
+

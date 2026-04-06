@@ -51,3 +51,17 @@ L["If an Achievement has other Achievements as requirement, they will be shown i
 L["Changing any option on this page, requires a reload to take affect."] = "Changing any option on this page, requires a reload to take affect."
 L["Include Battle-Pet related rewards"] = "Include Battle-Pet related rewards"
 L["This will include Achievements with Pet-Battle rewards like daily quests unlock, costumes and toys"] = "This will include Achievements with Pet-Battle rewards like daily quests unlock, costumes and toys"
+
+-- RewardPreview
+L["Preview Reward"] = "Preview Reward"
+L["No preview available for this reward"] = "No preview available for this reward"
+L["Reward"] = "Reward"
+L["Item"] = "Item"
+L["Decor"] = "Decor"
+L["Title"] = "Title"
+L["Spell"] = "Spell"
+L["Debug Settings"] = "Debug Settings"
+L["Enable debug output"] = "Enable debug output"
+L["If enabled, RewardPreview diagnostic messages are shown in chat."] = "If enabled, RewardPreview diagnostic messages are shown in chat."
+L["NPC"] = "NPC"
+

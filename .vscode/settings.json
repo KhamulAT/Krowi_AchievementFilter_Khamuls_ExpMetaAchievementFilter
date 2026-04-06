@@ -47,6 +47,18 @@
     "QUEUED_STATUS_UNKNOWN",
     "Add",
     "EXPANSION_NAME10",
-    "EXPANSION_NAME1"
+    "EXPANSION_NAME1",
+    "DressUpItemLink",
+    "DressUpLink",
+    "DressUpMount",
+    "DressUpBattlePet",
+    "DressUpBattlePetLink",
+    "ToggleCollectionsJournal",
+    "PetJournal_ShowPetCardBySpeciesID",
+    "PetJournal_SelectSpecies",
+    "ORBIT_CAMERA_MOUSE_MODE_PITCH_ROTATION",
+    "CAMERA_TRANSITION_TYPE_IMMEDIATE",
+    "CAMERA_MODIFICATION_TYPE_DISCARD",
+    "SetItemRef"
   ]
 }

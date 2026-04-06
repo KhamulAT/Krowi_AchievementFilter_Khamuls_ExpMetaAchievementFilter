@@ -62,7 +62,6 @@ function GetCrossExpansionPetAchievements()
         7433, -- Newbie
         6566, -- Just a Pup
         6581, -- Pro Pet Crew
-        6582, -- Pro Pet Mob
     }
 
 
