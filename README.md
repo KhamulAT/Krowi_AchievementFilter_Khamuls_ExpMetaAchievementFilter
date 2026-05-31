@@ -1,14 +1,19 @@
-# Khamuls Expansion Achievement Filter for Krowi's AchievementFilter Addon
-This addon provides additional filters for Krowi's AchievementFilter Addon.
+## Khamuls Collections Plugin for Krowi's AchievementFilter Addon
+
+This addon provides additional collections for Krowi's AchievementFilter Addon.
+
+__**New since 2.2.0:**__
+
+\--> Preview for Pets, Mounts and Decors
 
 Currently includes the following:
-- Battle for Azeroth
-- Shadowlands
-- Dragonflight
-- The War Within
 
-Curseforge:
-Requires https://www.curseforge.com/wow/addons/krowi-achievement-filter to work properly
+*   Mount-Meta Achievements for BfA, SL, DF and TWW
+*   Mount Achievements
+*   Warband Campsite Achievements
+*   Pet Achievements
+*   Housing Decoration Achievements
+*   Achievements with toys as reward
+*   more to come
 
-Wago:
-Requires https://addons.wago.io/addons/krowi-achievement-filter to work properly
+Requires [https://www.curseforge.com/wow/addons/krowi-achievement-filter](https://www.curseforge.com/wow/addons/krowi-achievement-filter)

@@ -154,11 +154,58 @@ function KhamulsAchievementFilter:InitOptions()
           },
         }
       },
+      mountAchievements = {
+        type = "group",
+        inline = true,
+        name = L["Mount Collection Settings"],
+        order = 4,
+        args = {
+          mountAchievementsEnabled = {
+            type = "toggle",
+            name = L["Show List for Achievements with mounts as reward"],
+            desc = L["If enabled, a list with all achievements, which have a mount as reward, will be shown"],
+            width = "full",
+            order = 1,
+            get = function()
+              return KhamulsAchievementFilter.db.profile.mountAchievementsEnabled
+            end,
+            set = function(_, value)
+              KhamulsAchievementFilter.db.profile.mountAchievementsEnabled = value
+            end,
+          },
+          flattenStructure = {
+            type = "toggle",
+            name = L["Flatten collection structure"],
+            desc = L["The collections depth will be flatten and all achievements will be displayed in the expansions category"],
+            width = "full",
+            order = 2,
+            get = function()
+              return KhamulsAchievementFilter.db.profile.mountAchievementsSettings.flattenStructure
+            end,
+            set = function(_, value)
+              KhamulsAchievementFilter.db.profile.mountAchievementsSettings.flattenStructure = value
+            end
+          },
+          includeChildAchievements = {
+            type = "toggle",
+            name = L["Include Child Achievements"],
+            desc = L["If an Achievement has other Achievements as requirement, they will be shown in an extra category."],
+            width = "full",
+            order = 3,
+            get = function()
+              return KhamulsAchievementFilter.db.profile.mountAchievementsSettings.includeChildAchievements
+            end,
+            set = function(_, value)
+              KhamulsAchievementFilter.db.profile.mountAchievementsSettings.includeChildAchievements = value
+            end
+          }
+        }
+      },
       petAchievements = {
         type = "group",
         inline = true,
         name = L["Pet Collection Settings"],
-        order = 4,
+        order = 5,
         args = {
           petAchievementsEnabled = {
             type = "toggle",
@@ -218,7 +265,7 @@ function KhamulsAchievementFilter:InitOptions()
         type = "group",
         inline = true,
         name = L["Toy Collection Settings"],
-        order = 5,
+        order = 6,
         args = {
           toyAchievementsEnabled = {
             type = "toggle",
@@ -263,7 +310,7 @@ function KhamulsAchievementFilter:InitOptions()
       },
       krowiStatus = {
         type = "description",
-        order = 6,
+        order = 7,
         name = function()
           if KhamulsAchievementFilter:IsKrowiAFAvailable() then
             return L["Krowi AchievementFilter status: "] .. L["detected"]

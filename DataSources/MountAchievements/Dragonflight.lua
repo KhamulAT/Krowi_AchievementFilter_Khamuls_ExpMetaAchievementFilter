@@ -1,0 +1,213 @@
+local ADDON_NAME = ...
+local KhamulsAchievementFilter = LibStub("AceAddon-3.0"):GetAddon(ADDON_NAME)
+local Utilities = KhamulsAchievementFilter:GetModule("Utilities")
+
+local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
+
+function GetDragonflightMountAchievements()
+
+    -- Child Achievements Glory of the Dragonflight Hero
+    local ACMChilds_GloryOfTheDragonflightHero = {
+        Utilities:GetAchievementName(16295),
+        false,
+        {
+            IgnoreCollapsedChainFilter = true,
+            IgnoreFactionFilter = true
+        },
+        {
+            16434, -- See Me After Class
+            16329, -- Duck, Duck, Spruce!
+            16441, -- Squad Goals
+            16296, -- Growlbossify
+            16430, -- All Bark, All Bite
+            16404, -- So You Can Kill This in a Way That Matters...
+            16517, -- Toxicity Strike Team
+            16426, -- Hungry Hungry Hornswog
+            16427, -- Go With the Flow
+            16438, -- Knowledge is... Preserved?
+            16432, -- Ready for Raiding VIII
+            16453, -- Liquid Hot Magma
+            16440, -- Are You My Broodmother?
+            16402, -- Dragon Kill Points
+            16320, -- Does Steam Do Fire Damage?
+            16330, -- You Must Be Made of Hide
+            16445, -- Icy What You Did There
+            16331, -- The Cracked Crystal
+            16447, -- What Are The Chances...
+            16456, -- Weapons of the Maruukai
+            16620, -- Ohuna Incubation
+            16602, -- Nokhud Deed Goes Unnoticed
+            16337, -- It's a Trogg Eat Trogg World
+            16282, -- No, You're Stunning!
+            16281 -- Like Sands Through the Hourglass
+        }
+    }
+
+    -- Child Achievements Glory of the Vault Raider
+    local ACMChilds_GloryOfTheVaultRaider = {
+        Utilities:GetAchievementName(16355),
+        false,
+        {
+            IgnoreCollapsedChainFilter = true,
+            IgnoreFactionFilter = true
+        },
+        {
+            16335, -- What Froozen Things Do
+            16365, -- Little Friends
+            16364, -- The Lunker Below
+            16419, -- I Was Saving That For Later
+            16458, -- Nothing But Air
+            16450, -- The Power is MINE!
+            16442, -- Incubation Extermination
+            16451 -- The Ol Raszle Daszle
+        }
+    }
+
+    -- Child Achievements Glory of the Aberrus Raider
+    local ACMChilds_GloryOfTheAberrusRaider = {
+        Utilities:GetAchievementName(18251),
+        false,
+        {
+            IgnoreCollapsedChainFilter = true,
+            IgnoreFactionFilter = true
+        },
+        {
+            18229, -- Cosplate
+            18168, -- I'll Make My Own Shadowflame
+            18173, -- Tabula Rasa
+            18228, -- Are You Even Trying?
+            18230, -- Whac-A-Swog
+            18193, -- Eggscellent Eggsecution
+            18172, -- Escar-Go-Go-Go
+            18149, -- Objects in Transit May Shatter
+            17877 -- We'll Never See That Again, Surely
+        }
+    }
+
+    -- Child Achievements Glory of the Dream Raider
+    local ACMChilds_GloryOfTheDreamRaider = {
+        Utilities:GetAchievementName(19349),
+        false,
+        {
+            IgnoreCollapsedChainFilter = true,
+            IgnoreFactionFilter = true
+        },
+        {
+            19322, -- Meaner Pastures
+            19320, -- Cruelty Free
+            19321, -- Swog Champion
+            19193, -- Ducks In A Row
+            19089, -- Don't Let the Doe Hit You On The Way Out
+            19394, -- A Dream Within a Dream
+            19319, -- Haven't We Done This Before?
+            19393, -- Whelp, I'm Lost
+            19390 -- Memories of Teldrassil
+        }
+    }
+
+    -- Child Achievements Awakening the Dragonflight Raids
+    local ACMChilds_AwakeningTheDragonflightRaids = {
+        Utilities:GetAchievementName(19574),
+        false,
+        {
+            IgnoreCollapsedChainFilter = true,
+            IgnoreFactionFilter = true
+        },
+        {
+            19564, -- Awakened Storms
+            19567, -- Awakened Shadows
+            19570 -- Awakened Flames
+        }
+    }
+
+    -- Flat achievement list
+    local ACMListFlat = {
+        _G.EXPANSION_NAME9, -- Dragonflight
+        false,
+        {
+            IgnoreCollapsedChainFilter = true,
+            IgnoreFactionFilter = true;
+            Tooltip = Utilities:ReplacePlaceholderInText(L["Tt_UseMetaAchievementPlugin"], {Utilities:GetAchievementName(19458)})
+        }
+    }
+
+    if KhamulsAchievementFilter.db.profile.mountAchievementsSettings.includeChildAchievements then
+        ACMListFlat[#ACMListFlat+1] = ACMChilds_GloryOfTheDragonflightHero
+        ACMListFlat[#ACMListFlat+1] = ACMChilds_GloryOfTheVaultRaider
+        ACMListFlat[#ACMListFlat+1] = ACMChilds_GloryOfTheAberrusRaider
+        ACMListFlat[#ACMListFlat+1] = ACMChilds_GloryOfTheDreamRaider
+        ACMListFlat[#ACMListFlat+1] = ACMChilds_AwakeningTheDragonflightRaids
+    end
+
+    ACMListFlat[#ACMListFlat+1] = {
+        16295, -- Glory of the Dragonflight Hero
+        16355, -- Glory of the Vault Raider
+        18251, -- Glory of the Aberrus Raider
+        19349, -- Glory of the Dream Raider
+        19574, -- Awakening the Dragonflight Raids,
+        19458, -- A World Awoken
+    }
+
+    -- Return flat structure if set
+    if KhamulsAchievementFilter.db.profile.mountAchievementsSettings.flattenStructure then
+        return ACMListFlat
+    end
+
+    -- Dungeons
+    local ACMList_Dungeons= {
+        _G.DUNGEONS,
+        false,
+        {
+            IgnoreCollapsedChainFilter = true,
+            IgnoreFactionFilter = true
+        }
+    }
+
+    if KhamulsAchievementFilter.db.profile.mountAchievementsSettings.includeChildAchievements then
+        ACMList_Dungeons[#ACMList_Dungeons+1] = ACMChilds_GloryOfTheDragonflightHero
+    end
+
+    ACMList_Dungeons[#ACMList_Dungeons+1] = {
+        16295, -- Glory of the Dragonflight Hero
+    }
+
+    local ACMList_Raids = {
+        Utilities:GetAchievementCategoryNameByCategoryID(15271), -- Raids
+        false,
+        {
+            IgnoreCollapsedChainFilter = true,
+            IgnoreFactionFilter = true
+        }
+    }
+
+    if KhamulsAchievementFilter.db.profile.mountAchievementsSettings.includeChildAchievements then
+        ACMList_Raids[#ACMList_Raids+1] = ACMChilds_GloryOfTheVaultRaider
+        ACMList_Raids[#ACMList_Raids+1] = ACMChilds_GloryOfTheAberrusRaider
+        ACMList_Raids[#ACMList_Raids+1] = ACMChilds_GloryOfTheDreamRaider
+        ACMList_Raids[#ACMList_Raids+1] = ACMChilds_AwakeningTheDragonflightRaids
+    end
+
+    ACMList_Raids[#ACMList_Raids+1] = {
+        16355, -- Glory of the Vault Raider
+        18251, -- Glory of the Aberrus Raider
+        19349, -- Glory of the Dream Raider
+        19574, -- Awakening the Dragonflight Raids
+    }
+
+    local ACMList = {
+        _G.EXPANSION_NAME9, -- Dragonflight
+        false,
+        {
+            IgnoreCollapsedChainFilter = true,
+            IgnoreFactionFilter = true;
+            Tooltip = Utilities:ReplacePlaceholderInText(L["Tt_UseMetaAchievementPlugin"], {Utilities:GetAchievementName(19458)})
+        },
+        ACMList_Dungeons,
+        ACMList_Raids,
+        {
+            19458, -- A World Awoken
+        }
+    }
+
+    return ACMList
+end
