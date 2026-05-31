@@ -6,4 +6,5 @@
     <Include file="CampsiteAchievements\Files.xml" />
     <Include file="PetAchievements\Files.xml" />
     <Include file="ToyAchievements\Files.xml" />
+    <Include file="MountAchievements\Files.xml" />
 </Ui>

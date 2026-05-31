@@ -18,6 +18,12 @@ local defaults = {
       flattenStructure = false,
       includeChildAchievements = true
     },
+    mountAchievementsEnabled = true,
+    mountAchievementsSettings = {
+      flattenStructure = false,
+      includeChildAchievements = true,
+      includePetRelatedStuff = true,
+    },
     petAchievementsEnabled = true,
     petAchievementsSettings = {
       flattenStructure = false,
@@ -98,6 +104,10 @@ function KhamulsAchievementFilter:OnPlayerLogin()
 
   if self.db.profile.toyAchievementsEnabled then
      KrowiAF.CategoryData.KhamulsToyAchievementLists = self.Data:GetSource("ToyAchievements"):GetItems()
+  end
+
+    if self.db.profile.mountAchievementsEnabled then
+     KrowiAF.CategoryData.KhamulsMountAchievementLists = self.Data:GetSource("MountAchievements"):GetItems()
   end
 
   local DecorPreview = self:GetModule("DecorPreview", true)

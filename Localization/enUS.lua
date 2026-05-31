@@ -10,6 +10,7 @@ L["Khamul's House Decor Achievement List"] = "Khamul's Decor Collection"
 L["Khamul's Campsite Achievement List"] = "Khamul's Campsite Collection"
 L["Khamul's Battle Pet Achievement List"] = "Khamul's Pet Collection"
 L["Khamul's Toy Box"] = "Khamul's Toy Box"
+L["Khamul's Mounts Achievement List"] = "Khamul's Mount Collection"
 
 -- Special categories
 L["Cross-Expansion"] = "Cross-Expansion"
@@ -51,6 +52,9 @@ L["If an Achievement has other Achievements as requirement, they will be shown i
 L["Changing any option on this page, requires a reload to take affect."] = "Changing any option on this page, requires a reload to take affect."
 L["Include Battle-Pet related rewards"] = "Include Battle-Pet related rewards"
 L["This will include Achievements with Pet-Battle rewards like daily quests unlock, costumes and toys"] = "This will include Achievements with Pet-Battle rewards like daily quests unlock, costumes and toys"
+L["Mount Collection Settings"] = "Mount Collection Settings"
+L["Show List for Achievements with mounts as reward"] = "Show List for Achievements with mounts as reward"
+L["If enabled, a list with all achievements, which have a mount as reward, will be shown"] = "If enabled, a list with all achievements, which have a mount as reward, will be shown"
 
 -- RewardPreview
 L["Preview Reward"] = "Preview Reward"
@@ -64,4 +68,3 @@ L["Debug Settings"] = "Debug Settings"
 L["Enable debug output"] = "Enable debug output"
 L["If enabled, RewardPreview diagnostic messages are shown in chat."] = "If enabled, RewardPreview diagnostic messages are shown in chat."
 L["NPC"] = "NPC"
-

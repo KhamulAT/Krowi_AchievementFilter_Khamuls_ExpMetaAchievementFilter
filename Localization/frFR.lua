@@ -54,6 +54,11 @@ L["Show List for Achievements with toys as reward"] = "Afficher la collection de
 L["If enabled, a list with all achievements, which have a toy as reward, will be shown"] = "Si cette option est activée, une collection avec tous les hauts faits qui offrent un jouet en récompense sera affichée."
 L["Toy Collection Settings"] = "Paramètres de la collection de jouets"
 
+L["Khamul's Mounts Achievement List"] = "Khamul's Mount Collection"
+L["Mount Collection Settings"] = "Mount Collection Settings"
+L["Show List for Achievements with mounts as reward"] = "Show List for Achievements with mounts as reward"
+L["If enabled, a list with all achievements, which have a mount as reward, will be shown"] = "If enabled, a list with all achievements, which have a mount as reward, will be shown"
+
 -- RewardPreview
 L["Preview Reward"] = "Preview Reward"
 L["No preview available for this reward"] = "No preview available for this reward"
@@ -66,4 +71,3 @@ L["Debug Settings"] = "Debug Settings"
 L["Enable debug output"] = "Enable debug output"
 L["If enabled, RewardPreview diagnostic messages are shown in chat."] = "If enabled, RewardPreview diagnostic messages are shown in chat."
 L["NPC"] = "NPC"
-

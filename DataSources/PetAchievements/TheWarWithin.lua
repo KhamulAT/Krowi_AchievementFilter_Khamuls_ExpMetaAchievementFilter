@@ -217,7 +217,7 @@ function GetTWWPetAchievements()
     }
 
     local ACMList_VisionsOfNZoth = {
-        _G.SPLASH_BATTLEFORAZEROTH_8_3_0_FEATURE1_TITLE, -- Horrific Visions
+        Utilities:GetAchievementCategoryNameByCategoryID(15546), -- Visions of N'Zoth Revisited
         false,
         {
             IgnoreCollapsedChainFilter = true,

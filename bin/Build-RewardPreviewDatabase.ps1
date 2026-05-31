@@ -1229,9 +1229,10 @@ Ensure-ParentDirectory $OutputPath
 $decorIds = @(Get-AchievementIdsFromDir "DataSources\\DecorAchievements")
 $petIds = @(Get-AchievementIdsFromDir "DataSources\\PetAchievements")
 $mountIds = @(Get-AchievementIdsFromDir "DataSources\\MetaAchievements")
+$moreMountIds = @(Get-AchievementIdsFromDir "DataSources\\MountAchievements")
 
 $allSet = New-Object System.Collections.Generic.HashSet[int]
-$decorIds + $petIds + $mountIds | ForEach-Object { [void]$allSet.Add([int]$_) }
+$decorIds + $petIds + $mountIds + $moreMountIds | ForEach-Object { [void]$allSet.Add([int]$_) }
 $allIds = @($allSet) | Sort-Object
 
 Write-Log ("Decor IDs: {0}, Pet IDs: {1}, Mount IDs: {2}, Combined unique: {3}" -f $decorIds.Count, $petIds.Count, $mountIds.Count, $allIds.Count)
