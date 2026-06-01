@@ -145,7 +145,7 @@ function GetBattleForAzerothMountAchievements()
 
     -- Flat achievement list
     local ACMListFlat = {
-        _G.EXPANSION_NAME6, -- Legion
+        _G.EXPANSION_NAME7, -- Battle for Azeroth
         false,
         {
             IgnoreCollapsedChainFilter = true,
