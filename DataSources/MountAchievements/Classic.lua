@@ -20,7 +20,7 @@ function GetClassicMountAchievements()
     }
 
     -- Return flat structure if set
-    if KhamulsAchievementFilter.db.profile.petAchievementsSettings.flattenStructure then
+    if KhamulsAchievementFilter.db.profile.mountAchievementsSettings.flattenStructure then
         return ACMListFlat
     end
 
