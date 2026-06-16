@@ -19,6 +19,11 @@ function GetFeatsOfStrengthAndLegacyPetAchievements()
             20003, -- Timeless Isle
             42319, -- Azsuna
             42541, -- Highmountain
+            19079, -- Master of the Turbulent Timeways
+            41056, -- Master of the Turbulent Timeways II
+            41779, -- Master of the Turbulent Timeways III
+            61394, -- Master of the Turbulent Timeways IV
+            61463, -- Master of the Turbulent Timeways V
         }
     }
 
@@ -55,6 +60,22 @@ function GetFeatsOfStrengthAndLegacyPetAchievements()
         }
     }
 
+    local ACMList_Events = {
+        Utilities:GetAchievementCategoryNameByCategoryID(15274), -- Events
+        false,
+        {
+            IgnoreCollapsedChainFilter = true,
+            IgnoreFactionFilter = true
+        },
+        {
+            19079, -- Master of the Turbulent Timeways
+            41056, -- Master of the Turbulent Timeways II
+            41779, -- Master of the Turbulent Timeways III
+            61394, -- Master of the Turbulent Timeways IV
+            61463, -- Master of the Turbulent Timeways V
+        }
+    }
+
     local ACMList = {
         Utilities:GetAchievementCategoryNameByCategoryID(81) .. " & " .. Utilities:GetAchievementCategoryNameByCategoryID(15176), -- Feats of Strength & Legacy
         false,
@@ -64,6 +85,7 @@ function GetFeatsOfStrengthAndLegacyPetAchievements()
         },
         ACMList_RemixMistsOfPandaria,
         ACMList_RemixLegion,
+        ACMList_Events
         {
             8820, -- WoW's 10th Anniversaryv
         }

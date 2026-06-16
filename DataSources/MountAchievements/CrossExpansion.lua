@@ -70,7 +70,7 @@ function GetCrossExpansionMountAchievements()
 
     ACMListFlat[#ACMListFlat+1] = {
         12866, -- 100 Exalted Reputations
-        11176 -- Remember to Share
+        11176, -- Remember to Share
     }
 
     -- Return flat structure if set
