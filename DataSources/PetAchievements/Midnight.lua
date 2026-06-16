@@ -23,6 +23,9 @@ function GetMNPetAchievements()
             61648, -- Heroic: The Blinding Vale
             61509, -- Heroic: Voidscar Arena
             41288, -- Heroic: Windrunner Spire
+            62882, -- Showdown Success: Naigtal
+            62880, -- Showdown Success: Val
+            63349, -- Ultradon  Carnage
         }
     }
 
@@ -81,6 +84,21 @@ function GetMNPetAchievements()
         }
     }
 
+    -- Void Assaults
+    local ACMList_VoidAssaults = {
+        Utilities:GetAchievementCategoryNameByCategoryID(15610),  -- Void Assaults
+        false,
+        {
+            IgnoreCollapsedChainFilter = true,
+            IgnoreFactionFilter = true
+        },
+        {
+            62882, -- Showdown Success: Naigtal
+            62880, -- Showdown Success: Val
+            63349, -- Ultradon  Carnage
+        }
+    }
+
     local ACMList = {
         _G.EXPANSION_NAME11, -- Midnight
         false,
@@ -89,7 +107,8 @@ function GetMNPetAchievements()
             IgnoreFactionFilter = true
         },
         ACMList_Dungeons,
-        ACMList_PetBattles
+        ACMList_PetBattles,
+        ACMList_VoidAssaults
     }
 
     return ACMList
