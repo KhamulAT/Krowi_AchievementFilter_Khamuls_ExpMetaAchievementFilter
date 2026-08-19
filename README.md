@@ -5,7 +5,7 @@ This addon provides additional collections for Krowi's AchievementFilter Addon.
 Currently includes the following:
 
 *   Mount-Meta Achievements for BfA, SL, DF and TWW
-*   Mount Achievements
+*   Mount Achievevments
 *   Warband Campsite Achievements
 *   Pet Achievements
 *   Housing Decoration Achievements
@@ -13,3 +13,6 @@ Currently includes the following:
 *   more to come
 
 Requires [https://www.curseforge.com/wow/addons/krowi-achievement-filter](https://www.curseforge.com/wow/addons/krowi-achievement-filter)
+
+For Wago Description:
+Requires https://addons.wago.io/addons/krowi-achievement-filter
