@@ -22,7 +22,6 @@ $IncludeFiles = @(
     "$AddonName.toc",
     "Core.lua",
     "Utilities.lua",
-    "RewardPreview.lua",
     "Options.lua",
     "LICENSE",
     "README.md"
@@ -30,8 +29,7 @@ $IncludeFiles = @(
 $IncludeDirs = @(
     "Libs",
     "Localization",
-    "DataSources",
-    "Media"
+    "DataSources"
 )
 
 # -------------------------

@@ -2,10 +2,6 @@
 
 This addon provides additional collections for Krowi's AchievementFilter Addon.
 
-__**New since 2.2.0:**__
-
-\--> Preview for Pets, Mounts and Decors
-
 Currently includes the following:
 
 *   Mount-Meta Achievements for BfA, SL, DF and TWW

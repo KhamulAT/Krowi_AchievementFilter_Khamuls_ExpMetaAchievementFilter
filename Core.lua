@@ -6,7 +6,6 @@ local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 
 local defaults = {
   profile = {
-    debugEnabled = false,
     metaAchievementsEnabled = true,
     decorAchievementsEnabled = true,
     decorAchievementsSettings = {
@@ -108,10 +107,5 @@ function KhamulsAchievementFilter:OnPlayerLogin()
 
     if self.db.profile.mountAchievementsEnabled then
      KrowiAF.CategoryData.KhamulsMountAchievementLists = self.Data:GetSource("MountAchievements"):GetItems()
-  end
-
-  local DecorPreview = self:GetModule("DecorPreview", true)
-  if DecorPreview and DecorPreview.Initialize then
-    DecorPreview:Initialize()
   end
 end
