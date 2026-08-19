@@ -7,14 +7,8 @@ local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 function GetDragonflightMountAchievements()
 
     -- Child Achievements Glory of the Dragonflight Hero
-    local ACMChilds_GloryOfTheDragonflightHero = {
-        Utilities:GetAchievementName(16295),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMChilds_GloryOfTheDragonflightHero = KAF_Cat(Utilities:GetAchievementName(16295))
+        :Ids{
             16434, -- See Me After Class
             16329, -- Duck, Duck, Spruce!
             16441, -- Squad Goals
@@ -41,17 +35,10 @@ function GetDragonflightMountAchievements()
             16282, -- No, You're Stunning!
             16281 -- Like Sands Through the Hourglass
         }
-    }
 
     -- Child Achievements Glory of the Vault Raider
-    local ACMChilds_GloryOfTheVaultRaider = {
-        Utilities:GetAchievementName(16355),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMChilds_GloryOfTheVaultRaider = KAF_Cat(Utilities:GetAchievementName(16355))
+        :Ids{
             16335, -- What Froozen Things Do
             16365, -- Little Friends
             16364, -- The Lunker Below
@@ -61,17 +48,10 @@ function GetDragonflightMountAchievements()
             16442, -- Incubation Extermination
             16451 -- The Ol Raszle Daszle
         }
-    }
 
     -- Child Achievements Glory of the Aberrus Raider
-    local ACMChilds_GloryOfTheAberrusRaider = {
-        Utilities:GetAchievementName(18251),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMChilds_GloryOfTheAberrusRaider = KAF_Cat(Utilities:GetAchievementName(18251))
+        :Ids{
             18229, -- Cosplate
             18168, -- I'll Make My Own Shadowflame
             18173, -- Tabula Rasa
@@ -82,17 +62,10 @@ function GetDragonflightMountAchievements()
             18149, -- Objects in Transit May Shatter
             17877 -- We'll Never See That Again, Surely
         }
-    }
 
     -- Child Achievements Glory of the Dream Raider
-    local ACMChilds_GloryOfTheDreamRaider = {
-        Utilities:GetAchievementName(19349),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMChilds_GloryOfTheDreamRaider = KAF_Cat(Utilities:GetAchievementName(19349))
+        :Ids{
             19322, -- Meaner Pastures
             19320, -- Cruelty Free
             19321, -- Swog Champion
@@ -103,49 +76,46 @@ function GetDragonflightMountAchievements()
             19393, -- Whelp, I'm Lost
             19390 -- Memories of Teldrassil
         }
-    }
 
     -- Child Achievements Awakening the Dragonflight Raids
-    local ACMChilds_AwakeningTheDragonflightRaids = {
-        Utilities:GetAchievementName(19574),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMChilds_AwakeningTheDragonflightRaids = KAF_Cat(Utilities:GetAchievementName(19574))
+        :Ids{
             19564, -- Awakened Storms
             19567, -- Awakened Shadows
             19570 -- Awakened Flames
         }
-    }
 
     -- Flat achievement list
-    local ACMListFlat = {
-        _G.EXPANSION_NAME9, -- Dragonflight
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true;
-            Tooltip = Utilities:ReplacePlaceholderInText(L["Tt_UseMetaAchievementPlugin"], {Utilities:GetAchievementName(19458)})
-        }
-    }
+    local ACMListFlat = KAF_Cat(_G.EXPANSION_NAME9, -- Dragonflight
+            Utilities:ReplacePlaceholderInText(L["Tt_UseMetaAchievementPlugin"], {Utilities:GetAchievementName(19458)}))
 
     if KhamulsAchievementFilter.db.profile.mountAchievementsSettings.includeChildAchievements then
-        ACMListFlat[#ACMListFlat+1] = ACMChilds_GloryOfTheDragonflightHero
-        ACMListFlat[#ACMListFlat+1] = ACMChilds_GloryOfTheVaultRaider
-        ACMListFlat[#ACMListFlat+1] = ACMChilds_GloryOfTheAberrusRaider
-        ACMListFlat[#ACMListFlat+1] = ACMChilds_GloryOfTheDreamRaider
-        ACMListFlat[#ACMListFlat+1] = ACMChilds_AwakeningTheDragonflightRaids
+        ACMListFlat:Insert(ACMChilds_GloryOfTheDragonflightHero)
+        ACMListFlat:Insert(ACMChilds_GloryOfTheVaultRaider)
+        ACMListFlat:Insert(ACMChilds_GloryOfTheAberrusRaider)
+        ACMListFlat:Insert(ACMChilds_GloryOfTheDreamRaider)
+        ACMListFlat:Insert(ACMChilds_AwakeningTheDragonflightRaids)
     end
 
-    ACMListFlat[#ACMListFlat+1] = {
+    ACMListFlat:Ids{
         16295, -- Glory of the Dragonflight Hero
         16355, -- Glory of the Vault Raider
         18251, -- Glory of the Aberrus Raider
         19349, -- Glory of the Dream Raider
         19574, -- Awakening the Dragonflight Raids,
         19458, -- A World Awoken
+        15916, -- Waking Shores: Silver
+        15928, -- Waking Shores Advanced: Silver
+        15919, -- Ohn'ahran Plains: Silver
+        15931, -- Ohn'ahran Plains Advanced: Silver
+        15922, -- Azure Span: Silver
+        15934, -- Azure Span Advanced: Silver
+        15925, -- Thaldraszus: Silver
+        15937, -- Thaldraszus Advanced: Silver
+        17484, -- Zaralek Cavern: Silver
+        17487, -- Zaralek Cavern Advanced: Silver
+        15833, -- Thanks for the Carry!
+        15834, -- Thanks for the Carry!
     }
 
     -- Return flat structure if set
@@ -154,60 +124,79 @@ function GetDragonflightMountAchievements()
     end
 
     -- Dungeons
-    local ACMList_Dungeons= {
-        _G.DUNGEONS,
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        }
-    }
+    local ACMList_Dungeons = KAF_Cat(_G.DUNGEONS)
 
     if KhamulsAchievementFilter.db.profile.mountAchievementsSettings.includeChildAchievements then
-        ACMList_Dungeons[#ACMList_Dungeons+1] = ACMChilds_GloryOfTheDragonflightHero
+        ACMList_Dungeons:Insert(ACMChilds_GloryOfTheDragonflightHero)
     end
 
-    ACMList_Dungeons[#ACMList_Dungeons+1] = {
+    ACMList_Dungeons:Ids{
         16295, -- Glory of the Dragonflight Hero
     }
 
-    local ACMList_Raids = {
-        Utilities:GetAchievementCategoryNameByCategoryID(15271), -- Raids
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        }
-    }
+    local ACMList_Raids = KAF_Cat(Utilities:GetAchievementCategoryNameByCategoryID(15271)) -- Raids
 
     if KhamulsAchievementFilter.db.profile.mountAchievementsSettings.includeChildAchievements then
-        ACMList_Raids[#ACMList_Raids+1] = ACMChilds_GloryOfTheVaultRaider
-        ACMList_Raids[#ACMList_Raids+1] = ACMChilds_GloryOfTheAberrusRaider
-        ACMList_Raids[#ACMList_Raids+1] = ACMChilds_GloryOfTheDreamRaider
-        ACMList_Raids[#ACMList_Raids+1] = ACMChilds_AwakeningTheDragonflightRaids
+        ACMList_Raids:Insert(ACMChilds_GloryOfTheVaultRaider)
+        ACMList_Raids:Insert(ACMChilds_GloryOfTheAberrusRaider)
+        ACMList_Raids:Insert(ACMChilds_GloryOfTheDreamRaider)
+        ACMList_Raids:Insert(ACMChilds_AwakeningTheDragonflightRaids)
     end
 
-    ACMList_Raids[#ACMList_Raids+1] = {
+    ACMList_Raids:Ids{
         16355, -- Glory of the Vault Raider
         18251, -- Glory of the Aberrus Raider
         19349, -- Glory of the Dream Raider
         19574, -- Awakening the Dragonflight Raids
     }
 
-    local ACMList = {
-        _G.EXPANSION_NAME9, -- Dragonflight
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true;
-            Tooltip = Utilities:ReplacePlaceholderInText(L["Tt_UseMetaAchievementPlugin"], {Utilities:GetAchievementName(19458)})
-        },
-        ACMList_Dungeons,
-        ACMList_Raids,
-        {
+    -- Skyriding Races
+    local ACMList_SkyridingRaces = KAF_Cat(_G.MOUNT_JOURNAL_FILTER_DRAGONRIDING) -- Skyriding
+
+    KAF_Sub(ACMList_SkyridingRaces, Utilities:GetZoneNameByMapID(2022)) -- The Waking Shores
+        :Ids{
+            15916, -- Waking Shores: Silver
+            15928, -- Waking Shores Advanced: Silver
+        }
+
+    KAF_Sub(ACMList_SkyridingRaces, Utilities:GetZoneNameByMapID(2023)) -- Ohn'ahran Plains
+        :Ids{
+            15919, -- Ohn'ahran Plains: Silver
+            15931, -- Ohn'ahran Plains Advanced: Silver
+        }
+
+    KAF_Sub(ACMList_SkyridingRaces, Utilities:GetZoneNameByMapID(2024)) -- The Azure Span
+        :Ids{
+            15922, -- Azure Span: Silver
+            15934, -- Azure Span Advanced: Silver
+        }
+
+    KAF_Sub(ACMList_SkyridingRaces, Utilities:GetZoneNameByMapID(2025)) -- Thaldraszus
+        :Ids{
+            15925, -- Thaldraszus: Silver
+            15937, -- Thaldraszus Advanced: Silver
+        }
+
+    KAF_Sub(ACMList_SkyridingRaces, Utilities:GetZoneNameByMapID(2133)) -- Zaralek Cavern
+        :Ids{
+            17484, -- Zaralek Cavern: Silver
+            17487, -- Zaralek Cavern Advanced: Silver
+        }
+
+    ACMList_SkyridingRaces:Ids{
+        -- Both faction variants are listed; only the character's own is earnable
+        15833, -- Thanks for the Carry!
+        15834, -- Thanks for the Carry!
+    }
+
+    local ACMList = KAF_Cat(_G.EXPANSION_NAME9, -- Dragonflight
+            Utilities:ReplacePlaceholderInText(L["Tt_UseMetaAchievementPlugin"], {Utilities:GetAchievementName(19458)}))
+        :Insert(ACMList_Dungeons)
+        :Insert(ACMList_Raids)
+        :Insert(ACMList_SkyridingRaces)
+        :Ids{
             19458, -- A World Awoken
         }
-    }
 
     return ACMList
 end

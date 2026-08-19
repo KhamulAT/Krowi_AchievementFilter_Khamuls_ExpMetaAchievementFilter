@@ -7,14 +7,8 @@ local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 function GetWotLKPetAchievements()
 
     -- Child Achievements Family Battler of Northrend
-    local ACMChilds_FamilyBattlerofNorthrend = {
-        Utilities:GetAchievementName(60956),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMChilds_FamilyBattlerofNorthrend = KAF_Cat(Utilities:GetAchievementName(60956))
+        :Ids{
             60942, -- Aquatic Battler of Northrend
             60951, -- Beast Battler of Northrend
             60943, -- Critter Battler of Northrend
@@ -26,7 +20,6 @@ function GetWotLKPetAchievements()
             60953, -- Mechanical Battler of Northrend
             60954, -- Undead Battler of Northrend
         }
-    }
 
     -- PetBattles->AdditionalPetStuff
     local ACMList_AdditionalPetStuffPetBattle = {
@@ -35,24 +28,17 @@ function GetWotLKPetAchievements()
     }
 
     -- Flat achievement list
-    local ACMListFlat = {
-        _G.EXPANSION_NAME2, -- Wrath of the Lich King
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        }
-    }
+    local ACMListFlat = KAF_Cat(_G.EXPANSION_NAME2) -- Wrath of the Lich King
 
     if KhamulsAchievementFilter.db.profile.petAchievementsSettings.includeChildAchievements then
-        ACMListFlat[#ACMListFlat+1] = ACMChilds_FamilyBattlerofNorthrend
+        ACMListFlat:Insert(ACMChilds_FamilyBattlerofNorthrend)
     end
 
     if KhamulsAchievementFilter.db.profile.petAchievementsSettings.includePetRelatedStuff then
-        ACMListFlat[#ACMListFlat+1] = ACMList_AdditionalPetStuffPetBattle
+        ACMListFlat:Ids(ACMList_AdditionalPetStuffPetBattle)
     end
 
-    ACMListFlat[#ACMListFlat+1] = {
+    ACMListFlat:Ids{
         60956, -- Family Battler of Northrend
     }
 
@@ -62,36 +48,22 @@ function GetWotLKPetAchievements()
     end
 
     -- PetBattles
-    local ACMList_PetBattles = {
-        Utilities:GetAchievementCategoryNameByCategoryID(15219), -- Pet Battles
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        }
-    }
+    local ACMList_PetBattles = KAF_Cat(Utilities:GetAchievementCategoryNameByCategoryID(15219)) -- Pet Battles
 
     if KhamulsAchievementFilter.db.profile.petAchievementsSettings.includeChildAchievements then
-        ACMList_PetBattles[#ACMList_PetBattles+1] = ACMChilds_FamilyBattlerofNorthrend
+        ACMList_PetBattles:Insert(ACMChilds_FamilyBattlerofNorthrend)
     end
 
     if KhamulsAchievementFilter.db.profile.petAchievementsSettings.includePetRelatedStuff then
-        ACMList_PetBattles[#ACMList_PetBattles+1] = ACMList_AdditionalPetStuffPetBattle
+        ACMList_PetBattles:Ids(ACMList_AdditionalPetStuffPetBattle)
     end
 
-    ACMList_PetBattles[#ACMList_PetBattles+1] = {
+    ACMList_PetBattles:Ids{
         60956, -- Family Battler of Northrend
     }
 
-    local ACMList = {
-        _G.EXPANSION_NAME2, -- Wrath of the Lich King
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        ACMList_PetBattles
-    }
+    local ACMList = KAF_Cat(_G.EXPANSION_NAME2) -- Wrath of the Lich King
+        :Insert(ACMList_PetBattles)
 
     return ACMList
 end

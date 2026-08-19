@@ -6,20 +6,13 @@ local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 
 function GetPlayerVsPlayerPetAchievements()
     -- Flat achievement list
-    local ACMListFlat = {
-        Utilities:GetAchievementCategoryNameByCategoryID(21), -- Player vs. Player
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMListFlat = KAF_Cat(Utilities:GetAchievementCategoryNameByCategoryID(21)) -- Player vs. Player
+        :Ids{
             12893, -- Honor Level 5
             12900, -- Honor Level 20
             12916, -- Honor Level 400
             40088, -- A Champion's Tour: The War Within
         }
-    }
 
     -- Return flat structure if set
     if KhamulsAchievementFilter.db.profile.petAchievementsSettings.flattenStructure then
@@ -27,43 +20,22 @@ function GetPlayerVsPlayerPetAchievements()
     end
 
     -- Honor
-    local ACMList_Honor = {
-        Utilities:GetAchievementCategoryNameByCategoryID(15266), -- Honor
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMList_Honor = KAF_Cat(Utilities:GetAchievementCategoryNameByCategoryID(15266)) -- Honor
+        :Ids{
             12893, -- Honor Level 5
             12900, -- Honor Level 20
             12916, -- Honor Level 400
         }
-    }
 
     -- World
-    local ACMList_KhazAlgar = {
-        Utilities:GetZoneNameByMapID(2274), -- Khaz Algar
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMList_KhazAlgar = KAF_Cat(Utilities:GetZoneNameByMapID(2274)) -- Khaz Algar
+        :Ids{
             40088, -- A Champion's Tour: The War Within
         }
-    }
 
-    local ACMList = {
-        Utilities:GetAchievementCategoryNameByCategoryID(21), -- Player vs. Player
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        ACMList_Honor,
-        ACMList_KhazAlgar
-    }
+    local ACMList = KAF_Cat(Utilities:GetAchievementCategoryNameByCategoryID(21)) -- Player vs. Player
+        :Insert(ACMList_Honor)
+        :Insert(ACMList_KhazAlgar)
 
     return ACMList
 end

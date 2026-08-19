@@ -12,66 +12,42 @@ function GetTBCPetAchievements()
     }
 
     -- Flat achievement list
-    local ACMListFlat = {
-        _G.EXPANSION_NAME1, -- The Burning Crusade
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMListFlat = KAF_Cat(_G.EXPANSION_NAME1) -- The Burning Crusade
+        :Ids{
             8293, -- Raiding with Leashes II: Attunement Edition
-            9824 -- Raiding with Leashes III: Drinkin' From the Sunwell
+            9824, -- Raiding with Leashes III: Drinkin' From the Sunwell
+            62460 -- Family Battler of Outland
         }
-    }
 
     if KhamulsAchievementFilter.db.profile.petAchievementsSettings.includePetRelatedStuff then
-        ACMListFlat[#ACMListFlat+1] = ACMList_AdditionalPetStuffPetBattles
+        ACMListFlat:Ids(ACMList_AdditionalPetStuffPetBattles)
     end
 
     -- Return flat structure if set
     if KhamulsAchievementFilter.db.profile.petAchievementsSettings.flattenStructure then
         return ACMListFlat
     end
-    
+
     -- Raids
-    local ACMList_Raids = {
-        _G.RAIDS, -- Raids
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
-           8293, -- Raiding with Leashes II: Attunement Edition
+    local ACMList_Raids = KAF_Cat(_G.RAIDS) -- Raids
+        :Ids{
+            8293, -- Raiding with Leashes II: Attunement Edition
             9824 -- Raiding with Leashes III: Drinkin' From the Sunwell
         }
-    }
 
     -- PetBattles
-    local ACMList_PetBattles = {
-        Utilities:GetAchievementCategoryNameByCategoryID(15219), -- Pet Battles
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
+    local ACMList_PetBattles = KAF_Cat(Utilities:GetAchievementCategoryNameByCategoryID(15219)) -- Pet Battles
+        :Ids{
+            62460, -- Family Battler of Outland
         }
-    }
 
     if KhamulsAchievementFilter.db.profile.petAchievementsSettings.includePetRelatedStuff then
-        ACMList_PetBattles[#ACMList_PetBattles+1] = ACMList_AdditionalPetStuffPetBattles
+        ACMList_PetBattles:Ids(ACMList_AdditionalPetStuffPetBattles)
     end
 
-    local ACMList = {
-        _G.EXPANSION_NAME1, -- The Burning Crusade
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        ACMList_PetBattles,
-        ACMList_Raids
-    }
+    local ACMList = KAF_Cat(_G.EXPANSION_NAME1) -- The Burning Crusade
+        :Insert(ACMList_PetBattles)
+        :Insert(ACMList_Raids)
 
     return ACMList
 end

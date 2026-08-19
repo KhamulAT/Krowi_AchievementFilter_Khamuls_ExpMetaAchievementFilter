@@ -18,6 +18,11 @@ L["Cross-Expansion"] = "Cross-Expansion"
 -- Missing category titles
 L["Hard"] = "Hard"
 L["Nightmare"] = "Nightmare"
+L["Coiled Nightmares"] = "Coiled Nightmares"
+L["Abyss Anglers"] = "Abyss Anglers"
+L["Breaknecking Races"] = "Breaknecking Races"
+L["Time Rifts"] = "Time Rifts"
+L["Hearthstone"] = "Hearthstone"
 
 -- Tooltips
 L["Tt_ACM_15035"] = "Only 4 needed to complete the Meta-Achievement"
@@ -55,16 +60,3 @@ L["This will include Achievements with Pet-Battle rewards like daily quests unlo
 L["Mount Collection Settings"] = "Mount Collection Settings"
 L["Show List for Achievements with mounts as reward"] = "Show List for Achievements with mounts as reward"
 L["If enabled, a list with all achievements, which have a mount as reward, will be shown"] = "If enabled, a list with all achievements, which have a mount as reward, will be shown"
-
--- RewardPreview
-L["Preview Reward"] = "Preview Reward"
-L["No preview available for this reward"] = "No preview available for this reward"
-L["Reward"] = "Reward"
-L["Item"] = "Item"
-L["Decor"] = "Decor"
-L["Title"] = "Title"
-L["Spell"] = "Spell"
-L["Debug Settings"] = "Debug Settings"
-L["Enable debug output"] = "Enable debug output"
-L["If enabled, RewardPreview diagnostic messages are shown in chat."] = "If enabled, RewardPreview diagnostic messages are shown in chat."
-L["NPC"] = "NPC"

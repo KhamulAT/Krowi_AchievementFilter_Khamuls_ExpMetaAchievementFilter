@@ -18,6 +18,11 @@ L["Cross-Expansion"] = "Entre expansões"
 -- Missing category titles
 L["Hard"] = "Difícil"
 L["Nightmare"] = "Pesadelo"
+L["Coiled Nightmares"] = "Pesadelos enrolados"
+L["Abyss Anglers"] = "Pescadores do Abismo"
+L["Breaknecking Races"] = "Corridas de Pé-na-Tábua"
+L["Time Rifts"] = "Fendas Temporais"
+L["Hearthstone"] = "Hearthstone"
 
 -- Tooltips
 L["Tt_ACM_15035"] = "Apenas 4 são necessários para concluir a meta-conquista"
@@ -58,16 +63,3 @@ L["Khamul's Mounts Achievement List"] = "Khamul's Mount Collection"
 L["Mount Collection Settings"] = "Mount Collection Settings"
 L["Show List for Achievements with mounts as reward"] = "Show List for Achievements with mounts as reward"
 L["If enabled, a list with all achievements, which have a mount as reward, will be shown"] = "If enabled, a list with all achievements, which have a mount as reward, will be shown"
-
--- RewardPreview
-L["Preview Reward"] = "Preview Reward"
-L["No preview available for this reward"] = "No preview available for this reward"
-L["Reward"] = "Reward"
-L["Item"] = "Item"
-L["Decor"] = "Decor"
-L["Title"] = "Title"
-L["Spell"] = "Spell"
-L["Debug Settings"] = "Debug Settings"
-L["Enable debug output"] = "Enable debug output"
-L["If enabled, RewardPreview diagnostic messages are shown in chat."] = "If enabled, RewardPreview diagnostic messages are shown in chat."
-L["NPC"] = "NPC"

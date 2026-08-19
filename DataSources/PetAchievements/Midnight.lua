@@ -7,14 +7,8 @@ local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 function GetMNPetAchievements()
 
     -- Child Achievements Midnight Dungeon Hero
-    local ACMChilds_MidnightDungeonHero = {
-        Utilities:GetAchievementName(61567),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMChilds_MidnightDungeonHero = KAF_Cat(Utilities:GetAchievementName(61567))
+        :Ids{
             61642, -- Heroic: Den of Nalorakk
             61213, -- Heroic: Magisters' Terrace
             61644, -- Heroic: Maisara Caverns
@@ -27,25 +21,23 @@ function GetMNPetAchievements()
             62880, -- Showdown Success: Val
             63349, -- Ultradon  Carnage
         }
-    }
 
     -- Flat achievement list
-    local ACMListFlat = {
-        _G.EXPANSION_NAME11, -- Midnight
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        }
-    }
+    local ACMListFlat = KAF_Cat(_G.EXPANSION_NAME11) -- Midnight
 
     if KhamulsAchievementFilter.db.profile.petAchievementsSettings.includeChildAchievements then
-        ACMListFlat[#ACMListFlat+1] = ACMChilds_MidnightDungeonHero
+        ACMListFlat:Insert(ACMChilds_MidnightDungeonHero)
     end
 
-    ACMListFlat[#ACMListFlat+1] = {
+    ACMListFlat:Ids{
         61567, -- Midnight Dungeon Hero
         61091, -- Midnight Safari
+        62492, -- The Coiled Isle Safari
+        63633, -- A Stack of Snacks
+        63609, -- No Egg Scramble
+        61960, -- Treasures of Eversong Woods
+        62518, -- Cosmic Exterminator
+        62776, -- Abyss Anglers: All Blue Angler
     }
 
     -- Return flat structure if set
@@ -54,62 +46,64 @@ function GetMNPetAchievements()
     end
 
     -- Dungeons
-    local ACMList_Dungeons = {
-        _G.DUNGEONS, -- Dungeons
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        }
-    }
+    local ACMList_Dungeons = KAF_Cat(_G.DUNGEONS) -- Dungeons
 
     if KhamulsAchievementFilter.db.profile.petAchievementsSettings.includeChildAchievements then
-        ACMList_Dungeons[#ACMList_Dungeons+1] = ACMChilds_MidnightDungeonHero
+        ACMList_Dungeons:Insert(ACMChilds_MidnightDungeonHero)
     end
 
-    ACMList_Dungeons[#ACMList_Dungeons+1] = {
+    ACMList_Dungeons:Ids{
         61567, -- Midnight Dungeon Hero
     }
 
-    -- PetBattles
-    local ACMList_PetBattles = {
-        Utilities:GetAchievementCategoryNameByCategoryID(15219), -- Pet Battles
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
-            61091, -- Midnight Safari
+    -- Zones
+    local ACMList_Zones = KAF_Cat(_G.ZONE) -- Zone
+
+    KAF_Sub(ACMList_Zones, Utilities:GetZoneNameByMapID(2395)) -- Eversong Woods
+        :Ids{
+            61960, -- Treasures of Eversong Woods
         }
-    }
+
+    KAF_Sub(ACMList_Zones, Utilities:GetZoneNameByMapID(2512)) -- The Coiled Isle
+        :Ids{
+            63633, -- A Stack of Snacks
+        }
+
+    -- Raids
+    local ACMList_Raids = KAF_Cat(Utilities:GetAchievementCategoryNameByCategoryID(15271)) -- Raids
+        :Ids{
+            63609, -- No Egg Scramble
+        }
+
+    -- PetBattles
+    local ACMList_PetBattles = KAF_Cat(Utilities:GetAchievementCategoryNameByCategoryID(15219)) -- Pet Battles
+        :Ids{
+            61091, -- Midnight Safari
+            62492, -- The Coiled Isle Safari
+        }
 
     -- Void Assaults
-    local ACMList_VoidAssaults = {
-        Utilities:GetAchievementCategoryNameByCategoryID(15610),  -- Void Assaults
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMList_VoidAssaults = KAF_Cat(Utilities:GetAchievementCategoryNameByCategoryID(15610)) -- Void Assaults
+        :Ids{
             62882, -- Showdown Success: Naigtal
             62880, -- Showdown Success: Val
             63349, -- Ultradon  Carnage
+            62518, -- Cosmic Exterminator
         }
-    }
 
-    local ACMList = {
-        _G.EXPANSION_NAME11, -- Midnight
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        ACMList_Dungeons,
-        ACMList_PetBattles,
-        ACMList_VoidAssaults
-    }
+    -- Abyss Anglers
+    local ACMList_AbyssAnglers = KAF_Cat(L["Abyss Anglers"])
+        :Ids{
+            62776, -- Abyss Anglers: All Blue Angler
+        }
+
+    local ACMList = KAF_Cat(_G.EXPANSION_NAME11) -- Midnight
+        :Insert(ACMList_Zones)
+        :Insert(ACMList_Dungeons)
+        :Insert(ACMList_Raids)
+        :Insert(ACMList_PetBattles)
+        :Insert(ACMList_VoidAssaults)
+        :Insert(ACMList_AbyssAnglers)
 
     return ACMList
 end

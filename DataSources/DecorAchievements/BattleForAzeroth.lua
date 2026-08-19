@@ -7,14 +7,8 @@ local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 function GetHousingBfA()
 
     -- Flat achievement list
-    local ACMListFlat = {
-        EXPANSION_NAME7, -- Battle for Azeroth
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMListFlat = KAF_Cat(EXPANSION_NAME7) -- Battle for Azeroth
+        :Ids{
             40953, -- A Farewell to Arms
             12582, -- Come Sail Away
             12997, -- The Pride of Kul Tiras
@@ -36,7 +30,6 @@ function GetHousingBfA()
             12870, -- Azeroth at War: Kalimdor on Fire
             13284, -- Frontline Warrior
         }
-    }
 
     -- Return flat structure if set
     if KhamulsAchievementFilter.db.profile.decorAchievementsSettings.flattenStructure then
@@ -44,157 +37,74 @@ function GetHousingBfA()
     end
 
     -- Zones
-    local ACMList_Zones = {
-        _G.ZONE, -- Zone
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
-            Utilities:GetZoneNameByMapID(876) .. " & " .. Utilities:GetZoneNameByMapID(875), -- Kul Tiras & Zandalar
-            false,
-            {
-                IgnoreCollapsedChainFilter = true,
-                IgnoreFactionFilter = true
-            },
-            {
-                12582, -- Come Sail Away
-                12997, -- The Pride of Kul Tiras
-                12479, -- Zandalar Forever!
-                12509, -- Ready for War
-            }
-        },
-        {
-            Utilities:GetZoneNameByMapID(895), -- Tiragarde Sound
-            false,
-            {
-                IgnoreCollapsedChainFilter = true,
-                IgnoreFactionFilter = true
-            },
-            {
-                13049, -- The Long Con
-            }
-        },
-        {
-            Utilities:GetZoneNameByMapID(862), -- Zuldazar
-            false,
-            {
-                IgnoreCollapsedChainFilter = true,
-                IgnoreFactionFilter = true
-            },
-            {
-                13039, -- Paku'ai
-                13038, -- Raptari Rider
-                12614, -- Loa Expectations
-            }
-        },
-        {
-            Utilities:GetZoneNameByMapID(864), -- Vol'dun
-            false,
-            {
-                IgnoreCollapsedChainFilter = true,
-                IgnoreFactionFilter = true
-            },
-            {
-                13018, -- Dune Rider
-            }
-        },
-        {
-            Utilities:GetZoneNameByMapID(1462), -- Mechagon Island
-            false,
-            {
-                IgnoreCollapsedChainFilter = true,
-                IgnoreFactionFilter = true
-            },
-            {
-                13473, -- Diversified Investments
-                13475, -- Junkyard Scavenger
-                13477, -- Junkyard Apprentice
-            }
-        },
-    }
+    local ACMList_Zones = KAF_Cat(_G.ZONE) -- Zone
+
+    KAF_Sub(ACMList_Zones, Utilities:GetZoneNameByMapID(876) .. " & " .. Utilities:GetZoneNameByMapID(875)) -- Kul Tiras & Zandalar
+        :Ids{
+            12582, -- Come Sail Away
+            12997, -- The Pride of Kul Tiras
+            12479, -- Zandalar Forever!
+            12509, -- Ready for War
+        }
+
+    KAF_Sub(ACMList_Zones, Utilities:GetZoneNameByMapID(895)) -- Tiragarde Sound
+        :Ids{
+            13049, -- The Long Con
+        }
+
+    KAF_Sub(ACMList_Zones, Utilities:GetZoneNameByMapID(862)) -- Zuldazar
+        :Ids{
+            13039, -- Paku'ai
+            13038, -- Raptari Rider
+            12614, -- Loa Expectations
+        }
+
+    KAF_Sub(ACMList_Zones, Utilities:GetZoneNameByMapID(864)) -- Vol'dun
+        :Ids{
+            13018, -- Dune Rider
+        }
+
+    KAF_Sub(ACMList_Zones, Utilities:GetZoneNameByMapID(1462)) -- Mechagon Island
+        :Ids{
+            13473, -- Diversified Investments
+            13475, -- Junkyard Scavenger
+            13477, -- Junkyard Apprentice
+        }
 
     -- Dungeons
-    local ACMList_Dungeons = {
-        _G.DUNGEONS, -- Dungeons
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMList_Dungeons = KAF_Cat(_G.DUNGEONS) -- Dungeons
+        :Ids{
             13723, -- M.C., Hammered
         }
-    }
 
-    local ACM_BfA_Professions_Cooking = {
-        Utilities:GetAchievementCategoryNameByCategoryID(170),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
-            12746
+    local ACMList_TradeSkills = KAF_Cat(_G.TRADE_SKILLS) -- Professions
+
+    KAF_Sub(ACMList_TradeSkills, Utilities:GetAchievementCategoryNameByCategoryID(170)) -- Cooking
+        :Ids{
+            12746, -- The Zandalari Menu
         }
+
+    ACMList_TradeSkills:Ids{
+        12733, -- Professional Zandalari Master
     }
 
-    local ACMList_TradeSkills = {
-        _G.TRADE_SKILLS, -- Professions
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
-            Utilities:GetAchievementCategoryNameByCategoryID(170), -- Cooking
-            false,
-            {
-                IgnoreCollapsedChainFilter = true,
-                IgnoreFactionFilter = true
-            },
-            {
-                12746, -- The Zandalari Menu
-            }
-        },
-        {
-            12733, -- Professional Zandalari Master
-        }
-    }
-
-    local ACMList_WarEffort = {
-        Utilities:GetAchievementCategoryNameByCategoryID(15308), -- War Effort
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMList_WarEffort = KAF_Cat(Utilities:GetAchievementCategoryNameByCategoryID(15308)) -- War Effort
+        :Ids{
             12867, -- Azeroth at War: The Barrens
             12869, -- Azeroth at War: After Lordaeron
             12870, -- Azeroth at War: Kalimdor on Fire
             13284, -- Frontline Warrior
         }
-    }
 
-    local ACMList = { 
-        EXPANSION_NAME7, -- Battle for Azeroth
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true,
-            Tooltip = Utilities:ReplacePlaceholderInText(L["Tt_UseMetaAchievementPlugin"], {Utilities:GetAchievementName(40953)})
-        },
-        ACMList_Zones,
-        ACMList_Dungeons,
-        ACMList_TradeSkills,
-        ACMList_WarEffort,
-        {
+    local ACMList = KAF_Cat(EXPANSION_NAME7, -- Battle for Azeroth
+            Utilities:ReplacePlaceholderInText(L["Tt_UseMetaAchievementPlugin"], {Utilities:GetAchievementName(40953)}))
+        :Insert(ACMList_Zones)
+        :Insert(ACMList_Dungeons)
+        :Insert(ACMList_TradeSkills)
+        :Insert(ACMList_WarEffort)
+        :Ids{
             40953
         }
-
-    }
 
     return ACMList
 end

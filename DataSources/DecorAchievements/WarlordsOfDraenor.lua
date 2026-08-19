@@ -7,61 +7,27 @@ local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 function GetHousingWoD()
 
     -- Flat achievement list
-    local ACMListFlat = {
-        EXPANSION_NAME5, -- Warlords of Draenor
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMListFlat = KAF_Cat(EXPANSION_NAME5) -- Warlords of Draenor
+        :Ids{
             9415, -- Secrets of Skettis
         }
-    }
 
     -- Return flat structure if set
     if KhamulsAchievementFilter.db.profile.decorAchievementsSettings.flattenStructure then
         return ACMListFlat
     end
 
-    local ACM_WoD_TradeSkills_Archaeology = {
-        Utilities:GetAchievementCategoryNameByCategoryID(15071),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true
-        },
-        {
-            9415
-        }
-    }
-
     -- TradeSkills
-    local ACMList_TradeSkills = {
-        _G.TRADE_SKILLS, -- Professions
-        false,
-        {
-            IgnoreCollapsedChainFilter = true
-        },
-        {
-            Utilities:GetAchievementCategoryNameByCategoryID(15071), -- Archeology
-            false,
-            {
-                IgnoreCollapsedChainFilter = true
-            },
-            {
-                9415, -- Secrets of Skettis
-            }
-        }
-    }
+    local ACMList_TradeSkills = KAF_CatChain(_G.TRADE_SKILLS) -- Professions
+        :Insert(
+            KAF_CatChain(Utilities:GetAchievementCategoryNameByCategoryID(15071)) -- Archeology
+                :Ids{
+                    9415, -- Secrets of Skettis
+                }
+        )
 
-    local ACMList = {
-        EXPANSION_NAME5, -- Warlords of Draenor
-        false,
-        {
-            IgnoreCollapsedChainFilter = true
-        },
-        ACMList_TradeSkills
-    }
+    local ACMList = KAF_CatChain(EXPANSION_NAME5) -- Warlords of Draenor
+        :Insert(ACMList_TradeSkills)
 
     return ACMList
 end

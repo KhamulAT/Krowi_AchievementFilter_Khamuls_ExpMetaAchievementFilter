@@ -20,14 +20,8 @@ function GetWoDMountAchievements()
     }
 
     -- Child Achievements Draenor Dungeon Hero
-    local ACMChilds_DraeonorDungeonHero = {
-        Utilities:GetAchievementName(9391),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMChilds_DraeonorDungeonHero = KAF_Cat(Utilities:GetAchievementName(9391))
+        :Ids{
             9046, -- Heroic: Blooodmaul Slag Mines
             9047, -- Heroic: Iron Docks
             9049, -- Heroic: Auchindoun
@@ -37,18 +31,11 @@ function GetWoDMountAchievements()
             9054, -- Heroic: Shadowmoon Burial Grounds
             9055 -- Heroic: Upper Blackrock Spire
         }
-    }
 
     -- Child Achievements Glory of the Draenor Hero
-    local ACMChilds_GloryOfTheDraenorHero = {
-        Utilities:GetAchievementName(9396),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        ACMChilds_DraeonorDungeonHero,
-        {
+    local ACMChilds_GloryOfTheDraenorHero = KAF_Cat(Utilities:GetAchievementName(9396))
+        :Insert(ACMChilds_DraeonorDungeonHero)
+        :Ids{
             9391, -- Draenor Dungeon Hero
             8993, -- A Gift of Earth and Fire
             9005, -- Come With Me If You Want to Live
@@ -69,17 +56,10 @@ function GetWoDMountAchievements()
             9056, -- Bridge Over Troubled Fire
             9057 -- Dragonmaw? More Like Dragonfall!
         }
-    }
 
     -- Child Achievements Glory of the Draenor Raider
-    local ACMChilds_GloryOfTheDraenorRaider = {
-        Utilities:GetAchievementName(8985),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMChilds_GloryOfTheDraenorRaider = KAF_Cat(Utilities:GetAchievementName(8985))
+        :Ids{
             8948, -- Flame On!
             8647, -- Hurry Up, Maggot!
             8974, -- More Like Wrecked-us
@@ -98,17 +78,10 @@ function GetWoDMountAchievements()
             8984, -- Be Quick or Be Dead
             8952 -- Ashes, Ashes
         }
-    }
 
     -- Child Achievements Glory of the Hellfire Raider
-    local ACMChilds_GloryOfTheHellfireRaider = {
-        Utilities:GetAchievementName(10149),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMChilds_GloryOfTheHellfireRaider = KAF_Cat(Utilities:GetAchievementName(10149))
+        :Ids{
             10026, -- Nearly Indestructible
             10057, -- Turning the Tide
             10013, -- Waves Came Crashing Down All Around
@@ -123,86 +96,54 @@ function GetWoDMountAchievements()
             10030, -- Bad Manner(oth)
             10073 -- Echoes of Doomfire
         }
-    }
 
     -- Child Achievements Draenor Pathfinder
-    local ACMChilds_DraenorPathfinder = {
-        Utilities:GetAchievementName(10018),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
-            Utilities:GetAchievementName(8935), -- Draenor Explorer
-            false,
-            {
-                IgnoreCollapsedChainFilter = true,
-                IgnoreFactionFilter = true
-            },
-            {
-                8937, -- Explore Frostfire Ridge
-                8938, -- Expore Shadowmoon Valley
-                8939, -- Explore Gorgrond
-                8940, -- Explore Talador
-                8941, -- Explore Spires of Arak
-                8942 -- Explore Nagrand
-            }
-        },
-        {
-            Utilities:GetAchievementName(9833), -- Loremaster of Draenor
-            false,
-            {
-                IgnoreCollapsedChainFilter = true,
-                IgnoreFactionFilter = true
-            },
-            {
-                8845, -- As I Walk Through the Valley of the Shadow of Moon
-                8923, -- Putting the Gore inn Gorgrond
-                8920, -- Don't Let the Tala-door Hit You on the Way Out
-                8925, -- Between Arak and a Hard Place
-                8927 -- Nagrandeur
-            }
-        },
-        {
-            Utilities:GetAchievementName(10348), -- Master Treasure Hunter
-            false,
-            {
-                IgnoreCollapsedChainFilter = true,
-                IgnoreFactionFilter = true
-            },
-            {
-                9726, -- Treasure Hunter
-                9727 -- Expert Treasure Hunter
-            }
-        },
-        {
-            8935, -- Draenor Explorer
-            Utilities:AchievementShowDecider(9833, 9923, factionSpecificAchievements), -- Loremaster of Draenor
-            Utilities:AchievementShowDecider(9564, 9562, factionSpecificAchievements), -- Securing Draenor
-            10348, -- Master Dreasure Hunter
-            Utilities:AchievementShowDecider(10350, 10349, factionSpecificAchievements) -- Tanaan Diplomat
+    local ACMChilds_DraenorPathfinder = KAF_Cat(Utilities:GetAchievementName(10018))
+
+    KAF_Sub(ACMChilds_DraenorPathfinder, Utilities:GetAchievementName(8935)) -- Draenor Explorer
+        :Ids{
+            8937, -- Explore Frostfire Ridge
+            8938, -- Expore Shadowmoon Valley
+            8939, -- Explore Gorgrond
+            8940, -- Explore Talador
+            8941, -- Explore Spires of Arak
+            8942 -- Explore Nagrand
         }
+
+    KAF_Sub(ACMChilds_DraenorPathfinder, Utilities:GetAchievementName(9833)) -- Loremaster of Draenor
+        :Ids{
+            8845, -- As I Walk Through the Valley of the Shadow of Moon
+            8923, -- Putting the Gore inn Gorgrond
+            8920, -- Don't Let the Tala-door Hit You on the Way Out
+            8925, -- Between Arak and a Hard Place
+            8927 -- Nagrandeur
+        }
+
+    KAF_Sub(ACMChilds_DraenorPathfinder, Utilities:GetAchievementName(10348)) -- Master Treasure Hunter
+        :Ids{
+            9726, -- Treasure Hunter
+            9727 -- Expert Treasure Hunter
+        }
+
+    ACMChilds_DraenorPathfinder:Ids{
+        8935, -- Draenor Explorer
+        Utilities:AchievementShowDecider(9833, 9923, factionSpecificAchievements), -- Loremaster of Draenor
+        Utilities:AchievementShowDecider(9564, 9562, factionSpecificAchievements), -- Securing Draenor
+        10348, -- Master Dreasure Hunter
+        Utilities:AchievementShowDecider(10350, 10349, factionSpecificAchievements) -- Tanaan Diplomat
     }
 
     -- Flat achievement list
-    local ACMListFlat = {
-        _G.EXPANSION_NAME5, -- Warlords of Draenor
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        }
-    }
+    local ACMListFlat = KAF_Cat(_G.EXPANSION_NAME5) -- Warlords of Draenor
 
     if KhamulsAchievementFilter.db.profile.mountAchievementsSettings.includeChildAchievements then
-        ACMListFlat[#ACMListFlat+1] = ACMChilds_DraenorPathfinder
-        ACMListFlat[#ACMListFlat+1] = ACMChilds_GloryOfTheDraenorHero
-        ACMListFlat[#ACMListFlat+1] = ACMChilds_GloryOfTheDraenorRaider
-        ACMListFlat[#ACMListFlat+1] = ACMChilds_GloryOfTheHellfireRaider
+        ACMListFlat:Insert(ACMChilds_DraenorPathfinder)
+        ACMListFlat:Insert(ACMChilds_GloryOfTheDraenorHero)
+        ACMListFlat:Insert(ACMChilds_GloryOfTheDraenorRaider)
+        ACMListFlat:Insert(ACMChilds_GloryOfTheHellfireRaider)
     end
 
-    ACMListFlat[#ACMListFlat+1] = {
+    ACMListFlat:Ids{
         10018, -- Draenor Pathfinder
         9396, -- Glory of the Draenor Hero
         8898, -- Challenge Warlord: Silver
@@ -216,74 +157,45 @@ function GetWoDMountAchievements()
     end
 
     -- Zones
-    local ACMList_Zones = {
-        _G.ZONE, -- Zone
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        }
-    }
+    local ACMList_Zones = KAF_Cat(_G.ZONE) -- Zone
 
     if KhamulsAchievementFilter.db.profile.mountAchievementsSettings.includeChildAchievements then
-        ACMList_Zones[#ACMList_Zones+1] = ACMChilds_DraenorPathfinder
+        ACMList_Zones:Insert(ACMChilds_DraenorPathfinder)
     end
 
-    ACMList_Zones[#ACMList_Zones+1] = {
+    ACMList_Zones:Ids{
         10018 -- Draenor Pathfinder
     }
 
     -- Dungeons
-    local ACMList_Dungeons = {
-        _G.DUNGEONS, -- Dungeons
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        }
-    }
+    local ACMList_Dungeons = KAF_Cat(_G.DUNGEONS) -- Dungeons
 
     if KhamulsAchievementFilter.db.profile.mountAchievementsSettings.includeChildAchievements then
-        ACMList_Dungeons[#ACMList_Dungeons+1] = ACMChilds_GloryOfTheDraenorHero
+        ACMList_Dungeons:Insert(ACMChilds_GloryOfTheDraenorHero)
     end
 
-    ACMList_Dungeons[#ACMList_Dungeons+1] = {
+    ACMList_Dungeons:Ids{
         9396, -- Glory of the Draenor Hero
         8898, -- Challenge Warlord: Silver
     }
 
     -- Raids
-    local ACMList_Raids = {
-        Utilities:GetAchievementCategoryNameByCategoryID(15271), -- Raids
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        }
-    }
+    local ACMList_Raids = KAF_Cat(Utilities:GetAchievementCategoryNameByCategoryID(15271)) -- Raids
 
     if KhamulsAchievementFilter.db.profile.mountAchievementsSettings.includeChildAchievements then
-        ACMList_Raids[#ACMList_Raids+1] = ACMChilds_GloryOfTheDraenorRaider
-        ACMList_Raids[#ACMList_Raids+1] = ACMChilds_GloryOfTheHellfireRaider
+        ACMList_Raids:Insert(ACMChilds_GloryOfTheDraenorRaider)
+        ACMList_Raids:Insert(ACMChilds_GloryOfTheHellfireRaider)
     end
 
-    ACMList_Raids[#ACMList_Raids+1] = {
+    ACMList_Raids:Ids{
         8985, -- Glory of the Draenor Raider
         10149 -- Glory of the Hellfire Raider
     }
 
-
-    local ACMList = {
-        _G.EXPANSION_NAME5, -- Warlords of Draenor
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        ACMList_Zones,
-        ACMList_Dungeons,
-        ACMList_Raids
-    }
+    local ACMList = KAF_Cat(_G.EXPANSION_NAME5) -- Warlords of Draenor
+        :Insert(ACMList_Zones)
+        :Insert(ACMList_Dungeons)
+        :Insert(ACMList_Raids)
 
     return ACMList
 end

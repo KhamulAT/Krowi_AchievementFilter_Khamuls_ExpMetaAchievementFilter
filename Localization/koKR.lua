@@ -18,6 +18,11 @@ L["Cross-Expansion"] = "확장팩 공통"
 -- Missing category titles
 L["Hard"] = "어려움"
 L["Nightmare"] = "악몽"
+L["Coiled Nightmares"] = "뒤엉킨 악몽"
+L["Abyss Anglers"] = "심연 강태공"
+L["Breaknecking Races"] = "광폭질주 레이스"
+L["Time Rifts"] = "시간의 균열"
+L["Hearthstone"] = "하스스톤"
 
 -- Tooltips
 L["Tt_ACM_15035"] = "메타 업적을 완료하려면 4개만 필요합니다"
@@ -58,16 +63,3 @@ L["Khamul's Mounts Achievement List"] = "Khamul's Mount Collection"
 L["Mount Collection Settings"] = "Mount Collection Settings"
 L["Show List for Achievements with mounts as reward"] = "Show List for Achievements with mounts as reward"
 L["If enabled, a list with all achievements, which have a mount as reward, will be shown"] = "If enabled, a list with all achievements, which have a mount as reward, will be shown"
-
--- RewardPreview
-L["Preview Reward"] = "Preview Reward"
-L["No preview available for this reward"] = "No preview available for this reward"
-L["Reward"] = "Reward"
-L["Item"] = "Item"
-L["Decor"] = "Decor"
-L["Title"] = "Title"
-L["Spell"] = "Spell"
-L["Debug Settings"] = "Debug Settings"
-L["Enable debug output"] = "Enable debug output"
-L["If enabled, RewardPreview diagnostic messages are shown in chat."] = "If enabled, RewardPreview diagnostic messages are shown in chat."
-L["NPC"] = "NPC"

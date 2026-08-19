@@ -11,5 +11,6 @@
     <Script file="Dragonflight.lua" />
     <Script file="TheWarWithin.lua" />
     <Script file="Midnight.lua" />
+    <Script file="PlayerVsPlayer.lua" />
     <Script file="ToyAchievements.lua" />
 </Ui>

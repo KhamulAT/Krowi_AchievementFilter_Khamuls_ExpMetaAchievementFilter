@@ -7,20 +7,13 @@ local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 function GetHousingDF()
 
     -- Flat achievement list
-    local ACMListFlat = {
-        EXPANSION_NAME9, -- Dragonflight
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMListFlat = KAF_Cat(EXPANSION_NAME9) -- Dragonflight
+        :Ids{
             19458, -- A World Awoken
             17773, -- A Blue Dawn
             19507, -- Fringe Benefits
             17529, -- Forbidden  Spoils
         }
-    }
 
     -- Return flat structure if set
     if KhamulsAchievementFilter.db.profile.decorAchievementsSettings.flattenStructure then
@@ -28,57 +21,35 @@ function GetHousingDF()
     end
 
     -- Zones
-    local ACMList_Zones = {
-        _G.ZONE, -- Zone
-        false,
-        {
-            IgnoreCollapsedChainFilter = true
-        },
-        {
-            Utilities:GetZoneNameByMapID(2024), -- Azure Span
-            false,
-            {
-                IgnoreCollapsedChainFilter = true
-            },
-            {
+    local ACMList_Zones = KAF_CatChain(_G.ZONE) -- Zone
+
+    ACMList_Zones:Insert(
+        KAF_CatChain(Utilities:GetZoneNameByMapID(2024)) -- Azure Span
+            :Ids{
                 17773, -- A Blue Dawn
             }
-        },
-        {
-            Utilities:GetZoneNameByMapID(2025), -- Thaldraszus
-            false,
-            {
-                IgnoreCollapsedChainFilter = true
-            },
-            {
+    )
+
+    ACMList_Zones:Insert(
+        KAF_CatChain(Utilities:GetZoneNameByMapID(2025)) -- Thaldraszus
+            :Ids{
                 19507, -- Fringe Benefits
             }
-        },
-        {
-            Utilities:GetZoneNameByMapID(2151), -- Forbidden Reach
-            false,
-            {
-                IgnoreCollapsedChainFilter = true
-            },
-            {
+    )
+
+    ACMList_Zones:Insert(
+        KAF_CatChain(Utilities:GetZoneNameByMapID(2151)) -- Forbidden Reach
+            :Ids{
                 17529, -- Forbidden  Spoils
             }
-        }
-    }
+    )
 
-    local ACMList = { 
-        EXPANSION_NAME9, -- Dragonflight
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            Tooltip = Utilities:ReplacePlaceholderInText(L["Tt_UseMetaAchievementPlugin"], {Utilities:GetAchievementName(19458)})
-        },
-        ACMList_Zones,
-        {
+    local ACMList = KAF_CatChain(EXPANSION_NAME9, -- Dragonflight
+            Utilities:ReplacePlaceholderInText(L["Tt_UseMetaAchievementPlugin"], {Utilities:GetAchievementName(19458)}))
+        :Insert(ACMList_Zones)
+        :Ids{
             19458, -- A World Awoken
         }
-
-    }
 
     return ACMList
 end

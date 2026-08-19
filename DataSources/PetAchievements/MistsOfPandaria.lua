@@ -7,14 +7,7 @@ local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 function GetMoPPetAchievements()
 
     -- Flat achievement list
-    local ACMListFlat = {
-        _G.EXPANSION_NAME4, -- Mists of Pandaria
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        }
-    }
+    local ACMListFlat = KAF_Cat(_G.EXPANSION_NAME4) -- Mists of Pandaria
 
     -- Zone->AdditionalPetStuff
     local ACMList_AdditionalPetStuffZone = {
@@ -28,11 +21,11 @@ function GetMoPPetAchievements()
     }
 
     if KhamulsAchievementFilter.db.profile.petAchievementsSettings.includePetRelatedStuff then
-        ACMListFlat[#ACMListFlat+1] = ACMList_AdditionalPetStuffZone
-        ACMListFlat[#ACMListFlat+1] = ACMList_AdditionalPetStuffPetBattles
+        ACMListFlat:Ids(ACMList_AdditionalPetStuffZone)
+        ACMListFlat:Ids(ACMList_AdditionalPetStuffPetBattles)
     end
 
-    ACMListFlat[#ACMListFlat+1] = {
+    ACMListFlat:Ids{
         6402, -- Ling-Ting's Herbal Journey
         13469, -- Raiding with Leashes VI: Pets of Pandaria
     }
@@ -43,80 +36,38 @@ function GetMoPPetAchievements()
     end
 
     -- Dungeons
-    local ACMList_Dungeons = {
-        _G.DUNGEONS, -- Dungeons
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
-            Utilities:GetDungeonNameByLFGDungeonID(469),
-            false,
-            {
-                IgnoreCollapsedChainFilter = true,
-                IgnoreFactionFilter = true
-            },
-            {
-                6402
-            }
+    local ACMList_Dungeons = KAF_Cat(_G.DUNGEONS) -- Dungeons
+
+    KAF_Sub(ACMList_Dungeons, Utilities:GetDungeonNameByLFGDungeonID(469))
+        :Ids{
+            6402
         }
-    }
 
     -- Raids
-    local ACMList_Raids = {
-        _G.RAIDS, -- Raids
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMList_Raids = KAF_Cat(_G.RAIDS) -- Raids
+        :Ids{
             13469, -- Raiding with Leashes VI: Pets of Pandaria
         }
-    }
 
     -- PetBattles
-    local ACMList_PetBattles = {
-        Utilities:GetAchievementCategoryNameByCategoryID(15219), -- Pet Battles
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        }
-    }
+    local ACMList_PetBattles = KAF_Cat(Utilities:GetAchievementCategoryNameByCategoryID(15219)) -- Pet Battles
 
     if KhamulsAchievementFilter.db.profile.petAchievementsSettings.includePetRelatedStuff then
-        ACMList_PetBattles[#ACMList_PetBattles+1] = ACMList_AdditionalPetStuffPetBattles
+        ACMList_PetBattles:Ids(ACMList_AdditionalPetStuffPetBattles)
     end
 
     -- Zones
-    local ACMList_Zones = {
-        _G.ZONE, -- Zone
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        }
-    }
+    local ACMList_Zones = KAF_Cat(_G.ZONE) -- Zone
 
     if KhamulsAchievementFilter.db.profile.petAchievementsSettings.includePetRelatedStuff then
-        ACMList_Zones[#ACMList_Zones+1] = ACMList_AdditionalPetStuffZone
+        ACMList_Zones:Ids(ACMList_AdditionalPetStuffZone)
     end
 
-
-    local ACMList = {
-        _G.EXPANSION_NAME4, -- Mists of Pandaria
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        ACMList_Zones,
-        ACMList_PetBattles,
-        ACMList_Dungeons,
-        ACMList_Raids,
-    }
+    local ACMList = KAF_Cat(_G.EXPANSION_NAME4) -- Mists of Pandaria
+        :Insert(ACMList_Zones)
+        :Insert(ACMList_PetBattles)
+        :Insert(ACMList_Dungeons)
+        :Insert(ACMList_Raids)
 
     return ACMList
 end

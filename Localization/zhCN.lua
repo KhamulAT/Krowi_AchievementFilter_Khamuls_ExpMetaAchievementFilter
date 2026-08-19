@@ -18,6 +18,11 @@ L["Cross-Expansion"] = "跨资料片"
 -- Missing category titles
 L["Hard"] = "困难"
 L["Nightmare"] = "梦魇"
+L["Coiled Nightmares"] = "盘卷梦魇"
+L["Abyss Anglers"] = "深渊钓客"
+L["Breaknecking Races"] = "疾飙竞速"
+L["Time Rifts"] = "时光裂隙"
+L["Hearthstone"] = "炉石传说"
 
 -- Tooltips
 L["Tt_ACM_15035"] = "只需 4 个即可完成该元成就"
@@ -58,16 +63,3 @@ L["Khamul's Mounts Achievement List"] = "Khamul's Mount Collection"
 L["Mount Collection Settings"] = "Mount Collection Settings"
 L["Show List for Achievements with mounts as reward"] = "Show List for Achievements with mounts as reward"
 L["If enabled, a list with all achievements, which have a mount as reward, will be shown"] = "If enabled, a list with all achievements, which have a mount as reward, will be shown"
-
--- RewardPreview
-L["Preview Reward"] = "Preview Reward"
-L["No preview available for this reward"] = "No preview available for this reward"
-L["Reward"] = "Reward"
-L["Item"] = "Item"
-L["Decor"] = "Decor"
-L["Title"] = "Title"
-L["Spell"] = "Spell"
-L["Debug Settings"] = "Debug Settings"
-L["Enable debug output"] = "Enable debug output"
-L["If enabled, RewardPreview diagnostic messages are shown in chat."] = "If enabled, RewardPreview diagnostic messages are shown in chat."
-L["NPC"] = "NPC"

@@ -26,14 +26,8 @@ function GetHousingPvP()
     }
 
     -- Child Achievements Master of Temple of Kotmogu
-    local ACMChilds_MasterOfTempleOfKotmogu = {
-        Utilities:GetAchievementName(6981),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMChilds_MasterOfTempleOfKotmogu = KAF_Cat(Utilities:GetAchievementName(6981))
+        :Ids{
             6882, -- Temple of Kotmogu Veteran
             6947, -- Four Square
             6950, -- Powerball
@@ -43,17 +37,10 @@ function GetHousingPvP()
             6972, -- What is Best in Life?
             6980, -- Temple of Kotmogu All-Star
         }
-    }
 
     -- Child Achievements Master of Twin Peaks
-    local ACMChilds_MasterOfTwinPeaks = {
-        Utilities:GetAchievementName(5223),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMChilds_MasterOfTwinPeaks = KAF_Cat(Utilities:GetAchievementName(5223))
+        :Ids{
             5209, -- Twin Peaks Veteran
             5210, -- Two-Timer
             5211, -- Top Defender
@@ -67,24 +54,16 @@ function GetHousingPvP()
             5230, -- Twin Peaks Mountaineer
             Utilities:AchievementShowDecider(5231, 5552, factionSpecificAchievements, "completedBeforeFaction"), -- Double Jeopardy
         }
-    }
 
     -- Flat achievement list
-    local ACMListFlat = {
-        Utilities:GetAchievementCategoryNameByCategoryID(15279), -- Player vs. Player
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        }
-    }
+    local ACMListFlat = KAF_Cat(Utilities:GetAchievementCategoryNameByCategoryID(15279)) -- Player vs. Player
 
     if KhamulsAchievementFilter.db.profile.petAchievementsSettings.includeChildAchievements then
-        ACMListFlat[#ACMListFlat+1] = ACMChilds_MasterOfTempleOfKotmogu
-        ACMListFlat[#ACMListFlat+1] = ACMChilds_MasterOfTwinPeaks
+        ACMListFlat:Insert(ACMChilds_MasterOfTempleOfKotmogu)
+        ACMListFlat:Insert(ACMChilds_MasterOfTwinPeaks)
     end
 
-    ACMListFlat[#ACMListFlat+1] = {
+    ACMListFlat:Ids{
         61683, -- Entering Battle
         61684, -- Progressing in Battle
         61685, -- Proficient in Battle
@@ -115,130 +94,77 @@ function GetHousingPvP()
     end
 
     -- Warsong Gulch
-    local ACMList_WarsongGulch = {
-        Utilities:GetZoneNameByMapID(92), -- Warsong Gulch
-        false,
-        {
-            IgnoreCollapsedChainFilter = true
-        },
-        {
+    local ACMList_WarsongGulch = KAF_CatChain(Utilities:GetZoneNameByMapID(92)) -- Warsong Gulch
+        :Ids{
             167, -- Warsong Gulch Veteran
             200 -- Persistent Defender
         }
-    }
 
     -- Arathi Basin
-    local ACMList_ArathiBasin = {
-        Utilities:GetZoneNameByMapID(93), -- Arathi Basin
-        false,
-        {
-            IgnoreCollapsedChainFilter = true
-        },
-        {
+    local ACMList_ArathiBasin = KAF_CatChain(Utilities:GetZoneNameByMapID(93)) -- Arathi Basin
+        :Ids{
             158, -- Me and the Cappin' Makin' It Happe
             1153 -- Overly Defense
         }
-    }
 
     -- Eye of the Storm
-    local ACMList_EyeOfTheStorm = {
-        Utilities:GetZoneNameByMapID(112), -- Eye of the Storm
-        false,
-        {
-            IgnoreCollapsedChainFilter = true
-        },
-        {
+    local ACMList_EyeOfTheStorm = KAF_CatChain(Utilities:GetZoneNameByMapID(112)) -- Eye of the Storm
+        :Ids{
             212, -- Storm Capper
             213 -- Stormtrooper
         }
-    }
 
     -- Alterac Valley
-    local ACMList_AlteracValley = {
-        Utilities:GetZoneNameByMapID(91), -- Alterac Valley
-        false,
-        {
-            IgnoreCollapsedChainFilter = true
-        },
-        {
+    local ACMList_AlteracValley = KAF_CatChain(Utilities:GetZoneNameByMapID(91)) -- Alterac Valley
+        :Ids{
             221, -- Alterac Grave Robber
             222 -- Tower Defense
         }
-    }
 
-    local ACMList_BattleForGilneas = {
-        Utilities:GetZoneNameByMapID(275), -- Battle for Gilneas
-        false,
-        {
-            IgnoreCollapsedChainFilter = true
-        },
-        {
+    local ACMList_BattleForGilneas = KAF_CatChain(Utilities:GetZoneNameByMapID(275)) -- Battle for Gilneas
+        :Ids{
             5245, -- Battle for Gilneas Victory
         }
-    }
 
     -- Twin Peaks
-    local ACMList_TwinPeaks = {
-        Utilities:GetZoneNameByMapID(206), -- Twin Peaks
-        false,
-        {
-            IgnoreCollapsedChainFilter = true
-        }
-    }
+    local ACMList_TwinPeaks = KAF_CatChain(Utilities:GetZoneNameByMapID(206)) -- Twin Peaks
 
     if KhamulsAchievementFilter.db.profile.petAchievementsSettings.includeChildAchievements then
-        ACMList_TwinPeaks[#ACMList_TwinPeaks+1] = ACMChilds_MasterOfTwinPeaks
+        ACMList_TwinPeaks:Insert(ACMChilds_MasterOfTwinPeaks)
     end
 
-    ACMList_TwinPeaks[#ACMList_TwinPeaks+1] = {
+    ACMList_TwinPeaks:Ids{
         5223, -- Master of Twin Peaks
     }
 
     -- Temple of Kotmogu
-    local ACMList_TempleOfKotmogu = {
-        Utilities:GetZoneNameByMapID(417), -- Temple of Kotmogu
-        false,
-        {
-            IgnoreCollapsedChainFilter = true
-        }
-    }
+    local ACMList_TempleOfKotmogu = KAF_CatChain(Utilities:GetZoneNameByMapID(417)) -- Temple of Kotmogu
 
     if KhamulsAchievementFilter.db.profile.petAchievementsSettings.includeChildAchievements then
-        ACMList_TempleOfKotmogu[#ACMList_TempleOfKotmogu+1] = ACMChilds_MasterOfTempleOfKotmogu
+        ACMList_TempleOfKotmogu:Insert(ACMChilds_MasterOfTempleOfKotmogu)
     end
 
-    ACMList_TempleOfKotmogu[#ACMList_TempleOfKotmogu+1] = {
+    ACMList_TempleOfKotmogu:Ids{
         6981 -- Master of the Temple of Kotmogu
     }
 
     -- Deephaul Ravine
-    local ACMList_DeephaulRavine = {
-        Utilities:GetZoneNameByMapID(2345), -- Deephaul Ravine
-        false,
-        {
-            IgnoreCollapsedChainFilter = true
-        },
-        {
+    local ACMList_DeephaulRavine = KAF_CatChain(Utilities:GetZoneNameByMapID(2345)) -- Deephaul Ravine
+        :Ids{
             40210, -- Deephaul Ravine Victory
             40612 -- Sprinting in the Ravine
         }
-    }
 
-    local ACMList = { 
-        Utilities:GetAchievementCategoryNameByCategoryID(15279), -- Player vs. Player
-        false,
-        {
-            IgnoreCollapsedChainFilter = true
-        },
-        ACMList_WarsongGulch,
-        ACMList_ArathiBasin,
-        ACMList_EyeOfTheStorm,
-        ACMList_AlteracValley,
-        ACMList_BattleForGilneas,
-        ACMList_TwinPeaks,
-        ACMList_TempleOfKotmogu,
-        ACMList_DeephaulRavine,
-        {
+    local ACMList = KAF_CatChain(Utilities:GetAchievementCategoryNameByCategoryID(15279)) -- Player vs. Player
+        :Insert(ACMList_WarsongGulch)
+        :Insert(ACMList_ArathiBasin)
+        :Insert(ACMList_EyeOfTheStorm)
+        :Insert(ACMList_AlteracValley)
+        :Insert(ACMList_BattleForGilneas)
+        :Insert(ACMList_TwinPeaks)
+        :Insert(ACMList_TempleOfKotmogu)
+        :Insert(ACMList_DeephaulRavine)
+        :Ids{
             61683, -- Entering Battle
             61684, -- Progressing in Battle
             61685, -- Proficient in Battle
@@ -249,8 +175,6 @@ function GetHousingPvP()
             231, -- Wrecking Ball
             1157 -- Duel-icious
         }
-
-    }
 
     return ACMList
 end

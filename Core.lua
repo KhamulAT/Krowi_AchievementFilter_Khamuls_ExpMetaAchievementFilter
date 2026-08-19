@@ -6,7 +6,6 @@ local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 
 local defaults = {
   profile = {
-    debugEnabled = false,
     metaAchievementsEnabled = true,
     decorAchievementsEnabled = true,
     decorAchievementsSettings = {
@@ -75,6 +74,32 @@ function KhamulsAchievementFilter:OnEnable()
   self.Data = Data
 end
 
+-- Each source builds a V2 injection (KrowiAF.NewInjection). Register() enqueues it
+-- in KrowiAF.CategoryData for KrowiAF.CreateCategories to pick up, so this has to
+-- run before that -- PLAYER_LOGIN is early enough. Registering is additive, so the
+-- guard keeps a repeated call from duplicating the collection.
+local registered = {}
+function KhamulsAchievementFilter:RegisterSourceCategories(sourceName)
+  if registered[sourceName] then
+    return
+  end
+
+  local source = self.Data:GetSource(sourceName)
+  if not source then
+    self:Print("ERROR: Data source '" .. tostring(sourceName) .. "' is not registered.")
+    return
+  end
+
+  local injection = source:GetItems()
+  if not injection or not injection.Register then
+    self:Print("ERROR: Data source '" .. tostring(sourceName) .. "' did not build a V2 injection.")
+    return
+  end
+
+  injection:Register()
+  registered[sourceName] = true
+end
+
 function KhamulsAchievementFilter:OnPlayerLogin()
   if not self:IsKrowiAFAvailable() then
     self:Print("Krowi's Achievement Filter Addon not loaded!")
@@ -86,32 +111,19 @@ function KhamulsAchievementFilter:OnPlayerLogin()
       Data:InitSources()
   end
 
-  if self.db.profile.metaAchievementsEnabled then
-     KrowiAF.CategoryData.KhamulsExpansionMetaAchievementLists = self.Data:GetSource("MetaAchievements"):GetItems()
-  end
+  local profile = self.db.profile
+  local sources = {
+    {profile.metaAchievementsEnabled, "MetaAchievements"},
+    {profile.decorAchievementsEnabled, "DecorAchievements"},
+    {profile.campsiteAchievementsEnabled, "CampsiteAchievements"},
+    {profile.petAchievementsEnabled, "PetAchievements"},
+    {profile.toyAchievementsEnabled, "ToyAchievements"},
+    {profile.mountAchievementsEnabled, "MountAchievements"},
+  }
 
-  if self.db.profile.decorAchievementsEnabled then
-     KrowiAF.CategoryData.KhamulsHousingDecorAchievementLists = self.Data:GetSource("DecorAchievements"):GetItems()
-  end
-
-  if self.db.profile.campsiteAchievementsEnabled then
-     KrowiAF.CategoryData.KhamulsWarbandCampsiteAchievementLists = self.Data:GetSource("CampsiteAchievements"):GetItems()
-  end
-
-  if self.db.profile.petAchievementsEnabled then
-     KrowiAF.CategoryData.KhamulsPetAchievementLists = self.Data:GetSource("PetAchievements"):GetItems()
-  end
-
-  if self.db.profile.toyAchievementsEnabled then
-     KrowiAF.CategoryData.KhamulsToyAchievementLists = self.Data:GetSource("ToyAchievements"):GetItems()
-  end
-
-    if self.db.profile.mountAchievementsEnabled then
-     KrowiAF.CategoryData.KhamulsMountAchievementLists = self.Data:GetSource("MountAchievements"):GetItems()
-  end
-
-  local DecorPreview = self:GetModule("DecorPreview", true)
-  if DecorPreview and DecorPreview.Initialize then
-    DecorPreview:Initialize()
+  for _, entry in ipairs(sources) do
+    if entry[1] then
+      self:RegisterSourceCategories(entry[2])
+    end
   end
 end
