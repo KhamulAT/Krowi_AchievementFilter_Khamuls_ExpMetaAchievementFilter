@@ -60,6 +60,26 @@ function GetMidnightMountAchievements()
         }
     }
 
+    -- Child Achievements Glory of the Venomous Raider
+    local ACMChilds_GloryOfTheVenomousRaider = {
+        Utilities:GetAchievementName(63254),
+        false,
+        {
+            IgnoreCollapsedChainFilter = true,
+            IgnoreFactionFilter = true
+        },
+        {
+            63418, -- Well, Well, Little Sky
+            63250, -- Is Venom Stasis A Joke To You?
+            63645, -- Accidental Inclusion
+            63397, -- Kept You Waiting Huh?
+            63391, -- Jumping Through Hoops
+            63656, -- Taking a Bite out of Slime
+            63669, -- Watch Out Behind You
+            63609, -- No Egg Scramble
+        }
+    }
+
     -- Child Achievements Void Response Team
     local ACMChilds_VoidResponseTeam = {
         Utilities:GetAchievementName(62563),
@@ -92,6 +112,7 @@ function GetMidnightMountAchievements()
         ACMListFlat[#ACMListFlat+1] = ACMChilds_MidnightGlyphHunter
         ACMListFlat[#ACMListFlat+1] = ACMChilds_GloryOfTheMidnightDelver
         ACMListFlat[#ACMListFlat+1] = ACMChilds_GloryOfTheMidnightRaider
+        ACMListFlat[#ACMListFlat+1] = ACMChilds_GloryOfTheVenomousRaider
         ACMListFlat[#ACMListFlat+1] = ACMChilds_VoidResponseTeam
     end
 
@@ -104,6 +125,10 @@ function GetMidnightMountAchievements()
         61380, -- Glory of the Midnight Raider
         42703, -- Prey: Nightmare Mode III
         62563, -- Void Response Team
+        63359, -- Treasures of the Coiled Isle
+        63630, -- Assault the Vault
+        63653, -- Pro Poison Patroller
+        63254, -- Glory of the Venomous Raider
     }
 
     -- Return flat structure if set
@@ -170,6 +195,29 @@ function GetMidnightMountAchievements()
             {
                 62385, -- Staring Into The void
             }
+        },
+        {
+            Utilities:GetZoneNameByMapID(2512), -- The Coiled Isle
+            false,
+            {
+                IgnoreCollapsedChainFilter = true,
+                IgnoreFactionFilter = true
+            },
+            {
+                63359, -- Treasures of the Coiled Isle
+            }
+        },
+        {
+            Utilities:GetZoneNameByMapID(2509), -- Vaults of Atal'Utek
+            false,
+            {
+                IgnoreCollapsedChainFilter = true,
+                IgnoreFactionFilter = true
+            },
+            {
+                63630, -- Assault the Vault
+                63653, -- Pro Poison Patroller
+            }
         }
     }
 
@@ -215,10 +263,12 @@ function GetMidnightMountAchievements()
 
     if KhamulsAchievementFilter.db.profile.mountAchievementsSettings.includeChildAchievements then
         ACMList_Raids[#ACMList_Raids+1] = ACMChilds_GloryOfTheMidnightRaider
+        ACMList_Raids[#ACMList_Raids+1] = ACMChilds_GloryOfTheVenomousRaider
     end
 
     ACMList_Raids[#ACMList_Raids+1] = {
         61380, -- Glory of the Midnight Raider
+        63254, -- Glory of the Venomous Raider
     }
 
     -- Prey

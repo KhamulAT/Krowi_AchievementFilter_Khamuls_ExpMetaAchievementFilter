@@ -112,6 +112,8 @@ function GetPlayerVsPlayerMountAchievements()
         5823, -- Veteran of the Alliance II
         5329, -- Warbound Veteran of the Alliance
         2091, -- Gladiator
+        62930, -- Gladiator: Midnight Season 2
+        62955, -- Venomous Gladiator's Goredrake
     }
 
     -- Return flat structure if set
@@ -257,6 +259,31 @@ function GetPlayerVsPlayerMountAchievements()
         40097, -- Ruffious's Bid
     }
 
+    ------
+    --- Midnight Achievements
+    ------
+
+    local ACMList_Midnight = {
+        _G.EXPANSION_NAME11, -- Midnight
+        false,
+        {
+            IgnoreCollapsedChainFilter = true,
+            IgnoreFactionFilter = true
+        },
+        {
+            Utilities:GetAchievementCategoryNameByCategoryID(165), -- Arena
+            false,
+            {
+                IgnoreCollapsedChainFilter = true,
+                IgnoreFactionFilter = true
+            },
+            {
+                62930, -- Gladiator: Midnight Season 2
+                62955, -- Venomous Gladiator's Goredrake
+            }
+        }
+    }
+
     local ACMList = {
         Utilities:GetAchievementCategoryNameByCategoryID(21), -- Player vs. Player
         false,
@@ -269,7 +296,8 @@ function GetPlayerVsPlayerMountAchievements()
         ACMList_Honor,
         ACMList_Arena,
         ACMList_Legion,
-        ACMList_TheWarWithin
+        ACMList_TheWarWithin,
+        ACMList_Midnight
     }
 
     return ACMList

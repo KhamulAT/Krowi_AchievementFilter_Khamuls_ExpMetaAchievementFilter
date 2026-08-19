@@ -18,6 +18,7 @@ L["Cross-Expansion"] = "跨资料片"
 -- Missing category titles
 L["Hard"] = "困难"
 L["Nightmare"] = "梦魇"
+L["Coiled Nightmares"] = "盘卷梦魇"
 
 -- Tooltips
 L["Tt_ACM_15035"] = "只需 4 个即可完成该元成就"

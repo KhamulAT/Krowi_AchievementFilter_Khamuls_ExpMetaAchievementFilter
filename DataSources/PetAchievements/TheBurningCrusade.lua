@@ -21,7 +21,8 @@ function GetTBCPetAchievements()
         },
         {
             8293, -- Raiding with Leashes II: Attunement Edition
-            9824 -- Raiding with Leashes III: Drinkin' From the Sunwell
+            9824, -- Raiding with Leashes III: Drinkin' From the Sunwell
+            62460 -- Family Battler of Outland
         }
     }
 
@@ -55,6 +56,9 @@ function GetTBCPetAchievements()
         {
             IgnoreCollapsedChainFilter = true,
             IgnoreFactionFilter = true
+        },
+        {
+            62460, -- Family Battler of Outland
         }
     }
 

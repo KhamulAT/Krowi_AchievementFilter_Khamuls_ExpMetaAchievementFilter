@@ -16,6 +16,7 @@ L["Cross-Expansion"] = "Erweiterungsübergreifend"
 -- Missing category titles
 L["Hard"] = "Schwer"
 L["Nightmare"] = "Albtraum"
+L["Coiled Nightmares"] = "Gewundene Albträume"
 
 -- Tooltips
 L["Tt_ACM_15035"] = "Nur 4 erforderlich, um die Meta-Errungenschaft abzuschließen"

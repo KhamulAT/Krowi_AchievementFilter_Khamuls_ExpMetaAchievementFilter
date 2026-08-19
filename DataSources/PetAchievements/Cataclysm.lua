@@ -24,6 +24,7 @@ function GetCataPetAchievements()
             5449, -- Rock Lover
             11856, -- Pet Battle Challenge: Deadmines
             12079, -- Raiding with Leashes V: Cuteaclysm
+            62461, -- Family Battler of Cataclysm
         }
     }
 
@@ -102,6 +103,9 @@ function GetCataPetAchievements()
         {
             IgnoreCollapsedChainFilter = true,
             IgnoreFactionFilter = true
+        },
+        {
+            62461, -- Family Battler of Cataclysm
         }
     }
     if KhamulsAchievementFilter.db.profile.petAchievementsSettings.includePetRelatedStuff then

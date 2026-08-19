@@ -18,6 +18,7 @@ L["Cross-Expansion"] = "Cross-Expansion"
 -- Missing category titles
 L["Hard"] = "Hard"
 L["Nightmare"] = "Nightmare"
+L["Coiled Nightmares"] = "Coiled Nightmares"
 
 -- Tooltips
 L["Tt_ACM_15035"] = "Only 4 needed to complete the Meta-Achievement"

@@ -18,6 +18,7 @@ L["Cross-Expansion"] = "Inter-espansione"
 -- Missing category titles
 L["Hard"] = "Difficile"
 L["Nightmare"] = "Incubo"
+L["Coiled Nightmares"] = "Incubi attorcigliati"
 
 -- Tooltips
 L["Tt_ACM_15035"] = "Ne bastano solo 4 per completare la meta-impresa"

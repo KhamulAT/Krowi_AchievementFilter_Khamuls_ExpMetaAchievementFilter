@@ -18,6 +18,7 @@ L["Cross-Expansion"] = "Entre expansiones"
 -- Missing category titles
 L["Hard"] = "Difícil"
 L["Nightmare"] = "Pesadilla"
+L["Coiled Nightmares"] = "Pesadillas enroscadas"
 
 -- Tooltips
 L["Tt_ACM_15035"] = "Solo se necesitan 4 para completar el meta-logro"

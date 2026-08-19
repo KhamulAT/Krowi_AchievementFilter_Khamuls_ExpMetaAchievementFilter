@@ -86,6 +86,12 @@ function GetHousingMN()
         62184, -- Prey: Breaking the Blade (Nightmare),
         63325, -- Omnium Folio Studies
         61442, -- Lorewalking: The Loa
+        63358, -- Coiled to Strike
+        63432, -- Mysterious Mix Master
+        63451, -- Scales for Days
+        63452, -- Fangs for the Memories
+        63453, -- One, Two, Ral'kala's Coming for You
+        63454, -- Nine, Ten, Never Sleep Again
     }
 
 
@@ -122,6 +128,18 @@ function GetHousingMN()
             },
             {
                 61574, -- Legends Never Die
+            }
+        },
+        {
+            Utilities:GetZoneNameByMapID(2512), -- The Coiled Isle
+            false,
+            {
+                IgnoreCollapsedChainFilter = true,
+                IgnoreFactionFilter = true
+            },
+            {
+                63358, -- Coiled to Strike
+                63432, -- Mysterious Mix Master
             }
         }
     }
@@ -207,6 +225,20 @@ function GetHousingMN()
                 62182, -- Prey: No Rest for the Wretched (Nightmare)
                 62183, -- Prey: A Thorn in the Side (Nightmare)
                 62184, -- Prey: Breaking the Blade (Nightmare)
+            }
+        },
+        {
+            L["Coiled Nightmares"],
+            false,
+            {
+                IgnoreCollapsedChainFilter = true,
+                IgnoreFactionFilter = true
+            },
+            {
+                63451, -- Scales for Days
+                63452, -- Fangs for the Memories
+                63453, -- One, Two, Ral'kala's Coming for You
+                63454, -- Nine, Ten, Never Sleep Again
             }
         }
     }

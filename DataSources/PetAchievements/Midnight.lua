@@ -46,6 +46,9 @@ function GetMNPetAchievements()
     ACMListFlat[#ACMListFlat+1] = {
         61567, -- Midnight Dungeon Hero
         61091, -- Midnight Safari
+        62492, -- The Coiled Isle Safari
+        63633, -- A Stack of Snacks
+        63609, -- No Egg Scramble
     }
 
     -- Return flat structure if set
@@ -71,6 +74,40 @@ function GetMNPetAchievements()
         61567, -- Midnight Dungeon Hero
     }
 
+    -- Zones
+    local ACMList_Zones = {
+        _G.ZONE, -- Zone
+        false,
+        {
+            IgnoreCollapsedChainFilter = true,
+            IgnoreFactionFilter = true
+        },
+        {
+            Utilities:GetZoneNameByMapID(2512), -- The Coiled Isle
+            false,
+            {
+                IgnoreCollapsedChainFilter = true,
+                IgnoreFactionFilter = true
+            },
+            {
+                63633, -- A Stack of Snacks
+            }
+        }
+    }
+
+    -- Raids
+    local ACMList_Raids = {
+        Utilities:GetAchievementCategoryNameByCategoryID(15271), -- Raids
+        false,
+        {
+            IgnoreCollapsedChainFilter = true,
+            IgnoreFactionFilter = true
+        },
+        {
+            63609, -- No Egg Scramble
+        }
+    }
+
     -- PetBattles
     local ACMList_PetBattles = {
         Utilities:GetAchievementCategoryNameByCategoryID(15219), -- Pet Battles
@@ -81,6 +118,7 @@ function GetMNPetAchievements()
         },
         {
             61091, -- Midnight Safari
+            62492, -- The Coiled Isle Safari
         }
     }
 
@@ -106,7 +144,9 @@ function GetMNPetAchievements()
             IgnoreCollapsedChainFilter = true,
             IgnoreFactionFilter = true
         },
+        ACMList_Zones,
         ACMList_Dungeons,
+        ACMList_Raids,
         ACMList_PetBattles,
         ACMList_VoidAssaults
     }

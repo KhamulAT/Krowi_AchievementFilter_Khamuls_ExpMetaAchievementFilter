@@ -32,6 +32,9 @@ function GetMythicPlusMountAchievements()
             61256, -- Midnight Keystone Master: Season One
             61258, -- Midnight Keystone Legend: Season One
             63097, -- Midnight Keystone Myth: Season One
+            63104, -- Umbral Champion: Midnight Season 1
+            62447, -- Midnight Keystone Master: Season 2
+            62449, -- Midnight Keystone Legend: Season 2
         }
     }
 
@@ -115,6 +118,9 @@ function GetMythicPlusMountAchievements()
             61256, -- Midnight Keystone Master: Season One
             61258, -- Midnight Keystone Legend: Season One
             63097, -- Midnight Keystone Myth: Season One
+            63104, -- Umbral Champion: Midnight Season 1
+            62447, -- Midnight Keystone Master: Season 2
+            62449, -- Midnight Keystone Legend: Season 2
         }
     }
 

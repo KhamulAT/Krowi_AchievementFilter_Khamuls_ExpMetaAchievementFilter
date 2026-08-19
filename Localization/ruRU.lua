@@ -18,6 +18,7 @@ L["Cross-Expansion"] = "Между дополнениями"
 -- Missing category titles
 L["Hard"] = "Сложный"
 L["Nightmare"] = "Кошмар"
+L["Coiled Nightmares"] = "Спиральные кошмары"
 
 -- Tooltips
 L["Tt_ACM_15035"] = "Для завершения мета-достижения требуется только 4"
