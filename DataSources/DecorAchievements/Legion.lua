@@ -20,6 +20,7 @@ function GetHousingLegion()
             10398, -- Drum Circle
             11257, -- Treasures of Highmountain
             11124, -- Good Suramaritan
+            11340, -- Insurrection
             10996, -- Got to Ketchum All
             11699, -- Grand Fin-ale
             42270, -- The Deathlord's Campaign
@@ -115,6 +116,7 @@ function GetHousingLegion()
             },
             {
                 11124, -- Good Suramaritan
+                11340, -- Insurrection
             }
         }
     }

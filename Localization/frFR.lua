@@ -19,6 +19,8 @@ L["Cross-Expansion"] = "Inter-extensions"
 L["Hard"] = "Difficile"
 L["Nightmare"] = "Cauchemar"
 L["Coiled Nightmares"] = "Cauchemars enroulés"
+L["Abyss Anglers"] = "Pêcheurs de l'Abîme"
+L["Breaknecking Races"] = "Courses effrénées"
 
 -- Tooltips
 L["Tt_ACM_15035"] = "Seulement 4 sont nécessaires pour terminer le méta-haut fait"

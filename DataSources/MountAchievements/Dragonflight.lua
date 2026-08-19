@@ -146,6 +146,18 @@ function GetDragonflightMountAchievements()
         19349, -- Glory of the Dream Raider
         19574, -- Awakening the Dragonflight Raids,
         19458, -- A World Awoken
+        15916, -- Waking Shores: Silver
+        15928, -- Waking Shores Advanced: Silver
+        15919, -- Ohn'ahran Plains: Silver
+        15931, -- Ohn'ahran Plains Advanced: Silver
+        15922, -- Azure Span: Silver
+        15934, -- Azure Span Advanced: Silver
+        15925, -- Thaldraszus: Silver
+        15937, -- Thaldraszus Advanced: Silver
+        17484, -- Zaralek Cavern: Silver
+        17487, -- Zaralek Cavern Advanced: Silver
+        15833, -- Thanks for the Carry!
+        15834, -- Thanks for the Carry!
     }
 
     -- Return flat structure if set
@@ -194,6 +206,81 @@ function GetDragonflightMountAchievements()
         19574, -- Awakening the Dragonflight Raids
     }
 
+    -- Skyriding Races
+    local ACMList_SkyridingRaces = {
+        _G.MOUNT_JOURNAL_FILTER_DRAGONRIDING, -- Skyriding
+        false,
+        {
+            IgnoreCollapsedChainFilter = true,
+            IgnoreFactionFilter = true
+        },
+        {
+            Utilities:GetZoneNameByMapID(2022), -- The Waking Shores
+            false,
+            {
+                IgnoreCollapsedChainFilter = true,
+                IgnoreFactionFilter = true
+            },
+            {
+                15916, -- Waking Shores: Silver
+                15928, -- Waking Shores Advanced: Silver
+            }
+        },
+        {
+            Utilities:GetZoneNameByMapID(2023), -- Ohn'ahran Plains
+            false,
+            {
+                IgnoreCollapsedChainFilter = true,
+                IgnoreFactionFilter = true
+            },
+            {
+                15919, -- Ohn'ahran Plains: Silver
+                15931, -- Ohn'ahran Plains Advanced: Silver
+            }
+        },
+        {
+            Utilities:GetZoneNameByMapID(2024), -- The Azure Span
+            false,
+            {
+                IgnoreCollapsedChainFilter = true,
+                IgnoreFactionFilter = true
+            },
+            {
+                15922, -- Azure Span: Silver
+                15934, -- Azure Span Advanced: Silver
+            }
+        },
+        {
+            Utilities:GetZoneNameByMapID(2025), -- Thaldraszus
+            false,
+            {
+                IgnoreCollapsedChainFilter = true,
+                IgnoreFactionFilter = true
+            },
+            {
+                15925, -- Thaldraszus: Silver
+                15937, -- Thaldraszus Advanced: Silver
+            }
+        },
+        {
+            Utilities:GetZoneNameByMapID(2133), -- Zaralek Cavern
+            false,
+            {
+                IgnoreCollapsedChainFilter = true,
+                IgnoreFactionFilter = true
+            },
+            {
+                17484, -- Zaralek Cavern: Silver
+                17487, -- Zaralek Cavern Advanced: Silver
+            }
+        },
+        {
+            -- Both faction variants are listed; only the character's own is earnable
+            15833, -- Thanks for the Carry!
+            15834, -- Thanks for the Carry!
+        }
+    }
+
     local ACMList = {
         _G.EXPANSION_NAME9, -- Dragonflight
         false,
@@ -204,6 +291,7 @@ function GetDragonflightMountAchievements()
         },
         ACMList_Dungeons,
         ACMList_Raids,
+        ACMList_SkyridingRaces,
         {
             19458, -- A World Awoken
         }

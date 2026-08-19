@@ -70,6 +70,7 @@ function GetDFPetAchievements()
         17741, -- Slow and Steady Wins the Race
         19293, -- Friends In Feathers
         19792, -- Just One More Thing
+        19793, -- Finally At Rest
         19089, -- Don't Let the Doe hit You The Way Out
         16512, -- Family Battler of the Dragon Isles
         17934, -- Family Battler of Zaralek Cavern
@@ -124,6 +125,7 @@ function GetDFPetAchievements()
         },
         {
             19792, -- Just One More Thing
+            19793, -- Finally At Rest
         }
     }
 

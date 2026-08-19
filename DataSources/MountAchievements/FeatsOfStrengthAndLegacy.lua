@@ -4,21 +4,19 @@ local Utilities = KhamulsAchievementFilter:GetModule("Utilities")
 
 local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 
-function GetFeatsOfStrengthAndLegacyPetAchievements()
+function GetFeatsOfStrengthAndLegacyMountAchievements()
     -- Flat achievement list
     local ACMListFlat = {
-       Utilities:GetAchievementCategoryNameByCategoryID(81) .. " & " .. Utilities:GetAchievementCategoryNameByCategoryID(15176), -- Feats of Strength & Legacy
+        Utilities:GetAchievementCategoryNameByCategoryID(81) .. " & " .. Utilities:GetAchievementCategoryNameByCategoryID(15176), -- Feats of Strength & Legacy
         false,
         {
             IgnoreCollapsedChainFilter = true,
             IgnoreFactionFilter = true
         },
         {
-            8820, -- WoW's 10th Anniversary
-            19877, -- Townlong Steppes,
-            20003, -- Timeless Isle
-            42319, -- Azsuna
-            42541, -- Highmountain
+            19876, -- Vale of Eternal Blossoms
+            20593, -- Time Trial
+            60817, -- Explore Argus
             19079, -- Master of the Turbulent Timeways
             41056, -- Master of the Turbulent Timeways II
             41779, -- Master of the Turbulent Timeways III
@@ -28,7 +26,7 @@ function GetFeatsOfStrengthAndLegacyPetAchievements()
     }
 
     -- Return flat structure if set
-    if KhamulsAchievementFilter.db.profile.petAchievementsSettings.flattenStructure then
+    if KhamulsAchievementFilter.db.profile.mountAchievementsSettings.flattenStructure then
         return ACMListFlat
     end
 
@@ -41,8 +39,8 @@ function GetFeatsOfStrengthAndLegacyPetAchievements()
             IgnoreFactionFilter = true
         },
         {
-            19877, -- Townlong Steppes,
-            20003, -- Timeless Isle
+            19876, -- Vale of Eternal Blossoms
+            20593, -- Time Trial
         }
     }
 
@@ -55,11 +53,11 @@ function GetFeatsOfStrengthAndLegacyPetAchievements()
             IgnoreFactionFilter = true
         },
         {
-            42319, -- Azsuna
-            42541, -- Highmountain
+            60817, -- Explore Argus
         }
     }
 
+    -- Events
     local ACMList_Events = {
         Utilities:GetAchievementCategoryNameByCategoryID(15274), -- Events
         false,
@@ -86,9 +84,6 @@ function GetFeatsOfStrengthAndLegacyPetAchievements()
         ACMList_RemixMistsOfPandaria,
         ACMList_RemixLegion,
         ACMList_Events
-        {
-            8820, -- WoW's 10th Anniversaryv
-        }
     }
 
     return ACMList

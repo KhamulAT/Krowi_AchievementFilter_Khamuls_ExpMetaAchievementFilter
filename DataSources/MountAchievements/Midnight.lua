@@ -129,6 +129,9 @@ function GetMidnightMountAchievements()
         63630, -- Assault the Vault
         63653, -- Pro Poison Patroller
         63254, -- Glory of the Venomous Raider
+        62386, -- Light Up the Night
+        62873, -- A Trip Around the Stars
+        62874, -- A Trip Through the Stars
     }
 
     -- Return flat structure if set
@@ -218,6 +221,9 @@ function GetMidnightMountAchievements()
                 63630, -- Assault the Vault
                 63653, -- Pro Poison Patroller
             }
+        },
+        {
+            62386, -- Light Up the Night
         }
     }
 
@@ -308,6 +314,8 @@ function GetMidnightMountAchievements()
 
     ACMList_VoidAssaults[#ACMList_VoidAssaults+1] = {
         62563, -- Void Response Team
+        62873, -- A Trip Around the Stars
+        62874, -- A Trip Through the Stars
     }
 
     local ACMList = {

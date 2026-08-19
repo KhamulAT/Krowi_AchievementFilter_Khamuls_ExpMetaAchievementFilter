@@ -26,7 +26,8 @@ function Source:Init(ctx)
         GetTheWarWithinMountAchievements(),
         GetMidnightMountAchievements(),
         GetMythicPlusMountAchievements(),
-        GetPlayerVsPlayerMountAchievements()
+        GetPlayerVsPlayerMountAchievements(),
+        GetFeatsOfStrengthAndLegacyMountAchievements()
     }
   }
 end
@@ -49,7 +50,8 @@ function Source:Rebuild()
         GetTheWarWithinMountAchievements(),
         GetMidnightMountAchievements(),
         GetMythicPlusMountAchievements(),
-        GetPlayerVsPlayerMountAchievements()
+        GetPlayerVsPlayerMountAchievements(),
+        GetFeatsOfStrengthAndLegacyMountAchievements()
     }
   }
 end

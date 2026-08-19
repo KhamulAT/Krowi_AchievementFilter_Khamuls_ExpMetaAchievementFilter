@@ -49,6 +49,9 @@ function GetMNPetAchievements()
         62492, -- The Coiled Isle Safari
         63633, -- A Stack of Snacks
         63609, -- No Egg Scramble
+        61960, -- Treasures of Eversong Woods
+        62518, -- Cosmic Exterminator
+        62776, -- Abyss Anglers: All Blue Angler
     }
 
     -- Return flat structure if set
@@ -81,6 +84,17 @@ function GetMNPetAchievements()
         {
             IgnoreCollapsedChainFilter = true,
             IgnoreFactionFilter = true
+        },
+        {
+            Utilities:GetZoneNameByMapID(2395), -- Eversong Woods
+            false,
+            {
+                IgnoreCollapsedChainFilter = true,
+                IgnoreFactionFilter = true
+            },
+            {
+                61960, -- Treasures of Eversong Woods
+            }
         },
         {
             Utilities:GetZoneNameByMapID(2512), -- The Coiled Isle
@@ -134,6 +148,20 @@ function GetMNPetAchievements()
             62882, -- Showdown Success: Naigtal
             62880, -- Showdown Success: Val
             63349, -- Ultradon  Carnage
+            62518, -- Cosmic Exterminator
+        }
+    }
+
+    -- Abyss Anglers
+    local ACMList_AbyssAnglers = {
+        L["Abyss Anglers"],
+        false,
+        {
+            IgnoreCollapsedChainFilter = true,
+            IgnoreFactionFilter = true
+        },
+        {
+            62776, -- Abyss Anglers: All Blue Angler
         }
     }
 
@@ -148,7 +176,8 @@ function GetMNPetAchievements()
         ACMList_Dungeons,
         ACMList_Raids,
         ACMList_PetBattles,
-        ACMList_VoidAssaults
+        ACMList_VoidAssaults,
+        ACMList_AbyssAnglers
     }
 
     return ACMList

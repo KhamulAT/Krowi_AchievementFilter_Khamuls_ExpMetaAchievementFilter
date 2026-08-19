@@ -19,6 +19,8 @@ L["Cross-Expansion"] = "Cross-Expansion"
 L["Hard"] = "Hard"
 L["Nightmare"] = "Nightmare"
 L["Coiled Nightmares"] = "Coiled Nightmares"
+L["Abyss Anglers"] = "Abyss Anglers"
+L["Breaknecking Races"] = "Breaknecking Races"
 
 -- Tooltips
 L["Tt_ACM_15035"] = "Only 4 needed to complete the Meta-Achievement"

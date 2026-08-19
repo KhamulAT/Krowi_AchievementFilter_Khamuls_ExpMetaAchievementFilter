@@ -19,6 +19,8 @@ L["Cross-Expansion"] = "Между дополнениями"
 L["Hard"] = "Сложный"
 L["Nightmare"] = "Кошмар"
 L["Coiled Nightmares"] = "Спиральные кошмары"
+L["Abyss Anglers"] = "Глубинные рыболовы"
+L["Breaknecking Races"] = "Скоростные гонки"
 
 -- Tooltips
 L["Tt_ACM_15035"] = "Для завершения мета-достижения требуется только 4"

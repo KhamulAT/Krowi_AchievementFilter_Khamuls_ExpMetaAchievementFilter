@@ -71,6 +71,22 @@ function GetCrossExpansionMountAchievements()
     ACMListFlat[#ACMListFlat+1] = {
         12866, -- 100 Exalted Reputations
         11176, -- Remember to Share
+        -- Mount collection milestones
+        2143, -- Leading the Cavalry
+        2536, -- Mountain o' Mounts
+        7860, -- We're Going to Need More Saddles
+        8302, -- Mount Parade
+        9598, -- Mountacular
+        9713, -- Awake the Drakes
+        10355, -- Lord of the Reins
+        12931, -- No Stable Big Enough
+        12933, -- A Horde of Hoofbeats
+        62096, -- Insurmountable Collection
+        9909, -- Heirloom Hoarder
+        -- World Events
+        2144, -- What a Long, Strange Trip It's Been
+        15310, -- A Tour of Towers
+        18646, -- Whodunnit?
     }
 
     -- Return flat structure if set
@@ -111,7 +127,44 @@ function GetCrossExpansionMountAchievements()
     end
 
     ACMList_Collections[#ACMList_Collections+1] = {
-        11176 -- Remember to Share
+        11176, -- Remember to Share
+        9909, -- Heirloom Hoarder
+    }
+
+    ACMList_Collections[#ACMList_Collections+1] = {
+        _G.MOUNTS, -- Mounts
+        false,
+        {
+            IgnoreCollapsedChainFilter = true,
+            IgnoreFactionFilter = true
+        },
+        {
+            2143, -- Leading the Cavalry
+            2536, -- Mountain o' Mounts
+            7860, -- We're Going to Need More Saddles
+            8302, -- Mount Parade
+            9598, -- Mountacular
+            9713, -- Awake the Drakes
+            10355, -- Lord of the Reins
+            12931, -- No Stable Big Enough
+            12933, -- A Horde of Hoofbeats
+            62096, -- Insurmountable Collection
+        }
+    }
+
+    -- World Events
+    local ACMList_WorldEvents = {
+        Utilities:GetAchievementCategoryNameByCategoryID(155), -- World Events
+        false,
+        {
+            IgnoreCollapsedChainFilter = true,
+            IgnoreFactionFilter = true
+        },
+        {
+            2144, -- What a Long, Strange Trip It's Been
+            15310, -- A Tour of Towers
+            18646, -- Whodunnit?
+        }
     }
 
     local ACMList = {
@@ -122,7 +175,8 @@ function GetCrossExpansionMountAchievements()
             IgnoreFactionFilter = true
         },
         ACMList_Reputation,
-        ACMList_Collections
+        ACMList_Collections,
+        ACMList_WorldEvents
     }
 
     return ACMList

@@ -19,6 +19,8 @@ L["Cross-Expansion"] = "Entre expansões"
 L["Hard"] = "Difícil"
 L["Nightmare"] = "Pesadelo"
 L["Coiled Nightmares"] = "Pesadelos enrolados"
+L["Abyss Anglers"] = "Pescadores do Abismo"
+L["Breaknecking Races"] = "Corridas de Pé-na-Tábua"
 
 -- Tooltips
 L["Tt_ACM_15035"] = "Apenas 4 são necessários para concluir a meta-conquista"

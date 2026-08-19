@@ -39,6 +39,7 @@ function GetCrossExpansionPetAchievements()
             12996, -- Toybox Tycoon,
             9983, -- That's Wwhack!
             18644, -- Community Rumor Mill
+            3478, -- Pilgrim
         }
     }
 
@@ -217,6 +218,19 @@ function GetCrossExpansionPetAchievements()
         }
     }
 
+    -- World Events
+    local ACMList_WorldEvents = {
+        Utilities:GetAchievementCategoryNameByCategoryID(155), -- World Events
+        false,
+        {
+            IgnoreCollapsedChainFilter = true,
+            IgnoreFactionFilter = true
+        },
+        {
+            3478, -- Pilgrim
+        }
+    }
+
     -- Zones
     local  ACMList_Zones = {
         _G.ZONE, -- Zone
@@ -244,6 +258,7 @@ function GetCrossExpansionPetAchievements()
         },
         ACMList_Collections,
         ACMList_DarkmoonFaire,
+        ACMList_WorldEvents,
         ACMList_DungeonsAndRaids,
         ACMList_PetBattles_CollectBattleLevel,
         ACMList_Professions_Cooking,

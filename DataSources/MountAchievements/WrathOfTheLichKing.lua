@@ -71,6 +71,10 @@ function GetWotLKMountAchievements()
 
     ACMListFlat[#ACMListFlat+1] = {
         2136, -- Glory of the Hero
+        4156, -- A Tribute to Immortality
+        12401, -- Glory of the Ulduar Raider
+        4602, -- Glory of the Icecrown Raider (10 player)
+        4603, -- Glory of the Icecrown Raider (25 player)
     }
 
     -- Return flat structure if set
@@ -116,7 +120,12 @@ function GetWotLKMountAchievements()
             IgnoreCollapsedChainFilter = true,
             IgnoreFactionFilter = true
         },
-        ACMList_RaidsTrialOfTheCrusader
+        ACMList_RaidsTrialOfTheCrusader,
+        {
+            12401, -- Glory of the Ulduar Raider
+            4602, -- Glory of the Icecrown Raider (10 player)
+            4603, -- Glory of the Icecrown Raider (25 player)
+        }
     }
 
     local ACMList = {

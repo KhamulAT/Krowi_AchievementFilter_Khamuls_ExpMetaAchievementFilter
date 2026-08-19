@@ -112,6 +112,46 @@ function GetPlayerVsPlayerMountAchievements()
         5823, -- Veteran of the Alliance II
         5329, -- Warbound Veteran of the Alliance
         2091, -- Gladiator
+        -- Seasonal arena mounts (Alliance and Horde variants are both listed)
+        8484, -- Grievous Combatant
+        8485, -- Grievous Combatant
+        8641, -- Prideful Combatant
+        8642, -- Prideful Combatant
+        9236, -- Primal Combatant
+        9238, -- Primal Combatant
+        10092, -- Wild Combatant
+        10093, -- Wild Combatant
+        10094, -- Warmongering Combatant
+        10095, -- Warmongering Combatant
+        10997, -- Vindictive Combatant
+        10998, -- Vindictive Combatant
+        11003, -- Fearless Combatant
+        11004, -- Fearless Combatant
+        11005, -- Cruel Combatant
+        11008, -- Cruel Combatant
+        11009, -- Ferocious Combatant
+        11010, -- Ferocious Combatant
+        12031, -- Fierce Combatant
+        12032, -- Fierce Combatant
+        12136, -- Dominant Combatant
+        12137, -- Dominant Combatant
+        12199, -- Demonic Combatant
+        12200, -- Demonic Combatant
+        12961, -- Gladiator: Battle for Azeroth Season 1
+        13212, -- Gladiator: Battle for Azeroth Season 2
+        13647, -- Gladiator: Battle for Azeroth Season 3
+        13967, -- Gladiator: Battle for Azeroth Season 4
+        14689, -- Gladiator: Shadowlands Season 1
+        14972, -- Gladiator: Shadowlands Season 2
+        15352, -- Gladiator: Shadowlands Season 3
+        15605, -- Gladiator: Shadowlands Season 4
+        15957, -- Gladiator: Dragonflight Season 1
+        17740, -- Gladiator: Dragonflight Season 2
+        19091, -- Gladiator: Dragonflight Season 3
+        19490, -- Gladiator: Dragonflight Season 4
+        40393, -- Gladiator: The War Within Season 1
+        41032, -- Gladiator: The War Within Season 2
+        41049, -- Gladiator: The War Within Season 3
         62930, -- Gladiator: Midnight Season 2
         62955, -- Venomous Gladiator's Goredrake
     }
@@ -205,12 +245,135 @@ function GetPlayerVsPlayerMountAchievements()
     }
 
     -- Arena
+    -- Both faction variants of the Combatant achievements are listed; only the one
+    -- matching the character's faction can actually be earned.
     local ACMList_Arena = {
-        Utilities:GetAchievementCategoryNameByCategoryID(165), -- Honor
+        Utilities:GetAchievementCategoryNameByCategoryID(165), -- Arena
         false,
         {
             IgnoreCollapsedChainFilter = true,
             IgnoreFactionFilter = true
+        },
+        {
+            _G.EXPANSION_NAME4, -- Mists of Pandaria
+            false,
+            {
+                IgnoreCollapsedChainFilter = true,
+                IgnoreFactionFilter = true
+            },
+            {
+                8484, -- Grievous Combatant
+                8485, -- Grievous Combatant
+                8641, -- Prideful Combatant
+                8642, -- Prideful Combatant
+            }
+        },
+        {
+            _G.EXPANSION_NAME5, -- Warlords of Draenor
+            false,
+            {
+                IgnoreCollapsedChainFilter = true,
+                IgnoreFactionFilter = true
+            },
+            {
+                9236, -- Primal Combatant
+                9238, -- Primal Combatant
+                10092, -- Wild Combatant
+                10093, -- Wild Combatant
+                10094, -- Warmongering Combatant
+                10095, -- Warmongering Combatant
+            }
+        },
+        {
+            _G.EXPANSION_NAME6, -- Legion
+            false,
+            {
+                IgnoreCollapsedChainFilter = true,
+                IgnoreFactionFilter = true
+            },
+            {
+                10997, -- Vindictive Combatant
+                10998, -- Vindictive Combatant
+                11003, -- Fearless Combatant
+                11004, -- Fearless Combatant
+                11005, -- Cruel Combatant
+                11008, -- Cruel Combatant
+                11009, -- Ferocious Combatant
+                11010, -- Ferocious Combatant
+                12031, -- Fierce Combatant
+                12032, -- Fierce Combatant
+                12136, -- Dominant Combatant
+                12137, -- Dominant Combatant
+                12199, -- Demonic Combatant
+                12200, -- Demonic Combatant
+            }
+        },
+        {
+            _G.EXPANSION_NAME7, -- Battle for Azeroth
+            false,
+            {
+                IgnoreCollapsedChainFilter = true,
+                IgnoreFactionFilter = true
+            },
+            {
+                12961, -- Gladiator: Battle for Azeroth Season 1
+                13212, -- Gladiator: Battle for Azeroth Season 2
+                13647, -- Gladiator: Battle for Azeroth Season 3
+                13967, -- Gladiator: Battle for Azeroth Season 4
+            }
+        },
+        {
+            _G.EXPANSION_NAME8, -- Shadowlands
+            false,
+            {
+                IgnoreCollapsedChainFilter = true,
+                IgnoreFactionFilter = true
+            },
+            {
+                14689, -- Gladiator: Shadowlands Season 1
+                14972, -- Gladiator: Shadowlands Season 2
+                15352, -- Gladiator: Shadowlands Season 3
+                15605, -- Gladiator: Shadowlands Season 4
+            }
+        },
+        {
+            _G.EXPANSION_NAME9, -- Dragonflight
+            false,
+            {
+                IgnoreCollapsedChainFilter = true,
+                IgnoreFactionFilter = true
+            },
+            {
+                15957, -- Gladiator: Dragonflight Season 1
+                17740, -- Gladiator: Dragonflight Season 2
+                19091, -- Gladiator: Dragonflight Season 3
+                19490, -- Gladiator: Dragonflight Season 4
+            }
+        },
+        {
+            _G.EXPANSION_NAME10, -- The War Within
+            false,
+            {
+                IgnoreCollapsedChainFilter = true,
+                IgnoreFactionFilter = true
+            },
+            {
+                40393, -- Gladiator: The War Within Season 1
+                41032, -- Gladiator: The War Within Season 2
+                41049, -- Gladiator: The War Within Season 3
+            }
+        },
+        {
+            _G.EXPANSION_NAME11, -- Midnight
+            false,
+            {
+                IgnoreCollapsedChainFilter = true,
+                IgnoreFactionFilter = true
+            },
+            {
+                62930, -- Gladiator: Midnight Season 2
+                62955, -- Venomous Gladiator's Goredrake
+            }
         },
         {
             2091, -- Gladiator
@@ -259,31 +422,6 @@ function GetPlayerVsPlayerMountAchievements()
         40097, -- Ruffious's Bid
     }
 
-    ------
-    --- Midnight Achievements
-    ------
-
-    local ACMList_Midnight = {
-        _G.EXPANSION_NAME11, -- Midnight
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
-            Utilities:GetAchievementCategoryNameByCategoryID(165), -- Arena
-            false,
-            {
-                IgnoreCollapsedChainFilter = true,
-                IgnoreFactionFilter = true
-            },
-            {
-                62930, -- Gladiator: Midnight Season 2
-                62955, -- Venomous Gladiator's Goredrake
-            }
-        }
-    }
-
     local ACMList = {
         Utilities:GetAchievementCategoryNameByCategoryID(21), -- Player vs. Player
         false,
@@ -296,8 +434,7 @@ function GetPlayerVsPlayerMountAchievements()
         ACMList_Honor,
         ACMList_Arena,
         ACMList_Legion,
-        ACMList_TheWarWithin,
-        ACMList_Midnight
+        ACMList_TheWarWithin
     }
 
     return ACMList

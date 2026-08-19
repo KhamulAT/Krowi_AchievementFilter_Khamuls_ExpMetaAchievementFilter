@@ -19,6 +19,8 @@ L["Cross-Expansion"] = "跨资料片"
 L["Hard"] = "困难"
 L["Nightmare"] = "梦魇"
 L["Coiled Nightmares"] = "盘卷梦魇"
+L["Abyss Anglers"] = "深渊钓客"
+L["Breaknecking Races"] = "疾飙竞速"
 
 -- Tooltips
 L["Tt_ACM_15035"] = "只需 4 个即可完成该元成就"

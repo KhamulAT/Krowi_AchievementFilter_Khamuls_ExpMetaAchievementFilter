@@ -140,6 +140,11 @@ function GetTheWarWithinMountAchievements()
         41929, -- Through the Depths of Visions
         41966, -- Mastering the Visions
         61451, -- Worldsoul-Searching
+        40433, -- Let Me Solo Him: Zekvir
+        41530, -- My New Nemesis
+        41210, -- Let Me Solo Him: The Underpin
+        42190, -- Let Me Solo Her: Nexus-Princess Ky'veza
+        41081, -- Undermine Breaknecking: Bronze
     }
 
     -- Return flat structure if set
@@ -187,6 +192,10 @@ function GetTheWarWithinMountAchievements()
         },
         {
             42212, -- Titan Console Overcharged
+            40433, -- Let Me Solo Him: Zekvir
+            41530, -- My New Nemesis
+            41210, -- Let Me Solo Him: The Underpin
+            42190, -- Let Me Solo Her: Nexus-Princess Ky'veza
         }
     }
 
@@ -233,6 +242,27 @@ function GetTheWarWithinMountAchievements()
         }
     }
 
+    -- Breaknecking Races
+    local ACMList_BreakneckingRaces = {
+        L["Breaknecking Races"],
+        false,
+        {
+            IgnoreCollapsedChainFilter = true,
+            IgnoreFactionFilter = true
+        },
+        {
+            Utilities:GetZoneNameByMapID(2346), -- Undermine
+            false,
+            {
+                IgnoreCollapsedChainFilter = true,
+                IgnoreFactionFilter = true
+            },
+            {
+                41081, -- Undermine Breaknecking: Bronze
+            }
+        }
+    }
+
     local ACMList_VisionsOfNZoth = {
         Utilities:GetAchievementCategoryNameByCategoryID(15546), -- Visions of N'Zoth Revisited
         false,
@@ -264,6 +294,7 @@ function GetTheWarWithinMountAchievements()
         ACMList_Delves,
         ACMList_Raids,
         ACMList_Professions,
+        ACMList_BreakneckingRaces,
         ACMList_VisionsOfNZoth,
         {
             61451, -- Worldsoul-Searching

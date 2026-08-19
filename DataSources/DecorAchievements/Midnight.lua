@@ -86,6 +86,16 @@ function GetHousingMN()
         62184, -- Prey: Breaking the Blade (Nightmare),
         63325, -- Omnium Folio Studies
         61442, -- Lorewalking: The Loa
+        63343, -- Goal!
+        62288, -- Eversong Woods: The Highest Peaks
+        61507, -- A Bloody Song
+        62186, -- The Party Must Go On
+        62289, -- Zul'Aman: The Highest Peaks
+        62122, -- Tallest Tree in the Forest
+        62290, -- Harandar: The Highest Peaks
+        61264, -- Leaf None Behind
+        62291, -- Voidstorm: The Highest Peaks
+        62130, -- The Ultimate Predator
         63358, -- Coiled to Strike
         63432, -- Mysterious Mix Master
         63451, -- Scales for Days
@@ -109,7 +119,18 @@ function GetHousingMN()
             IgnoreFactionFilter = true
         },
         {
-            Utilities:GetZoneNameByMapID(1267), -- Eversong Woods
+            Utilities:GetZoneNameByMapID(2537), -- Quel'Thalas
+            false,
+            {
+                IgnoreCollapsedChainFilter = true,
+                IgnoreFactionFilter = true
+            },
+            {
+                63343, -- Goal!
+            }
+        },
+        {
+            Utilities:GetZoneNameByMapID(2395), -- Eversong Woods
             false,
             {
                 IgnoreCollapsedChainFilter = true,
@@ -117,10 +138,25 @@ function GetHousingMN()
             },
             {
                 62185, -- Ever Painting
+                62288, -- Eversong Woods: The Highest Peaks
+                61507, -- A Bloody Song
+                62186, -- The Party Must Go On
             }
         },
         {
-            Utilities:GetZoneNameByMapID(2480), -- Harandar
+            Utilities:GetZoneNameByMapID(2437), -- Zul'Aman
+            false,
+            {
+                IgnoreCollapsedChainFilter = true,
+                IgnoreFactionFilter = true
+            },
+            {
+                62289, -- Zul'Aman: The Highest Peaks
+                62122, -- Tallest Tree in the Forest
+            }
+        },
+        {
+            Utilities:GetZoneNameByMapID(2413), -- Harandar
             false,
             {
                 IgnoreCollapsedChainFilter = true,
@@ -128,6 +164,20 @@ function GetHousingMN()
             },
             {
                 61574, -- Legends Never Die
+                62290, -- Harandar: The Highest Peaks
+                61264, -- Leaf None Behind
+            }
+        },
+        {
+            Utilities:GetZoneNameByMapID(2405), -- Voidstorm
+            false,
+            {
+                IgnoreCollapsedChainFilter = true,
+                IgnoreFactionFilter = true
+            },
+            {
+                62291, -- Voidstorm: The Highest Peaks
+                62130, -- The Ultimate Predator
             }
         },
         {

@@ -14,5 +14,6 @@
     <Script file="Midnight.lua" />
     <Script file="MythicPlus.lua" />
     <Script file="PlayerVsPlayer.lua" />
+    <Script file="FeatsOfStrengthAndLegacy.lua" />
     <Script file="MountAchievements.lua" />
 </Ui>

@@ -171,6 +171,7 @@ function GetBattleForAzerothMountAchievements()
         13687, -- Glory of the Eternal Raider
         14146, -- Glory of the Ny'alotha Raider
         40953, -- A Farewell to Arms
+        13250, -- Battle for Azeroth Pathfinder, Part Two
     }
 
     -- Return flat structure if set
@@ -233,6 +234,7 @@ function GetBattleForAzerothMountAchievements()
         ACMList_Raids,
         {
             40953, -- A Farewell to Arms
+            13250, -- Battle for Azeroth Pathfinder, Part Two
         }
     }
 
