@@ -82,6 +82,19 @@ function GetCrossExpansionToyAchievements()
         9673, -- The Toymaster
         15781, -- The Joy of Toy
         14021, -- The Shadows Revealed
+        20033, -- Hearthstone Beginner
+        9394, -- They Really Love Me!
+        9885, -- Ace Tonk Commander
+        9894, -- Triumphant Turtle Tossing
+        9761, -- Darkmoon Racer Roadhog
+        9764, -- Rocketeer: Gold
+        9792, -- Wanderluster: Gold
+        9785, -- Powermonger: Gold
+        9799, -- Big Race Roadhog
+        9805, -- Big Rocketeer: Gold
+        9811, -- Big Wanderluster: Gold
+        9817, -- Big Powermonger: Gold
+        15221, -- Dancing Machine
     }
 
     -- Return flat structure if set
@@ -143,6 +156,53 @@ function GetCrossExpansionToyAchievements()
         14021, -- The Shadows Revealed
     }
 
+    -- World Events
+    local ACMList_WorldEvents = {
+        Utilities:GetAchievementCategoryNameByCategoryID(155), -- World Events
+        false,
+        {
+            IgnoreCollapsedChainFilter = true,
+            IgnoreFactionFilter = true
+        },
+        {
+            Utilities:GetAchievementCategoryNameByCategoryID(15101), -- Darkmoon Faire
+            false,
+            {
+                IgnoreCollapsedChainFilter = true,
+                IgnoreFactionFilter = true
+            },
+            {
+                9885, -- Ace Tonk Commander
+                9894, -- Triumphant Turtle Tossing
+                9761, -- Darkmoon Racer Roadhog
+                9764, -- Rocketeer: Gold
+                9792, -- Wanderluster: Gold
+                9785, -- Powermonger: Gold
+                9799, -- Big Race Roadhog
+                9805, -- Big Rocketeer: Gold
+                9811, -- Big Wanderluster: Gold
+                9817, -- Big Powermonger: Gold
+                15221, -- Dancing Machine
+            }
+        },
+        {
+            9394, -- They Really Love Me! (Love is in the Air)
+        }
+    }
+
+    -- Hearthstone
+    local ACMList_Hearthstone = {
+        L["Hearthstone"],
+        false,
+        {
+            IgnoreCollapsedChainFilter = true,
+            IgnoreFactionFilter = true
+        },
+        {
+            20033, -- Hearthstone Beginner
+        }
+    }
+
     local ACMList = {
         L["Cross-Expansion"],
         false,
@@ -152,7 +212,9 @@ function GetCrossExpansionToyAchievements()
         },
         ACMList_Professions_Fishing,
         ACMList_Collections,
-        ACMList_PetBattles
+        ACMList_PetBattles,
+        ACMList_WorldEvents,
+        ACMList_Hearthstone
     }
 
     return ACMList

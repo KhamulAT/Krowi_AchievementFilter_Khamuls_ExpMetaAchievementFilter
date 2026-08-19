@@ -57,6 +57,7 @@ function GetSLToyAchievements()
         15211, -- Completing the Code
         14471, -- Twisting Corridors: Layer 4
         15252, -- The Jailer's Gauntlet: Layer 2
+        14625, -- Battle in the Shadowlands
     }
 
     -- Return flat structure if set
@@ -129,6 +130,19 @@ function GetSLToyAchievements()
         15252, -- The Jailer's Gauntlet: Layer 2
     }
 
+    -- PetBattles
+    local ACMList_PetBattles = {
+        Utilities:GetAchievementCategoryNameByCategoryID(15219), -- Pet Battles
+        false,
+        {
+            IgnoreCollapsedChainFilter = true,
+            IgnoreFactionFilter = true
+        },
+        {
+            14625, -- Battle in the Shadowlands
+        }
+    }
+
     local ACMList = {
         _G.EXPANSION_NAME8, -- Shadowlands
         false,
@@ -137,7 +151,8 @@ function GetSLToyAchievements()
             IgnoreFactionFilter = true
         },
         ACMList_Zones,
-        ACMList_Torghast
+        ACMList_Torghast,
+        ACMList_PetBattles
     }
 
     return ACMList

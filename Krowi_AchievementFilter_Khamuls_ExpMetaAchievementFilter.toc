@@ -15,7 +15,6 @@
 Libs\Files.xml
 Localization\Files.xml
 
-
 Core.lua
 Utilities.lua
 DataSources\Files.xml

@@ -16,6 +16,10 @@ function GetMNToyAchievements()
         },
         {
             62388, -- Illicit Rain: Five Stars
+            62125, -- Treasures of Zul'Aman
+            62126, -- Treasures of Voidstorm
+            63662, -- Student of Hissstory
+            63167, -- Tour of Duty: The Coiled Isle
         }
     }
 
@@ -45,6 +49,50 @@ function GetMNToyAchievements()
         }
     }
 
+    -- Zones
+    local ACMList_Zones = {
+        _G.ZONE, -- Zone
+        false,
+        {
+            IgnoreCollapsedChainFilter = true,
+            IgnoreFactionFilter = true
+        },
+        {
+            Utilities:GetZoneNameByMapID(2437), -- Zul'Aman
+            false,
+            {
+                IgnoreCollapsedChainFilter = true,
+                IgnoreFactionFilter = true
+            },
+            {
+                62125, -- Treasures of Zul'Aman
+            }
+        },
+        {
+            Utilities:GetZoneNameByMapID(2405), -- Voidstorm
+            false,
+            {
+                IgnoreCollapsedChainFilter = true,
+                IgnoreFactionFilter = true
+            },
+            {
+                62126, -- Treasures of Voidstorm
+            }
+        },
+        {
+            Utilities:GetZoneNameByMapID(2512), -- The Coiled Isle
+            false,
+            {
+                IgnoreCollapsedChainFilter = true,
+                IgnoreFactionFilter = true
+            },
+            {
+                63662, -- Student of Hissstory
+                63167, -- Tour of Duty: The Coiled Isle
+            }
+        }
+    }
+
     local ACMList = {
         _G.EXPANSION_NAME11, -- Midnight
         false,
@@ -52,6 +100,7 @@ function GetMNToyAchievements()
             IgnoreCollapsedChainFilter = true,
             IgnoreFactionFilter = true
         },
+        ACMList_Zones,
         ACMList_Dungeons
     }
 

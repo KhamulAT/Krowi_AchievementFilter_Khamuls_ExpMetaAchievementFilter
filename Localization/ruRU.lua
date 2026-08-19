@@ -21,6 +21,8 @@ L["Nightmare"] = "Кошмар"
 L["Coiled Nightmares"] = "Спиральные кошмары"
 L["Abyss Anglers"] = "Глубинные рыболовы"
 L["Breaknecking Races"] = "Скоростные гонки"
+L["Time Rifts"] = "Порталы времени"
+L["Hearthstone"] = "Hearthstone"
 
 -- Tooltips
 L["Tt_ACM_15035"] = "Для завершения мета-достижения требуется только 4"

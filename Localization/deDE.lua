@@ -19,6 +19,8 @@ L["Nightmare"] = "Albtraum"
 L["Coiled Nightmares"] = "Gewundene Albträume"
 L["Abyss Anglers"] = "Abgrundangler"
 L["Breaknecking Races"] = "Halsbrecherrennen"
+L["Time Rifts"] = "Zeitrisse"
+L["Hearthstone"] = "Hearthstone"
 
 -- Tooltips
 L["Tt_ACM_15035"] = "Nur 4 erforderlich, um die Meta-Errungenschaft abzuschließen"

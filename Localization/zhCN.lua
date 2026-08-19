@@ -21,6 +21,8 @@ L["Nightmare"] = "梦魇"
 L["Coiled Nightmares"] = "盘卷梦魇"
 L["Abyss Anglers"] = "深渊钓客"
 L["Breaknecking Races"] = "疾飙竞速"
+L["Time Rifts"] = "时光裂隙"
+L["Hearthstone"] = "炉石传说"
 
 -- Tooltips
 L["Tt_ACM_15035"] = "只需 4 个即可完成该元成就"

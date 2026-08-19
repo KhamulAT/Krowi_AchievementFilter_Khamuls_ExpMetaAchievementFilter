@@ -21,6 +21,8 @@ L["Nightmare"] = "Incubo"
 L["Coiled Nightmares"] = "Incubi attorcigliati"
 L["Abyss Anglers"] = "Pescatori dell'Abisso"
 L["Breaknecking Races"] = "Corse spericolate"
+L["Time Rifts"] = "Fratture temporali"
+L["Hearthstone"] = "Hearthstone"
 
 -- Tooltips
 L["Tt_ACM_15035"] = "Ne bastano solo 4 per completare la meta-impresa"

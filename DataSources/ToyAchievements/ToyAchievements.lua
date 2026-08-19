@@ -23,7 +23,8 @@ function Source:Init(ctx)
         GetSLToyAchievements(),
         GetDFToyAchievements(),
         GetTWWToyAchievements(),
-        GetMNToyAchievements()
+        GetMNToyAchievements(),
+        GetPlayerVsPlayerToyAchievements()
     }
   }
 end
@@ -43,7 +44,8 @@ function Source:Rebuild()
         GetSLToyAchievements(),
         GetDFToyAchievements(),
         GetTWWToyAchievements(),
-        GetMNToyAchievements()
+        GetMNToyAchievements(),
+        GetPlayerVsPlayerToyAchievements()
     }
   }
 end

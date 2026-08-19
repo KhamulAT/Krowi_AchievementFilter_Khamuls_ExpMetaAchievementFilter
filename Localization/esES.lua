@@ -21,6 +21,8 @@ L["Nightmare"] = "Pesadilla"
 L["Coiled Nightmares"] = "Pesadillas enroscadas"
 L["Abyss Anglers"] = "Pescadores del Abismo"
 L["Breaknecking Races"] = "Carreras vertiginosas"
+L["Time Rifts"] = "Fisuras temporales"
+L["Hearthstone"] = "Hearthstone"
 
 -- Tooltips
 L["Tt_ACM_15035"] = "Solo se necesitan 4 para completar el meta-logro"

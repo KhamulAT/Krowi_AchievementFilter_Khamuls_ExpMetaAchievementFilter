@@ -21,6 +21,8 @@ L["Nightmare"] = "악몽"
 L["Coiled Nightmares"] = "뒤엉킨 악몽"
 L["Abyss Anglers"] = "심연 강태공"
 L["Breaknecking Races"] = "광폭질주 레이스"
+L["Time Rifts"] = "시간의 균열"
+L["Hearthstone"] = "하스스톤"
 
 -- Tooltips
 L["Tt_ACM_15035"] = "메타 업적을 완료하려면 4개만 필요합니다"

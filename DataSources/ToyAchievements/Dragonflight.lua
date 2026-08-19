@@ -46,6 +46,7 @@ function GetDFToyAchievements()
         18100, -- Cavern Clawbbering
         16762, -- The Vegetarian Diet
         18790, -- Dragonriding Challenge: Dragon Isles: Bronze
+        18554, -- Temporal Acquisitions Specialist
     }
 
     -- Return flat structure if set
@@ -157,6 +158,19 @@ function GetDFToyAchievements()
         18790, -- Dragonriding Challenge: Dragon Isles: Bronze
     }
 
+    -- Time Rifts
+    local ACMList_TimeRifts = {
+        L["Time Rifts"],
+        false,
+        {
+            IgnoreCollapsedChainFilter = true,
+            IgnoreFactionFilter = true
+        },
+        {
+            18554, -- Temporal Acquisitions Specialist
+        }
+    }
+
     local ACMList = {
         _G.EXPANSION_NAME9, -- Dragonflight
         false,
@@ -166,7 +180,8 @@ function GetDFToyAchievements()
         },
         ACMList_Zones,
         ACMList_Dungeons_BrackenhideHollow,
-        ACMList_Skyriding
+        ACMList_Skyriding,
+        ACMList_TimeRifts
     }
 
     return ACMList
