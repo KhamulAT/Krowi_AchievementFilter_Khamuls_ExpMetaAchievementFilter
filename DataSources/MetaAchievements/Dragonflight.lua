@@ -10,10 +10,8 @@ end
 
 function GetDFList()
 
-    local ACM_16339 = { -- Myths of the Dragonflight Dungeons
-        Utilities:GetAchievementName(16339),
-        false,
-        {
+    local ACM_16339 = KAF_CatPlain(Utilities:GetAchievementName(16339)) -- Myths of the Dragonflight Dungeons
+        :Ids{
             16271,
             16257,
             16262,
@@ -23,12 +21,9 @@ function GetDFList()
             16277,
             16280
         }
-    }
 
-    local ACM_16585 = { -- Loremaster of the Dragon Isles
-        Utilities:GetAchievementName(16585),
-        false,
-        {
+    local ACM_16585 = KAF_CatPlain(Utilities:GetAchievementName(16585)) -- Loremaster of the Dragon Isles
+        :Ids{
             16334,
             16401,
             15394,
@@ -38,12 +33,9 @@ function GetDFList()
             16363,
             16398
         }
-    }
 
-    local ACM_19463 = { -- Dragon Quests
-        Utilities:GetAchievementName(19463),
-        false,
-        {
+    local ACM_19463 = KAF_CatPlain(Utilities:GetAchievementName(19463)) -- Dragon Quests
+        :Ids{
             17773,
             17734,
             18958,
@@ -51,12 +43,9 @@ function GetDFList()
             16683,
             19507
         }
-    }
 
-    local ACM_19466 = { -- Oh My God, They Were Clutchmates
-        Utilities:GetAchievementName(19466),
-        false,
-        {
+    local ACM_19466 = KAF_CatPlain(Utilities:GetAchievementName(19466)) -- Oh My God, They Were Clutchmates
+        :Ids{
             41174,
             41180,
             16529,
@@ -70,12 +59,9 @@ function GetDFList()
             16537,
             17427
         }
-    }
 
-    local ACM_19307 = { -- Dragon Isles Pathfinder
-        Utilities:GetAchievementName(19307),
-        false,
-        {
+    local ACM_19307 = KAF_CatPlain(Utilities:GetAchievementName(19307)) -- Dragon Isles Pathfinder
+        :Ids{
             16334,
             15394,
             16336,
@@ -85,15 +71,12 @@ function GetDFList()
             17766,
             19309
         }
-    }
 
-    local ACM_19486 = { -- Accross the Isles
-        Utilities:GetAchievementName(19486),
-        false,
-        {
-            Utilities:GetAchievementName(19479),
-            true,
-            {
+    local ACM_19486 = KAF_CatPlain(Utilities:GetAchievementName(19486)) -- Accross the Isles
+
+    ACM_19486:Insert(
+        KAF_CatPlain(Utilities:GetAchievementName(19479)):Merge()
+            :Ids{
                 16570,
                 16587,
                 15890,
@@ -103,11 +86,11 @@ function GetDFList()
                 16571,
                 16297
             }
-        },
-        {
-            Utilities:GetAchievementName(19481),
-            false,
-            {
+    )
+
+    ACM_19486:Insert(
+        KAF_CatPlain(Utilities:GetAchievementName(19481))
+            :Ids{
                 16540,
                 16545,
                 16543,
@@ -117,11 +100,11 @@ function GetDFList()
                 16424,
                 16299
             }
-        },
-        {
-            Utilities:GetAchievementName(19482),
-            false,
-            {
+    )
+
+    ACM_19486:Insert(
+        KAF_CatPlain(Utilities:GetAchievementName(19482))
+            :Ids{
                 16443,
                 16444,
                 16317,
@@ -131,11 +114,11 @@ function GetDFList()
                 16678,
                 16300
             }
-        },
-        {
-            Utilities:GetAchievementName(19483),
-            false,
-            {
+    )
+
+    ACM_19486:Insert(
+        KAF_CatPlain(Utilities:GetAchievementName(19483))
+            :Ids{
                 16411,
                 16412,
                 16495,
@@ -148,11 +131,11 @@ function GetDFList()
                 17782,
                 16679
             }
-        },
-        {
-            Utilities:GetAchievementName(19485),
-            false,
-            {
+    )
+
+    ACM_19486:Insert(
+        KAF_CatPlain(Utilities:GetAchievementName(19485))
+            :Ids{
                 17342,
                 18635,
                 18637,
@@ -164,84 +147,82 @@ function GetDFList()
                 18703,
                 18704
             }
-        },
-        {
-            Utilities:GetAchievementName(16492),
-            false,
-            {
-                Utilities:GetAchievementName(16490),
-                false,
-                {
-                    Utilities:GetAchievementName(16468),
-                    false,
-                    {
-                        16463,
-                        16465,
-                        16466,
-                        16467
-                    }
-                },
-                {
-                    Utilities:GetAchievementName(16476),
-                    false,
-                    {
-                        16475,
-                        16478,
-                        16477,
-                        16479
-                    }
-                },
-                {
-                    Utilities:GetAchievementName(16484),
-                    false,
-                    {
-                        16480,
-                        16481,
-                        16482,
-                        16483
-                    }
-                },
-                {
-                    Utilities:GetAchievementName(16489),
-                    false,
-                    {
-                        16485,
-                        16486,
-                        16487,
-                        16488
-                    }
-                },
-                {
-                    16468,
-                    16476,
-                    16484,
-                    16489
-                }
-            },
-            {
+    )
+
+    local ACM_16490 = KAF_CatPlain(Utilities:GetAchievementName(16490))
+
+    ACM_16490:Insert(
+        KAF_CatPlain(Utilities:GetAchievementName(16468))
+            :Ids{
+                16463,
+                16465,
+                16466,
+                16467
+            }
+    )
+
+    ACM_16490:Insert(
+        KAF_CatPlain(Utilities:GetAchievementName(16476))
+            :Ids{
+                16475,
+                16478,
+                16477,
+                16479
+            }
+    )
+
+    ACM_16490:Insert(
+        KAF_CatPlain(Utilities:GetAchievementName(16484))
+            :Ids{
+                16480,
+                16481,
+                16482,
+                16483
+            }
+    )
+
+    ACM_16490:Insert(
+        KAF_CatPlain(Utilities:GetAchievementName(16489))
+            :Ids{
+                16485,
+                16486,
+                16487,
+                16488
+            }
+    )
+
+    ACM_16490:Ids{
+        16468,
+        16476,
+        16484,
+        16489
+    }
+
+    ACM_19486:Insert(
+        KAF_CatPlain(Utilities:GetAchievementName(16492))
+            :Insert(ACM_16490)
+            :Ids{
                 16490,
                 16461,
                 16500,
                 16502
             }
-        },
-        {
-            19479,
-            19481,
-            19482,
-            19483,
-            19485,
-            16492,
-            18209,
-            18867,
-            19008
-        }
+    )
+
+    ACM_19486:Ids{
+        19479,
+        19481,
+        19482,
+        19483,
+        19485,
+        16492,
+        18209,
+        18867,
+        19008
     }
 
-    local ACM_17543 = { -- You Know How to Reach Me
-        Utilities:GetAchievementName(17543),
-        false,
-        {
+    local ACM_17543 = KAF_CatPlain(Utilities:GetAchievementName(17543)) -- You Know How to Reach Me
+        :Ids{
             17534,
             17526,
             17528,
@@ -254,15 +235,9 @@ function GetDFList()
             17509,
             17315
         }
-    }
 
-    local ACM_17785 = { --Que Zara(lek), Zara(lek)
-        Utilities:GetAchievementName(17785),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true
-        },
-        {
+    local ACM_17785 = KAF_CatChain(Utilities:GetAchievementName(17785)) -- Que Zara(lek), Zara(lek)
+        :Ids{
             17739,
             17783,
             17781,
@@ -271,12 +246,9 @@ function GetDFList()
             17786,
             17832
         }
-    }
 
-    local ACM_19318 = { -- Dream On
-        Utilities:GetAchievementName(19318),
-        false,
-        {
+    local ACM_19318 = KAF_CatPlain(Utilities:GetAchievementName(19318)) -- Dream On
+        :Ids{
             19026,
             19316,
             19317,
@@ -284,15 +256,9 @@ function GetDFList()
             19309,
             19312
         }
-    }
 
-    local ACM_19478 = { -- Now THIS is Dragon Racing!
-        Utilities:GetAchievementName(19478),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true
-        },
-        {
+    local ACM_19478 = KAF_CatChain(Utilities:GetAchievementName(19478)) -- Now THIS is Dragon Racing!
+        :Ids{
             15939,
             17492,
             16575,
@@ -305,25 +271,19 @@ function GetDFList()
             16578,
             18150
         }
-    }
 
-    local ACMList = { -- meta achievements overview
-        Utilities:GetAchievementName(19458, "DF - "),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true
-        },
-        ACM_16339, -- Myths of the Dragonflight Dungeons
-        ACM_16585, -- Loremaster of the Dragon Isles
-        ACM_19463, -- Dragon Quests
-        ACM_19466, -- Oh My God, They Were Clutchmates
-        ACM_19307, -- Dragon Isles Pathfinder
-        ACM_19486, -- Accross the Isles
-        ACM_17543, -- You Know How to Reach Me
-        ACM_17785, -- Que Zara(lek), Zara(lek)
-        ACM_19318, -- Dream On
-        ACM_19478, -- Now THIS is Dragon Racing!
-        {
+    local ACMList = KAF_CatChain(Utilities:GetAchievementName(19458, "DF - ")) -- meta achievements overview
+        :Insert(ACM_16339) -- Myths of the Dragonflight Dungeons
+        :Insert(ACM_16585) -- Loremaster of the Dragon Isles
+        :Insert(ACM_19463) -- Dragon Quests
+        :Insert(ACM_19466) -- Oh My God, They Were Clutchmates
+        :Insert(ACM_19307) -- Dragon Isles Pathfinder
+        :Insert(ACM_19486) -- Accross the Isles
+        :Insert(ACM_17543) -- You Know How to Reach Me
+        :Insert(ACM_17785) -- Que Zara(lek), Zara(lek)
+        :Insert(ACM_19318) -- Dream On
+        :Insert(ACM_19478) -- Now THIS is Dragon Racing!
+        :Ids{
             16343,
             18160,
             19331,
@@ -339,7 +299,6 @@ function GetDFList()
             19318,
             19478
         }
-    }
 
     return ACMList
 end

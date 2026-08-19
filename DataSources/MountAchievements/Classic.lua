@@ -7,17 +7,10 @@ local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 function GetClassicMountAchievements()
 
     -- Flat achievement list
-    local ACMListFlat = {
-        _G.EXPANSION_NAME0, -- Classic
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMListFlat = KAF_Cat(_G.EXPANSION_NAME0) -- Classic
+        :Ids{
             9550 -- Boldly, You Sought the Power of Ragnaros
         }
-    }
 
     -- Return flat structure if set
     if KhamulsAchievementFilter.db.profile.mountAchievementsSettings.flattenStructure then
@@ -25,38 +18,17 @@ function GetClassicMountAchievements()
     end
 
     -- Dungeons & Raids -> Molten Core
-    local ACMList_DungeonsAndRaidsMoltenCore = {
-        Utilities:GetZoneNameByMapID(232),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMList_DungeonsAndRaidsMoltenCore = KAF_Cat(Utilities:GetZoneNameByMapID(232))
+        :Ids{
             9550 -- Boldly, You Sought the Power of Ragnaros
         }
-    }
 
     -- Dungeons & Raids
-    local ACMList_DungeonsAndRaids = {
-        Utilities:GetAchievementCategoryNameByCategoryID(168), -- Dungeons & Raids
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        ACMList_DungeonsAndRaidsMoltenCore
-    }
+    local ACMList_DungeonsAndRaids = KAF_Cat(Utilities:GetAchievementCategoryNameByCategoryID(168)) -- Dungeons & Raids
+        :Insert(ACMList_DungeonsAndRaidsMoltenCore)
 
-    local ACMList = {
-        _G.EXPANSION_NAME0, -- Classic
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        ACMList_DungeonsAndRaids
-    }
+    local ACMList = KAF_Cat(_G.EXPANSION_NAME0) -- Classic
+        :Insert(ACMList_DungeonsAndRaids)
 
     return ACMList
 end

@@ -7,14 +7,8 @@ local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 function GetTWWPetAchievements()
 
     -- Child Achievements Family Battler of Khaz Algar
-    local ACMChilds_FamilyBattlerOfKhazAlgar = {
-        Utilities:GetAchievementName(40980),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMChilds_FamilyBattlerOfKhazAlgar = KAF_Cat(Utilities:GetAchievementName(40980))
+        :Ids{
             40154, -- Aquatic Battler of Khaz Algar
             40155, -- Beast Battler of Khaz Algar
             40156, -- Critter Battler of Khaz Algar
@@ -26,17 +20,10 @@ function GetTWWPetAchievements()
             40164, -- Mechanical Battler of Khaz Algar
             40165, -- Undead Battler of Khaz Algar
         }
-    }
 
     -- Child Achievements Family Battler of Undermine
-    local ACMChilds_FamilyBattlerOfUndermine= {
-        Utilities:GetAchievementName(41551),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMChilds_FamilyBattlerOfUndermine = KAF_Cat(Utilities:GetAchievementName(41551))
+        :Ids{
             41542, -- Aquatic Battler of Undermine
             41543, -- Beast Battler of Undermine
             41541, -- Critter Battler of Undermine
@@ -48,31 +35,17 @@ function GetTWWPetAchievements()
             41549, -- Mechanical Battler of Undermine
             41550, -- Undead Battler of Undermine
         }
-    }
 
     -- Child Achievements Reeking of Visions
-    local ACMChilds_ReekingOfVisions = {
-        Utilities:GetAchievementName(41928),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMChilds_ReekingOfVisions = KAF_Cat(Utilities:GetAchievementName(41928))
+        :Ids{
             41876, -- The Even More Horrific Vision of Ogrimmar
             41854 -- The Even More Horrific Vision of Stormwind
         }
-    }
 
     -- Child Achievements War Within Dungeon Hero
-    local ACMChilds_WarWithinDungeonHero = {
-        Utilities:GetAchievementName(61565),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMChilds_WarWithinDungeonHero = KAF_Cat(Utilities:GetAchievementName(61565))
+        :Ids{
             40374, -- Heroic: Ara-Kara, City of Echoes
             40363, -- Heroic: Cinderbrew Meadery
             40377, -- Heroic: City of Threads
@@ -84,26 +57,18 @@ function GetTWWPetAchievements()
             41340, -- Heroic: Operation: Floodgate
             42781, -- Heroic: Eco-Dome Al'dani
         }
-    }
 
     -- Flat achievement list
-    local ACMListFlat = {
-        _G.EXPANSION_NAME10, -- The War Within
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        }
-    }
+    local ACMListFlat = KAF_Cat(_G.EXPANSION_NAME10) -- The War Within
 
     if KhamulsAchievementFilter.db.profile.petAchievementsSettings.includeChildAchievements then
-        ACMListFlat[#ACMListFlat+1] = ACMChilds_FamilyBattlerOfKhazAlgar
-        ACMListFlat[#ACMListFlat+1] = ACMChilds_FamilyBattlerOfUndermine
-        ACMListFlat[#ACMListFlat+1] = ACMChilds_WarWithinDungeonHero
-        ACMListFlat[#ACMListFlat+1] = ACMChilds_ReekingOfVisions
+        ACMListFlat:Insert(ACMChilds_FamilyBattlerOfKhazAlgar)
+        ACMListFlat:Insert(ACMChilds_FamilyBattlerOfUndermine)
+        ACMListFlat:Insert(ACMChilds_WarWithinDungeonHero)
+        ACMListFlat:Insert(ACMChilds_ReekingOfVisions)
     end
 
-    ACMListFlat[#ACMListFlat+1] = {
+    ACMListFlat:Ids{
         40869, -- Worm Theory
         41349, -- In with the Cartels
         41979, -- Bounty Seeker
@@ -121,130 +86,64 @@ function GetTWWPetAchievements()
     end
 
     -- Pet Battle Dungeons
-    local ACMList_Zones = {
-        _G.ZONE, -- Zone
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
-            Utilities:GetZoneNameByMapID(2255), -- Azj-Kahet
-            false,
-            {
-                IgnoreCollapsedChainFilter = true,
-                IgnoreFactionFilter = true
-            },
-            {
-                40869, -- Worm Theory
-            }
-        },
-        {
-            Utilities:GetZoneNameByMapID(2346), -- Undermine
-            false,
-            {
-                IgnoreCollapsedChainFilter = true,
-                IgnoreFactionFilter = true
-            },
-            {
-                41349, -- In with the Cartels
-            }
-        },
-        {
-            Utilities:GetZoneNameByMapID(2371), -- K'aresh
-            false,
-            {
-                IgnoreCollapsedChainFilter = true,
-                IgnoreFactionFilter = true
-            },
-            {
-                41979, -- Bounty Seeker
-            }
-        },
-    }
+    local ACMList_Zones = KAF_Cat(_G.ZONE) -- Zone
+
+    KAF_Sub(ACMList_Zones, Utilities:GetZoneNameByMapID(2255)) -- Azj-Kahet
+        :Ids{
+            40869, -- Worm Theory
+        }
+
+    KAF_Sub(ACMList_Zones, Utilities:GetZoneNameByMapID(2346)) -- Undermine
+        :Ids{
+            41349, -- In with the Cartels
+        }
+
+    KAF_Sub(ACMList_Zones, Utilities:GetZoneNameByMapID(2371)) -- K'aresh
+        :Ids{
+            41979, -- Bounty Seeker
+        }
 
     -- Dungeons
-    local ACMList_Dungeons = {
-        _G.DUNGEONS, -- Dungeons
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        }
-    }
+    local ACMList_Dungeons = KAF_Cat(_G.DUNGEONS) -- Dungeons
 
     if KhamulsAchievementFilter.db.profile.petAchievementsSettings.includeChildAchievements then
-        ACMList_Dungeons[#ACMList_Dungeons+1] = ACMChilds_WarWithinDungeonHero
+        ACMList_Dungeons:Insert(ACMChilds_WarWithinDungeonHero)
     end
 
-    ACMList_Dungeons[#ACMList_Dungeons+1] = {
+    ACMList_Dungeons:Ids{
         61565, -- War Within Dungeon Hero
     }
 
     -- PetBattles
-    local ACMList_PetBattles = {
-        Utilities:GetAchievementCategoryNameByCategoryID(15219), -- Pet Battles
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        }
-    }
+    local ACMList_PetBattles = KAF_Cat(Utilities:GetAchievementCategoryNameByCategoryID(15219)) -- Pet Battles
 
     if KhamulsAchievementFilter.db.profile.petAchievementsSettings.includeChildAchievements then
-        ACMList_PetBattles[#ACMList_PetBattles+1] = ACMChilds_FamilyBattlerOfKhazAlgar
-        ACMList_PetBattles[#ACMList_PetBattles+1] = ACMChilds_FamilyBattlerOfUndermine
+        ACMList_PetBattles:Insert(ACMChilds_FamilyBattlerOfKhazAlgar)
+        ACMList_PetBattles:Insert(ACMChilds_FamilyBattlerOfUndermine)
     end
 
-    ACMList_PetBattles[#ACMList_PetBattles+1] = {
+    ACMList_PetBattles:Ids{
         40194, -- Khaz Algar Safari
         40980, -- Family Battler of Khaz Algar
         41092, -- Undermine Safari
         41551, -- Family Battler of Undermine
     }
 
-    -- Dragonriding Races
-    local ACMList_DragonridingRaces = {
-        _G.MOUNT_JOURNAL_FILTER_DRAGONRIDING, -- Skyriding
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
-            15940, -- Dragon Racing Completitionist: Silver
-        }
-    }
-
-    local ACMList_VisionsOfNZoth = {
-        Utilities:GetAchievementCategoryNameByCategoryID(15546), -- Visions of N'Zoth Revisited
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        }
-    }
+    local ACMList_VisionsOfNZoth = KAF_Cat(Utilities:GetAchievementCategoryNameByCategoryID(15546)) -- Visions of N'Zoth Revisited
 
     if KhamulsAchievementFilter.db.profile.petAchievementsSettings.includeChildAchievements then
-        ACMList_VisionsOfNZoth[#ACMList_VisionsOfNZoth+1] = ACMChilds_ReekingOfVisions
+        ACMList_VisionsOfNZoth:Insert(ACMChilds_ReekingOfVisions)
     end
 
-    ACMList_VisionsOfNZoth[#ACMList_VisionsOfNZoth+1] = {
+    ACMList_VisionsOfNZoth:Ids{
         41928, -- Reeking of Visions
     }
 
-    local ACMList = {
-        _G.EXPANSION_NAME10, -- The War Within
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        ACMList_Zones,
-        ACMList_Dungeons,
-        ACMList_PetBattles,
-        ACMList_VisionsOfNZoth
-    }
+    local ACMList = KAF_Cat(_G.EXPANSION_NAME10) -- The War Within
+        :Insert(ACMList_Zones)
+        :Insert(ACMList_Dungeons)
+        :Insert(ACMList_PetBattles)
+        :Insert(ACMList_VisionsOfNZoth)
 
     return ACMList
 end

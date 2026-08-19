@@ -2,50 +2,42 @@ local ADDON_NAME = ...
 local Addon = LibStub("AceAddon-3.0"):GetAddon(ADDON_NAME)
 local Data = Addon:GetModule("Data")
 
+local TARGET_CATEGORY_ID = 971 -- Specials tab root
+
 ---@type KAF_DataSource
 local Source = {
   Name = "DecorAchievements",
   Items = {},
 }
 
+-- V2: a single injection into the Specials tab holding one named collection.
+local function BuildInjection(L)
+  local injection = KrowiAF.NewInjection(TARGET_CATEGORY_ID)
+
+  injection:Insert(
+    KAF_CatPlain(L["Khamul's House Decor Achievement List"])
+      :Insert(GetHousingClassic())
+      :Insert(GetHousingWotLk())
+      :Insert(GetHousingMoP())
+      :Insert(GetHousingWoD())
+      :Insert(GetHousingLegion())
+      :Insert(GetHousingBfA())
+      :Insert(GetHousingSL())
+      :Insert(GetHousingDF())
+      :Insert(GetHousingTWW())
+      :Insert(GetHousingMN())
+      :Insert(GetHousingPvP())
+  )
+
+  return injection
+end
+
 function Source:Init(ctx)
-  self.Items = {
-    971,
-    {
-        ctx.L["Khamul's House Decor Achievement List"],
-        GetHousingClassic(),
-        GetHousingWotLk(),
-        GetHousingMoP(),
-        GetHousingWoD(),
-        GetHousingLegion(),
-        GetHousingBfA(),
-        GetHousingSL(),
-        GetHousingDF(),
-        GetHousingTWW(),
-        GetHousingMN(),
-        GetHousingPvP()
-    }
-  }
+  self.Items = BuildInjection(ctx.L)
 end
 
 function Source:Rebuild()
-  self.Items = {
-    971,
-    {
-        self.ctx.L["Khamul's House Decor Achievement List"],
-        GetHousingClassic(),
-        GetHousingWotLk(),
-        GetHousingMoP(),
-        GetHousingWoD(),
-        GetHousingLegion(),
-        GetHousingBfA(),
-        GetHousingSL(),
-        GetHousingDF(),
-        GetHousingTWW(),
-        GetHousingMN(),
-        GetHousingPvP()
-    }
-  }
+  self.Items = BuildInjection(self.ctx.L)
 end
 
 function Source:GetItems()

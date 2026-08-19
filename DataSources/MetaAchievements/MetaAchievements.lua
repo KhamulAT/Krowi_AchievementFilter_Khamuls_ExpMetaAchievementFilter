@@ -2,48 +2,41 @@ local ADDON_NAME = ...
 local Addon = LibStub("AceAddon-3.0"):GetAddon(ADDON_NAME)
 local Data = Addon:GetModule("Data")
 
+local TARGET_CATEGORY_ID = 971 -- Specials tab root
+
 ---@type KAF_DataSource
 local Source = {
   Name = "MetaAchievements",
   Items = {},
 }
 
+-- V2: a single injection into the Specials tab holding one named collection.
+local function BuildInjection(L)
+  local injection = KrowiAF.NewInjection(TARGET_CATEGORY_ID)
+
+  injection:Insert(
+    KAF_CatPlain(L["Khamul's Meta-Expansion Achievement List"])
+      :Insert(GetBfAList())
+      :Insert(GetSLList())
+      :Insert(GetDFList())
+      :Insert(GetTWWList())
+      :Ids{
+          GetBfAAchievementId(),
+          GetSLAchievementId(),
+          GetDFAchievementId(),
+          GetTWWAchievementId()
+      }
+  )
+
+  return injection
+end
+
 function Source:Init(ctx)
-  self.Items = {
-    971,
-    {
-        ctx.L["Khamul's Meta-Expansion Achievement List"],
-        GetBfAList(),
-        GetSLList(),
-        GetDFList(),
-        GetTWWList(),
-        {
-            GetBfAAchievementId(),
-            GetSLAchievementId(),
-            GetDFAchievementId(),
-            GetTWWAchievementId()
-        }
-    }
-  }
+  self.Items = BuildInjection(ctx.L)
 end
 
 function Source:Rebuild()
-  self.Items = {
-    971,
-    {
-        self.ctx.L["Khamul's Meta-Expansion Achievement List"],
-        GetBfAList(),
-        GetSLList(),
-        GetDFList(),
-        GetTWWList(),
-        {
-            GetBfAAchievementId(),
-            GetSLAchievementId(),
-            GetDFAchievementId(),
-            GetTWWAchievementId()
-        }
-    }
-  }
+  self.Items = BuildInjection(self.ctx.L)
 end
 
 function Source:GetItems()

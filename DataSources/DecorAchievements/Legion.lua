@@ -7,14 +7,8 @@ local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 function GetHousingLegion()
 
     -- Flat achievement list
-    local ACMListFlat = {
-        EXPANSION_NAME6, -- Legion
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMListFlat = KAF_Cat(EXPANSION_NAME6) -- Legion
+        :Ids{
             10698, -- That's Val'sharah Folks!
             11258, -- Treasures of Val'sharah
             10398, -- Drum Circle
@@ -72,7 +66,6 @@ function GetHousingLegion()
             42297, -- Hidden Potential of the Netherlord
             42298, -- Hidden Potential of the Battlelord
         }
-    }
 
     -- Return flat structure if set
     if KhamulsAchievementFilter.db.profile.decorAchievementsSettings.flattenStructure then
@@ -80,100 +73,55 @@ function GetHousingLegion()
     end
 
     -- Zones
-    local ACMList_Zones = {
-        ZONE,
-        false,
-        {
-            IgnoreCollapsedChainFilter = true
-        },
-        {
-            Utilities:GetZoneNameByMapID(641), -- Val'sharah
-            false,
-            {
-                IgnoreCollapsedChainFilter = true
-            },
-            {
+    local ACMList_Zones = KAF_CatChain(ZONE)
+
+    ACMList_Zones:Insert(
+        KAF_CatChain(Utilities:GetZoneNameByMapID(641)) -- Val'sharah
+            :Ids{
                 10698, -- That's Val'sharah Folks!
                 11258, -- Treasures of Val'sharah
             }
-        },
-        {
-            Utilities:GetZoneNameByMapID(650), -- Hightmountain
-            false,
-            {
-                IgnoreCollapsedChainFilter = true
-            },
-            {
+    )
+
+    ACMList_Zones:Insert(
+        KAF_CatChain(Utilities:GetZoneNameByMapID(650)) -- Hightmountain
+            :Ids{
                 10398, -- Drum Circle
                 11257, -- Treasures of Highmountain
             }
-        },
-        {
-            Utilities:GetZoneNameByMapID(680), -- Suramar
-            false,
-            {
-                IgnoreCollapsedChainFilter = true
-            },
-            {
+    )
+
+    ACMList_Zones:Insert(
+        KAF_CatChain(Utilities:GetZoneNameByMapID(680)) -- Suramar
+            :Ids{
                 11124, -- Good Suramaritan
                 11340, -- Insurrection
             }
-        }
-    }
+    )
 
-    local ACM_Legion_Dungeons_NeltharionsLair = {
-        Utilities:GetDungeonNameByLFGDungeonID(1206),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true
-        },
-        {
-            10996
-        }
-    }
     -- Dungeons & Raids
-    local ACMList_DungeonsRaids = {
-        _G.DUNGEONS .. " & " .. _G.RAIDS, -- Dungeons & Raids
-        false,
-        {
-            IgnoreCollapsedChainFilter = true
-        },
-        {
-            Utilities:GetDungeonNameByLFGDungeonID(1206), -- Neltharion's Lair
-            false,
-            {
-                IgnoreCollapsedChainFilter = true
-            },
-            {
+    local ACMList_DungeonsRaids = KAF_CatChain(_G.DUNGEONS .. " & " .. _G.RAIDS) -- Dungeons & Raids
+
+    ACMList_DungeonsRaids:Insert(
+        KAF_CatChain(Utilities:GetDungeonNameByLFGDungeonID(1206)) -- Neltharion's Lair
+            :Ids{
                 10996, -- Got to Ketchum All
             }
-        },
-        {
-            Utilities:GetDungeonNameByLFGDungeonID(1525), -- Tomb of Sargeras
-            false,
-            {
-                IgnoreCollapsedChainFilter = true
-            },
-            {
+    )
+
+    ACMList_DungeonsRaids:Insert(
+        KAF_CatChain(Utilities:GetDungeonNameByLFGDungeonID(1525)) -- Tomb of Sargeras
+            :Ids{
                 11699 -- Grand Fin-ale
             }
-        }
-    }
+    )
 
     -- Orderhalls
-    local ACMList_Orderhalls = {
-        Utilities:GetAchievementCategoryNameByCategoryID(15304), -- Class Halls
-        false,
-        {
-            IgnoreCollapsedChainFilter = true
-        },
-        {
-            Utilities:GetAchievementName(11137), -- A Legendary Campaign
-            false,
-            {
-                IgnoreCollapsedChainFilter = true
-            },
-            {
+    local ACMList_Orderhalls = KAF_CatChain(Utilities:GetAchievementCategoryNameByCategoryID(15304)) -- Class Halls
+
+    ACMList_Orderhalls:Insert(
+        KAF_CatChain(Utilities:GetAchievementName(11137)) -- A Legendary Campaign
+            :Ids{
                 42270, -- The Deathlord's Campaign
                 42271, -- The Slayer's Campaign
                 42272, -- The Archdruid's Campaign
@@ -187,14 +135,11 @@ function GetHousingLegion()
                 42281, -- The Netherlord's Campaign
                 42282, -- The Battlelord's Campaign
             }
-        },
-        {
-            Utilities:GetAchievementName(11212), -- Raise an Army
-            false,
-            {
-                IgnoreCollapsedChainFilter = true
-            },
-            {
+    )
+
+    ACMList_Orderhalls:Insert(
+        KAF_CatChain(Utilities:GetAchievementName(11212)) -- Raise an Army
+            :Ids{
                 60981, -- Raise an Army for Acherus
                 60982, -- Raise an Army for the Fel Hammer
                 60983, -- Raise an Army for the Dreamgrove
@@ -208,14 +153,11 @@ function GetHousingLegion()
                 60991, -- Raise an Army for the Dreadscar Rift
                 60992, -- Raise an Army for Skyhold
             }
-        },
-        {
-            Utilities:GetAchievementName(11223), -- Legendary Research
-            false,
-            {
-                IgnoreCollapsedChainFilter = true
-            },
-            {
+    )
+
+    ACMList_Orderhalls:Insert(
+        KAF_CatChain(Utilities:GetAchievementName(11223)) -- Legendary Research
+            :Ids{
                 60962, -- Legendary Research of the Ebon Blade
                 60963, -- Legendary Research of the Illidari
                 60964, -- Legendary Research of the Dreamgrove
@@ -229,14 +171,11 @@ function GetHousingLegion()
                 60972, -- Legendary Research of the Black Harvest
                 60973, -- Legendary Research of the Valarjar
             }
-        },
-        {
-            Utilities:GetAchievementName(10460), -- Hidden  Potential
-            false,
-            {
-                IgnoreCollapsedChainFilter = true
-            },
-            {
+    )
+
+    ACMList_Orderhalls:Insert(
+        KAF_CatChain(Utilities:GetAchievementName(10460)) -- Hidden  Potential
+            :Ids{
                 42287, -- Hidden Potential of the Dreathlord
                 42288, -- Hidden Potential of the Slayer
                 42289, -- Hidden Potential of the Archdruid
@@ -250,19 +189,12 @@ function GetHousingLegion()
                 42297, -- Hidden Potential of the Netherlord
                 42298, -- Hidden Potential of the Battlelord
             }
-        }
-    }
+    )
 
-    local ACMList = { 
-        EXPANSION_NAME6,
-        false,
-        {
-            IgnoreCollapsedChainFilter = true
-        },
-        ACMList_Zones,
-        ACMList_DungeonsRaids,
-        ACMList_Orderhalls
-    }
+    local ACMList = KAF_CatChain(EXPANSION_NAME6)
+        :Insert(ACMList_Zones)
+        :Insert(ACMList_DungeonsRaids)
+        :Insert(ACMList_Orderhalls)
 
     return ACMList
 end

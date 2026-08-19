@@ -7,18 +7,11 @@ local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 function GetWoDToyAchievements()
 
     -- Flat achievement list
-    local ACMListFlat = {
-        _G.EXPANSION_NAME5, -- Warlords of Draenor
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMListFlat = KAF_Cat(_G.EXPANSION_NAME5) -- Warlords of Draenor
+        :Ids{
             9838, -- What A Strange, Interdimensional Trip It's Been
             9912, -- Azeroth's Top Twenty Tunes
         }
-    }
 
     -- Return flat structure if set
     if KhamulsAchievementFilter.db.profile.toyAchievementsSettings.flattenStructure then
@@ -26,30 +19,16 @@ function GetWoDToyAchievements()
     end
 
     -- Garrison
-    local ACMList_Garrison = {
-        _G.GARRISON_LOCATION_TOOLTIP, -- Garrison
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMList_Garrison = KAF_Cat(_G.GARRISON_LOCATION_TOOLTIP) -- Garrison
+        :Ids{
             9912, -- Azeroth's Top Twenty Tunes
         }
-    }
 
-    local ACMList = {
-        _G.EXPANSION_NAME5, -- Warlords of Draenor
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        ACMList_Garrison,
-        {
+    local ACMList = KAF_Cat(_G.EXPANSION_NAME5) -- Warlords of Draenor
+        :Insert(ACMList_Garrison)
+        :Ids{
             9838, -- What A Strange, Interdimensional Trip It's Been
         }
-    }
 
     return ACMList
 end

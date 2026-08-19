@@ -7,14 +7,8 @@ local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 function GetWotLKMountAchievements()
 
     -- Child Achievements Glory of the Hero
-    local ACMChilds_GloryOfTheHero = {
-        Utilities:GetAchievementName(2136),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMChilds_GloryOfTheHero = KAF_Cat(Utilities:GetAchievementName(2136))
+        :Ids{
             1919, -- On The Rocks
             2150, -- Split Personality
             2036, -- Intense Cold
@@ -53,23 +47,15 @@ function GetWotLKMountAchievements()
             2045, -- Emerald Void
             2046 -- Amber Void
         }
-    }
 
     -- Flat achievement list
-    local ACMListFlat = {
-        _G.EXPANSION_NAME2, -- Wrath of the Lich King
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        }
-    }
+    local ACMListFlat = KAF_Cat(_G.EXPANSION_NAME2) -- Wrath of the Lich King
 
     if KhamulsAchievementFilter.db.profile.mountAchievementsSettings.includeChildAchievements then
-        ACMListFlat[#ACMListFlat+1] = ACMChilds_GloryOfTheHero
+        ACMListFlat:Insert(ACMChilds_GloryOfTheHero)
     end
 
-    ACMListFlat[#ACMListFlat+1] = {
+    ACMListFlat:Ids{
         2136, -- Glory of the Hero
         4156, -- A Tribute to Immortality
         12401, -- Glory of the Ulduar Raider
@@ -83,61 +69,33 @@ function GetWotLKMountAchievements()
     end
 
     -- Dungeons
-    local ACMList_Dungeons = {
-        Utilities:GetAchievementCategoryNameByCategoryID(15272), -- Dungeons
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        }
-    }
+    local ACMList_Dungeons = KAF_Cat(Utilities:GetAchievementCategoryNameByCategoryID(15272)) -- Dungeons
 
     if KhamulsAchievementFilter.db.profile.mountAchievementsSettings.includeChildAchievements then
-        ACMList_Dungeons[#ACMList_Dungeons+1] = ACMChilds_GloryOfTheHero
+        ACMList_Dungeons:Insert(ACMChilds_GloryOfTheHero)
     end
 
-    ACMList_Dungeons[#ACMList_Dungeons+1] = {
+    ACMList_Dungeons:Ids{
         2136, -- Glory of the Hero
     }
 
     -- Raids->Trial of the Crusader
-    local ACMList_RaidsTrialOfTheCrusader = {
-        Utilities:GetDungeonNameByLFGDungeonID(246), -- Trial of the Crusader
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMList_RaidsTrialOfTheCrusader = KAF_Cat(Utilities:GetDungeonNameByLFGDungeonID(246)) -- Trial of the Crusader
+        :Ids{
             4156 -- A Tribute to Immortality
         }
-    }
 
-    local ACMList_Raids = {
-        Utilities:GetAchievementCategoryNameByCategoryID(15271), -- Raids
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        ACMList_RaidsTrialOfTheCrusader,
-        {
+    local ACMList_Raids = KAF_Cat(Utilities:GetAchievementCategoryNameByCategoryID(15271)) -- Raids
+        :Insert(ACMList_RaidsTrialOfTheCrusader)
+        :Ids{
             12401, -- Glory of the Ulduar Raider
             4602, -- Glory of the Icecrown Raider (10 player)
             4603, -- Glory of the Icecrown Raider (25 player)
         }
-    }
 
-    local ACMList = {
-        _G.EXPANSION_NAME2, -- Wrath of the Lich King
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        ACMList_Dungeons,
-        ACMList_Raids
-    }
+    local ACMList = KAF_Cat(_G.EXPANSION_NAME2) -- Wrath of the Lich King
+        :Insert(ACMList_Dungeons)
+        :Insert(ACMList_Raids)
 
     return ACMList
 end

@@ -7,14 +7,8 @@ local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 function GetTWWCampsiteList()
 
     -- Child Achievements All That Khaz
-    local ACMChilds_AllThatKhaz = {
-        Utilities:GetAchievementName(41555),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMChilds_AllThatKhaz = KAF_Cat(Utilities:GetAchievementName(41555))
+        :Ids{
             40430, -- Khaz Algar Flight Master
             40702, -- Khaz Algar Glyph Hunter
             20596, -- Loremaster of Khaz Algar
@@ -22,17 +16,10 @@ function GetTWWCampsiteList()
             41169, -- Khaz Algar Diplomat
             40307 -- Allied Races: Earthen
         }
-    }
 
     -- Child Achievements Going Goblin Mode
-    local ACMChilds_GoingGoblinMode = {
-        Utilities:GetAchievementName(41586),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMChilds_GoingGoblinMode = KAF_Cat(Utilities:GetAchievementName(41586))
+        :Ids{
             41216, -- Adventurer of Undermine
             41217, -- Treasures of Undermine
             40948, -- Nine-Tenths of the Law
@@ -40,24 +27,16 @@ function GetTWWCampsiteList()
             41589, -- That Can-Do Attitude
             41708 -- You're My Friend Now
         }
-    }
 
     -- Flat achievement list
-    local ACMListFlat = {
-        _G.EXPANSION_NAME10, -- The War Within
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        }
-    }
+    local ACMListFlat = KAF_Cat(_G.EXPANSION_NAME10) -- The War Within
 
     if KhamulsAchievementFilter.db.profile.campsiteAchievementsSettings.includeChildAchievements then
-        ACMListFlat[#ACMListFlat+1] = ACMChilds_AllThatKhaz
-        ACMListFlat[#ACMListFlat+1] = ACMChilds_GoingGoblinMode
+        ACMListFlat:Insert(ACMChilds_AllThatKhaz)
+        ACMListFlat:Insert(ACMChilds_GoingGoblinMode)
     end
 
-    ACMListFlat[#ACMListFlat+1] = {
+    ACMListFlat:Ids{
         41555, -- All That Khaz
         41586, -- Going Goblin Mode
         41970, -- The Knife's Edge
@@ -69,61 +48,37 @@ function GetTWWCampsiteList()
     end
 
     -- Freywold Spring
-    local ACMList_FreywoldSpring = {
-        Utilities:GetAchievementRewardInfo(41555),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true
-        }
-    }
+    local ACMList_FreywoldSpring = KAF_CatChain(Utilities:GetAchievementRewardInfo(41555))
 
     if KhamulsAchievementFilter.db.profile.campsiteAchievementsSettings.includeChildAchievements then
-        ACMList_FreywoldSpring[#ACMList_FreywoldSpring+1] = ACMChilds_AllThatKhaz
+        ACMList_FreywoldSpring:Insert(ACMChilds_AllThatKhaz)
     end
 
-    ACMList_FreywoldSpring[#ACMList_FreywoldSpring+1] = {
+    ACMList_FreywoldSpring:Ids{
         41555, -- All That Khaz
     }
 
     -- Gallagio Grand Gallery
-    local ACMList_GallagioGrandGallery = {
-        Utilities:GetAchievementRewardInfo(41586),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true
-        }
-    }
+    local ACMList_GallagioGrandGallery = KAF_CatChain(Utilities:GetAchievementRewardInfo(41586))
 
     if KhamulsAchievementFilter.db.profile.campsiteAchievementsSettings.includeChildAchievements then
-        ACMList_GallagioGrandGallery[#ACMList_GallagioGrandGallery+1] = ACMChilds_GoingGoblinMode
+        ACMList_GallagioGrandGallery:Insert(ACMChilds_GoingGoblinMode)
     end
 
-    ACMList_GallagioGrandGallery[#ACMList_GallagioGrandGallery+1] = {
+    ACMList_GallagioGrandGallery:Ids{
         41586, -- Going Goblin Mode
     }
 
     -- The Fate of the Devoured
-    local ACMList_TheFateOfTheDevoured = {
-        Utilities:GetAchievementRewardInfo(41970),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true
-        },
-        {
+    local ACMList_TheFateOfTheDevoured = KAF_CatChain(Utilities:GetAchievementRewardInfo(41970))
+        :Ids{
             41970, -- The Knife's Edge
         }
-    }
 
-    local ACMList = { 
-        _G.EXPANSION_NAME10, -- The War Within
-        false,
-        {
-            IgnoreCollapsedChainFilter = true
-        },
-        ACMList_FreywoldSpring,
-        ACMList_GallagioGrandGallery,
-        ACMList_TheFateOfTheDevoured
-    }
+    local ACMList = KAF_CatChain(_G.EXPANSION_NAME10) -- The War Within
+        :Insert(ACMList_FreywoldSpring)
+        :Insert(ACMList_GallagioGrandGallery)
+        :Insert(ACMList_TheFateOfTheDevoured)
 
     return ACMList
 end

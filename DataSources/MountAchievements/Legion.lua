@@ -7,28 +7,15 @@ local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 function GetLegionMountAchievements()
 
     -- Child Achievements ..And Chew Mana Buns
-    local ACMChilds_AndChewManaBuns = {
-        Utilities:GetAchievementName(12103),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMChilds_AndChewManaBuns = KAF_Cat(Utilities:GetAchievementName(12103))
+        :Ids{
             12101, -- We Came Here For Two Reasons
             12102, -- To Kill Demons...
         }
-    }
 
     -- Child Achievements Glory of the Legion Hero
-    local ACMChilds_GloryOfTheLegionHero = {
-        Utilities:GetAchievementName(11163),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMChilds_GloryOfTheLegionHero = KAF_Cat(Utilities:GetAchievementName(11163))
+        :Ids{
             10456, -- But You Say He's Just a Friend
             10457, -- Stay Salty
             10458, -- Ready for Raiding V
@@ -55,17 +42,10 @@ function GetLegionMountAchievements()
             10610, -- Waiting for Gerdo
             10611 -- Dropping Some Eaves
         }
-    }
 
     -- Child Achievements Glory of the Legion Raider
-    local ACMChilds_GloryOfTheLegionRaider = {
-        Utilities:GetAchievementName(11180),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMChilds_GloryOfTheLegionRaider = KAF_Cat(Utilities:GetAchievementName(11180))
+        :Ids{
             10555, -- Buggy Fight
             10771, -- Webbing Crashers
             10753, -- Scare Bear
@@ -83,17 +63,10 @@ function GetLegionMountAchievements()
             10699, -- Infinitesimal
             10696 -- I've Got My Eyes On You
         }
-    }
 
     -- Child Achievements Glory of the Argus Raider
-    local ACMChilds_GloryOfTheArgusRaider = {
-        Utilities:GetAchievementName(11987),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMChilds_GloryOfTheArgusRaider = KAF_Cat(Utilities:GetAchievementName(11987))
+        :Ids{
             11949, -- Hard to Kill
             11948, -- Together We Stand
             11930, -- Worm-monger
@@ -106,26 +79,18 @@ function GetLegionMountAchievements()
             12046, -- Remeber the Titans
             12257 -- Stardust Crusaders
         }
-    }
 
     -- Flat achievement list
-    local ACMListFlat = {
-        _G.EXPANSION_NAME6, -- Legion
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        }
-    }
+    local ACMListFlat = KAF_Cat(_G.EXPANSION_NAME6) -- Legion
 
     if KhamulsAchievementFilter.db.profile.mountAchievementsSettings.includeChildAchievements then
-        ACMListFlat[#ACMListFlat+1] = ACMChilds_AndChewManaBuns
-        ACMListFlat[#ACMListFlat+1] = ACMChilds_GloryOfTheLegionHero
-        ACMListFlat[#ACMListFlat+1] = ACMChilds_GloryOfTheLegionRaider
-        ACMListFlat[#ACMListFlat+1] = ACMChilds_GloryOfTheArgusRaider
+        ACMListFlat:Insert(ACMChilds_AndChewManaBuns)
+        ACMListFlat:Insert(ACMChilds_GloryOfTheLegionHero)
+        ACMListFlat:Insert(ACMChilds_GloryOfTheLegionRaider)
+        ACMListFlat:Insert(ACMChilds_GloryOfTheArgusRaider)
     end
 
-    ACMListFlat[#ACMListFlat+1] = {
+    ACMListFlat:Ids{
         12103, -- ...And Chew Mana Buns
         11163, -- Glory of the Legion Hero
         11180, -- Glory of the Legion Raider
@@ -138,96 +103,54 @@ function GetLegionMountAchievements()
     end
 
     -- ACMList_Zones_Dalaran
-    local ACMList_Zones_Dalaran = {
-        Utilities:GetZoneNameByMapID(627),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMList_Zones_Dalaran = KAF_Cat(Utilities:GetZoneNameByMapID(627))
+        :Ids{
             11066, -- Underbelly Tycoon
         }
-    }
 
     -- Zones -> Dalaran -> Argus
-    local ACMList_Zones_Argus = {
-        Utilities:GetZoneNameByMapID(905),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        }
-    }
+    local ACMList_Zones_Argus = KAF_Cat(Utilities:GetZoneNameByMapID(905))
 
     if KhamulsAchievementFilter.db.profile.mountAchievementsSettings.includeChildAchievements then
-        ACMList_Zones_Argus[#ACMList_Zones_Argus+1] = ACMChilds_AndChewManaBuns
+        ACMList_Zones_Argus:Insert(ACMChilds_AndChewManaBuns)
     end
 
-    ACMList_Zones_Argus[#ACMList_Zones_Argus+1] = {
+    ACMList_Zones_Argus:Ids{
         12103 -- ...And Chew Mana Buns
     }
 
     -- Zones
-    local ACMList_Zones = {
-        _G.ZONE,
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        ACMList_Zones_Dalaran,
-        ACMList_Zones_Argus
-    }
+    local ACMList_Zones = KAF_Cat(_G.ZONE)
+        :Insert(ACMList_Zones_Dalaran)
+        :Insert(ACMList_Zones_Argus)
 
     -- Dungeons
-    local ACMList_Dungeons= {
-        _G.DUNGEONS,
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        }
-    }
+    local ACMList_Dungeons = KAF_Cat(_G.DUNGEONS)
 
     if KhamulsAchievementFilter.db.profile.mountAchievementsSettings.includeChildAchievements then
-        ACMList_Dungeons[#ACMList_Dungeons+1] = ACMChilds_GloryOfTheLegionHero
+        ACMList_Dungeons:Insert(ACMChilds_GloryOfTheLegionHero)
     end
 
-    ACMList_Dungeons[#ACMList_Dungeons+1] = {
+    ACMList_Dungeons:Ids{
         11163, -- Glory of the Legion Hero
     }
 
-    local ACMList_Raids = {
-        Utilities:GetAchievementCategoryNameByCategoryID(15271), -- Raids
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        }
-    }
+    local ACMList_Raids = KAF_Cat(Utilities:GetAchievementCategoryNameByCategoryID(15271)) -- Raids
 
     if KhamulsAchievementFilter.db.profile.mountAchievementsSettings.includeChildAchievements then
-        ACMList_Raids[#ACMList_Raids+1] = ACMChilds_GloryOfTheLegionRaider
-        ACMList_Raids[#ACMList_Raids+1] = ACMChilds_GloryOfTheArgusRaider
+        ACMList_Raids:Insert(ACMChilds_GloryOfTheLegionRaider)
+        ACMList_Raids:Insert(ACMChilds_GloryOfTheArgusRaider)
     end
 
-    ACMList_Raids[#ACMList_Raids+1] = {
+    ACMList_Raids:Ids{
         11180, -- Glory of the Legion Raider
         11987, -- Glory of the Argus Raider
     }
 
-    local ACMList = {
-        _G.EXPANSION_NAME6, -- Legion
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        ACMList_Zones,
-        ACMList_Dungeons,
-        ACMList_Raids
-    }
+    local ACMList = KAF_Cat(_G.EXPANSION_NAME6) -- Legion
+        :Insert(ACMList_Zones)
+        :Insert(ACMList_Dungeons)
+        :Insert(ACMList_Raids)
 
     return ACMList
 end

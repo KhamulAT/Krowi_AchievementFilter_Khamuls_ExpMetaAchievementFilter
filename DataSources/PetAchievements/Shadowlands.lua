@@ -7,14 +7,8 @@ local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 function GetSLPetAchievements()
 
     -- Child Achievements Family Exorcist
-    local ACMChilds_FamilyExorcist = {
-        Utilities:GetAchievementName(14879),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMChilds_FamilyExorcist = KAF_Cat(Utilities:GetAchievementName(14879))
+        :Ids{
             14868, -- Aquatic Apparitions
             14869, -- Beast Busters
             14870, -- Creepy Critters
@@ -26,7 +20,6 @@ function GetSLPetAchievements()
             14876, -- Macabre Mechanicals
             14877 -- Unholy Undead
         }
-    }
 
     -- PetBattles->AdditionalPetStuff
     local ACMList_AdditionalPetStuffPetBattle = {
@@ -34,30 +27,23 @@ function GetSLPetAchievements()
     }
 
     -- Flat achievement list
-    local ACMListFlat = {
-        _G.EXPANSION_NAME8, -- Shadowlands
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        }
-    }
+    local ACMListFlat = KAF_Cat(_G.EXPANSION_NAME8) -- Shadowlands
 
     local ACMList_Accessoiries = {
             15508, -- Fashion of the First Ones
     }
 
-    if KhamulsAchievementFilter.db.profile.petAchievementsSettings.includeChildAchievements then
-        ACMListFlat[#ACMListFlat+1] = ACMChilds_FamilyBattler
-        ACMListFlat[#ACMListFlat+1] = ACMChilds_TeamAquashock
-        ACMListFlat[#ACMListFlat+1] = ACMChilds_ReekingOfVisions
+    -- NOTE: the V1 version guarded an includeChildAchievements block here that appended
+    -- ACMChilds_FamilyBattler / ACMChilds_TeamAquashock / ACMChilds_ReekingOfVisions --
+    -- none of which are ever defined in this file, so it always appended nil and did
+    -- nothing. Behaviour is preserved (no child group in the flat list); the variable
+    -- that was presumably intended is ACMChilds_FamilyExorcist.
+
+    if KhamulsAchievementFilter.db.profile.petAchievementsSettings.includePetRelatedStuff then
+        ACMListFlat:Ids(ACMList_AdditionalPetStuffPetBattle)
     end
 
-    if KhamulsAchievementFilter.db.profile.petAchievementsSettings.includePetRelatedStuff then 
-        ACMListFlat[#ACMListFlat+1] = ACMList_AdditionalPetStuffPetBattle
-    end
-
-    ACMListFlat[#ACMListFlat + 1] = {
+    ACMListFlat:Ids{
         14879, -- Family Exorcist
         14881, -- Abhorrent Adversaries of the Afterlife
         15004, -- A Sly Fox
@@ -67,7 +53,7 @@ function GetSLPetAchievements()
     }
 
     if KhamulsAchievementFilter.db.profile.petAchievementsSettings.includePetRelatedStuff then
-        ACMListFlat[#ACMListFlat+1] = ACMList_Accessoiries
+        ACMListFlat:Ids(ACMList_Accessoiries)
     end
 
     -- Return flat structure if set
@@ -76,75 +62,40 @@ function GetSLPetAchievements()
     end
 
     -- Pet Battle
-    local ACMList_PetBattles = {
-        Utilities:GetAchievementCategoryNameByCategoryID(15219), -- Pet Battles
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        }
-    }
+    local ACMList_PetBattles = KAF_Cat(Utilities:GetAchievementCategoryNameByCategoryID(15219)) -- Pet Battles
 
     if KhamulsAchievementFilter.db.profile.petAchievementsSettings.includeChildAchievements then
-        ACMList_PetBattles[#ACMList_PetBattles+1] = ACMChilds_FamilyExorcist
+        ACMList_PetBattles:Insert(ACMChilds_FamilyExorcist)
     end
 
-    if KhamulsAchievementFilter.db.profile.petAchievementsSettings.includePetRelatedStuff then 
-        ACMList_PetBattles[#ACMList_PetBattles+1] = ACMList_AdditionalPetStuffPetBattle
+    if KhamulsAchievementFilter.db.profile.petAchievementsSettings.includePetRelatedStuff then
+        ACMList_PetBattles:Ids(ACMList_AdditionalPetStuffPetBattle)
     end
 
-    ACMList_PetBattles[#ACMList_PetBattles+1] = {
+    ACMList_PetBattles:Ids{
         14879, -- Family Exorcist
         14881, -- Abhorrent Adversaries of the Afterlife
         15004, -- A Sly Fox
     }
 
-    local ACMList_Thorghast = {
-        Utilities:GetDungeonNameByLFGDungeonID(1963),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMList_Thorghast = KAF_Cat(Utilities:GetDungeonNameByLFGDungeonID(1963))
+        :Ids{
             15079, -- Many, Many Things
             14469, -- Twisting Corridors: Layer 2
             15251, -- The Jailer's Gauntlet: Layer 1
         }
-    }
 
-    local ACMList_Zones = {
-        _G.ZONE, -- Zone
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
-            Utilities:GetZoneNameByMapID(1970), -- Zereth Mortis
-            false,
-            {
-                IgnoreCollapsedChainFilter = true,
-                IgnoreFactionFilter = true
-            },
-            {
-                15508, -- Fashion of the First Ones
-            }
+    local ACMList_Zones = KAF_Cat(_G.ZONE) -- Zone
+
+    KAF_Sub(ACMList_Zones, Utilities:GetZoneNameByMapID(1970)) -- Zereth Mortis
+        :Ids{
+            15508, -- Fashion of the First Ones
         }
-    }
 
-    local ACMList = {
-        _G.EXPANSION_NAME8, -- Shadowlands
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        ACMList_Zones,
-        ACMList_PetBattles,
-        ACMList_Thorghast,
-    }
-
+    local ACMList = KAF_Cat(_G.EXPANSION_NAME8) -- Shadowlands
+        :Insert(ACMList_Zones)
+        :Insert(ACMList_PetBattles)
+        :Insert(ACMList_Thorghast)
 
     return ACMList
 end

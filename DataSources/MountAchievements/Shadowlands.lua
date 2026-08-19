@@ -7,14 +7,9 @@ local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 function GetShadowlandsMountAchievements()
 
     -- Child Achievements On the Offensive
-    local ACMChilds_OnTheOffensive = {
-        Utilities:GetAchievementName(15035),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    -- (also nested under Breaking the Chains, which is why it is built once here)
+    local ACMChilds_OnTheOffensive = KAF_Cat(Utilities:GetAchievementName(15035))
+        :Ids{
             15000, -- United Front
             15001, -- Jailer's Personal Stash
             15037, -- This Army
@@ -25,36 +20,11 @@ function GetShadowlandsMountAchievements()
             15042, -- Tea for the Troubled
             15044 -- Krrprripripkraak's Heroes
         }
-    }
 
     -- Child Achievements Breaking the Chains
-    local ACMChilds_BreakingTheChains = {
-        Utilities:GetAchievementName(15064),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
-            Utilities:GetAchievementName(15035),
-            false,
-            {
-                IgnoreCollapsedChainFilter = true,
-                IgnoreFactionFilter = true
-            },
-            {
-                15000, -- United Front
-                15001, -- Jailer's Personal Stash
-                15037, -- This Army
-                15039, -- Up For Grabs
-                15041, -- The Zovall Shuffle
-                15043, -- Hoarders of Thorghast
-                15004, -- A Sly Fox
-                15042, -- Tea for the Troubled
-                15044 -- Krrprripripkraak's Heroes
-            }
-        },
-        {
+    local ACMChilds_BreakingTheChains = KAF_Cat(Utilities:GetAchievementName(15064))
+        :Insert(ACMChilds_OnTheOffensive)
+        :Ids{
             14961, -- Chains of Domination
             15035, -- On the Offensive
             15054, -- Minions of the Cold Dark
@@ -65,17 +35,10 @@ function GetShadowlandsMountAchievements()
             15099, -- Treasures of Korthia
             15107 -- Conquering Korthia
         }
-    }
 
     -- Child Achievements Glory of the Shadowlands Hero
-    local ACMChilds_GloryOfTheShadowlandsHero = {
-        Utilities:GetAchievementName(14322),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMChilds_GloryOfTheShadowlandsHero = KAF_Cat(Utilities:GetAchievementName(14322))
+        :Ids{
             14295, -- Bountiful Harvest
             14320, -- Surgeon's Supplies
             14285, -- Ready for Raiding VII
@@ -101,17 +64,10 @@ function GetShadowlandsMountAchievements()
             14290, -- I Only Have Eyes For You
             14289 -- Kall-ed Shot
         }
-    }
 
     -- Child Achievements Glory of the Nathria Raider
-    local ACMChilds_GloryOfTheNathriaRaider = {
-        Utilities:GetAchievementName(14355),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMChilds_GloryOfTheNathriaRaider = KAF_Cat(Utilities:GetAchievementName(14355))
+        :Ids{
             14293, -- Blind as a Bat
             14523, -- Taking Care of Business
             14608, -- Burning Bright
@@ -123,17 +79,10 @@ function GetShadowlandsMountAchievements()
             14525, -- Feed Me, Seymour!
             14610 -- Clear Conscience
         }
-    }
 
     -- Child Achievements Glory of the Dominnant Raider
-    local ACMChilds_GloryOfTheDominantRaider = {
-        Utilities:GetAchievementName(15130),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMChilds_GloryOfTheDominantRaider = KAF_Cat(Utilities:GetAchievementName(15130))
+        :Ids{
             14998, -- Name A Better Duo, I'll Wait
             15065, -- Eye Wish You Were Here
             15003, -- To the Nines
@@ -145,17 +94,10 @@ function GetShadowlandsMountAchievements()
             15108, -- Together Forever
             15133 -- This World is a Prism
         }
-    }
 
     -- Child Achievements Glory of the Sepulcher Raider
-    local ACMChilds_GloryOfTheSepulcherRaider = {
-        Utilities:GetAchievementName(15491),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMChilds_GloryOfTheSepulcherRaider = KAF_Cat(Utilities:GetAchievementName(15491))
+        :Ids{
             15315, -- Amidst Ourselves
             15397, -- Four Fing Circus
             15381, -- Power ON
@@ -167,44 +109,29 @@ function GetShadowlandsMountAchievements()
             15398, -- Xy Never, Ever Marks the Spot.
             15494 -- Damnation Aviation
         }
-    }
 
     -- Child Achievements Fates of the Shadowlands Raids
-    local ACMChilds_FatesOfTheShadowlandsRaids = {
-        Utilities:GetAchievementName(15684),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMChilds_FatesOfTheShadowlandsRaids = KAF_Cat(Utilities:GetAchievementName(15684))
+        :Ids{
             15663, -- Fate of Nathria
             15667, -- Fate of Domination
             15681 -- Fate of the Sepulcher
         }
-    }
 
     -- Flat achievement list
-    local ACMListFlat = {
-        _G.EXPANSION_NAME8, -- Shadowlands
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true;
-            Tooltip = Utilities:ReplacePlaceholderInText(L["Tt_UseMetaAchievementPlugin"], {Utilities:GetAchievementName(20501)})
-        }
-    }
+    local ACMListFlat = KAF_Cat(_G.EXPANSION_NAME8, -- Shadowlands
+            Utilities:ReplacePlaceholderInText(L["Tt_UseMetaAchievementPlugin"], {Utilities:GetAchievementName(20501)}))
 
     if KhamulsAchievementFilter.db.profile.mountAchievementsSettings.includeChildAchievements then
-        ACMListFlat[#ACMListFlat+1] = ACMChilds_BreakingTheChains
-        ACMListFlat[#ACMListFlat+1] = ACMChilds_GloryOfTheShadowlandsHero
-        ACMListFlat[#ACMListFlat+1] = ACMChilds_GloryOfTheNathriaRaider
-        ACMListFlat[#ACMListFlat+1] = ACMChilds_GloryOfTheDominantRaider
-        ACMListFlat[#ACMListFlat+1] = ACMChilds_GloryOfTheSepulcherRaider
-        ACMListFlat[#ACMListFlat+1] = ACMChilds_FatesOfTheShadowlandsRaids
+        ACMListFlat:Insert(ACMChilds_BreakingTheChains)
+        ACMListFlat:Insert(ACMChilds_GloryOfTheShadowlandsHero)
+        ACMListFlat:Insert(ACMChilds_GloryOfTheNathriaRaider)
+        ACMListFlat:Insert(ACMChilds_GloryOfTheDominantRaider)
+        ACMListFlat:Insert(ACMChilds_GloryOfTheSepulcherRaider)
+        ACMListFlat:Insert(ACMChilds_FatesOfTheShadowlandsRaids)
     end
 
-    ACMListFlat[#ACMListFlat + 1] = {
+    ACMListFlat:Ids{
         15064, -- Breaking the Chains
         14322, -- Glory of the Shadowlands Hero
         14355, -- Glory of the Nathria Raider
@@ -220,80 +147,51 @@ function GetShadowlandsMountAchievements()
     end
 
     -- Zones
-    local ACMList_Zones = {
-        _G.ZONE,
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        }
-    }
+    local ACMList_Zones = KAF_Cat(_G.ZONE)
 
     if KhamulsAchievementFilter.db.profile.mountAchievementsSettings.includeChildAchievements then
-        ACMList_Zones[#ACMList_Zones+1] = ACMChilds_BreakingTheChains
+        ACMList_Zones:Insert(ACMChilds_BreakingTheChains)
     end
 
-    ACMList_Zones[#ACMList_Zones+1] = {
+    ACMList_Zones:Ids{
         15064, -- Breaking the Chains
     }
 
     -- Dungeons
-    local ACMList_Dungeons= {
-        _G.DUNGEONS,
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        }
-    }
+    local ACMList_Dungeons = KAF_Cat(_G.DUNGEONS)
 
     if KhamulsAchievementFilter.db.profile.mountAchievementsSettings.includeChildAchievements then
-        ACMList_Dungeons[#ACMList_Dungeons+1] = ACMChilds_GloryOfTheShadowlandsHero
+        ACMList_Dungeons:Insert(ACMChilds_GloryOfTheShadowlandsHero)
     end
 
-    ACMList_Dungeons[#ACMList_Dungeons+1] = {
+    ACMList_Dungeons:Ids{
         14322, -- Glory of the Shadowlands Hero
     }
 
-    local ACMList_Raids = {
-        Utilities:GetAchievementCategoryNameByCategoryID(15271), -- Raids
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        }
-    }
+    local ACMList_Raids = KAF_Cat(Utilities:GetAchievementCategoryNameByCategoryID(15271)) -- Raids
 
     if KhamulsAchievementFilter.db.profile.mountAchievementsSettings.includeChildAchievements then
-        ACMList_Raids[#ACMList_Raids+1] = ACMChilds_GloryOfTheNathriaRaider
-        ACMList_Raids[#ACMList_Raids+1] = ACMChilds_GloryOfTheDominantRaider
-        ACMList_Raids[#ACMList_Raids+1] = ACMChilds_GloryOfTheSepulcherRaider
-        ACMList_Raids[#ACMList_Raids+1] = ACMChilds_FatesOfTheShadowlandsRaids
+        ACMList_Raids:Insert(ACMChilds_GloryOfTheNathriaRaider)
+        ACMList_Raids:Insert(ACMChilds_GloryOfTheDominantRaider)
+        ACMList_Raids:Insert(ACMChilds_GloryOfTheSepulcherRaider)
+        ACMList_Raids:Insert(ACMChilds_FatesOfTheShadowlandsRaids)
     end
 
-    ACMList_Raids[#ACMList_Raids+1] = {
+    ACMList_Raids:Ids{
         14355, -- Glory of the Nathria Raider
         15130, -- Glory of the Dominant Raider
         15491, -- Glory of  the Sepulcher Raider
         15684, -- Fates of the Shadowlands Raids
     }
 
-    local ACMList = {
-        _G.EXPANSION_NAME8, -- Shadowlands
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true;
-            Tooltip = Utilities:ReplacePlaceholderInText(L["Tt_UseMetaAchievementPlugin"], {Utilities:GetAchievementName(20501)})
-        },
-        ACMList_Zones,
-        ACMList_Dungeons,
-        ACMList_Raids,
-        {
+    local ACMList = KAF_Cat(_G.EXPANSION_NAME8, -- Shadowlands
+            Utilities:ReplacePlaceholderInText(L["Tt_UseMetaAchievementPlugin"], {Utilities:GetAchievementName(20501)}))
+        :Insert(ACMList_Zones)
+        :Insert(ACMList_Dungeons)
+        :Insert(ACMList_Raids)
+        :Ids{
             20501, -- Back from the Beyond
         }
-    }
-
 
     return ACMList
 end

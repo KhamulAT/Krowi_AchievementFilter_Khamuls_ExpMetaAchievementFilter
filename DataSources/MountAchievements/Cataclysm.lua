@@ -7,14 +7,8 @@ local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 function GetCataMountAchievements()
 
     -- Child Achievements Cataclysm Dungeon Hero
-    local ACMChilds_CataclysmDungeonHero = {
-        Utilities:GetAchievementName(4844),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMChilds_CataclysmDungeonHero = KAF_Cat(Utilities:GetAchievementName(4844))
+        :Ids{
             5060, -- Heroic: Blackrock Caverns
             5061, -- Heroic: Throne of the Tides
             5063, -- Heroic: The Stonecore
@@ -25,18 +19,11 @@ function GetCataMountAchievements()
             5083, -- Heroic: Deadmines
             5093 -- Heroic: Shadowfang Keep
         }
-    }
 
     -- Child Achievements Glory of the Cataclysm Hero
-    local ACMChilds_GloryOfTheCataclysmHero = {
-        Utilities:GetAchievementName(4845),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        ACMChilds_CataclysmDungeonHero,
-        {
+    local ACMChilds_GloryOfTheCataclysmHero = KAF_Cat(Utilities:GetAchievementName(4845))
+        :Insert(ACMChilds_CataclysmDungeonHero)
+        :Ids{
             4844, -- Cataclysm Dungeon Hero
             5281, -- Crushing Bones and Cracking Skulls
             5282, -- Arrested Development
@@ -63,17 +50,10 @@ function GetCataMountAchievements()
             5505, -- Bullet Time
             5298 -- Don't Need to Break Eggs to Make an Omelet
         }
-    }
 
     -- Child Achievements Glory of the Cataclysm Raider
-    local ACMChilds_GloryOfTheCataclysmRaider = {
-        Utilities:GetAchievementName(4853),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMChilds_GloryOfTheCataclysmRaider = KAF_Cat(Utilities:GetAchievementName(4853))
+        :Ids{
             5094, -- Heroic: Magmaw
             5107, -- Heroic: Omnotron Defense System
             5108, -- Heroic: Maloriak
@@ -99,17 +79,10 @@ function GetCataMountAchievements()
             5304, -- Stay Chill
             5305 -- Four Play
         }
-    }
 
     -- Child Achievements Glory of the Firelands Raider
-    local ACMChilds_GloryOfTheFirelandsRaider = {
-        Utilities:GetAchievementName(5828),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMChilds_GloryOfTheFirelandsRaider = KAF_Cat(Utilities:GetAchievementName(5828))
+        :Ids{
             5807, -- Heroic: Beth'tilac
             5808, -- Heroic: Lord Rhyolith
             5806, -- Heroic: Shannox
@@ -123,17 +96,10 @@ function GetCataMountAchievements()
             5830, -- Share the Pain
             5799 -- Only the Penitent...
         }
-    }
 
     -- Child Achievements Glory of the Dragon Soul Raider
-    local ACMChilds_GloryOfTheDragonSoulRaider = {
-        Utilities:GetAchievementName(6169),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMChilds_GloryOfTheDragonSoulRaider = KAF_Cat(Utilities:GetAchievementName(6169))
+        :Ids{
             6109, -- Heroic: Morchok
             6110, -- Heroic: Warlord Zon'ozz
             6111, -- Heroic: Yor'sahj the Unsleeping
@@ -148,26 +114,18 @@ function GetCataMountAchievements()
             6133, -- Maybe He'll Get Dizzy...
             6180 -- Chromatic Champion
         }
-    }
 
     -- Flat achievement list
-    local ACMListFlat = {
-        _G.EXPANSION_NAME3, -- Cataclysm
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        }
-    }
+    local ACMListFlat = KAF_Cat(_G.EXPANSION_NAME3) -- Cataclysm
 
     if KhamulsAchievementFilter.db.profile.mountAchievementsSettings.includeChildAchievements then
-        ACMListFlat[#ACMListFlat+1] = ACMChilds_GloryOfTheCataclysmHero
-        ACMListFlat[#ACMListFlat+1] = ACMChilds_GloryOfTheCataclysmRaider
-        ACMListFlat[#ACMListFlat+1] = ACMChilds_GloryOfTheFirelandsRaider
-        ACMListFlat[#ACMListFlat+1] = ACMChilds_GloryOfTheDragonSoulRaider
+        ACMListFlat:Insert(ACMChilds_GloryOfTheCataclysmHero)
+        ACMListFlat:Insert(ACMChilds_GloryOfTheCataclysmRaider)
+        ACMListFlat:Insert(ACMChilds_GloryOfTheFirelandsRaider)
+        ACMListFlat:Insert(ACMChilds_GloryOfTheDragonSoulRaider)
     end
 
-    ACMListFlat[#ACMListFlat+1] = {
+    ACMListFlat:Ids{
         5866, -- The Molten Front Offensive
         42300, -- Two Minutes to Midnight
         5866, -- The Molten Front Offensive
@@ -183,102 +141,56 @@ function GetCataMountAchievements()
     end
 
     -- Zones
-    local ACMList_Zones_MountHyjalTwilightHighlandsMoltenFront = {
-        _G.ZONE, -- Zone
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        -- Mount Hyjal
-        {
-            Utilities:GetZoneNameByMapID(198), -- Mount Hyjal
-            false,
-            {
-                IgnoreCollapsedChainFilter = true,
-                IgnoreFactionFilter = true
-            },
-            {
-                5866 -- The Molten Front Offensive
-            }
-        },
-        -- Twilight Highlands
-        {
-            Utilities:GetZoneNameByMapID(241), -- Twilight Highlands
-            false,
-            {
-                IgnoreCollapsedChainFilter = true,
-                IgnoreFactionFilter = true
-            },
-            {
-                42300 -- Two Minutes to Mitnight
-            }
-        },
-        -- Molten Front
-        {
-            Utilities:GetZoneNameByMapID(338), -- Molten Front
-            false,
-            {
-                IgnoreCollapsedChainFilter = true,
-                IgnoreFactionFilter = true
-            },
-            {
-                5866 -- The Molten Front Offensive
-            }
+    local ACMList_Zones_MountHyjalTwilightHighlandsMoltenFront = KAF_Cat(_G.ZONE) -- Zone
+
+    -- Mount Hyjal
+    KAF_Sub(ACMList_Zones_MountHyjalTwilightHighlandsMoltenFront, Utilities:GetZoneNameByMapID(198)) -- Mount Hyjal
+        :Ids{
+            5866 -- The Molten Front Offensive
         }
-    }
+
+    -- Twilight Highlands
+    KAF_Sub(ACMList_Zones_MountHyjalTwilightHighlandsMoltenFront, Utilities:GetZoneNameByMapID(241)) -- Twilight Highlands
+        :Ids{
+            42300 -- Two Minutes to Mitnight
+        }
+
+    -- Molten Front
+    KAF_Sub(ACMList_Zones_MountHyjalTwilightHighlandsMoltenFront, Utilities:GetZoneNameByMapID(338)) -- Molten Front
+        :Ids{
+            5866 -- The Molten Front Offensive
+        }
 
     -- Dungeons
-    local ACMList_Dungeons = {
-        Utilities:GetAchievementCategoryNameByCategoryID(15272), -- Dungeons
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        }
-    }
+    local ACMList_Dungeons = KAF_Cat(Utilities:GetAchievementCategoryNameByCategoryID(15272)) -- Dungeons
 
     if KhamulsAchievementFilter.db.profile.mountAchievementsSettings.includeChildAchievements then
-        ACMList_Dungeons[#ACMList_Dungeons+1] = ACMChilds_GloryOfTheCataclysmHero
+        ACMList_Dungeons:Insert(ACMChilds_GloryOfTheCataclysmHero)
     end
 
-    ACMList_Dungeons[#ACMList_Dungeons+1] = {
+    ACMList_Dungeons:Ids{
         4845 -- Glory of the Cataclysm Hero
     }
 
     -- Raids
-    local ACMList_Raids = {
-        Utilities:GetAchievementCategoryNameByCategoryID(15271), -- Raids
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        }
-    }
+    local ACMList_Raids = KAF_Cat(Utilities:GetAchievementCategoryNameByCategoryID(15271)) -- Raids
 
     if KhamulsAchievementFilter.db.profile.mountAchievementsSettings.includeChildAchievements then
-        ACMList_Raids[#ACMList_Raids+1] = ACMChilds_GloryOfTheCataclysmRaider
-        ACMList_Raids[#ACMList_Raids+1] = ACMChilds_GloryOfTheFirelandsRaider
-        ACMList_Raids[#ACMList_Raids+1] = ACMChilds_GloryOfTheDragonSoulRaider
+        ACMList_Raids:Insert(ACMChilds_GloryOfTheCataclysmRaider)
+        ACMList_Raids:Insert(ACMChilds_GloryOfTheFirelandsRaider)
+        ACMList_Raids:Insert(ACMChilds_GloryOfTheDragonSoulRaider)
     end
 
-    ACMList_Raids[#ACMList_Raids+1] = {
+    ACMList_Raids:Ids{
         4853, -- Glory of the Cataclysm Raider
         5828, -- Glory of the Firelands Raider
         6169 -- Glory of the Dragon Soul Raider
     }
 
-    local ACMList = {
-        _G.EXPANSION_NAME3, -- Cataclysm
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        ACMList_Zones_MountHyjalTwilightHighlandsMoltenFront,
-        ACMList_Dungeons,
-        ACMList_Raids
-    }
+    local ACMList = KAF_Cat(_G.EXPANSION_NAME3) -- Cataclysm
+        :Insert(ACMList_Zones_MountHyjalTwilightHighlandsMoltenFront)
+        :Insert(ACMList_Dungeons)
+        :Insert(ACMList_Raids)
 
     return ACMList
 end

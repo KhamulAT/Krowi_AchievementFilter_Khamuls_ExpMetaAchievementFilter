@@ -7,27 +7,14 @@ local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 function GetBattleForAzerothMountAchievements()
 
     -- Child Achievements Battle for Azeroth Keystone Master: Season Four
-    local ACMChilds_BattleForAzerothKeystoneMasterSeasonFour = {
-        Utilities:GetAchievementName(14145),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMChilds_BattleForAzerothKeystoneMasterSeasonFour = KAF_Cat(Utilities:GetAchievementName(14145))
+        :Ids{
             14144, -- Battle For Azeroth Keystone Conqueror: Season Four
         }
-    }
 
     -- Child Achievements Glory of the Wartorn Hero
-    local ACMChilds_GloryOfTheWartornHero = {
-        Utilities:GetAchievementName(12812),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMChilds_GloryOfTheWartornHero = KAF_Cat(Utilities:GetAchievementName(12812))
+        :Ids{
             12550, -- Pecking Order
             12548, -- I'm in Charge Now!
             12998, -- That Sweete Booty
@@ -56,17 +43,10 @@ function GetBattleForAzerothMountAchievements()
             12723, -- How to Keep a Mummy
             12721 -- Wrap God
         }
-    }
 
     -- Child Achievements Glory of the Uldir Raider
-    local ACMChilds_GloryOfTheUldirRaider = {
-        Utilities:GetAchievementName(12806),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMChilds_GloryOfTheUldirRaider = KAF_Cat(Utilities:GetAchievementName(12806))
+        :Ids{
             12551, -- Double Dribble
             12937, -- Elevator Music
             12938, -- Parental Controls
@@ -76,17 +56,10 @@ function GetBattleForAzerothMountAchievements()
             12830, -- Edgelords
             12836 -- Existential Crisis
         }
-    }
 
     -- Child Achievements Glory of the Dazar'alor Raider
-    local ACMChilds_GloryOfTheDazaralorRaider = {
-        Utilities:GetAchievementName(13315),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMChilds_GloryOfTheDazaralorRaider = KAF_Cat(Utilities:GetAchievementName(13315))
+        :Ids{
             13316, -- Can I Get a Hek Hek Hek Yeah?
             13325, -- Walk the Dinosaur
             13345, -- Praise the Sunflower
@@ -97,17 +70,10 @@ function GetBattleForAzerothMountAchievements()
             13430, -- De Lurker Be'loa
             13425 -- We Got Spirit, How About You?
         }
-    }
 
     -- Child Achievements Glory of the Eternal Raider
-    local ACMChilds_GloryOfTheEternalRaider = {
-        Utilities:GetAchievementName(13687),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMChilds_GloryOfTheEternalRaider = KAF_Cat(Utilities:GetAchievementName(13687))
+        :Ids{
             13684, -- You and What Army?
             13767, -- Fun Run
             13628, -- Intro to Marine Biology
@@ -117,17 +83,10 @@ function GetBattleForAzerothMountAchievements()
             13716, -- Lactose Intolerant
             13768 -- The Best of Us
         }
-    }
 
     -- Child Achievements Glory of the Ny'alotha Raider
-    local ACMChilds_GloryOfTheNyalothaRaider = {
-        Utilities:GetAchievementName(14146),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMChilds_GloryOfTheNyalothaRaider = KAF_Cat(Utilities:GetAchievementName(14146))
+        :Ids{
             14019, -- Smoke Test
             14008, -- Mana Sponge
             14037, -- Phase 3: Prophet
@@ -141,29 +100,21 @@ function GetBattleForAzerothMountAchievements()
             14147, -- Cleansing Treatment
             14148 -- It's Not A Cult
         }
-    }
 
     -- Flat achievement list
-    local ACMListFlat = {
-        _G.EXPANSION_NAME7, -- Battle for Azeroth
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true;
-            Tooltip = Utilities:ReplacePlaceholderInText(L["Tt_UseMetaAchievementPlugin"], {Utilities:GetAchievementName(40953)})
-        }
-    }
+    local ACMListFlat = KAF_Cat(EXPANSION_NAME7, -- Battle for Azeroth
+            Utilities:ReplacePlaceholderInText(L["Tt_UseMetaAchievementPlugin"], {Utilities:GetAchievementName(40953)}))
 
     if KhamulsAchievementFilter.db.profile.mountAchievementsSettings.includeChildAchievements then
-        ACMListFlat[#ACMListFlat+1] = ACMChilds_GloryOfTheWartornHero
-        ACMListFlat[#ACMListFlat+1] = ACMChilds_BattleForAzerothKeystoneMasterSeasonFour
-        ACMListFlat[#ACMListFlat+1] = ACMChilds_GloryOfTheUldirRaider
-        ACMListFlat[#ACMListFlat+1] = ACMChilds_GloryOfTheDazaralorRaider
-        ACMListFlat[#ACMListFlat+1] = ACMChilds_GloryOfTheEternalRaider
-        ACMListFlat[#ACMListFlat+1] = ACMChilds_GloryOfTheNyalothaRaider
+        ACMListFlat:Insert(ACMChilds_GloryOfTheWartornHero)
+        ACMListFlat:Insert(ACMChilds_BattleForAzerothKeystoneMasterSeasonFour)
+        ACMListFlat:Insert(ACMChilds_GloryOfTheUldirRaider)
+        ACMListFlat:Insert(ACMChilds_GloryOfTheDazaralorRaider)
+        ACMListFlat:Insert(ACMChilds_GloryOfTheEternalRaider)
+        ACMListFlat:Insert(ACMChilds_GloryOfTheNyalothaRaider)
     end
 
-    ACMListFlat[#ACMListFlat+1] = {
+    ACMListFlat:Ids{
         12812, -- Glory of the Wartorn Hero
         14145, -- Battle for Azeroth Keystone Master: Season Four
         12806, -- Glory of the Uldir Raider
@@ -180,63 +131,42 @@ function GetBattleForAzerothMountAchievements()
     end
 
     -- Dungeons -> Maw of Souls
-    local ACMList_Dungeons= {
-        _G.DUNGEONS,
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        }
-    }
+    local ACMList_Dungeons = KAF_Cat(_G.DUNGEONS)
 
     if KhamulsAchievementFilter.db.profile.mountAchievementsSettings.includeChildAchievements then
-        ACMList_Dungeons[#ACMList_Dungeons+1] = ACMChilds_GloryOfTheWartornHero
-        ACMList_Dungeons[#ACMList_Dungeons+1] = ACMChilds_BattleForAzerothKeystoneMasterSeasonFour
+        ACMList_Dungeons:Insert(ACMChilds_GloryOfTheWartornHero)
+        ACMList_Dungeons:Insert(ACMChilds_BattleForAzerothKeystoneMasterSeasonFour)
     end
 
-    ACMList_Dungeons[#ACMList_Dungeons+1] = {
+    ACMList_Dungeons:Ids{
         12812, -- Glory of the Wartorn Hero
         14145, -- Battle for Azeroth Keystone Master: Season Four
     }
 
-    local ACMList_Raids = {
-        Utilities:GetAchievementCategoryNameByCategoryID(15271), -- Raids
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        }
-    }
+    local ACMList_Raids = KAF_Cat(Utilities:GetAchievementCategoryNameByCategoryID(15271)) -- Raids
 
     if KhamulsAchievementFilter.db.profile.mountAchievementsSettings.includeChildAchievements then
-        ACMList_Raids[#ACMList_Raids+1] = ACMChilds_GloryOfTheUldirRaider
-        ACMList_Raids[#ACMList_Raids+1] = ACMChilds_GloryOfTheDazaralorRaider
-        ACMList_Raids[#ACMList_Raids+1] = ACMChilds_GloryOfTheEternalRaider
-        ACMList_Raids[#ACMList_Raids+1] = ACMChilds_GloryOfTheNyalothaRaider
+        ACMList_Raids:Insert(ACMChilds_GloryOfTheUldirRaider)
+        ACMList_Raids:Insert(ACMChilds_GloryOfTheDazaralorRaider)
+        ACMList_Raids:Insert(ACMChilds_GloryOfTheEternalRaider)
+        ACMList_Raids:Insert(ACMChilds_GloryOfTheNyalothaRaider)
     end
 
-    ACMList_Raids[#ACMList_Raids+1] = {
+    ACMList_Raids:Ids{
         12806, -- Glory of the Uldir Raider
         13315, -- Glory of the Dazar'alor Raider
         13687, -- Glory of the Eternal Raider
         14146 -- Glory of the Ny'alotha Raider
     }
 
-    local ACMList = {
-        _G.EXPANSION_NAME7, -- Battle for Azeroth
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true;
-            Tooltip = Utilities:ReplacePlaceholderInText(L["Tt_UseMetaAchievementPlugin"], {Utilities:GetAchievementName(40953)})
-        },
-        ACMList_Dungeons,
-        ACMList_Raids,
-        {
+    local ACMList = KAF_Cat(EXPANSION_NAME7, -- Battle for Azeroth
+            Utilities:ReplacePlaceholderInText(L["Tt_UseMetaAchievementPlugin"], {Utilities:GetAchievementName(40953)}))
+        :Insert(ACMList_Dungeons)
+        :Insert(ACMList_Raids)
+        :Ids{
             40953, -- A Farewell to Arms
             13250, -- Battle for Azeroth Pathfinder, Part Two
         }
-    }
 
     return ACMList
 end

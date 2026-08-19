@@ -6,16 +6,9 @@ local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 
 function GetMoPToyAchievements()
 
-
     -- Child Avhievements Pub Crawl
-    local ACMChilds_PubCrawl = {
-        Utilities:GetAchievementName(7385),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMChilds_PubCrawl = KAF_Cat(Utilities:GetAchievementName(7385))
+        :Ids{
             7231, -- Spill No Evil
             6930, -- Yaungolian Barbecue
             6931, -- Binan Village All-Star
@@ -28,23 +21,15 @@ function GetMoPToyAchievements()
             7266, -- Save it for Later
             7267, -- Perfect Delivery
         }
-    }
 
     -- Flat achievement list
-    local ACMListFlat = {
-        _G.EXPANSION_NAME4, -- Mists of Pandaria
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        }
-    }
+    local ACMListFlat = KAF_Cat(_G.EXPANSION_NAME4) -- Mists of Pandaria
 
     if KhamulsAchievementFilter.db.profile.toyAchievementsSettings.includeChildAchievements then
-        ACMListFlat[#ACMListFlat+1] = ACMChilds_PubCrawl
+        ACMListFlat:Insert(ACMChilds_PubCrawl)
     end
 
-    ACMListFlat[#ACMListFlat+1] = {
+    ACMListFlat:Ids{
         7385, -- Pub Crawl
     }
 
@@ -54,33 +39,18 @@ function GetMoPToyAchievements()
     end
 
     -- Scenarios
-    local ACMList_Scenarios = {
-        _G.SCENARIOS, -- Scenarios
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        }
-    }
+    local ACMList_Scenarios = KAF_Cat(_G.SCENARIOS) -- Scenarios
 
     if KhamulsAchievementFilter.db.profile.toyAchievementsSettings.includeChildAchievements then
-        ACMList_Scenarios[#ACMList_Scenarios+1] = ACMChilds_PubCrawl
+        ACMList_Scenarios:Insert(ACMChilds_PubCrawl)
     end
 
-    ACMList_Scenarios[#ACMList_Scenarios+1] = {
+    ACMList_Scenarios:Ids{
         7385, -- Pub Crawl
     }
 
-
-    local ACMList = {
-        _G.EXPANSION_NAME4, -- Mists of Pandaria
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        ACMList_Scenarios
-    }
+    local ACMList = KAF_Cat(_G.EXPANSION_NAME4) -- Mists of Pandaria
+        :Insert(ACMList_Scenarios)
 
     return ACMList
 end

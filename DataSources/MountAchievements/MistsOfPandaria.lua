@@ -7,14 +7,8 @@ local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 function GetMoPMountAchievements()
 
     -- Child Achievements Pandaria Dungeon Hero
-    local ACMChilds_PandariaDungeonHero = {
-        Utilities:GetAchievementName(6925),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMChilds_PandariaDungeonHero = KAF_Cat(Utilities:GetAchievementName(6925))
+        :Ids{
             6758, -- Heroic: Temple of the Jade Serpent
             6456, -- Heroic: Stormstout Brewery
             6756, -- Heroic: Mogu'shan Palace
@@ -25,18 +19,11 @@ function GetMoPMountAchievements()
             6762, -- Heroic: Scholomance
             6763 -- Heroic: Siege of Niuzao Temple
         }
-    }
 
     -- Child Achievements Glory of the Pandaria Hero
-    local ACMChilds_GloryOfThePandariaHero = {
-        Utilities:GetAchievementName(6927),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        ACMChilds_PandariaDungeonHero,
-        {
+    local ACMChilds_GloryOfThePandariaHero = KAF_Cat(Utilities:GetAchievementName(6927))
+        :Insert(ACMChilds_PandariaDungeonHero)
+        :Ids{
             6925, -- Pandaria Dungeon Hero
             6460, -- Hdydrophobia
             6475, -- Cleaning Up
@@ -66,17 +53,10 @@ function GetMoPMountAchievements()
             6822, -- Run with the Wind
             6715 -- Ployformic Acid Science
         }
-    }
 
     -- Child Achievements Glory of the Pandaria Raider
-    local ACMChilds_GloryOfThePandariaRaider = {
-        Utilities:GetAchievementName(6932),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMChilds_GloryOfThePandariaRaider = KAF_Cat(Utilities:GetAchievementName(6932))
+        :Ids{
             6823, -- Must Love Dogs
             6674, -- Anything You Can Do, I Can Do Better...
             7056, -- Sorry, Were You Looking for This?
@@ -106,19 +86,11 @@ function GetMoPMountAchievements()
             6731, -- Heroic: Protectors of the Endless
             6732, -- Heroic: Tsulong
             6733 -- Heroic: Lei Shi
-            
         }
-    }
 
     -- Child Achievements Glory of the Thundering Raider
-    local ACMChilds_GloryOfTheThunderingRaider = {
-        Utilities:GetAchievementName(8124),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMChilds_GloryOfTheThunderingRaider = KAF_Cat(Utilities:GetAchievementName(8124))
+        :Ids{
             8056, -- Heroic: Jin'rokh the Breaker
             8057, -- Heroic: Horridon
             8058, -- Heroic: Council of Elders
@@ -143,17 +115,10 @@ function GetMoPMountAchievements()
             8086, -- From Dusk 'til Dawn
             8090 -- A Complete Circuit
         }
-    }
 
     -- Child Achievements Glory of the Orgrimmar Raider
-    local ACMChilds_GloryOfTheOrgrimmarRaider = {
-        Utilities:GetAchievementName(8454),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMChilds_GloryOfTheOrgrimmarRaider = KAF_Cat(Utilities:GetAchievementName(8454))
+        :Ids{
             8536, -- No More Tears
             8528, -- Go Long
             8532, -- None Shall Pass
@@ -169,26 +134,18 @@ function GetMoPMountAchievements()
             8531, -- Now we are the Paragon
             8537 -- Strike
         }
-    }
 
     -- Flat achievement list
-    local ACMListFlat = {
-        _G.EXPANSION_NAME4, -- Mists of Pandaria
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        }
-    }
+    local ACMListFlat = KAF_Cat(_G.EXPANSION_NAME4) -- Mists of Pandaria
 
     if KhamulsAchievementFilter.db.profile.mountAchievementsSettings.includeChildAchievements then
-        ACMListFlat[#ACMListFlat+1] = ACMChilds_GloryOfThePandariaHero
-        ACMListFlat[#ACMListFlat+1] = ACMChilds_GloryOfThePandariaRaider
-        ACMListFlat[#ACMListFlat+1] = ACMChilds_GloryOfTheThunderingRaider
-        ACMListFlat[#ACMListFlat+1] = ACMChilds_GloryOfTheOrgrimmarRaider
+        ACMListFlat:Insert(ACMChilds_GloryOfThePandariaHero)
+        ACMListFlat:Insert(ACMChilds_GloryOfThePandariaRaider)
+        ACMListFlat:Insert(ACMChilds_GloryOfTheThunderingRaider)
+        ACMListFlat:Insert(ACMChilds_GloryOfTheOrgrimmarRaider)
     end
 
-    ACMListFlat[#ACMListFlat+1] = {
+    ACMListFlat:Ids{
         6828, -- Pandaren Ambassador
         6927, -- Glory of the Pandaria Hero
         6375, -- Challenge Conqueror: Silver
@@ -205,84 +162,48 @@ function GetMoPMountAchievements()
     end
 
     -- Reputation
-    local ACMList_Reputation = {
-        Utilities:GetAchievementCategoryNameByCategoryID(201), -- Reputation
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMList_Reputation = KAF_Cat(Utilities:GetAchievementCategoryNameByCategoryID(201)) -- Reputation
+        :Ids{
             6828 -- Pandaren Ambassador
         }
-    }
 
     -- Dungeons
-    local ACMList_Dungeons = {
-        _G.DUNGEONS, -- Dungeons
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        }
-    }
+    local ACMList_Dungeons = KAF_Cat(_G.DUNGEONS) -- Dungeons
 
     if KhamulsAchievementFilter.db.profile.mountAchievementsSettings.includeChildAchievements then
-        ACMList_Dungeons[#ACMList_Dungeons+1] = ACMChilds_GloryOfThePandariaHero
+        ACMList_Dungeons:Insert(ACMChilds_GloryOfThePandariaHero)
     end
 
-    ACMList_Dungeons[#ACMList_Dungeons+1] = {
+    ACMList_Dungeons:Ids{
         6927, -- Glory of the Pandaria Hero
         6375 -- Challenge Conqueror: Silver
     }
 
-
     -- Raids
-    local ACMList_Raids = {
-        Utilities:GetAchievementCategoryNameByCategoryID(15271), -- Raids
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        }
-    }
+    local ACMList_Raids = KAF_Cat(Utilities:GetAchievementCategoryNameByCategoryID(15271)) -- Raids
 
     if KhamulsAchievementFilter.db.profile.mountAchievementsSettings.includeChildAchievements then
-        ACMList_Raids[#ACMList_Raids+1] = ACMChilds_GloryOfThePandariaRaider
-        ACMList_Raids[#ACMList_Raids+1] = ACMChilds_GloryOfTheThunderingRaider
-        ACMList_Raids[#ACMList_Raids+1] = ACMChilds_GloryOfTheOrgrimmarRaider
+        ACMList_Raids:Insert(ACMChilds_GloryOfThePandariaRaider)
+        ACMList_Raids:Insert(ACMChilds_GloryOfTheThunderingRaider)
+        ACMList_Raids:Insert(ACMChilds_GloryOfTheOrgrimmarRaider)
     end
 
-    ACMList_Raids[#ACMList_Raids+1] = {
-        Utilities:GetDungeonNameByLFGDungeonID(714), -- Siege of Orgrimmar
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    KAF_Sub(ACMList_Raids, Utilities:GetDungeonNameByLFGDungeonID(714)) -- Siege of Orgrimmar
+        :Ids{
             8398, -- Ahead of the Curve: Garrosh Hellscream (10 player)
             8399 -- Ahead of the Curve: Garrosh Hellscream (25 player)
         }
-    }
 
-    ACMList_Raids[#ACMList_Raids+1] = {
+    ACMList_Raids:Ids{
         6932, -- Glory of the Pandaria Raider
         8124, -- Glory of the Thundering Raider
         8454, -- Glory of the Orgrimmar Raider
     }
 
-    local ACMList = {
-        _G.EXPANSION_NAME4, -- Mists of Pandaria
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        ACMList_Reputation,
-        ACMList_Dungeons,
-        ACMList_Raids,
-    }
+    local ACMList = KAF_Cat(_G.EXPANSION_NAME4) -- Mists of Pandaria
+        :Insert(ACMList_Reputation)
+        :Insert(ACMList_Dungeons)
+        :Insert(ACMList_Raids)
 
     return ACMList
 end

@@ -7,49 +7,28 @@ local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 function GetSLToyAchievements()
 
     -- Child Achievements Twisting Corridors: Layer 4
-    local ACMChilds_TwistingCorridors = {
-        Utilities:GetAchievementName(14471),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMChilds_TwistingCorridors = KAF_Cat(Utilities:GetAchievementName(14471))
+        :Ids{
             14468, -- Twisting Corridors: Layer 1
             14469, -- Twisting Corridors: Layer 2
             14470, -- Twisting Corridors: Layer 3
         }
-    }
 
     -- Child Achievements The Jailer's Gauntlet: Layer 2
-    local ACMChilds_TheJailersGauntlet = {
-        Utilities:GetAchievementName(15252),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMChilds_TheJailersGauntlet = KAF_Cat(Utilities:GetAchievementName(15252))
+        :Ids{
             15251, -- The Jailer's Gauntlet: Layer 1
         }
-    }
 
     -- Flat achievement list
-    local ACMListFlat = {
-        _G.EXPANSION_NAME8, -- Shadowlands
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        }
-    }
+    local ACMListFlat = KAF_Cat(_G.EXPANSION_NAME8) -- Shadowlands
 
     if KhamulsAchievementFilter.db.profile.toyAchievementsSettings.includeChildAchievements then
-        ACMListFlat[#ACMListFlat+1] = ACMChilds_TwistingCorridors
-        ACMListFlat[#ACMListFlat+1] = ACMChilds_TheJailersGauntlet
+        ACMListFlat:Insert(ACMChilds_TwistingCorridors)
+        ACMListFlat:Insert(ACMChilds_TheJailersGauntlet)
     end
 
-    ACMListFlat[#ACMListFlat+1] = {
+    ACMListFlat:Ids{
         14721, -- It's In The Mix
         14634, -- Nine Afterlives
         14766, -- Parasoling
@@ -66,94 +45,48 @@ function GetSLToyAchievements()
     end
 
     -- Zones
-    local ACMList_Zones = {
-        _G.ZONE, -- Zone
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
-            Utilities:GetZoneNameByMapID(1536), -- Maldraxxus
-            false,
-            {
-                IgnoreCollapsedChainFilter = true,
-                IgnoreFactionFilter = true
-            },
-            {
-                14721, -- It's In The Mix
-                14634, -- Nine Afterlives
-            }
-        },
-        {
-            Utilities:GetZoneNameByMapID(1525), -- Rivendreth
-            false,
-            {
-                IgnoreCollapsedChainFilter = true,
-                IgnoreFactionFilter = true
-            },
-            {
-                14766, -- Parasoling
-            }
-        },
-        {
-            Utilities:GetZoneNameByMapID(1970), -- Zereth Mortis
-            false,
-            {
-                IgnoreCollapsedChainFilter = true,
-                IgnoreFactionFilter = true
-            },
-            {
-                15229, -- Traversing the Spheres
-                15211, -- Completing the Code
-            }
+    local ACMList_Zones = KAF_Cat(_G.ZONE) -- Zone
+
+    KAF_Sub(ACMList_Zones, Utilities:GetZoneNameByMapID(1536)) -- Maldraxxus
+        :Ids{
+            14721, -- It's In The Mix
+            14634, -- Nine Afterlives
         }
-    }
+
+    KAF_Sub(ACMList_Zones, Utilities:GetZoneNameByMapID(1525)) -- Rivendreth
+        :Ids{
+            14766, -- Parasoling
+        }
+
+    KAF_Sub(ACMList_Zones, Utilities:GetZoneNameByMapID(1970)) -- Zereth Mortis
+        :Ids{
+            15229, -- Traversing the Spheres
+            15211, -- Completing the Code
+        }
 
     -- Torghast
-    local ACMList_Torghast = {
-        Utilities:GetZoneNameByMapID(1618), -- Torghast
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        }
-    }
+    local ACMList_Torghast = KAF_Cat(Utilities:GetZoneNameByMapID(1618)) -- Torghast
 
     if KhamulsAchievementFilter.db.profile.toyAchievementsSettings.includeChildAchievements then
-        ACMList_Torghast[#ACMList_Torghast+1] = ACMChilds_TwistingCorridors
-        ACMList_Torghast[#ACMList_Torghast+1] = ACMChilds_TheJailersGauntlet
+        ACMList_Torghast:Insert(ACMChilds_TwistingCorridors)
+        ACMList_Torghast:Insert(ACMChilds_TheJailersGauntlet)
     end
 
-    ACMList_Torghast[#ACMList_Torghast+1] = {
+    ACMList_Torghast:Ids{
         14471, -- Twisting Corridors: Layer 4
         15252, -- The Jailer's Gauntlet: Layer 2
     }
 
     -- PetBattles
-    local ACMList_PetBattles = {
-        Utilities:GetAchievementCategoryNameByCategoryID(15219), -- Pet Battles
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACMList_PetBattles = KAF_Cat(Utilities:GetAchievementCategoryNameByCategoryID(15219)) -- Pet Battles
+        :Ids{
             14625, -- Battle in the Shadowlands
         }
-    }
 
-    local ACMList = {
-        _G.EXPANSION_NAME8, -- Shadowlands
-        false,
-        {
-            IgnoreCollapsedChainFilter = true,
-            IgnoreFactionFilter = true
-        },
-        ACMList_Zones,
-        ACMList_Torghast,
-        ACMList_PetBattles
-    }
+    local ACMList = KAF_Cat(_G.EXPANSION_NAME8) -- Shadowlands
+        :Insert(ACMList_Zones)
+        :Insert(ACMList_Torghast)
+        :Insert(ACMList_PetBattles)
 
     return ACMList
 end

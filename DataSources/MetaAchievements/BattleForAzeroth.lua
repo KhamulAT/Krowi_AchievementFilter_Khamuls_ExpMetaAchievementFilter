@@ -63,13 +63,8 @@ function GetBfAList()
         }
     }
 
-    local ACM_12807 = { -- Battle for Azeroth Dungeon Hero
-        Utilities:GetAchievementName(12807),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true
-        },
-        {
+    local ACM_12807 = KAF_CatChain(Utilities:GetAchievementName(12807)) -- Battle for Azeroth Dungeon Hero
+        :Ids{
             12505,
             12484,
             12837,
@@ -78,22 +73,13 @@ function GetBfAList()
             12832,
             12825,
             12845
-        },
-    }
+        }
 
-    local ACM_40956 = { -- I'm On Island Time
-        Utilities:GetAchievementName(40956),
-        false,
-        {
-            IgnoreFactionFilter = true
-        },
-        { -- Hot Tropic
-            Utilities:GetAchievementName(41202),
-            false,
-            {
-                IgnoreFactionFilter = true
-            },
-            {
+    local ACM_40956 = KAF_CatFaction(Utilities:GetAchievementName(40956)) -- I'm On Island Time
+
+    ACM_40956:Insert( -- Hot Tropic
+        KAF_CatFaction(Utilities:GetAchievementName(41202))
+            :Ids{
                 12944,
                 12851,
                 12614,
@@ -102,15 +88,12 @@ function GetBfAList()
                 13036,
                 13029,
                 13038
-            },
-        },
-        { -- Sound Off
-            Utilities:GetAchievementName(41205),
-            false,
-            {
-                IgnoreFactionFilter = true
-            },
-            {
+            }
+    )
+
+    ACM_40956:Insert( -- Sound Off
+        KAF_CatFaction(Utilities:GetAchievementName(41205))
+            :Ids{
                 12939,
                 12852,
                 13050,
@@ -118,15 +101,12 @@ function GetBfAList()
                 13061,
                 13058,
                 13049
-            },
-        },
-        { -- Bown Voyage
-            Utilities:GetAchievementName(41203),
-            false,
-            {
-                IgnoreFactionFilter = true
-            },
-            {
+            }
+    )
+
+    ACM_40956:Insert( -- Bown Voyage
+        KAF_CatFaction(Utilities:GetAchievementName(41203))
+            :Ids{
                 12942,
                 12771,
                 13024,
@@ -135,15 +115,12 @@ function GetBfAList()
                 13028,
                 13022,
                 13021
-            },
-        },
-        { -- Songs of Storms
-            Utilities:GetAchievementName(41206),
-            false,
-            {
-                IgnoreFactionFilter = true
-            },
-            {
+            }
+    )
+
+    ACM_40956:Insert( -- Songs of Storms
+        KAF_CatFaction(Utilities:GetAchievementName(41206))
+            :Ids{
                 12940,
                 12853,
                 13047,
@@ -152,15 +129,12 @@ function GetBfAList()
                 13045,
                 13062,
                 13053
-            },
-        },
-        { -- Dune Sqpad
-            Utilities:GetAchievementName(41204),
-            false,
-            {
-                IgnoreFactionFilter = true
-            },
-            {
+            }
+    )
+
+    ACM_40956:Insert( -- Dune Sqpad
+        KAF_CatFaction(Utilities:GetAchievementName(41204))
+            :Ids{
                 12943,
                 12849,
                 13016,
@@ -169,15 +143,12 @@ function GetBfAList()
                 13009,
                 13017,
                 13437
-            },
-        },
-        { -- When the Drust Settles
-            Utilities:GetAchievementName(41207),
-            false,
-            {
-                IgnoreFactionFilter = true
-            },
-            {
+            }
+    )
+
+    ACM_40956:Insert( -- When the Drust Settles
+        KAF_CatFaction(Utilities:GetAchievementName(41207))
+            :Ids{
                 12941,
                 12995,
                 13087,
@@ -185,64 +156,49 @@ function GetBfAList()
                 13064,
                 13094,
                 13082
-            },
-        },
-        { -- Loremaster of Zandalar
-            Utilities:GetAchievementName(13294),
-            false,
-            {
-                IgnoreFactionFilter  = true
-            },
-            {
+            }
+    )
+
+    ACM_40956:Insert( -- Loremaster of Zandalar
+        KAF_CatFaction(Utilities:GetAchievementName(13294))
+            :Ids{
                 11861,
                 12478,
                 11868
-            },
-        },
-        { -- Loremaster of Kul Tiras
-            Utilities:GetAchievementName(12593),
-            false,
-            {
-                IgnoreFactionFilter  = true
-            },
-            {
+            }
+    )
+
+    ACM_40956:Insert( -- Loremaster of Kul Tiras
+        KAF_CatFaction(Utilities:GetAchievementName(12593))
+            :Ids{
                 12473,
                 12496,
                 12497
-            },
-        },
-        {
-            41202,
-            41205,
-            41203,
-            41206,
-            41204,
-            41207,
-            12988,
-            13144,
-            13294,
-            12593
-        },
+            }
+    )
+
+    ACM_40956:Ids{
+        41202,
+        41205,
+        41203,
+        41206,
+        41204,
+        41207,
+        12988,
+        13144,
+        13294,
+        12593
     }
 
-    local ACM_40955 = { -- War Stories
-        Utilities:GetAchievementName(40955),
-        false,
-        {
-            IgnoreFactionFilter  = true
-        },
-        { -- Two Sides to Every Tale
-            Utilities:GetAchievementName(13517),
-            false,
-            {
-                IgnoreFactionFilter  = true
-            },
-            {
-                Utilities:AchievementShowDecider(13467, 13466, factionSpecificAchievements, "completedBeforeFaction"),
-                Utilities:AchievementShowDecider(12891, 12479, factionSpecificAchievements, "completedBeforeFaction")
-            }
-        },
-        {
+    local ACM_40955 = KAF_CatFaction(Utilities:GetAchievementName(40955)) -- War Stories
+        :Insert( -- Two Sides to Every Tale
+            KAF_CatFaction(Utilities:GetAchievementName(13517))
+                :Ids{
+                    Utilities:AchievementShowDecider(13467, 13466, factionSpecificAchievements, "completedBeforeFaction"),
+                    Utilities:AchievementShowDecider(12891, 12479, factionSpecificAchievements, "completedBeforeFaction")
+                }
+        )
+        :Ids{
             12555,
             12582,
             13517,
@@ -254,16 +210,10 @@ function GetBfAList()
             Utilities:AchievementShowDecider(13700, 13553, factionSpecificAchievements, "completedBeforeFaction"),
             Utilities:AchievementShowDecider(13709, 13710, factionSpecificAchievements, "completedBeforeFaction"),
             14157
-        },
-    }
+        }
 
-    local ACM_13134 = { -- Expedition Leader
-        Utilities:GetAchievementName(13134),
-        false,
-        {
-            IgnoreFactionFilter  = true
-        },
-        {
+    local ACM_13134 = KAF_CatFaction(Utilities:GetAchievementName(13134)) -- Expedition Leader
+        :Ids{
             13122,
             13126,
             13124,
@@ -274,15 +224,9 @@ function GetBfAList()
             13128,
             Utilities:AchievementShowDecider(13135, 13133, factionSpecificAchievements, "completedBeforeFaction")
         }
-    }
 
-    local ACM_40957 = { -- Maximum Effort
-        Utilities:GetAchievementName(40957),
-        false,
-        {
-            IgnoreFactionFilter  = true
-        },
-        {
+    local ACM_40957 = KAF_CatFaction(Utilities:GetAchievementName(40957)) -- Maximum Effort
+        :Ids{
             Utilities:AchievementShowDecider(12873, 12881, factionSpecificAchievements, "completedBeforeFaction"), -- War is Hell
             Utilities:AchievementShowDecider(13296, 13297, factionSpecificAchievements, "completedBeforeFaction"), -- War for the Shore
             --AchievementShowDecider(12876, 12889, factionSpecificAchievements, "completedBeforeFaction"), -- Strike Fast
@@ -297,27 +241,17 @@ function GetBfAList()
             Utilities:AchievementShowDecider(12870, 12899, factionSpecificAchievements, "completedBeforeFaction"), -- Kalimdor
             Utilities:AchievementShowDecider(13284, 13283, factionSpecificAchievements, "completedBeforeFaction") -- Frontline Warrior
         }
-    }
 
-    local ACM_13638 = { -- Undersea Usurper
-        Utilities:GetAchievementName(13638),
-        false,
-        {
-            IgnoreFactionFilter  = true
-        },
-        {
-            Utilities:GetAchievementName(Utilities:AchievementShowDecider(13761, 13762, factionSpecificAchievements, "completedBeforeFaction")),
-            false,
-            {
-                IgnoreFactionFilter  = true
-            },
-            {
-                Utilities:AchievementShowDecider(13750, 13759, factionSpecificAchievements, "completedBeforeFaction"),
-                Utilities:AchievementShowDecider(13756, 13760, factionSpecificAchievements, "completedBeforeFaction"),
-                Utilities:AchievementShowDecider(13757, 13758, factionSpecificAchievements, "completedBeforeFaction")
-            }
-        },
-        {
+    local ACM_13638 = KAF_CatFaction(Utilities:GetAchievementName(13638)) -- Undersea Usurper
+        :Insert(
+            KAF_CatFaction(Utilities:GetAchievementName(Utilities:AchievementShowDecider(13761, 13762, factionSpecificAchievements, "completedBeforeFaction")))
+                :Ids{
+                    Utilities:AchievementShowDecider(13750, 13759, factionSpecificAchievements, "completedBeforeFaction"),
+                    Utilities:AchievementShowDecider(13756, 13760, factionSpecificAchievements, "completedBeforeFaction"),
+                    Utilities:AchievementShowDecider(13757, 13758, factionSpecificAchievements, "completedBeforeFaction")
+                }
+        )
+        :Ids{
             13635,
             13690,
             13691,
@@ -336,15 +270,9 @@ function GetBfAList()
             Utilities:AchievementShowDecider(13709, 13710, factionSpecificAchievements, "completedBeforeFaction"),
             13836
         }
-    }
 
-    local ACM_13541 = { -- Mecha-Done
-        Utilities:GetAchievementName(13541),
-        false,
-        {
-            IgnoreFactionFilter  = true
-        },
-        {
+    local ACM_13541 = KAF_CatFaction(Utilities:GetAchievementName(13541)) -- Mecha-Done
+        :Ids{
             Utilities:AchievementShowDecider(13553, 13700, factionSpecificAchievements, "completedBeforeFaction"),
             13470,
             13556,
@@ -356,15 +284,9 @@ function GetBfAList()
             13791,
             13790
         }
-    }
 
-    local ACM_40959 = { --Black Empire State of Mind
-        Utilities:GetAchievementName(40959),
-        false,
-        {
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACM_40959 = KAF_CatFaction(Utilities:GetAchievementName(40959)) --Black Empire State of Mind
+        :Ids{
             14154,
             14153,
             14156,
@@ -373,43 +295,25 @@ function GetBfAList()
             14158,
             14161
         }
-    }
 
-    local ACM_13994 = { -- Through the Depths of Visions
-        Utilities:GetAchievementName(13994),
-        false,
-        {
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACM_13994 = KAF_CatFaction(Utilities:GetAchievementName(13994)) -- Through the Depths of Visions
+        :Ids{
             14066,
             14060,
             14067,
             14061
         }
-    }
 
-    local ACM_40958 = { -- Full Heart, Can't Lose
-        Utilities:GetAchievementName(40958),
-        false,
-        {
-            IgnoreFactionFilter = true
-        },
-        {
+    local ACM_40958 = KAF_CatFaction(Utilities:GetAchievementName(40958)) -- Full Heart, Can't Lose
+        :Ids{
             12918,
             13572,
             13771,
             13777
         }
-    }
 
-    local ACM_41209 = { -- Dressed to Kill: Battle for Azeroth
-        Utilities:GetAchievementName(41209),
-        false,
-        {
-            IgnoreFactionFilter = true
-        },
-        Utilities:ShowOnlyCompletedAchievementsWhenRequirementsAreMet(4, {
+    local ACM_41209 = KAF_CatFaction(Utilities:GetAchievementName(41209)) -- Dressed to Kill: Battle for Azeroth
+        :Ids(Utilities:ShowOnlyCompletedAchievementsWhenRequirementsAreMet(4, {
             12991,
             12993,
             13385,
@@ -418,28 +322,22 @@ function GetBfAList()
             13585,
             14058,
             14059
-        })
-    }
+        }))
 
-    -- try to add a new category to the specials tab 
-    local ACMList = { -- meta achievements overview
-        Utilities:GetAchievementName(40953, "BfA - "),
-        false,
-        {
-            IgnoreCollapsedChainFilter = true
-        },
-        ACM_12807, -- Battle for Azeroth Dungeon Hero
-        ACM_40956, -- I'm On Island Time
-        ACM_40955, -- War Stories
-        ACM_13134, -- Expedition Leader
-        ACM_40957, -- Maximum Effort
-        ACM_13638, -- Undersea Usurper
-        ACM_13541, -- Mecha-Done
-        ACM_40959, --Black Empire State of Mind
-        ACM_13994, -- Through the Depths of Visions
-        ACM_40958, -- Full Heart, Can't Lose
-        ACM_41209, -- Dressed to Kill: Battle for Azeroth
-        {
+    -- try to add a new category to the specials tab
+    local ACMList = KAF_CatChain(Utilities:GetAchievementName(40953, "BfA - ")) -- meta achievements overview
+        :Insert(ACM_12807) -- Battle for Azeroth Dungeon Hero
+        :Insert(ACM_40956) -- I'm On Island Time
+        :Insert(ACM_40955) -- War Stories
+        :Insert(ACM_13134) -- Expedition Leader
+        :Insert(ACM_40957) -- Maximum Effort
+        :Insert(ACM_13638) -- Undersea Usurper
+        :Insert(ACM_13541) -- Mecha-Done
+        :Insert(ACM_40959) --Black Empire State of Mind
+        :Insert(ACM_13994) -- Through the Depths of Visions
+        :Insert(ACM_40958) -- Full Heart, Can't Lose
+        :Insert(ACM_41209) -- Dressed to Kill: Battle for Azeroth
+        :Ids{
             40960,
             40961,
             13414,
@@ -459,7 +357,6 @@ function GetBfAList()
             41209,
             14730
         }
-    }
 
     return ACMList
 end
