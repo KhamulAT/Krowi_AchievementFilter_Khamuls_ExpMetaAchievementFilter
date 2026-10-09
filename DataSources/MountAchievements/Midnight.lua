@@ -90,6 +90,7 @@ function GetMidnightMountAchievements()
         62386, -- Light Up the Night
         62873, -- A Trip Around the Stars
         62874, -- A Trip Through the Stars
+        63715, -- Let Me Solo Him: Kindo'jan
     }
 
     -- Return flat structure if set
@@ -156,6 +157,11 @@ function GetMidnightMountAchievements()
     KAF_Sub(ACMList_Delves, Utilities:GetDungeonNameByLFGDungeonID(3071)) -- Torment's Rise
         :Ids{
             61799, -- Let Me Solo Him: Nullaeus
+        }
+
+    KAF_Sub(ACMList_Delves, Utilities:GetAchievementName(63721)) -- The Labyrinth of Kindo'jan
+        :Ids{
+            63715, -- Let Me Solo Him: Kindo'jan
         }
 
     -- Raids
