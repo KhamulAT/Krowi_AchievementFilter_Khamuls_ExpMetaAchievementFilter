@@ -159,10 +159,13 @@ function GetMidnightMountAchievements()
             61799, -- Let Me Solo Him: Nullaeus
         }
 
-    KAF_Sub(ACMList_Delves, Utilities:GetAchievementName(63721)) -- The Labyrinth of Kindo'jan
-        :Ids{
-            63715, -- Let Me Solo Him: Kindo'jan
-        }
+    -- 12.1.5
+    if Utilities:AchievementExists(63721) then
+        KAF_Sub(ACMList_Delves, Utilities:GetAchievementName(63721)) -- The Labyrinth of Kindo'jan
+            :Ids{
+                63715, -- Let Me Solo Him: Kindo'jan
+            }
+    end
 
     -- Raids
     local ACMList_Raids = KAF_Cat(Utilities:GetAchievementCategoryNameByCategoryID(15271)) -- Raids
