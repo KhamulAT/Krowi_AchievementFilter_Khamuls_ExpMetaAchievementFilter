@@ -10,7 +10,8 @@ function Utilities:GetAchievementName(achievementID, prefix)
         prefix = ""
     end
 
-    local name = select(2, GetAchievementInfo(achievementID)) or self.GetUnknownAchievementString()
+    -- pcall: achievements from an upcoming patch are not known to the client yet
+    local name = select(3, pcall(GetAchievementInfo, achievementID)) or self.GetUnknownAchievementString()
     
     if name == self.GetUnknownAchievementString() then
         -- try to get the achievementname from locale
@@ -24,6 +25,11 @@ function Utilities:GetAchievementName(achievementID, prefix)
     end
     
     return prefix .. name
+end
+
+-- Achievements from an upcoming patch are not known to the client yet
+function Utilities:AchievementExists(achievementID)
+    return select(3, pcall(GetAchievementInfo, achievementID)) ~= nil
 end
 
 function Utilities:IsAchievementCompleted(achievementId) 
