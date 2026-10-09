@@ -29,6 +29,7 @@ function GetMythicPlusMountAchievements()
             63104, -- Umbral Champion: Midnight Season 1
             62447, -- Midnight Keystone Master: Season 2
             62449, -- Midnight Keystone Legend: Season 2
+            63690, -- Midnight Keystone Myth: Season 2
         }
 
     -- Return flat structure if set
@@ -79,6 +80,7 @@ function GetMythicPlusMountAchievements()
             63104, -- Umbral Champion: Midnight Season 1
             62447, -- Midnight Keystone Master: Season 2
             62449, -- Midnight Keystone Legend: Season 2
+            63690, -- Midnight Keystone Myth: Season 2
         }
 
     local ACMList = KAF_Cat(_G.PLAYER_DIFFICULTY_MYTHIC_PLUS) -- Mythic+

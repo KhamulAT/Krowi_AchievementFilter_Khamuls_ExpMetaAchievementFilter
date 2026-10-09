@@ -1,6 +1,6 @@
-## Interface: 120100
+## Interface: 120100, 120105
 ## Title: Krowi's |cFF1D92C2AF|r - Khamuls Collections Plugin
-## Version: 3.0.0
+## Version: 3.0.1
 ## Author: Khamûl-Antonidas
 ## X-Email: khamul.antonidas@gmail.com
 ## Notes: Adds additional categories to the special tab (Campsites, Decors, Meta Mounts, Pets, Toys)
